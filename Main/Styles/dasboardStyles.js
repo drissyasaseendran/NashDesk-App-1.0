@@ -8,25 +8,31 @@ const styles = StyleSheet.create({
       height:200,
     },
     heading: {
-      top: 0, left: 0,
-      right: 0, bottom: 130,
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: 'absolute',
-  
+        top: 0,
+        bottom: 0,
+        textAlign: 'center',
+        right: 0,
+        position: 'absolute',
+        left: 0,
+        
   },
-  headerTitle:
+  headingTitle:
   {
- 
+    fontWeight:700,
     color:'#fff',
     fontSize: 30,
   },
 
 statusBody:
 {
+    display:'flex',
+    flexDirection:'row'
 
 },
-
+statusContent:
+{
+    flex:1
+},
 
 
 

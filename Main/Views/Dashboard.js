@@ -8,12 +8,12 @@ function Dashboard ({navigation}){
     return (
       <ScrollView >
             <View style={styles.header}></View>
-            <View >
-              <Text >Dashboard</Text>
+            <View style={styles.heading}>
+              <Text style={styles.headingTitle}>Dashboard</Text>
             </View>
             <View style={styles.statusBody}>
             
-                       <View>
+                       <View style={styles.statusContent}>
 
                           <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
                          
@@ -30,7 +30,7 @@ function Dashboard ({navigation}){
                             <Text style={styles.textStyle}>Due Today</Text>
                             </TouchableOpacity>
                         </View>
-                       <View >
+                        <View style={styles.statusContent}>
                            <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
                         
                             <Icon
@@ -46,7 +46,7 @@ function Dashboard ({navigation}){
                             <Text style={styles.textStyle}>OverDue</Text>
                             </TouchableOpacity>
                         </View>
-                       <View style={styles.iconStyle}>
+                        <View style={styles.statusContent}>
                           <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
                     
                             <Icon
@@ -64,7 +64,7 @@ function Dashboard ({navigation}){
                         </View>
 
            
-                       <View >
+                        <View style={styles.statusContent}>
                           <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
                          
                             <Icon
@@ -80,7 +80,7 @@ function Dashboard ({navigation}){
                             <Text style={styles.textStyle}>Unassigned</Text>
                             </TouchableOpacity>
                         </View>
-                         <View style={styles.iconStyle}>
+                        <View style={styles.statusContent}>
                           <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
                        
                             <Icon
@@ -96,7 +96,7 @@ function Dashboard ({navigation}){
                             <Text style={styles.textStyle}>Resolved</Text>
                             </TouchableOpacity>
                         </View>
-                       <View >
+                        <View style={styles.statusContent}>
                          <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
                          
                             <Icon
