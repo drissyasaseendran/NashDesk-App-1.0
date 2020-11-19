@@ -26,12 +26,16 @@ const styles = StyleSheet.create({
 statusBody:
 {
     display:'flex',
+    flexWrap: 'wrap',
     flexDirection:'row'
+
 
 },
 statusContent:
 {
-    flex:1
+    // flex:1,
+    alignItems:'center',
+    flexBasis:'33.233%',
 },
 
 
