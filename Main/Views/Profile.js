@@ -123,7 +123,7 @@ function Profile (){
     return (
       <View style={styles.container}>
           <View style={styles.header}></View>
-            <View style={styles.avatarHeading}><Text style={styles.HeaderTitle}>Leadership Board</Text></View>
+            <View style={styles.heading}><Text style={styles.HeaderTitle}>Leadership Board</Text></View>
             <View style={styles.avatar}>
 
             <Image style={styles.avatarImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
