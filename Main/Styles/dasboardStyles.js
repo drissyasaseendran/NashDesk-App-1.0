@@ -1,7 +1,9 @@
 import {
     StyleSheet
 } from 'react-native';
-
+import { Dimensions } from 'react-native';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     header:{
       backgroundColor: "#FFAE42",
@@ -14,30 +16,52 @@ const styles = StyleSheet.create({
         right: 0,
         position: 'absolute',
         left: 0,
+    },
+    headingTitle:
+    {
+      fontWeight:700,
+      color:'#fff',
+      fontSize: 30,
+    },
+    canvasBody:
+    {
+      width: windowWidth,
+      height:windowHeight,
+       backgroundColor: "#f5f5f5",
+       borderRadius: 50,
+       borderWidth: 4,
+       borderColor: "#f5f5f5",
+       borderWidth: 4,
+       marginBottom:10,
+       alignSelf:'center',
+       position: 'absolute',
+       marginTop:130
+    },
+    statusBody:
+    {
+        display:'flex',
+        flexWrap: 'wrap',
+        flexDirection:'row'
         
-  },
-  headingTitle:
-  {
-    fontWeight:700,
-    color:'#fff',
-    fontSize: 30,
-  },
+    },
+    statusContent:
+    {
+        alignItems:'center',
+        flexBasis:'33.233%',
+    },
+    statusCardBox:
+    {
 
-statusBody:
-{
-    display:'flex',
-    flexWrap: 'wrap',
-    flexDirection:'row'
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin:20,
+        backgroundColor: '#fff',
+        width:150,
+        height:150,
+        borderColor:'red',
+        borderRadius: 20,
 
-
-},
-statusContent:
-{
-    // flex:1,
-    alignItems:'center',
-    flexBasis:'33.233%',
-},
-
+    },
 
 
 
@@ -72,24 +96,7 @@ statusContent:
     fontSize: 14,
     },
   
-    Settingscard:
-      {
-  //     flexDirection: 'row',
-  
-          justifyContent: 'center',
-          alignItems: 'center',
-  //        padding:5,
-          margin:20,
-          backgroundColor: '#fff',
-          width:150,
-          height:150,
-  //        border:5,
-  //        borderColor: "#f5f5f5",
-          borderColor:'red',
-          borderRadius: 20,
-  //        shadowRadius:13,
-  
-      },
+ 
       PerformanceTitle:
       {
       padding:25,

@@ -1,9 +1,10 @@
 import React from 'react';
 import SparkLine from '../Views/SparkLine'
 import {styles} from '../Styles/dasboardStyles'
-import {Text, View,TouchableOpacity} from 'react-native';
+import {Text, View} from 'react-native';
 import {ScrollView,SafeAreaView} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import DashboardStatusCard from './DashboardStatusCard';
+
 function Dashboard ({navigation}){
     return (
       <ScrollView >
@@ -11,109 +12,15 @@ function Dashboard ({navigation}){
             <View style={styles.heading}>
               <Text style={styles.headingTitle}>Dashboard</Text>
             </View>
+            <View style={styles.canvasBody}>
             <View style={styles.statusBody}>
-            
-                       <View style={styles.statusContent}>
-
-                          <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
-                         
-                            <Icon
-                            style={{paddingTop:4,}}
-                                                name="group"
-                                                color='#FFAE42'
-                                                size={20}
-
-                                                />
-                                                 <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                                                  alignItems: 'center', alignSelf:'center'}}>80</Text>
-                            
-                            <Text style={styles.textStyle}>Due Today</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.statusContent}>
-                           <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
-                        
-                            <Icon
-                            style={{paddingTop:4,}}
-                                                name="group"
-                                                color='#FFAE42'
-                                                size={20}
-
-                                                />
-                                                 <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                                                  alignItems: 'center', alignSelf:'center'}}>80</Text>
-                          
-                            <Text style={styles.textStyle}>OverDue</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.statusContent}>
-                          <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
-                    
-                            <Icon
-                            style={{paddingTop:4,}}
-                                                name="group"
-                                                color='#FFAE42'
-                                                size={20}
-
-                                                />
-                                                 <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                                                  alignItems: 'center', alignSelf:'center'}}>80</Text>
-                          
-                            <Text style={styles.textStyle}>Assigned</Text>
-                            </TouchableOpacity>
-                        </View>
-
-           
-                        <View style={styles.statusContent}>
-                          <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
-                         
-                            <Icon
-                            style={{paddingTop:4,}}
-                                                name="group"
-                                                color='#FFAE42'
-                                                size={20}
-
-                                                />
-                                                 <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                                                  alignItems: 'center', alignSelf:'center'}}>80</Text>
-                            
-                            <Text style={styles.textStyle}>Unassigned</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.statusContent}>
-                          <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
-                       
-                            <Icon
-                            style={{paddingTop:4,}}
-                                                name="group"
-                                                color='#FFAE42'
-                                                size={20}
-
-                                                />
-                                                 <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                                                  alignItems: 'center', alignSelf:'center'}}>80</Text>
-                           
-                            <Text style={styles.textStyle}>Resolved</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.statusContent}>
-                         <TouchableOpacity style={styles.Settingscard} onPress={() => navigation.navigate('Category')} >
-                         
-                            <Icon
-                            style={{paddingTop:4,}}
-                                                name="group"
-                                                color='#FFAE42'
-                                                size={20}
-
-                                                />
-                                                 <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                                                  alignItems: 'center', alignSelf:'center'}}>80</Text>
-                            
-                            <Text style={styles.textStyle}>Closed</Text>
-                            </TouchableOpacity>
-                        </View>
-
-                    </View>
+              <DashboardStatusCard  title="Due today"  count={20} />
+              <DashboardStatusCard  title="OverDue"    count={28} />
+              <DashboardStatusCard  title="Assigned"   count={25} />
+              <DashboardStatusCard  title="Unassigned" count={20} />
+              <DashboardStatusCard  title="Resolved"   count={50} />
+              <DashboardStatusCard  title="Closed"     count={2}  />
+            </View>
 
                      <Text style={styles.PerformanceTitle}>Performance Graph</Text>
                       <View style={ {
@@ -153,7 +60,7 @@ function Dashboard ({navigation}){
         
 
 
-
+                    </View>
 
 
       </ScrollView>
