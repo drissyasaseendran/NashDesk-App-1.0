@@ -6,16 +6,14 @@ function DashboardStatusCard (props){
     return (
       <View style={styles.statusContent}>
         <View style={styles.statusCardBox} >
-        <Icon
-        style={{paddingTop:4,}}
-                            name="group"
-                            color='#FFAE42'
-                            size={20}
-
-                            />
-                             <Text style={{fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-                              alignItems: 'center', alignSelf:'center'}}>80</Text>
-        <Text style={styles.textStyle}>{props.title}</Text>
+          <View style={styles.statusContentinside}>
+              <Icon name={props.icon} style={styles.statusIcon}/>
+              <Text style={styles.statusText}>{props.count}</Text>
+          </View>
+          <View style={styles.statusTitlebody}>
+            <Text style={styles.statusTitle}>{props.title}</Text>
+          </View>
+         
         </View>
     </View>
     );

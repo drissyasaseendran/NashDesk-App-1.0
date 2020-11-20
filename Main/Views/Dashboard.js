@@ -14,12 +14,12 @@ function Dashboard ({navigation}){
             </View>
             <View style={styles.canvasBody}>
             <View style={styles.statusBody}>
-              <DashboardStatusCard  title="Due today"  count={20} />
-              <DashboardStatusCard  title="OverDue"    count={28} />
-              <DashboardStatusCard  title="Assigned"   count={25} />
-              <DashboardStatusCard  title="Unassigned" count={20} />
-              <DashboardStatusCard  title="Resolved"   count={50} />
-              <DashboardStatusCard  title="Closed"     count={2}  />
+              <DashboardStatusCard  title="Due today"  icon="clock"  count={20} />
+              <DashboardStatusCard  title="OverDue"    icon="clock"  count={28} />
+              <DashboardStatusCard  title="Assigned"   icon="clock"  count={25} />
+              <DashboardStatusCard  title="Unassigned" icon="clock"  count={20} />
+              <DashboardStatusCard  title="Resolved"   icon="clock"  count={50} />
+              <DashboardStatusCard  title="Closed"     icon="clock"  count={2}  />
             </View>
 
                      <Text style={styles.PerformanceTitle}>Performance Graph</Text>

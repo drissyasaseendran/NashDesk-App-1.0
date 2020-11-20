@@ -6,7 +6,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     header:{
-      backgroundColor: "#FFAE42",
+      backgroundColor: "#0187CA",
       height:200,
     },
     heading: {
@@ -56,11 +56,40 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin:20,
         backgroundColor: '#fff',
-        width:150,
-        height:150,
+        width:120,
+        height:120,
         borderColor:'red',
         borderRadius: 20,
 
+    },
+    statusContentinside:
+    {
+        paddingVertical: 15,
+        paddingHorizontal: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
+    statusIcon:
+    {
+      fontSize:30,
+      color:'#888',
+      paddingRight:15
+    },
+    statusText:
+    {
+      fontSize:30,
+      fontWeight:700,
+      color:'#888'
+    },
+    statusTitlebody:
+    {
+      
+    },
+    statusTitle:
+    {
+      fontSize: 14,
+      color:'#504f4d'
     },
 
 
@@ -77,17 +106,6 @@ const styles = StyleSheet.create({
 
 
 
-
-
-
-
-
-  textStyle:{
-  paddingTop:27,
-  fontSize: 14,
-  color:'#504f4d'
-  },
-  
 
 
   
