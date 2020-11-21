@@ -14,7 +14,7 @@ const About = () => (
             <Icon style={styles.PrfileIcon} name='phone'   color={'#0187CA'}/>  
            
              
-            <Title style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
+            <Title style={styles.Prfiletext}>98989748</Title>
          
         </View>
         <View style={styles.PrfileFileds}>

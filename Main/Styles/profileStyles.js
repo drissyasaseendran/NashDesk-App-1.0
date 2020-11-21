@@ -67,14 +67,15 @@ const styles = StyleSheet.create({
       ProfileContentInside:
       {
         display:'flex',
-    
+       
+        width:'400px'
       },
     
       PrfileFileds:
       {
         flexDirection: "row",
-        
-        alignItems: "center"
+        justifySelf: 'center',
+         alignItems: "center"
       },
       PrfileIcon:
       {
