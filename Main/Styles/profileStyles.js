@@ -69,8 +69,13 @@ const styles = StyleSheet.create({
         justifyContent:'center',
       },
       profileabout:
-      {flexDirection:'row',alignItems: 'center', flex:1},
-
+      {
+        flexDirection:'row', flex:1
+      },
+      PrfileFileds:
+      { 
+           flexDirection:'row', flex:1
+    },
 
 
 

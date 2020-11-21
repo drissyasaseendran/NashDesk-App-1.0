@@ -12,13 +12,13 @@ const About = () => (
       <Title style={{ flexDirection:'column'}}>9874884777</Title>
     </View>
     <View style={styles.ProfileContentInside}>
-    <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
-      <Icon name='home'  size={10} color={'#0187CA'}/>
-      <Title style={{ flexDirection:'column'}}>st josphp nhoi chrush bushvilla</Title>
-    </View>
+        <View style={styles.PrfileFileds}>
+          <Icon name='home'  size={10} color={'#0187CA'}/>
+          <Title style={{ flexDirection:'column'}}>st josphp nhoi chrush bushvilla</Title>
+        </View>
 
         
-          <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
+          <View style={styles.PrfileFileds}>
 
           <Icon name='city'  size={10} color={'#0187CA'}/>
             <Title style={{ flexDirection:'column'}}>Amsterdam</Title>
@@ -26,7 +26,7 @@ const About = () => (
 
 
           </View>
-          <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
+          <View style={styles.PrfileFileds}>
 
             <Icon name='city'  size={10} color={'#0187CA'}/>
               <Title style={{ flexDirection:'column'}}>UK</Title>
@@ -34,7 +34,7 @@ const About = () => (
 
 
             </View>
-            <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
+            <View style={styles.PrfileFileds}>
 
                         <Button
               // onPress={onPressLearnMore}
