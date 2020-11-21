@@ -100,6 +100,7 @@ function Profile (){
   const renderTabBar = props => (
     <TabBar
       {...props}
+      labelStyle={{color: '#888', fontSize: 14}}
       indicatorStyle={{ backgroundColor: '#0187CA',color:"#888" }}
       style={{ backgroundColor: 'none',color:"#888" }}
     />
