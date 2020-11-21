@@ -27,7 +27,7 @@ const SettingStack = createStackNavigator(
             return{
                 headerStyle: {
                     // height: '45%',
-                    backgroundColor: '#ffae19'
+                    backgroundColor: '#0187CA'
                   },
                   headerTintColor: 'white',
                   headerLeft: (

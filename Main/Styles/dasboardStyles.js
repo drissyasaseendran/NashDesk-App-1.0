@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
     {
       width: windowWidth,
       height:windowHeight,
+      display:'flex',
+      flexDirection:'column',
        backgroundColor: "#f5f5f5",
        borderRadius: 50,
        borderWidth: 4,
@@ -88,7 +90,6 @@ const styles = StyleSheet.create({
     statusTitlebody:
     {
       paddingTop:'5px'
-      // marginTop:'-10px'
     },
     statusTitle:
     {
@@ -110,14 +111,10 @@ const styles = StyleSheet.create({
     performanceBg:
     {
         display:"flex",
-       
-        // flexDirection:'column',
         justifyContent: 'center',
         alignItems: 'center',
         margin:20,
         backgroundColor: '#fff',
-        // width:1000,
-        // height:420,
         borderColor:'red',
         borderRadius: 20,
         border:'1px solid #ccc',

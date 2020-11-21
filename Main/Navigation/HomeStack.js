@@ -20,7 +20,7 @@ import AddCategory from '../Views/Settings/AddCategory'
 import AddCannedResponse from '../Views/Settings/AddCannedResponse'
 import Analytics from '../Views/Analytics'
 import Notification from '../Views/Settings/Notification'
-import GoBack from '../Views/GoBack'
+
 
 const NotificationTab = createStackNavigator({
 
