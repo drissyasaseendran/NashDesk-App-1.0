@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ScrollView ,Text,View,Image,Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {Title} from 'react-native-paper';
 import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
@@ -96,7 +96,15 @@ function Profile (){
     { key: 'Password', title: 'Password' },
     { key: 'Status', title: 'Status' },
   ]);
- 
+
+  const renderTabBar = props => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: '#0187CA',color:"#888" }}
+      style={{ backgroundColor: 'none',color:"#888" }}
+    />
+  );
+   
   const renderScene = SceneMap({
     About: About,
     Password: Password,
@@ -106,24 +114,21 @@ function Profile (){
 
     return (
       <ScrollView>
-        <View style={styles.header}></View>
+          <View style={styles.header}></View>
           <View style={styles.canvasBody}>
-            <View style={styles.ProfileBody}> 
-                 <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-                 <Text style={styles.Profilename}>Jenifer Lopus</Text>
-                 </View>
-                  <TabView
+                <View style={styles.ProfileBody}> 
+                    <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+                    <Text style={styles.Profilename}>Jenifer Lopus</Text>
+                </View>
+                <TabView
+                      renderTabBar={renderTabBar}
                       navigationState={{ index, routes }}
                       renderScene={renderScene}
-                      activeColor='orange'indicatorStyle={{ backgroundColor:'rgb(0,144,209)', height: 5}}
-                      style={{
-                                    }}indicatorStyle={{ backgroundColor: 'orange' }}
                       onIndexChange={setIndex}
                       initialLayout={initialLayout}
-                    />
+                />
            
           </View>
-   
       </ScrollView >
     );
 
