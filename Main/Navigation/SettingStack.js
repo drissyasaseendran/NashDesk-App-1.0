@@ -8,7 +8,7 @@ import Dashboard from '../Views/Dashboard'
 import Groups from  '../Views/Settings/Groups'
 import Agents from  '../Views/Settings/Agents'
 import Tags from  '../Views/Settings/Tags'
-import Header from '../Views/Navstructure'
+import Header from './Navstructure'
 import CannedResponse from '../Views/Settings/cannedResponse'
 import GoBack from '../Views/GoBack'
 

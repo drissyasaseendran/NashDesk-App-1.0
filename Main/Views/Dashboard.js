@@ -14,10 +14,10 @@ function Dashboard ({navigation}){
             </View>
             <View style={styles.canvasBody}>
             <View style={styles.statusBody}>
-              <DashboardStatusCard  title="Due today"  icon="clock"  count={20} />
+              <DashboardStatusCard  title="Due today"  icon="rocket"  count={20} />
               <DashboardStatusCard  title="OverDue"    icon="clock"  count={28} />
               <DashboardStatusCard  title="Assigned"   icon="clock"  count={25} />
-              <DashboardStatusCard  title="Unassigned" icon="clock"  count={20} />
+              <DashboardStatusCard  title="Unassigned" icon="facebook"  count={20} />
               <DashboardStatusCard  title="Resolved"   icon="clock"  count={50} />
               <DashboardStatusCard  title="Closed"     icon="clock"  count={2}  />
             </View>
