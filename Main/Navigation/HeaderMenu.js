@@ -2,7 +2,7 @@ import  React from 'react';
 import { View,TouchableOpacity } from 'react-native';
 import {styles} from '../Styles/styles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-const NavigationDrawerStructure = ({navigation})=> {
+const HeaderMenu = ({navigation})=> {
     const openMenu = () => {
         navigation.openDrawer();
     };
@@ -29,4 +29,4 @@ const NavigationDrawerStructure = ({navigation})=> {
         </View>
     );
   }
-  export default NavigationDrawerStructure;
+  export default HeaderMenu;

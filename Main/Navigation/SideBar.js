@@ -6,37 +6,26 @@ import {
     Avatar,
     Title,
     Caption,
-    Paragraph,
     Drawer,
     Text,
     TouchableRipple,
     Switch
 } from 'react-native-paper';
 import {
-    DrawerContentScrollView,
+ 
     DrawerItem
 } from '@react-navigation/drawer';
-// https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/MaterialCommunityIcons.json
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-// import{ AuthContext } from '../components/context';
-
 const SideBar = ({navigation})=> {
 
     const paperTheme = useTheme();
-
-    // const { signOut, toggleTheme } = React.useContext(AuthContext);
-
     return(
         <View style={{flex:1}}>
             <ScrollView>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row',
-                        // Setting up View inside component in Vertically center.
-                        // justifyContent: 'center',
-                        // Setting up View inside component align horizontally center.
-                        alignItems: 'center',
+                                      alignItems: 'center',
                         
                         flex:1,height:200,alignContent:'center'}}>
                             <Avatar.Image 

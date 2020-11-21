@@ -2,10 +2,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation'
 import SettingStack from '../Navigation/SettingStack'
 import Home from '../Navigation/HomeStack'
-import Sidebar from './sideBar'
-// import Dashboard from '../Views/Dashboard'
-import Messagememo from '../Views/MessageMemmo'
-
+import Sidebar from './SideBar'
 const DrawNavigator = createDrawerNavigator({
   
     Home:

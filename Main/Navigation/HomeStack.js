@@ -2,7 +2,6 @@ import { createAppContainer, } from 'react-navigation'
 import { createBottomTabNavigator, } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import {Button } from 'react-native';
 import Dashboard from '../Views/Dashboard'
 import Profile from '../Views/Profile'
 import React from 'react'
@@ -10,7 +9,7 @@ import Settings from '../Views/Settings'
 import Groups from  '../Views/Settings/Groups'
 import Agents from  '../Views/Settings/Agents'
 import Tags from  '../Views/Settings/Tags'
-import Header from './Navstructure'
+import Header from './HeaderMenu'
 import CannedResponse from '../Views/Settings/cannedResponse'
 import Leader from '../Views/LeaderShip'
 import MessageMemo from '../Views/MessageMemmo'
@@ -22,62 +21,7 @@ import AddCannedResponse from '../Views/Settings/AddCannedResponse'
 import Analytics from '../Views/Analytics'
 import Notification from '../Views/Settings/Notification'
 import GoBack from '../Views/GoBack'
-const StackNavigator = createStackNavigator(
-  {
-   
-    Dashboard: {
-      screen: Dashboard,
-      navigationOptions:({navigation}) => {
-        return{
-        headerTitle: () => <Header navigation={navigation} title='Dashboard'/>
-        }
-    }
-    },
- 
-    Settings:{
-      screen:Settings,
-      navigationOptions:({navigation}) => {
-          return{
-          headerTitle: () => <Header navigation={navigation} title='Settings'/>
-          }
-      }
-  },
-  Groups:{
-      screen:Groups,
-      navigationOptions:({navigation}) => {
-         
-          return{
-              headerStyle: {
-                  // height: '45%',
-                  backgroundColor: 'blue'
-                },
-                headerTintColor: 'white',
-                headerLeft: (
-                  <Button onPress={() => navigation.goBack()} title="Back" />
-                ),
-          headerTitle: () => <GoBack navigation={navigation} title='Group'/>
-          }
-      }
-  },
-  Tags:{
-      screen:Tags,
-      // navigationOptions:({navigation}) => {
-      //     return{
-      //     headerTitle: () => <Header navigation={navigation} title='Tags' />
-      //     }
-      // }
-  },
-  Agents:{
-      screen:Agents,
-      
-  },
-  CannedResponse:{
-      screen:CannedResponse,
-     
-  },
-  },
-  
-)
+
 const NotificationTab = createStackNavigator({
 
   Notification: {
@@ -343,8 +287,7 @@ CannedResponse:{
        
       return{
         headerStyle: {
-            // height: '45%',
-            
+      
             borderBottomWidth: 0,
             backgroundColor: '#0187CA'
           },

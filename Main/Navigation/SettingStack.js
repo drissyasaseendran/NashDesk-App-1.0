@@ -1,6 +1,4 @@
-import { createDrawerNavigator  } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation'
 import React from 'react'
 import Settings from '../Views/Settings'
 import {Button } from 'react-native';
@@ -8,7 +6,7 @@ import Dashboard from '../Views/Dashboard'
 import Groups from  '../Views/Settings/Groups'
 import Agents from  '../Views/Settings/Agents'
 import Tags from  '../Views/Settings/Tags'
-import Header from './Navstructure'
+import Header from './HeaderMenu'
 import CannedResponse from '../Views/Settings/cannedResponse'
 import GoBack from '../Views/GoBack'
 
@@ -41,27 +39,15 @@ const SettingStack = createStackNavigator(
     },
     Tags:{
         screen:Tags,
-        // navigationOptions:({navigation}) => {
-        //     return{
-        //     headerTitle: () => <Header navigation={navigation} title='Tags' />
-        //     }
-        // }
+      
     },
     Agents:{
         screen:Agents,
-        // navigationOptions:({navigation}) => {
-        //     return{
-        //     headerTitle: () => <Header navigation={navigation} title='Agents'/>
-        //     }
-        // }
+        
     },
     CannedResponse:{
         screen:CannedResponse,
-        // navigationOptions:({navigation}) => {
-        //     return{
-        //     headerTitle: () => <Header navigation={navigation} title='CannedResponse'/>
-        //     }
-        // }
+        
     },
     Dashboard:{
         screen:Dashboard,
