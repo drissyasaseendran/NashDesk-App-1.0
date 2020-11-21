@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     {
         display:'flex',
         flexWrap: 'wrap',
-        flexDirection:'row'
+        flexDirection:'row',
+        paddingTop:'30px'
         
     },
     statusContent:
@@ -51,7 +52,8 @@ const styles = StyleSheet.create({
     },
     statusCardBox:
     {
-
+        display:"flex",
+        flexDirection:'column',
         justifyContent: 'center',
         alignItems: 'center',
         margin:20,
@@ -60,12 +62,13 @@ const styles = StyleSheet.create({
         height:120,
         borderColor:'red',
         borderRadius: 20,
+        border:'1px solid #ccc',
+        boxShadow: '1px 1px 1px  #eef'
+     
 
     },
     statusContentinside:
     {
-        paddingVertical: 15,
-        paddingHorizontal: 10,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center"
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
     {
       fontSize:30,
       color:'#888',
-      paddingRight:15
+      paddingRight:10
     },
     statusText:
     {
@@ -84,44 +87,42 @@ const styles = StyleSheet.create({
     },
     statusTitlebody:
     {
-      
+      paddingTop:'5px'
+      // marginTop:'-10px'
     },
     statusTitle:
     {
       fontSize: 14,
-      color:'#504f4d'
+      color:'#888'
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    caption:{
-     paddingTop:20,
-    fontSize: 14,
+    performanceContent:
+    { 
+      
     },
-  
- 
-      PerformanceTitle:
-      {
-      padding:25,
-         fontSize:24,paddingLeft:18, color:'#504f4d', justifyContent: 'center',
-  //                                                  alignItems: 'center', alignSelf:'center'
-      },
-  
+    performanceText:
+    {
+      paddingLeft:'10px',
+      paddingTop:'15px',
+      fontSize:25,
+      fontWeight:700,
+      color:'#888'
+    },
+    performanceBg:
+    {
+        display:"flex",
+       
+        // flexDirection:'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin:20,
+        backgroundColor: '#fff',
+        // width:1000,
+        // height:420,
+        borderColor:'red',
+        borderRadius: 20,
+        border:'1px solid #ccc',
+        boxShadow: '1px 1px 1px  #eef'
+    }
   });
 export {
     styles
