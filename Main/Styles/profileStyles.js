@@ -86,24 +86,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
     
     },
- 
 
-    
-      bodyContent: {
-      marginTop:100,
-         width: 500,
-       height:500,
-        // backgroundColor: "#fff",
-        // borderRadius:20,
-    
-        // borderColor: "#c7c5c5",
-        // borderWidth: 1,
-    //    marginBottom:10,
-        alignSelf:'center',
-        flex: 1,
-        alignItems: 'center',
-        padding:30,
-      },
       bodyStatus:{
         marginTop:30,
         width: 400,

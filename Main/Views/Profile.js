@@ -5,8 +5,6 @@ import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {Title} from 'react-native-paper';
 import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 const About = () => (
   <View style={styles.bodyContent}>
 
