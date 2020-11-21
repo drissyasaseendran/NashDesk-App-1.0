@@ -2,6 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 import { Dimensions } from 'react-native';
+import { color } from 'react-native-reanimated';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -65,23 +66,26 @@ const styles = StyleSheet.create({
       },
       ProfileContentInside:
       {
-       
-        justifyContent:'center',
+        display:'flex',
+    
       },
-      profileabout:
-      {
-        flexDirection:'row', flex:1
-      },
+    
       PrfileFileds:
-      { 
-           flexDirection:'row', flex:1
-    },
+      {
+        flexDirection: "row",
+        
+        alignItems: "center"
+      },
+      PrfileIcon:
+      {
+        fontSize:'18px'
+      },
 
-
-
-
-
-
+      Prfiletext:
+      {
+        fontSize:'14px',
+        color:'#888'
+      },
 
 
 

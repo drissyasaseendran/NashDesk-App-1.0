@@ -7,33 +7,41 @@ import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
 const About = () => (
   <View style={styles.ProfileAboutBody}>
-    <View style={styles.profileabout}>
-      <Icon name='phone'  size={10} color={'#0187CA'}/>
-      <Title style={{ flexDirection:'column'}}>9874884777</Title>
-    </View>
+  
     <View style={styles.ProfileContentInside}>
         <View style={styles.PrfileFileds}>
-          <Icon name='home'  size={10} color={'#0187CA'}/>
-          <Title style={{ flexDirection:'column'}}>st josphp nhoi chrush bushvilla</Title>
+           
+            <Icon style={styles.PrfileIcon} name='phone'   color={'#0187CA'}/>  
+           
+             
+            <Title style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
+         
         </View>
-
-        
-          <View style={styles.PrfileFileds}>
-
-          <Icon name='city'  size={10} color={'#0187CA'}/>
-            <Title style={{ flexDirection:'column'}}>Amsterdam</Title>
-
-
-
-          </View>
-          <View style={styles.PrfileFileds}>
-
-            <Icon name='city'  size={10} color={'#0187CA'}/>
-              <Title style={{ flexDirection:'column'}}>UK</Title>
-
-
-
-            </View>
+        <View style={styles.PrfileFileds}>
+           
+            <Icon style={styles.PrfileIcon} name='home'   color={'#0187CA'}/>  
+         
+             
+            <Title  style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
+          
+        </View>
+        <View style={styles.PrfileFileds}>
+           
+            <Icon style={styles.PrfileIcon} name='city'   color={'#0187CA'}/>  
+          
+             
+            <Title  style={styles.Prfiletext}>Amtredam</Title>
+            
+        </View>
+        <View style={styles.PrfileFileds}>
+           
+            <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
+         
+          
+            <Title  style={styles.Prfiletext}>Uk</Title>
+          
+        </View>
+   
             <View style={styles.PrfileFileds}>
 
                         <Button
@@ -45,7 +53,8 @@ const About = () => (
             />
 
             </View>
-</View></View>
+    </View>
+    </View>
 );
  
 const Password = () => (
