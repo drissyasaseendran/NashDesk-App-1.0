@@ -1,8 +1,8 @@
 import React from 'react';
 import {styles} from '../Styles/dasboardStyles'
-import {Text,SafeAreaView, View} from 'react-native';
+import {Text, View} from 'react-native';
 import { LineChart} from 'react-native-svg-charts'
-import { Icon } from 'react-native-elements'
+
 const linedata = [0, 10, 40,49, 5]
 const data = [
     { date: 1577421956000,value: 0.36},
@@ -18,15 +18,6 @@ const data = [
     { date: 1578285956000, value: 0.26 },
     { date: 1578458756000, value: 0.48 },
     ]
-
-    const Gradient = () => (
-        <Defs key={'gradient'}>
-            <LinearGradient id={'gradient'} x1={'0'} y={'0%'} x2={'100%'} y2={'0%'}>
-                <Stop offset={'0%'} stopColor={'rgb(134, 65, 244)'}/>
-                <Stop offset={'100%'} stopColor={'rgb(66, 194, 244)'}/>
-            </LinearGradient>
-        </Defs>
-    )
 
 function DashboardPerformanceGraph (props){
     return (
