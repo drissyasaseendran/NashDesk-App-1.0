@@ -6,39 +6,30 @@ import {Title} from 'react-native-paper';
 import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
 const About = () => (
-  <View style={styles.bodyContent}>
-
-  <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:500}}>
-
-              <Icon name='phone' size={40} color={'orange'}/>
-                <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>9874884777</Title>
-               
-
-
-        </View>
-
-        <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
-
-          <Icon name='home' size={40} color={'orange'}/>
-            <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>st josphp nhoi chrush bushvilla</Title>
-          
-
-
-          </View>
+  <View style={styles.ProfileAboutBody}>
+    <View style={styles.profileabout}>
+      <Icon name='phone'  size={10} color={'#0187CA'}/>
+      <Title style={{ flexDirection:'column'}}>9874884777</Title>
+    </View>
+    <View style={styles.ProfileContentInside}>
+    <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
+      <Icon name='home'  size={10} color={'#0187CA'}/>
+      <Title style={{ flexDirection:'column'}}>st josphp nhoi chrush bushvilla</Title>
+    </View>
 
         
           <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
 
-          <Icon name='city' size={40} color={'orange'}/>
-            <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>Amsterdam</Title>
+          <Icon name='city'  size={10} color={'#0187CA'}/>
+            <Title style={{ flexDirection:'column'}}>Amsterdam</Title>
 
 
 
           </View>
           <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
 
-            <Icon name='city' size={40} color={'orange'}/>
-              <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>UK</Title>
+            <Icon name='city'  size={10} color={'#0187CA'}/>
+              <Title style={{ flexDirection:'column'}}>UK</Title>
 
 
 
@@ -54,7 +45,7 @@ const About = () => (
             />
 
             </View>
-</View>
+</View></View>
 );
  
 const Password = () => (

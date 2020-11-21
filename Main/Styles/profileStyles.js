@@ -63,8 +63,13 @@ const styles = StyleSheet.create({
         color:'#888',
         textAlign:'center'
       },
-
-
+      ProfileContentInside:
+      {
+       
+        justifyContent:'center',
+      },
+      profileabout:
+      {flexDirection:'row',alignItems: 'center', flex:1},
 
 
 

@@ -2,11 +2,12 @@ import React from 'react';
 import {StyleSheet,Title,View,Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 function ProfileAbout () {
-return ( <View style={styles.bodyContent}>
+return ( 
 
-  <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:500}}>
+<View style={styles.bodyContent}>
+  <View style={styles.profileabout}>
 
-              <Icon name='phone' size={40} color={'orange'}/>
+              <Icon name='phone' size={30} color={'#0187CA'}/>
                 <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>9874884777</Title>
                
 
@@ -15,7 +16,7 @@ return ( <View style={styles.bodyContent}>
 
         <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
 
-          <Icon name='home' size={40} color={'orange'}/>
+          <Icon name='home'  size={30} color={'#0187CA'}/>
             <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>st josphp nhoi chrush bushvilla</Title>
           
 
@@ -25,7 +26,7 @@ return ( <View style={styles.bodyContent}>
         
           <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200}}>
 
-          <Icon name='city' size={40} color={'orange'}/>
+          <Icon name='city'  size={30} color={'#0187CA'}/>
             <Title style={{paddingLeft:55, flexDirection:'column',width:300}}>Amsterdam</Title>
 
 
