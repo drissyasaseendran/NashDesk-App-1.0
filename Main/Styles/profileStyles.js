@@ -64,21 +64,16 @@ const styles = StyleSheet.create({
         color:'#888',
         textAlign:'center'
       },
-      ProfileContentInside:
-      {
-        display:'flex',
-       
-        width:'400px'
-      },
-    
-      PrfileFileds:
+  
+      ProfileFileds:
       {
         flexDirection: "row",
-        justifySelf: 'center',
-         alignItems: "center"
+        alignItems: "center"
       },
+      
       PrfileIcon:
       {
+        paddingRight:'15px',
         fontSize:'18px'
       },
 
@@ -87,6 +82,66 @@ const styles = StyleSheet.create({
         fontSize:'14px',
         color:'#888'
       },
+      ProfileAboutBody:
+      {
+        paddingTop:'12px',
+      },
+
+      ProfileContentInside:
+      {
+        display:'flex',
+      },
+      ProfileFiledBtn:
+      {
+        paddingTop:'12px',
+    
+        display:'flex',
+      },
+      ProfileRender:
+      {
+        // display:'flex',
+      },
+      ProfileBtn:
+      {
+        flexWrap: 'wrap',
+        fontSize:'14px',
+        color:'#0187CA',
+        fontWeight:'700'
+      },
+      ProfileContent:
+      {
+        border:'1px solid #ccc',
+        borderRadius:'15px',
+        padding:'15px',
+        boxShadow: '1px 1px 1px  #ccc',
+        backgroundColor:'#fff',
+        margin:'28px'
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

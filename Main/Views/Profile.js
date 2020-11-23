@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, ScrollView ,Text,View,Image,Button} from 'react-native';
+import {ScrollView ,Text,View,Image,Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {Title} from 'react-native-paper';
@@ -7,61 +7,40 @@ import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
 const About = () => (
   <View style={styles.ProfileAboutBody}>
-  
+    
     <View style={styles.ProfileContentInside}>
-        <View style={styles.PrfileFileds}>
-           
+    <View style={styles.ProfileContent}>
+        <View style={styles.ProfileFileds}>
             <Icon style={styles.PrfileIcon} name='phone'   color={'#0187CA'}/>  
-           
-             
             <Title style={styles.Prfiletext}>98989748</Title>
-         
         </View>
-        <View style={styles.PrfileFileds}>
-           
+        <View style={styles.ProfileFileds}>
             <Icon style={styles.PrfileIcon} name='home'   color={'#0187CA'}/>  
-         
-             
             <Title  style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
-          
         </View>
-        <View style={styles.PrfileFileds}>
-           
+        <View style={styles.ProfileFileds}>
             <Icon style={styles.PrfileIcon} name='city'   color={'#0187CA'}/>  
-          
-             
             <Title  style={styles.Prfiletext}>Amtredam</Title>
-            
         </View>
-        <View style={styles.PrfileFileds}>
-           
+        <View style={styles.ProfileFileds}>
             <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-         
-          
             <Title  style={styles.Prfiletext}>Uk</Title>
-          
         </View>
-   
-            <View style={styles.PrfileFileds}>
-
-                        <Button
-              // onPress={onPressLearnMore}
-              style={{paddingLeft:50}}
-              title="Edit"
-              color="orange"
-              accessibilityLabel="Learn more about this purple button"
-            />
-
-            </View>
+        <View style={styles.ProfileFileds}>
+            <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
+            <Title  style={styles.Prfiletext}>1245487</Title>
+        </View>
+        </View>
     </View>
+    <View style={styles.ProfileFiledBtn}>
+      <Title  style={styles.ProfileBtn}>EDIT</Title>      
     </View>
+  </View>
 );
  
 const Password = () => (
   <View> 
-   
-   <Button
-              // onPress={onPressLearnMore}
+     <Button
               style={{paddingLeft:50}}
               title="Change Password"
               color="orange"
@@ -70,19 +49,16 @@ const Password = () => (
 </View>
 );
 const Status = () => (
-  // <View style={{flexDirection:'row',alignItems: 'center', flex:1,height:200,alignContent:'center'}}>
- <View> 
-   <View><Title style={styles.title}>Your plan expires on</Title></View>
-   
- <View style={styles.bodyStatus}>
-  <View style={{paddingLeft:55}}>
-      <Title style={styles.titleExpire}> 31 December 2020</Title>
-    
-    
-
+  <View> 
+      <View>
+         <Title style={styles.title}>Your plan expires on</Title>
+      </View>
+      <View style={styles.bodyStatus}>
+          <View style={{paddingLeft:55}}>
+              <Title style={styles.titleExpire}> 31 December 2020</Title>
+          </View>
+      </View>
   </View>
-  </View>
-</View>
 );
 const initialLayout = { width: Dimensions.get('window').width };
  
@@ -119,6 +95,7 @@ function Profile (){
                     <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
                     <Text style={styles.Profilename}>Jenifer Lopus</Text>
                 </View>
+                <View  style={styles.ProfileRender}>
                 <TabView
                       renderTabBar={renderTabBar}
                       navigationState={{ index, routes }}
@@ -126,7 +103,7 @@ function Profile (){
                       onIndexChange={setIndex}
                       initialLayout={initialLayout}
                 />
-           
+           </View>
           </View>
       </ScrollView >
     );
