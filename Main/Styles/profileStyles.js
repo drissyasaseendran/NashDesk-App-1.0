@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
       ProfileFiledBtn:
       {
         paddingTop:'12px',
-    
         display:'flex',
       },
       ProfileRender:
@@ -103,8 +102,11 @@ const styles = StyleSheet.create({
       },
       ProfileBtn:
       {
-        flexWrap: 'wrap',
+       
+        textAlign:'right',
+        justifyContent:'flex-end',
         fontSize:'14px',
+        padding:'40px',
         color:'#0187CA',
         fontWeight:'700'
       },

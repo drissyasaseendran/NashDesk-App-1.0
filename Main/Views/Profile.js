@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView ,Text,View,Image,Button} from 'react-native';
+import {ScrollView,TouchableOpacity ,Text,View,Image,Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {Title} from 'react-native-paper';
@@ -32,18 +32,17 @@ const About = () => (
         </View>
         </View>
     </View>
-    <View style={styles.ProfileFiledBtn}>
+    <TouchableOpacity style={styles.ProfileContentInside}>
       <Title  style={styles.ProfileBtn}>EDIT</Title>      
-    </View>
+    </TouchableOpacity>
   </View>
 );
  
 const Password = () => (
   <View> 
      <Button
-              style={{paddingLeft:50}}
+              
               title="Change Password"
-              color="orange"
               accessibilityLabel="Learn more about this purple button"
             />
 </View>
