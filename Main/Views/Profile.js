@@ -1,11 +1,11 @@
 import React from 'react';
 import {ScrollView ,TouchableOpacity,Title,Text,View,Image} from 'react-native';
-import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
+// import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
 import ProfileAbout from './ProfileAbout'
 import ProfileStatus from './ProfileStatus'
-const initialLayout = { width: Dimensions.get('window').width };
+// const initialLayout = { width: Dimensions.get('window').width };
 function Profile ({navigation}){
   // const [index, setIndex] = React.useState(0);
   // const [routes] = React.useState([
