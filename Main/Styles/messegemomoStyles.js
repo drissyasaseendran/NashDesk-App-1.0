@@ -42,15 +42,23 @@ const styles = StyleSheet.create({
        },
        memoBody:
        {
-        marginTop:50,
-        margin:'28px'
+        marginBottom:50,
+        borderBottomColor: '#c7c5c5',
+        borderBottomWidth: 1,
+      
        },
-
+       memoBodyContainer:
+       {
+            marginTop:50,
+            margin:'30px',
+         
+            paddingBottom:'15px'
+       },
        memotitle:
        {
         fontSize:14,
         // paddingBottom:'5px',
-        paddingLeft:'5px',
+        paddingLeft:'10px',
         color:'#888',
         
        },
@@ -58,69 +66,54 @@ const styles = StyleSheet.create({
        {
         display:'flex',
         flexDirection:'row',
-     
+        paddingLeft:'8px',
+        // paddingBottom:'10px',
         alignItems: "center"
        },
-
-
-
-
-
-
-
-
-
-
-
-       avatar: {
-        width: windowWidth,
-        height:windowHeight,
-         backgroundColor: "#f5f5f5",
-         borderRadius: 50,
-         borderWidth: 4,
-         borderColor: "#f5f5f5",
-         borderWidth: 4,
-         marginBottom:10,
-         alignSelf:'center',
-         position: 'absolute',
-         marginTop:130
+       memoViewsdate:
+       {
+        display:'flex',
+        flexDirection:'row',
+        alignItems: "center",
+        justifyContent:'space-between'
        },
-     
-    
-       caption:{
-        paddingTop:20,
-       fontSize: 14,
-       },
+
+
+
           memoinput: {
              color: '#555555',
              paddingRight: 10,
              paddingLeft: 10,
              paddingTop: 15,
-             width: 400,
+             width: '100%',
              height: 100,
-             borderColor: '#FFAE42',
+             borderColor: '#0187CA',
              borderWidth: 1,
-             borderRadius: 2,
+             borderRadius: 10,
              alignSelf: 'center',
-             backgroundColor: '#ffffff'
+             backgroundColor: '#ffffff',
+             marginBottom:'20px'
+         },
+         memobtnContainer:
+         {
+            display:'flex',
+            width:'100%'
          },
            sendContainer: {
-             padding: 20,
+            
      
          },
           sendLabel: {
-               color: '#fff',
-             paddingRight: 10,
-             paddingLeft: 10,
-             paddingTop: 15,
-             width: 400,
-             height: 80,
-             borderColor: '#FFAE42',
-             borderWidth: 1,
-             borderRadius: 2,
-             alignSelf: 'center',
-             textAlign:'center',
-             backgroundColor: '#FFAE42'
+            color: '#fff',
+           padding:'10px',
+            width: '100%',
+            height: 40,
+            borderColor: '#0187CA',
+            borderWidth: 1,
+            borderRadius: 10,
+            alignSelf: 'center',
+            textAlign:'center',
+            backgroundColor: '#0187CA'
          },
 });
 
