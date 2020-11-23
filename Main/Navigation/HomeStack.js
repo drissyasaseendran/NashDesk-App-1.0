@@ -20,8 +20,8 @@ import AddCategory from '../Views/Settings/AddCategory'
 import AddCannedResponse from '../Views/Settings/AddCannedResponse'
 import Analytics from '../Views/Analytics'
 import Notification from '../Views/Settings/Notification'
-
-
+import ProfileUpdate from '../Views/ProfileUpdate'
+import ProfileAbout from '../Views/ProfileAbout'
 const NotificationTab = createStackNavigator({
 
   Notification: {
@@ -95,7 +95,37 @@ const HomeTab = createStackNavigator({
         }
     }
     },
-      
+
+    ProfileAbout: {
+      screen: ProfileAbout,
+      navigationOptions:({navigation}) => {
+       
+        return{
+            headerStyle: {
+          
+                borderBottomWidth: 0,
+                backgroundColor: '#0187CA'
+              },
+              headerTintColor: 'white',
+           
+        }
+    }
+    },
+    ProfileUpdate: {
+      screen: ProfileUpdate,
+      navigationOptions:({navigation}) => {
+       
+        return{
+            headerStyle: {
+          
+                borderBottomWidth: 0,
+                backgroundColor: '#0187CA'
+              },
+              headerTintColor: 'white',
+           
+        }
+    }
+    },
    Analytics: {
     screen: Analytics,
     navigationOptions:({navigation}) => {

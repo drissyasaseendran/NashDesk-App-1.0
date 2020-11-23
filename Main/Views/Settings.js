@@ -10,14 +10,6 @@ import {
 import { Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {
-
-    Avatar,
-    Title,
-    Caption,
-
-
-} from 'react-native-paper';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 function Settings ({navigation}){

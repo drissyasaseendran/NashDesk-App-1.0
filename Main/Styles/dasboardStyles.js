@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         borderColor:'red',
         borderRadius: 20,
         border:'1px solid #ccc',
-        boxShadow: '1px 1px 1px  #eef'
+        boxShadow: '0 2px 6px -2px #ccc',
      
 
     },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         borderColor:'red',
         borderRadius: 20,
         border:'1px solid #ccc',
-        boxShadow: '1px 1px 1px  #eef'
+        boxShadow: '0 2px 6px -2px #ccc',
     }
   });
 export {

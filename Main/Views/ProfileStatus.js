@@ -5,25 +5,18 @@ import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {Title} from 'react-native-paper';
 import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
-import ProfileAbout from './ProfileAbout'
-import ProfilePassword from './ProfilePassword'
+
 const initialLayout = { width: Dimensions.get('window').width };
 function ProfileStatus (){
 
 
     return (
-      <ScrollView>
-                <View> 
-                <View>
-                <Title style={styles.title}>Your plan expires on</Title>
+     
+                <View style={styles.ProfileStatusContent}>
+                        <Title style={styles.ProfileStatustitle}>Your plan expires on</Title>
+                        <Title style={styles.ProfiletitleExpire}> 31 December 2020</Title>
                 </View>
-                <View style={styles.bodyStatus}>
-                    <View style={{paddingLeft:55}}>
-                        <Title style={styles.titleExpire}> 31 December 2020</Title>
-                    </View>
-                </View>
-            </View>
-      </ScrollView >
+   
     );
 
 }

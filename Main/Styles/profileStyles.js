@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
       },
       Profilename:
       {
-        fontSize:15,
+        fontSize:14,
+        paddingBottom:'5px',
         color:'#888',
         textAlign:'center'
       },
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
       },
       ProfileAboutBody:
       {
-        paddingTop:'12px',
+        // paddingTop:'12px',
       },
 
       ProfileContentInside:
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
         textAlign:'right',
         justifyContent:'flex-end',
         fontSize:'14px',
-        padding:'40px',
+        // padding:'40px',
         color:'#0187CA',
         fontWeight:'700'
       },
@@ -115,14 +116,31 @@ const styles = StyleSheet.create({
         border:'1px solid #ccc',
         borderRadius:'15px',
         padding:'15px',
-        boxShadow: '1px 1px 1px  #ccc',
+      boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
         margin:'28px'
       },
 
-
-
-
+      ProfileStatusContent:
+      {
+        border:'1px solid #ccc',
+        borderRadius:'15px',
+        padding:'15px',
+      boxShadow: '0 2px 6px -2px #ccc',
+        backgroundColor:'#fff',
+        margin:'28px'
+      },
+      ProfileStatustitle:
+      {
+        fontSize:'14px',
+        color:'#888'
+      },
+      ProfiletitleExpire:
+      {
+        fontSize:'14px',
+        marginTop:'-12px',
+        color:'#C42937'
+      },
 
 
 

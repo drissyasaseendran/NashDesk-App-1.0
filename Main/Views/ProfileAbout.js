@@ -4,38 +4,14 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Title} from 'react-native-paper';
 import {styles} from '../Styles/profileStyles'
 
-function ProfileAbout (){
+function ProfileAbout (props){
 
     return (
-      <View style={styles.ProfileAboutBody}>
-      <View style={styles.ProfileContentInside}>
-       <View style={styles.ProfileContent}>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='phone'   color={'#0187CA'}/>  
-               <Title style={styles.Prfiletext}>98989748</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='home'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='city'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>Amtredam</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>Uk</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>1245487</Title>
-           </View>
-           </View>
-       </View>
-       <TouchableOpacity style={styles.ProfileContentInside}>
-         <Title  style={styles.ProfileBtn}>EDIT</Title>      
-       </TouchableOpacity>
-     </View>
+                    <View style={styles.ProfileFileds}>
+                        <Icon style={styles.PrfileIcon} name={props.Icon}   color={'#0187CA'}/>  
+                        <Title style={styles.Prfiletext}>{props.Feilds}</Title>
+                    </View>
+             
     );
 
 }
