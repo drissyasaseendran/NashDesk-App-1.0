@@ -5,7 +5,9 @@ import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {Title} from 'react-native-paper';
 import {styles} from '../Styles/profileStyles'
 import { Dimensions } from 'react-native';
-
+import ProfileAbout from './ProfileAbout'
+import ProfilePassword from './ProfilePassword'
+import ProfileStatus from './ProfileStatus'
 const initialLayout = { width: Dimensions.get('window').width };
 function Profile (){
   const [index, setIndex] = React.useState(0);
@@ -14,55 +16,8 @@ function Profile (){
     { key: 'Password', title: 'Password' },
     { key: 'Status', title: 'Status' },
   ]);
-  const About = () => (
-    <View style={styles.ProfileAboutBody}>
-     <View style={styles.ProfileContentInside}>
-      <View style={styles.ProfileContent}>
-          <View style={styles.ProfileFileds}>
-              <Icon style={styles.PrfileIcon} name='phone'   color={'#0187CA'}/>  
-              <Title style={styles.Prfiletext}>98989748</Title>
-          </View>
-          <View style={styles.ProfileFileds}>
-              <Icon style={styles.PrfileIcon} name='home'   color={'#0187CA'}/>  
-              <Title  style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
-          </View>
-          <View style={styles.ProfileFileds}>
-              <Icon style={styles.PrfileIcon} name='city'   color={'#0187CA'}/>  
-              <Title  style={styles.Prfiletext}>Amtredam</Title>
-          </View>
-          <View style={styles.ProfileFileds}>
-              <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-              <Title  style={styles.Prfiletext}>Uk</Title>
-          </View>
-          <View style={styles.ProfileFileds}>
-              <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-              <Title  style={styles.Prfiletext}>1245487</Title>
-          </View>
-          </View>
-      </View>
-      <TouchableOpacity style={styles.ProfileContentInside}>
-        <Title  style={styles.ProfileBtn}>EDIT</Title>      
-      </TouchableOpacity>
-    </View>
-  );
-   
-  const Password = () => (
-    <View> 
-       <Button title="Change Password" accessibilityLabel="Learn more about this purple button"/>
-  </View>
-  );
-  const Status = () => (
-    <View> 
-        <View>
-           <Title style={styles.title}>Your plan expires on</Title>
-        </View>
-        <View style={styles.bodyStatus}>
-            <View style={{paddingLeft:55}}>
-                <Title style={styles.titleExpire}> 31 December 2020</Title>
-            </View>
-        </View>
-    </View>
-  );
+
+
   const renderTabBar = props => (
     <TabBar
       {...props}
@@ -73,9 +28,9 @@ function Profile (){
   );
    
   const renderScene = SceneMap({
-    About: About,
-    Password: Password,
-    Status:Status
+    About: ProfileAbout,
+    Password: ProfilePassword,
+    Status:ProfileStatus
   });
  
 
