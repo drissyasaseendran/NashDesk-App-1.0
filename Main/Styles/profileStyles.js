@@ -141,98 +141,58 @@ const styles = StyleSheet.create({
         marginTop:'-12px',
         color:'#C42937'
       },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      avatarHeading: {
-        top: 0, left: 0,
-        right: 0, bottom: 130,
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-    
-    },
-
-      bodyStatus:{
-        marginTop:30,
-        width: 400,
-    
-       backgroundColor: "#fff",
-       borderRadius:20,
-    
-       borderColor: "#c7c5c5",
-       borderWidth: 1,
-       marginBottom:10,
-       alignSelf:'center',
-      //  flex: 1,
-       alignItems: 'center',
-       padding:30,
-      },
-      caption:{
-    
-      // fontWeight: 'bold',
-      fontSize: 18,
-      },
-   
-      titleExpire:{
-        fontSize:25,
-        color:'red'
-      },
-      title:{
-        marginTop:100,
-        width: 400,
-    
-      //  backgroundColor: "#fff",
-      //  borderRadius:20,
-    
-      //  borderColor: "#c7c5c5",
-      //  borderWidth: 1,
-      //  marginBottom:10,/
-       alignSelf:'center',
-      //  flex: 1,
-       alignItems: 'center',
-      //  padding:30,
-      },
-      scene: {
-        flex: 1,
-      },
-      memoinput: {
-        color: '#555555',
-        paddingRight: 10,
-        paddingLeft: 10,
-        paddingTop: 15,
-        width: 500,
-        height: 100,
-        borderColor: '#FFAE42',
+      editProfile:
+      {
+        margin: 15,
+        height: 40,
+        borderColor: '#7a42f4',
+        color:'#888',
         borderWidth: 1,
-        borderRadius: 2,
-        alignSelf: 'center',
-        backgroundColor: '#ffffff'
-    },
+        paddingLeft:'12px',
+        backgroundColor:'#F5F5F6',
+        boxShadow: '0 2px 6px -2px #F5F5F6',
+        borderColor: '#eee',
+        borderWidth: 1,
+      },
+
+      EditBody:
+      {
+        border:'1px solid #ccc',
+        borderRadius:'15px',
+        padding:'15px',
+        boxShadow: '0 2px 6px -2px #ccc',
+        backgroundColor:'#fff',
+        margin:'28px'
+      },
+  
+      editlabel:
+      {
+        margin: 16,
+        fontSize:'11px',
+        marginBottom:'-12px',
+        color:'#888'
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 export {

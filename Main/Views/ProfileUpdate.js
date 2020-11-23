@@ -1,43 +1,78 @@
 import React from 'react';
-import {TouchableOpacity ,View} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Title} from 'react-native-paper';
+import {TextInput ,Text,Image,ScrollView,View} from 'react-native';
 import {styles} from '../Styles/profileStyles'
 
-function ProfileUpdate (){
+function ProfileUpdate (props){
 
     return (
-      <View style={styles.ProfileAboutBody}>
-      <View style={styles.ProfileContentInside}>
-       <View style={styles.ProfileContent}>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='phone'   color={'#0187CA'}/>  
-               <Title style={styles.Prfiletext}>98989748</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='home'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>st josphp nhoi chrush bushvilla</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='city'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>Amtredam</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>Uk</Title>
-           </View>
-           <View style={styles.ProfileFileds}>
-               <Icon style={styles.PrfileIcon} name='globe-model'   color={'#0187CA'}/>  
-               <Title  style={styles.Prfiletext}>1245487</Title>
-           </View>
-           <TouchableOpacity style={styles.ProfileContentInside} >
-          <Title  style={styles.ProfileBtn}>EDIT</Title>      
-        </TouchableOpacity>
-           </View>
-        
-       </View>
+        <ScrollView>
+        <View style={styles.header}></View>
+        <View style={styles.canvasBody}>
+        <View style={styles.ProfileBody}> 
+                    <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+                   
+        </View>
+        <View style={styles.EditBody}> 
+        <View style={styles.EditField}> 
+        <Text style={styles.editlabel} >Name</Text>
+        <TextInput style = {styles.editProfile}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               value="Jenifer" 
+               autoCapitalize = "none"
+            //    onChangeText = {this.handleEmail}
+               
+        />
+        </View>
+        <View style={styles.EditField}> 
+        <Text style={styles.editlabel} >Home</Text>
+        <TextInput style = {styles.editProfile}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               value="St plbcx ahgd" 
+               autoCapitalize = "none"
+            //    onChangeText = {this.handleEmail}
+               
+        />
+        </View>
+        <View style={styles.EditField}> 
+        <Text style={styles.editlabel} >City</Text>
+        <TextInput style = {styles.editProfile}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               value="Amtredam" 
+               autoCapitalize = "none"
+            //    onChangeText = {this.handleEmail}
+               
+        />
+        </View>
+        <View style={styles.EditField}> 
+        <Text style={styles.editlabel} >Country</Text>
+        <TextInput style = {styles.editProfile}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               value="Uk" 
+               autoCapitalize = "none"
+            //    onChangeText = {this.handleEmail}
+               
+        />
+        </View>
+        <View style={styles.EditField}> 
+        <Text style={styles.editlabel} >Code</Text>
+        <TextInput style = {styles.editProfile}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               value="48586" 
+               autoCapitalize = "none"
+            //    onChangeText = {this.handleEmail}
+               
+        />
+        </View>
+        </View>    
+             
       
      </View>
+     </ScrollView>
     );
 
 }
