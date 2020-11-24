@@ -28,19 +28,20 @@ const styles = StyleSheet.create({
 
       canvasBody: {
         width: windowWidth,
-        // height:windowHeight,
-        display:'flex',
-        flexDirection:'column',
-         backgroundColor: "#f5f5f5",
-         borderRadius: 50,
-         borderWidth: 4,
-         borderColor: "#f5f5f5",
-         borderWidth: 4,
-         marginBottom:10,
-         alignSelf:'center',
-         position: 'relative',
-         top:-85
-       },
+   //   height:windowHeight,
+     display:'flex',
+     flexDirection:'column',
+      backgroundColor: "rgb(242, 242, 242)",
+      borderRadius: 50,
+      borderWidth: 4,
+      borderColor: "rgb(242, 242, 242)",
+      borderWidth: 4,
+      marginBottom:10,
+      alignSelf:'center',
+      position: 'relative',
+      top:-85
+      },
+
        ProfileBody:
        {
         paddingTop:30,

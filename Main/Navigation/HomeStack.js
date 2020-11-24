@@ -204,7 +204,7 @@ Groups:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          headerTitle: () => <Header navigation={navigation} title='Settings'/>
+          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
      
     }
     }
@@ -220,7 +220,7 @@ Tags:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          headerTitle: () => <Header navigation={navigation} title='Settings'/>
+          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
         
     }
     }
@@ -237,7 +237,7 @@ Agents:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          headerTitle: () => <Header navigation={navigation} title='Settings'/>
+          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
          
     }
     }
@@ -254,7 +254,7 @@ Category:{
           backgroundColor: '#0187CA'
         },
         headerTintColor: 'white',
-        headerTitle: () => <Header navigation={navigation} title='Category'/>
+        // headerTitle: () => <Header navigation={navigation} title='Category'/>
      
   }
   }
@@ -271,7 +271,7 @@ AddCategory:{
           backgroundColor: '#0187CA'
         },
         headerTintColor: 'white',
-        headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
+        // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
 
   }
   }
@@ -288,7 +288,7 @@ AddGroup:{
           backgroundColor: '#0187CA'
         },
         headerTintColor: 'white',
-        headerTitle: () => <Header navigation={navigation} title='AddGroup'/>
+        // headerTitle: () => <Header navigation={navigation} title='AddGroup'/>
      
   }
   }
@@ -305,7 +305,7 @@ AddAgents:{
           backgroundColor: '#0187CA'
         },
         headerTintColor: 'white',
-        headerTitle: () => <Header navigation={navigation} title='AddAgents'/>
+        // headerTitle: () => <Header navigation={navigation} title='AddAgents'/>
         
   }
   }
@@ -322,7 +322,7 @@ CannedResponse:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          headerTitle: () => <Header  navigation={navigation} title='Settings'/>
+          // headerTitle: () => <Header  navigation={navigation} title='Settings'/>
      
     }
     }
@@ -340,7 +340,7 @@ AddCannedResponse:{
           backgroundColor: '#0187CA'
         },
         headerTintColor: 'white',
-        headerTitle: () => <Header navigation={navigation} title='AddCannedResponse'/>
+        // headerTitle: () => <Header navigation={navigation} title='AddCannedResponse'/>
 
   }
   }

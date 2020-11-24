@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
-
 } from 'react-native';
-
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {styles} from '../Styles/settingsStyles'
 import SettingsBlock from './SettingsBlock'
 function Settings ({navigation}){
@@ -26,10 +22,7 @@ function Settings ({navigation}){
                     < SettingsBlock icon="account-star-outline" title="Category" destination="Category" navigate={navigation.navigate}/>
                     < SettingsBlock icon="account-group" title="Profile" destination="Profile" navigate={navigation.navigate}/>
                     </View>
-               
-
-
-            </View>
+              </View>
 
       </View>
     );
