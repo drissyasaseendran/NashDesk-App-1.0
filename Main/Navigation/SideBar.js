@@ -3,13 +3,10 @@ import {styles} from '../Styles/SidebarStyles'
 import { View, StyleSheet,ScrollView ,Image} from 'react-native';
 import {
     useTheme,
-    Avatar,
     Title,
     Caption,
     Drawer,
-    Text,
-    TouchableRipple,
-    Switch,
+
     
 } from 'react-native-paper';
 import {
@@ -21,28 +18,25 @@ const SideBar = ({navigation})=> {
 
     const paperTheme = useTheme();
     return(
-        <View style={{flex:1}}>
+     
             <ScrollView>
-                <View style={styles.drawerContent}>
-                    <View style={styles.userInfoSection}>
-                        <View style={{flexDirection:'row',
-                                      alignItems: 'center',
-                        
-                        flex:1,height:200,alignContent:'center'}}>
-                              <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-                            <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.title}>Drissya</Title>
-                                <Caption style={styles.caption}>drissyasaseendran@gmail.com</Caption>
-                                <Icon 
-                                name="account-outline" 
-                                color='#FFAE42'
-                                size={50}
-                              
-                                > <Caption style={styles.caption}>Admin</Caption> </Icon>
-                            </View>
+                <View >
+                    <View style={styles.SideBarProfile}>
+                        <View  style={styles.SideBarProfileContent}>
+                            <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+                        </View > 
+                        <View style={styles.SideBarProfileDetails}>
+                                <Title style={styles.Profilename}>Drissya</Title>
+                                <Caption style={styles.profileId}>drissyasaseendran@gmail.com</Caption>
+                                <View style={styles.ProfileRole}>
+                                    <Icon 
+                                    style={styles.profileRoleIcon}
+                                    name="account-outline" 
+                                    color='#FFAE42'
+                                    size={20} > </Icon> 
+                                    <Caption style={styles.profileRoleName}>Admin</Caption> 
+                                </View >
                         </View>
-
-                        
                     </View>
 
                     <Drawer.Section style={styles.drawerSection}>
@@ -114,21 +108,9 @@ const SideBar = ({navigation})=> {
                             onPress={() => {navigation.navigate('Settings')}}
                         />
                     </Drawer.Section>
-                    <Drawer.Section title="Preferences">
-                        <TouchableRipple 
-                        // onPress={() => {toggleTheme()}}
-                        >
-                            <View style={styles.preference}>
-                                <Text>Dark Theme</Text>
-                                <View pointerEvents="none">
-                                    <Switch value={paperTheme.dark}/>
-                                </View>
-                            </View>
-                        </TouchableRipple>
-                    </Drawer.Section>
+                
                 </View>
-            </ScrollView>
-            <Drawer.Section style={styles.bottomDrawerSection}>
+                <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem 
                     icon={({color, size}) => (
                         <Icon 
@@ -141,7 +123,8 @@ const SideBar = ({navigation})=> {
                     onPress={() => {signOut()}}
                 />
             </Drawer.Section>
-        </View>
+            </ScrollView>
+     
     );
 }
 

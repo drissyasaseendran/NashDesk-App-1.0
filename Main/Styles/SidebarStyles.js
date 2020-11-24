@@ -2,11 +2,76 @@ import {
     StyleSheet
 } from 'react-native';
 import { Dimensions } from 'react-native';
-import { color } from 'react-native-reanimated';
-const windowWidth = Dimensions.get('window').width;
-
 
 const styles = StyleSheet.create({
+    SideBarProfile:
+    {
+        margin:15,
+        display:'flex',
+        flexDirection:'row',
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+    },
+    ProfileImage:
+    {
+        width: 80,
+        height: 80,
+        borderRadius: 63,
+        borderWidth: 4,
+        borderColor: "white",
+        marginBottom:10,
+        paddingTop:30
+    },
+    SideBarProfileDetails:
+    {
+        paddingLeft:15
+    },
+    ProfileRole:
+    {
+        display:'flex',
+        flexDirection:'row',
+       
+    },
+    profileRoleIcon:
+    {
+        justifyContent:'center'
+    },
+    profileRoleName:
+    {
+        justifyContent:'center'
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     drawerContent: {
         flex: 1,
       },
@@ -36,9 +101,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginRight: 3,
       },
-      drawerSection: {
-        marginTop: 15,
-      },
+  
       bottomDrawerSection: {
           marginBottom: 15,
           borderTopColor: '#f4f4f4',
