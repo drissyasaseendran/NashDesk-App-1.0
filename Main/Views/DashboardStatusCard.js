@@ -14,7 +14,6 @@ function DashboardStatusCard (props){
           <View style={styles.statusTitlebody}>
             <Text style={styles.statusTitle}>{props.title}</Text>
           </View>
-         
         </View>
     </View>
     );

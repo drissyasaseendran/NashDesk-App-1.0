@@ -12,7 +12,7 @@ import SettingsBlock from './SettingsBlock'
 function Settings ({navigation}){
 
     return (
-      <ScrollView >
+      <View >
             <View style={styles.header}></View>
             <View style={styles.heading}>
               <Text style={styles.headingTitle}>Settings</Text>
@@ -31,7 +31,7 @@ function Settings ({navigation}){
 
             </View>
 
-      </ScrollView>
+      </View>
     );
 
 }
