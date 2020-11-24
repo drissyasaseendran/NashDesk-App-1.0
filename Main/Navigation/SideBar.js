@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { View, StyleSheet,ScrollView } from 'react-native';
+import {styles} from '../Styles/SidebarStyles'
+import { View, StyleSheet,ScrollView ,Image} from 'react-native';
 import {
     useTheme,
     Avatar,
@@ -9,7 +9,8 @@ import {
     Drawer,
     Text,
     TouchableRipple,
-    Switch
+    Switch,
+    
 } from 'react-native-paper';
 import {
  
@@ -28,12 +29,7 @@ const SideBar = ({navigation})=> {
                                       alignItems: 'center',
                         
                         flex:1,height:200,alignContent:'center'}}>
-                            <Avatar.Image 
-                                source={{
-                                    uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
-                                }}
-                                size={50}
-                            />
+                              <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
                             <View style={{marginLeft:15, flexDirection:'column'}}>
                                 <Title style={styles.title}>Drissya</Title>
                                 <Caption style={styles.caption}>drissyasaseendran@gmail.com</Caption>
@@ -148,52 +144,6 @@ const SideBar = ({navigation})=> {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    drawerContent: {
-      flex: 1,
-    },
-    userInfoSection: {
-      paddingLeft: 20,
-    },
-    title: {
-      fontSize: 16,
-      marginTop: 3,
-      fontWeight: 'bold',
-    },
-    caption: {
-      fontSize: 14,
-      lineHeight: 14,
-    },
-    row: {
-      marginTop: 20,
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-    section: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginRight: 15,
-    },
-    paragraph: {
-      fontWeight: 'bold',
-      marginRight: 3,
-    },
-    drawerSection: {
-      marginTop: 15,
-    },
-    bottomDrawerSection: {
-        marginBottom: 15,
-        borderTopColor: '#f4f4f4',
-        borderTopWidth: 1
-    },
-    preference: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingVertical: 12,
-      paddingHorizontal: 16,
-    },
-  });
 
   export default SideBar;
 
