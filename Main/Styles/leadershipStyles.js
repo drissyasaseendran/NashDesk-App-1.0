@@ -30,53 +30,52 @@ const styles = StyleSheet.create({
      
        leaderbody: {
         display:"flex",
-        justifyContent: 'center',
-        alignItems: 'center',
+      
         margin:20,
         backgroundColor: '#fff',
         borderColor:'red',
         borderRadius: 20,
         border:'1px solid #ccc',
         boxShadow: '0 2px 6px -2px #ccc',
-        paddingBottom:'20px'
+        // paddingBottom:'20px'
         },
 
         leaderContent:
         {
+            display:'flex',
             flexDirection:'row',
-      
-            paddingTop:'20px',
+            padding:'20px',
+            justifyContent: 'center',
             alignItems: 'center',
             
         },
         leadername:
         {
-            flex: '1 1 33%',
+           
             paddingLeft:'12px',
             fontSize:'14px',
             color:'#888'
         },  
         leadercount:
         {
-           flex: '1 1 33%',
-            textAlign:'center',
+          
+            textAlign:'right',
             fontSize:'14px',
             color:'#888'
         },
         leaderImage: {
-            flex: '1 1 33%',
+           
             width: 50,
             height: 50,
             borderRadius: 63,
-      
-            // borderWidth: 4,
-            // borderColor: "white",
-            // marginBottom:10,
-            // alignSelf:'center',
-            // paddingTop:'30px'
+
+        },
+
+        leaderContentFeild:
+        {
+            flexGrow:1,
+            justifyContent:'space-between'
         }
-
-
 
 
 
