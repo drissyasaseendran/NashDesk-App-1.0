@@ -50,15 +50,15 @@ const styles = StyleSheet.create({
        memoBodyContainer:
        {
             marginTop:50,
-            margin:'30px',
+            margin:30,
          
-            paddingBottom:'15px'
+            paddingBottom:15
        },
        memotitle:
        {
         fontSize:14,
-        // paddingBottom:'5px',
-        paddingLeft:'10px',
+        // paddingBottom'5,
+        paddingLeft:10,
         color:'#888',
         
        },
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
        {
         display:'flex',
         flexDirection:'row',
-        paddingLeft:'8px',
-        // paddingBottom:'10px',
+        paddingLeft:8,
+        // paddingBottom:10,
         alignItems: "center"
        },
        memoViewsdate:
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
              borderRadius: 10,
              alignSelf: 'center',
              backgroundColor: '#ffffff',
-             marginBottom:'20px'
+             marginBottom:20
          },
          memobtnContainer:
          {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
          },
           sendLabel: {
             color: '#fff',
-           padding:'10px',
+           padding:10,
             width: '100%',
             height: 40,
             borderColor: '#0187CA',

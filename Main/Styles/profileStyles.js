@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
        },
        ProfileBody:
        {
-        paddingTop:'30px',
+        paddingTop:30,
         paddingBottom:'30px'
        },   
        ProfileImage: {
@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
         borderColor: "white",
         marginBottom:10,
         alignSelf:'center',
-        paddingTop:'30px'
+        paddingTop:30
       
       
       },
       Profilename:
       {
         fontSize:14,
-        paddingBottom:'5px',
+        paddingBottom:5,
         color:'#888',
         textAlign:'center'
       },
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
       
       PrfileIcon:
       {
-        paddingRight:'15px',
+        paddingRight: 15,
         fontSize:18,
       },
 
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
       },
       ProfileAboutBody:
       {
-        // paddingTop:'12px',
+        // paddingTop: 12,
       },
 
       ProfileContentInside:
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
       },
       ProfileFiledBtn:
       {
-        paddingTop:'12px',
+        paddingTop:12,
         display:'flex',
       },
       ProfileRender:
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         textAlign:'right',
         justifyContent:'flex-end',
         fontSize:14,
-        // padding:'40px',
+        // padding: 40,
         color:'#0187CA',
         // fontWeight:'700'
       },
@@ -115,10 +115,10 @@ const styles = StyleSheet.create({
       {
         // border:'1px solid #ccc',
         borderRadius:15,
-        padding:'15px',
+        padding: 15,
       // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
-        margin:'28px'
+        margin: 28
       },
 
       ProfileStatusContent:

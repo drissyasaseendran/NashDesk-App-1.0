@@ -37,33 +37,33 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         // border:'1px solid #ccc',
         // boxShadow: '0 2px 6px -2px #ccc',
-        // paddingBottom:'20px'
+        // paddingBottom:20
         },
 
         leaderContent:
         {
             display:'flex',
             flexDirection:'row',
-            padding:'20px',
+            padding:20,
             justifyContent: 'center',
             alignItems: 'center',
             borderBottomColor: '#ccc',
              borderBottomWidth: 1,
-             marginLeft:'20px',
-             marginRight:'20px'
+             marginLeft:20,
+             marginRight:20
         },
         leadername:
         {
-           fontWeight:'800',
-            paddingLeft:'12px',
-            fontSize:'14px',
+        //    fontWeight:'800',
+            paddingLeft:12,
+            fontSize:14,
             color:'#888'
         },  
         leadercount:
         {
           
             textAlign:'right',
-            fontSize:'14px',
+            fontSize:14,
             color:'#888'
         },
         leaderImage: {

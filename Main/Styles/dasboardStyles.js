@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         display:'flex',
         flexWrap: 'wrap',
         flexDirection:'row',
-        paddingTop:'30px'
+        paddingTop:30
         
     },
     statusContent:
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     },
     statusTitlebody:
     {
-      paddingTop:'5px'
+      paddingTop:5
     },
     statusTitle:
     {
@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
     },
     performanceText:
     {
-      paddingLeft:'10px',
-      paddingTop:'15px',
+      paddingLeft:10,
+      paddingTop:15,
       fontSize:25,
       // fontWeight:700,
       color:'#888'
