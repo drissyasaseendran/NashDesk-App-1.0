@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,ScrollView
+
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -19,12 +19,12 @@ function Settings ({navigation}){
             </View>
             <View style={styles.canvasBody}>
                   <View style={styles.settingsBody}>
-                    < SettingsBlock icon="account-group" title="Groups"/>
-                    < SettingsBlock icon="message-reply-text" title="Agent"/>
-                    < SettingsBlock icon="account-star-outline" title="Tag"/>
-                    < SettingsBlock icon="account-group" title="Canned Response"/>
-                    < SettingsBlock icon="account-star-outline" title="Category"/>
-                    < SettingsBlock icon="account-group" title="Profile"/>
+                    < SettingsBlock icon="account-group" title="Groups" destination="Groups"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="message-reply-text" title="Agent" destination="Agents"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="account-star-outline" title="Tag" destination="Tag"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="account-group" title="Canned Response" destination="cannedresponse"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="account-star-outline" title="Category" destination="category" navigate={navigation.navigate}/>
+                    < SettingsBlock icon="account-group" title="Profile" destination="Profile" navigate={navigation.navigate}/>
                     </View>
                
 

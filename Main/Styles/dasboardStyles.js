@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     canvasBody:
     {
       width: windowWidth,
-      height:windowHeight,
+      // height:windowHeight,
       display:'flex',
       flexDirection:'column',
        backgroundColor: "#f5f5f5",

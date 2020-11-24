@@ -12,7 +12,7 @@ import {styles} from '../Styles/settingsStyles'
 function SettingsBlock (props){
 
     return (
-        <TouchableOpacity  onPress={() => navigation.navigate('Groups')} >
+        <TouchableOpacity   onPress={() => props.navigate(props.destination) } >
         <View style={styles.settingsCardBox} >
           
         <View >
@@ -26,17 +26,7 @@ function SettingsBlock (props){
       </View>
 
       </TouchableOpacity>
-    //     <View style={styles.settingsContent}>
-    //     <TouchableOpacity  onPress={() => navigation.navigate('Groups')} >
-    //       <Icon style={styles.settingsIcon}
-    //                           name={props.icon}
-    //                           color='#0187CA'
-    //                           size={50}
-
-    //                           />
-    //       <Text >{props.title}</Text>
-    //       </TouchableOpacity>
-    //   </View>
+  
     );
 
 }
