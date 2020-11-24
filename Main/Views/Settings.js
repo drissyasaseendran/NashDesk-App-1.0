@@ -20,10 +20,10 @@ function Settings ({navigation}){
             <View style={styles.canvasBody}>
                   <View style={styles.settingsBody}>
                     < SettingsBlock icon="account-group" title="Groups" destination="Groups"  navigate={navigation.navigate} />
-                    < SettingsBlock icon="message-reply-text" title="Agent" destination="Agents"  navigate={navigation.navigate} />
-                    < SettingsBlock icon="account-star-outline" title="Tag" destination="Tag"  navigate={navigation.navigate} />
-                    < SettingsBlock icon="account-group" title="Canned Response" destination="cannedresponse"  navigate={navigation.navigate} />
-                    < SettingsBlock icon="account-star-outline" title="Category" destination="category" navigate={navigation.navigate}/>
+                    < SettingsBlock icon="message-reply-text" title="Agents" destination="Agents"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="account-star-outline" title="Tags" destination="Tags"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="account-group" title="Canned Response" destination="CannedResponse"  navigate={navigation.navigate} />
+                    < SettingsBlock icon="account-star-outline" title="Category" destination="Category" navigate={navigation.navigate}/>
                     < SettingsBlock icon="account-group" title="Profile" destination="Profile" navigate={navigation.navigate}/>
                     </View>
                
