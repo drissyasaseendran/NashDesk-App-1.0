@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
          borderWidth: 4,
          marginBottom:10,
          alignSelf:'center',
-         position: 'absolute',
-         marginTop:130
+         position: 'relative',
+         top:-85
        },
        memoBody:
        {

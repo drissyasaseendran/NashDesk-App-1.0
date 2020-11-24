@@ -10,12 +10,12 @@ const styles = StyleSheet.create({
       height:200,
     },
     heading: {
-        top: 0,
+        top: 30,
         bottom: 0,
         textAlign: 'center',
-        right: 0,
+        left:130,
         position: 'absolute',
-        left: 0,
+     
     },
     headingTitle:
     {
@@ -36,8 +36,9 @@ const styles = StyleSheet.create({
        borderWidth: 4,
        marginBottom:10,
        alignSelf:'center',
-       position: 'absolute',
-       marginTop:130
+       position: 'relative',
+       top:-85
+      //  marginTop:130
     },
     statusBody:
     {
@@ -104,7 +105,8 @@ const styles = StyleSheet.create({
     {
       paddingLeft:10,
       paddingTop:15,
-      fontSize:25,
+      fontSize:20,
+      paddingBottom:20,
       // fontWeight:700,
       color:'#888'
     },
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
         display:"flex",
         justifyContent: 'center',
         alignItems: 'center',
-        margin:20,
+        margin:5,
         backgroundColor: '#fff',
         borderColor:'red',
         borderRadius: 20,

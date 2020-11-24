@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
          borderWidth: 4,
          marginBottom:10,
          alignSelf:'center',
-         position: 'absolute',
-         marginTop:130
+         position: 'relative',
+         top:-85
        },
        ProfileBody:
        {
         paddingTop:30,
-        paddingBottom:'30px'
+        paddingBottom:30
        },   
        ProfileImage: {
         width: 130,
@@ -125,10 +125,10 @@ const styles = StyleSheet.create({
       {
         // border:'1px solid #ccc',
         borderRadius:15,
-        padding:'15px',
+        padding:15,
       // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
-        margin:'28px'
+        margin:28
       },
       ProfileStatustitle:
       {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
       ProfiletitleExpire:
       {
         fontSize:14,
-        marginTop:'-12px',
+        marginTop:-12,
         color:'#C42937'
       },
       editProfile:
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         borderColor: '#7a42f4',
         color:'#888',
         borderWidth: 1,
-        paddingLeft:'12px',
+        paddingLeft:12,
         backgroundColor:'#F5F5F6',
         // boxShadow: '0 2px 6px -2px #F5F5F6',
         borderColor: '#eee',
@@ -159,17 +159,17 @@ const styles = StyleSheet.create({
       {
         // border:'1px solid #ccc',
         borderRadius:15,
-        padding:'15px',
+        padding:15,
         // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
-        margin:'28px'
+        margin:28
       },
   
       editlabel:
       {
         margin: 16,
         fontSize:11,
-        marginBottom:'-12px',
+        marginBottom:-12,
         color:'#888'
       }
 
