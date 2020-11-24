@@ -1,16 +1,45 @@
 import {
     StyleSheet
 } from 'react-native';
-
+import { Dimensions } from 'react-native';
+import { color } from 'react-native-reanimated';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    header:{
+        backgroundColor: "#0187CA",
+        height:200,
+      },
+      heading: {
+        top: 0,
+        bottom: 0,
+        textAlign: 'center',
+        right: 0,
+        position: 'absolute',
+        left: 0,
     },
-
+    headingTitle:
+    {
+      // fontWeight:700,
+      color:'#fff',
+      fontSize: 30,
+    },
+    canvasBody: {
+      width: windowWidth,
+ //   height:windowHeight,
+   display:'flex',
+   flexDirection:'column',
+    backgroundColor: "rgb(242, 242, 242)",
+    borderRadius: 50,
+    borderWidth: 4,
+    borderColor: "rgb(242, 242, 242)",
+    borderWidth: 4,
+    marginBottom:10,
+    alignSelf:'center',
+    position: 'relative',
+    top:-85
+    },
     input: {
 
         borderRadius: 20,
@@ -210,10 +239,72 @@ const styles = StyleSheet.create({
     cardContent:{
         marginHorizontal:30,
         marginVertical:20,
-    }
+    },
    
-});
 
+caption:{
+
+    // fontWeight: 'bold',
+    fontSize: 18,
+    },
+    title:{
+        color:'orange',
+        fontSize:17
+    },
+    content:{
+      color:'#666',
+      fontSize:14
+  },
+  appButtonContainer: {
+      // elevation: 8,
+      width:80,
+      height:30,
+      backgroundColor: "#fff",
+      borderRadius: 10,
+      borderColor: "#c7c5c5",
+      borderWidth: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginRight:2,
+      // borderBottomColor: '#0f0',
+      // paddingVertical: 10,
+      // paddingHorizontal: 12
+    },
+    appButtonText: {
+      fontSize: 14,
+      color: "#c7c5c5",
+      // fontWeight: "bold",
+      alignSelf: "center",
+      // textTransform: "uppercase"
+    },
+  
+  searchSection: {
+      width: 250,
+      height: 40,
+      borderColor: '#c7c5c5',
+      borderWidth: 1,
+      borderRadius: 25,
+      // flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#fff',
+  },
+  searchIcon: {
+      color:'#c7c5c5',
+      padding: 10,
+  },
+  input: {
+      
+      // flex: 1,
+      padding: 8,
+      // paddingRight: 10,
+      // paddingBottom: 10,
+      // paddingLeft: 0,
+      // backgroundColor: '#fff',
+      color: '#424242',
+  },
+});
 export {
     styles
 }

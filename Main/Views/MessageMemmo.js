@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
-  StyleSheet,
+
   Text,
   View,
   TextInput,
@@ -9,13 +9,8 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {styles} from '../Styles/messegemomoStyles'
-import { Dimensions } from 'react-native';
 import {
-
-    Avatar,
-    Title,
-    Caption,
-
+  Title,
 
 } from 'react-native-paper';
 
