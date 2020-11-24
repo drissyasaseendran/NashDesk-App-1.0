@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     headingTitle:
     {
-      fontWeight:700,
+      // fontWeight:700,
       color:'#fff',
       fontSize: 30,
     },

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     },
     headingTitle:
     {
-      fontWeight:700,
+      // fontWeight:700,
       color:'#fff',
       fontSize: 30,
     },
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
         height:120,
         borderColor:'red',
         borderRadius: 20,
-        border:'1px solid #ccc',
-        boxShadow: '0 2px 6px -2px #ccc',
+        // border:'1px solid #ccc',
+        // boxShadow: '0 2px 6px -2px #ccc',
      
 
     },
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     statusText:
     {
       fontSize:30,
-      fontWeight:700,
+      // fontWeight:700,
       color:'#888'
     },
     statusTitlebody:
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
       paddingLeft:'10px',
       paddingTop:'15px',
       fontSize:25,
-      fontWeight:700,
+      // fontWeight:700,
       color:'#888'
     },
     performanceBg:
@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderColor:'red',
         borderRadius: 20,
-        border:'1px solid #ccc',
-        boxShadow: '0 2px 6px -2px #ccc',
+        // border:'1px solid #ccc',
+        // boxShadow: '0 2px 6px -2px #ccc',
     }
   });
 export {

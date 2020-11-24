@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
       },
       headingTitle:
       {
-        fontWeight:700,
+        // fontWeight:700,
         color:'#fff',
         fontSize: 30,
       },
@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
       PrfileIcon:
       {
         paddingRight:'15px',
-        fontSize:'18px'
+        fontSize:18,
       },
 
       Prfiletext:
       {
-        fontSize:'14px',
+        fontSize:14,
         color:'#888'
       },
       ProfileAboutBody:
@@ -106,38 +106,38 @@ const styles = StyleSheet.create({
        
         textAlign:'right',
         justifyContent:'flex-end',
-        fontSize:'14px',
+        fontSize:14,
         // padding:'40px',
         color:'#0187CA',
-        fontWeight:'700'
+        // fontWeight:'700'
       },
       ProfileContent:
       {
-        border:'1px solid #ccc',
-        borderRadius:'15px',
+        // border:'1px solid #ccc',
+        borderRadius:15,
         padding:'15px',
-      boxShadow: '0 2px 6px -2px #ccc',
+      // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
         margin:'28px'
       },
 
       ProfileStatusContent:
       {
-        border:'1px solid #ccc',
-        borderRadius:'15px',
+        // border:'1px solid #ccc',
+        borderRadius:15,
         padding:'15px',
-      boxShadow: '0 2px 6px -2px #ccc',
+      // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
         margin:'28px'
       },
       ProfileStatustitle:
       {
-        fontSize:'14px',
+        fontSize:14,
         color:'#888'
       },
       ProfiletitleExpire:
       {
-        fontSize:'14px',
+        fontSize:14,
         marginTop:'-12px',
         color:'#C42937'
       },
@@ -150,17 +150,17 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingLeft:'12px',
         backgroundColor:'#F5F5F6',
-        boxShadow: '0 2px 6px -2px #F5F5F6',
+        // boxShadow: '0 2px 6px -2px #F5F5F6',
         borderColor: '#eee',
         borderWidth: 1,
       },
 
       EditBody:
       {
-        border:'1px solid #ccc',
-        borderRadius:'15px',
+        // border:'1px solid #ccc',
+        borderRadius:15,
         padding:'15px',
-        boxShadow: '0 2px 6px -2px #ccc',
+        // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
         margin:'28px'
       },
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
       editlabel:
       {
         margin: 16,
-        fontSize:'11px',
+        fontSize:11,
         marginBottom:'-12px',
         color:'#888'
       }

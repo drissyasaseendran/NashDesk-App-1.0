@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderColor:'red',
         borderRadius: 20,
-        border:'1px solid #ccc',
-        boxShadow: '0 2px 6px -2px #ccc',
+        // border:'1px solid #ccc',
+        // boxShadow: '0 2px 6px -2px #ccc',
         // paddingBottom:'20px'
         },
 
@@ -47,11 +47,14 @@ const styles = StyleSheet.create({
             padding:'20px',
             justifyContent: 'center',
             alignItems: 'center',
-            
+            borderBottomColor: '#ccc',
+             borderBottomWidth: 1,
+             marginLeft:'20px',
+             marginRight:'20px'
         },
         leadername:
         {
-           
+           fontWeight:'800',
             paddingLeft:'12px',
             fontSize:'14px',
             color:'#888'
