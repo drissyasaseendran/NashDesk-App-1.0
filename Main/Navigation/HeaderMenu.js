@@ -1,5 +1,5 @@
 import  React from 'react';
-import { View,TouchableOpacity } from 'react-native';
+import { View,TouchableOpacity ,Image} from 'react-native';
 import {styles} from '../Styles/styles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const HeaderMenu = ({navigation})=> {

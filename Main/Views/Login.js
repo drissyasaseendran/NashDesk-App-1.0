@@ -7,10 +7,13 @@ import { styles } from '../Styles/styles'
   const login = () => {
     navigation.navigate("Dashboard")
   }
-    return (
+  const signup = () => {
+    navigation.navigate("Signup")
+  }
+   return (
 
         <View style={styles.container}>
-        <Text style={styles.logo}>HeyAPP</Text>
+        <View style={styles.logo}><Image source={require('../../images/nash_logo.svg')} /></View>
         <View style={styles.inputView} >
           <TextInput  
             style={styles.inputText}
@@ -33,7 +36,7 @@ import { styles } from '../Styles/styles'
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.loginText}>Signup</Text>
+          <Text style={styles.loginSignup} onPress={signup}>Signup</Text>
         </TouchableOpacity>
       </View>
     );
