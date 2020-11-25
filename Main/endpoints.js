@@ -9,7 +9,8 @@ export const loginApiPath = urljoin(apiPath, "/agentlogin");
 export const logoutApiPath = urljoin(apiPath, "/agentlogout");
 export const credValidateApiPath = urljoin(apiPath, "/credvalidation");
 
-//auth test api
+//Statuscard Analytics
+export const statuscardanalytics = urljoin(apiPath,'/statuscardanalytics')
 
 //notification api
 export const notificationApiPath = urljoin(apiPath, "/notification");
