@@ -1,9 +1,9 @@
 import React from 'react'
 import { Provider as PaperProvider } from 'react-native-paper'
-import AppNavigator from './Main/Navigation/Drawer'
+import AppNavigator from './main/navigation/Drawer'
 import { Provider as StoreProvider } from 'react-redux'
 
-import store from "./Main/states/store";
+import store from "./main/states/store";
 
 export default function App() {
   return (
