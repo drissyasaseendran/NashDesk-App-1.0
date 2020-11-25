@@ -9,33 +9,33 @@ import { styles } from '../Styles/styles'
   }
     return (
 
-      <View style={styles.container}>
-        {/* <Image  style={styles.image} source = {require('../../assets/Logo.png')} /> */}
-         {/* <Text style={styles.login}>Login</Text> */}
-         <TextInput  
-           value={email}
-           
-           onChange={e => setEmail(e.target.value)}
-            style={styles.input}
-            placeholder="Email" 
+        <View style={styles.container}>
+        <Text style={styles.logo}>HeyAPP</Text>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Email..." 
             placeholderTextColor="#003f5c"
-          />
-        <TextInput
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          placeholder={'Password'}
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          style={styles.input}
-        />
-        <TouchableOpacity
-          style={styles.loginScreenButton}
-          onPress={login}
-          underlayColor='#fff'>
-          <Text style={styles.loginText}>Login</Text>
-       </TouchableOpacity>
-       </View>
-       
+            />
+        </View>
+        <View style={styles.inputView} >
+          <TextInput  
+            secureTextEntry
+            style={styles.inputText}
+            placeholder="Password..." 
+            placeholderTextColor="#003f5c"
+     />
+        </View>
+        <TouchableOpacity>
+          <Text style={styles.forgot}>Forgot Password?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginBtn} onPress={login}>
+          <Text style={styles.loginText}>LOGIN</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.loginText}>Signup</Text>
+        </TouchableOpacity>
+      </View>
     );
   
 }

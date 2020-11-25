@@ -15,7 +15,9 @@ import {
 } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const SideBar = ({navigation})=> {
-
+    const signOut = () => {
+        navigation.navigate("Login")
+      }
     const paperTheme = useTheme();
     return(
      
