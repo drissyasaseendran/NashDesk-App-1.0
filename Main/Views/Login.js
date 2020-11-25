@@ -14,10 +14,10 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   });
   const [usrErrorCode, setUsrErrorCode] = useState(0);
   const [pwdErrorCode, setPwdErrorCode] = useState(0);
-  const loginStatus = useSelector((state) => state.login);
+  const loginStatus = useSelector((state) => state.login.status);
 
   useEffect(() => {
-      alert(JSON.stringify(loginStatus))
+   
     dispatch(setLogout());
   }, [dispatch]);
   useEffect(() => {
@@ -50,23 +50,9 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   }, [loginStatus]);
 
   const handleSubmit = () => {
-    if (
-      !fresh.username &&
-      !fresh.password &&
-      usrErrorCode === 0 &&
-      pwdErrorCode === 0
-    ) {
-      setLoading(true);
+    
       loginCall(username, password);
-    } else {
-      if (fresh.username) {
-        setUsrErrorCode(1);
-      }
-      if (fresh.password) {
-        setPwdErrorCode(2);
-      }
-      setFresh({ username: false, password: false });
-    }
+   
   };
    return (
 
