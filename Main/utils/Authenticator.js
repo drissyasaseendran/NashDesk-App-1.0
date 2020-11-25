@@ -4,7 +4,6 @@ import axios from "axios";
 import store from "../states/store";
 import {
   setLogout,
-  setLoginWait,
   setLoginSuccess,
   setLoginFailure,
   setLoginError,

@@ -14,9 +14,10 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   });
   const [usrErrorCode, setUsrErrorCode] = useState(0);
   const [pwdErrorCode, setPwdErrorCode] = useState(0);
-  const loginStatus = "Fail"
+  const loginStatus = useSelector((state) => state.login);
 
   useEffect(() => {
+      alert(JSON.stringify(loginStatus))
     dispatch(setLogout());
   }, [dispatch]);
   useEffect(() => {
