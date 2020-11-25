@@ -10,11 +10,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
+      logoContainer:
+      {
+        paddingBottom:50
+      },
       logo:{
-        fontWeight:"bold",
-        fontSize:50,
-        color:"#0187CA",
-        marginBottom:40
+        width: 501,
+
+    height: 51,
+    resizeMode: 'contain'
       },
       inputView:{
         width:"80%",

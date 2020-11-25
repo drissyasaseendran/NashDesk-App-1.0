@@ -1,24 +1,17 @@
-import React from 'react'
-import { Text,Image,TouchableOpacity, View , TextInput} from 'react-native';
+import React, { useState ,useEffect} from 'react'
+import { Text,Image,TouchableOpacity, View ,Alert, Button, TextInput, StyleSheet} from 'react-native';
 import { styles } from '../Styles/styles' 
-  function Login({navigation}) {
- 
+  function Signup({navigation}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const login = () => {
     navigation.navigate("Dashboard")
   }
-  const signup = () => {
-    navigation.navigate("Signup")
-  }
-   return (
+    return (
 
         <View style={styles.container}>
-       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
-         
-        </View>
-             
+        <Text style={styles.logo}>HeyAPP</Text>
         <View style={styles.inputView} >
-                    
           <TextInput  
             style={styles.inputText}
             placeholder="Email..." 
@@ -40,11 +33,11 @@ import { styles } from '../Styles/styles'
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.loginSignup} onPress={signup}>Signup</Text>
+          <Text style={styles.loginText}>Signup</Text>
         </TouchableOpacity>
       </View>
     );
   
 }
 
-export default Login
+export default Signup
