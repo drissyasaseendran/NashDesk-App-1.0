@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Text,Image,TouchableOpacity, View , TextInput} from 'react-native';
 import { styles } from '../Styles/styles' 
-import { loginCall, isAuthenticated } from "../utils/Authenticator";
+
   function Login({navigation}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-  const login = () => {
-    navigation.navigate("Login")
-  }
-
-  const handleSubmit = () => {
-    loginCall(username, password);
-  }
+    const login = () => {
+        navigation.navigate("Login")
+    }
+    const handleSubmit = () => {
+        // loginCall(username, password);
+    }
    return (
 
         <View style={styles.container}>
