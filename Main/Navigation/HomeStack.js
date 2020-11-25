@@ -2,6 +2,7 @@ import { createAppContainer, } from 'react-navigation'
 import { createBottomTabNavigator, } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Login from '../Views/Login'
 import Dashboard from '../Views/Dashboard'
 import Profile from '../Views/Profile'
 import React from 'react'
@@ -62,8 +63,7 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-  
-   
+
     Dashboard: {
       screen: Dashboard,
       navigationOptions:({navigation}) => {

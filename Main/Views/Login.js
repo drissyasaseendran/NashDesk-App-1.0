@@ -1,7 +1,7 @@
 import React, { useState ,useEffect} from 'react'
 import { Text,Image,TouchableOpacity, View ,Alert, Button, TextInput, StyleSheet} from 'react-native';
 import { styles } from '../Styles/styles' 
-  function login({navigation}) {
+  function Login({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const login = () => {
@@ -40,4 +40,4 @@ import { styles } from '../Styles/styles'
   
 }
 
-export default login
+export default Login

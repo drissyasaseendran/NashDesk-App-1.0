@@ -1,6 +1,6 @@
 import React from 'react';
 import {styles} from '../Styles/SidebarStyles'
-import { View, StyleSheet,ScrollView ,Image} from 'react-native';
+import { View,ScrollView ,Image} from 'react-native';
 import {
     useTheme,
     Title,

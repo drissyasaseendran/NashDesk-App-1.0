@@ -1,27 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  StyleSheet,
   ScrollView,
-//   Text,
   View,
-  Image,
-  TouchableOpacity
+
 } from 'react-native';
-import { BarChart,StackedBarChart, LineChart,YAxis, XAxis, Grid } from 'react-native-svg-charts'
+import { BarChart,StackedBarChart, XAxis } from 'react-native-svg-charts'
 import { PieChart } from 'react-native-svg-charts'
 import { Text } from 'react-native-svg'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Dimensions } from 'react-native';
-import {
+import {styles} from '../Styles/anlyticsStyles'
 
-    Avatar,
-    Title,
-    Caption,
-
-
-} from 'react-native-paper';
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 const Stackdata = [
     {
         month: new Date(2015, 0, 1),
@@ -255,60 +242,4 @@ function Analytics (){
 
 }
 
-const styles = StyleSheet.create({
-  header:{
-    backgroundColor: "#FFAE42",
-    height:200,
-  },
-  avatarHeading: {
-    top: 0, left: 0,
-    right: 0, bottom: 130,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-
-},
-HeaderTitle:
-{
-
-  color:'#fff',
-//   fontWeight: 'bold',
-  fontSize: 30,
-},
-  avatar: {
-   width: windowWidth,
-   height:'auto',
-    backgroundColor: "#f5f5f5",
-    borderRadius: 50,
-    borderWidth: 4,
-    borderColor: "#f5f5f5",
-    borderWidth: 4,
-    marginBottom:10,
-    alignSelf:'center',
-    position: 'absolute',
-    marginTop:130
-  },
-
-  bodyContent: {
-  marginTop:30,
-     width: 800,
-     padding:30,
-//    height:500,
-    backgroundColor: "#fff",
-    borderRadius:20,
-
-    borderColor: "#c7c5c5",
-    // borderWidth: 1,
-//    marginBottom:10,
-    alignSelf:'center',
-    // flex: 1,
-    // alignItems: 'center',
-    // padding:30,
-  },
-  caption:{
-
-//   fontWeight: 'bold',
-  fontSize: 18,
-  },
-});
 export default Analytics;
