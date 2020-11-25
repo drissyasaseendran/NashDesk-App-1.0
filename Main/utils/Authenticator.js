@@ -1,14 +1,14 @@
 import Cookies from "js-cookie";
 import { loginApiPath, logoutApiPath, credValidateApiPath } from "../endpoints";
 import axios from "axios";
-// import store from "../states/store";
-// import {
-//   setLogout,
-//   setLoginWait,
-//   setLoginSuccess,
-//   setLoginFailure,
-//   setLoginError,
-// } from "../states/login/loginAction";
+import store from "../states/store";
+import {
+  setLogout,
+  setLoginWait,
+  setLoginSuccess,
+  setLoginFailure,
+  setLoginError,
+} from "../states/login/loginAction";
 
 export const getAccessToken = () => Cookies.get("access_token");
 export const getUserDetails = () => Cookies.get("user_details");

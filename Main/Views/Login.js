@@ -6,14 +6,11 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
   const login = () => {
-    navigation.navigate("Dashboard")
+    navigation.navigate("Login")
   }
-  const signup = () => {
-    navigation.navigate("Signup")
-  }
-  const handleChange = () =>
-  {
 
+  const handleSubmit = () => {
+    loginCall(username, password);
   }
    return (
 
@@ -27,27 +24,29 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
           <TextInput  
             style={styles.inputText}
             placeholder="Email..." 
+            value={username}
             placeholderTextColor="#003f5c"
-            onChangeText = {handleChange}
+            onChangeText={username => setUsername(username)}
             />
         </View>
         <View style={styles.inputView} >
           <TextInput  
             secureTextEntry
+            value={password}
             style={styles.inputText}
             placeholder="Password..." 
             placeholderTextColor="#003f5c"
-            onChangeText = {handleChange}
+            onChangeText={password => setPassword(password)}
         />
         </View>
         <TouchableOpacity>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn} onPress={login}>
+        <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.loginSignup} onPress={signup}>Signup</Text>
+          <Text style={styles.loginSignup}>Signup</Text>
         </TouchableOpacity>
       </View>
     );
