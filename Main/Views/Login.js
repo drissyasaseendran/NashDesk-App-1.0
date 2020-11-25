@@ -8,43 +8,19 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const [fresh, setFresh] = useState({
     username: true,
     password: true,
   });
-
   const [usrErrorCode, setUsrErrorCode] = useState(0);
   const [pwdErrorCode, setPwdErrorCode] = useState(0);
-  const [loading, setLoading] = useState(false);
-//   const loginStatus = useSelector((state) => state.login.status);
-  const loginStatus = "success"
-  const errorRef = {
-    0: {
-      username: "",
-      password: "",
-    },
-    1: {
-      username: "* Provide a valid email format",
-      password: "* Password cannot be empty",
-    },
-    2: {
-      password: "* Invalid username or/and password provided",
-    },
-  };
+  const loginStatus = "Fail"
 
-  const validateForm = () => {
-    if (!fresh.username) {
-      validateEmail(username) ? setUsrErrorCode(0) : setUsrErrorCode(1);
-    }
-    if (!fresh.password) {
-      validatePassword(password) ? setPwdErrorCode(0) : setPwdErrorCode(1);
-    }
-  };
   useEffect(() => {
     dispatch(setLogout());
   }, [dispatch]);
   useEffect(() => {
+    
     switch (loginStatus) {
       case "error":
         setPwdErrorCode(0);
@@ -53,27 +29,24 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
         break;
       case "failed":
         setPwdErrorCode(2);
-        setLoading(false);
+      
         break;
 
       case "wait":
-        setLoading(true);
+       
         break;
 
       case "success":
         if (isAuthenticated()) {
-        //   history.push("/home");
+            navigation.navigate("Dashboard")
         }
         break;
 
       default:
-        setLoading(false);
+      
         break;
     }
   }, [loginStatus]);
-  useEffect(() => {
-    validateForm();
-  }, [username, password]);
 
   const handleSubmit = () => {
     if (

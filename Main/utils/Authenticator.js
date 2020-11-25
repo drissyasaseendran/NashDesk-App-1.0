@@ -14,15 +14,11 @@ export const getAccessToken = () => Cookies.get("access_token");
 export const getUserDetails = () => Cookies.get("user_details");
 export const isAuthenticated = () => !!getAccessToken() && !!getUserDetails();
 
-
-
 export const loginCall = (username, password) => {
   const loginInput = {
     username: username,
     password: password,
   };
-
- 
   axios
     .post(loginApiPath, loginInput)
     .then((resp) => {
@@ -44,6 +40,19 @@ export const loginCall = (username, password) => {
     });
 };
 
+export const logout = () => {
+  const accessToken = Cookies.get("access_token");
+  const requestData = {
+    access_token: accessToken,
+    request_type: "delete",
+  };
+  axios.post(logoutApiPath, requestData).then((data) => {
+    store.dispatch(setLogout());
+  });
+
+  Cookies.remove("access_token");
+  Cookies.remove("user_details");
+};
 
 
 export const restErrorMsgValidation = (msgJson) => {
