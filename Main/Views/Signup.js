@@ -30,7 +30,7 @@ import { styles } from '../Styles/styles'
                     
           <TextInput  
             style={styles.inputText}
-            placeholder="Email..." 
+            placeholder="Company Name" 
             placeholderTextColor="#003f5c"
             />
         </View>
@@ -43,10 +43,10 @@ import { styles } from '../Styles/styles'
      />
         </View>
         <TouchableOpacity>
-          <Text style={styles.forgot}>Forgot Password?</Text>
+          <Text style={styles.forgot}>Already have an account?</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.loginBtn} onPress={login}>
-          <Text style={styles.loginText}>LOGIN</Text>
+          <Text style={styles.loginText}>SIGNUP</Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <Text style={styles.loginSignup} onPress={signup}>Signup</Text>
