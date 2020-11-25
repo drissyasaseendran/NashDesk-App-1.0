@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect ,useState} from "react";
+import {broadcastApiPath} from '../endpoints'
+import axios from 'axios'
 import {
-
   Text,
   View,
   TextInput,
@@ -13,14 +14,45 @@ import {
   Title,
 
 } from 'react-native-paper';
+import {getAccessToken} from '../utils/Authenticator'
 
 function Memo (){
-
+  
+  const [Message, setMessage] = useState("");
+  const token = getAccessToken()
+  useEffect(() => {
+       
+    messageMemo()
+  
+   
+  },[]);
+  const messageMemo = () =>
+  {
+ 
+      let data = {
+        "access_token":token,
+        "request_type": "view"
+        }
+        console.log(JSON.stringify(data))
+        axios.post(broadcastApiPath, data)
+      .then((resp) => {
+      
+      if (resp.data.status === "success") {
+          let res = resp.data.payload.data
+          alert(JSON.stringify(res))
+          setMessage(res)
+    }
+  
+    })
+    
+  
+  }
     return (
       <ScrollView>
           <View style={styles.header}></View>
               <View style={styles.canvasBody}>
-              <View style={styles.memoBodyContainer}>
+       {  Message && Message.map((msg)  =>
+        {  <View style={styles.memoBodyContainer}>
                 <View style={styles.memoBody}>
                   <View  style={styles.memoViews}>
                     <Icon size={15} color='#888' name="checkbox-blank-circle-outline"/> 
@@ -52,9 +84,14 @@ function Memo (){
                   </View>
               </View>               
 
+              
+               </View>})
+}
+          
+
 
       
-            <View style={styles.memobtnContainer}>
+               <View style={styles.memobtnContainer}>
             <TextInput
                   multiline={true}
 
@@ -70,10 +107,6 @@ function Memo (){
                   <Text style={styles.sendLabel}>SEND</Text>
                 </TouchableOpacity>
               </View> 
-              
-               </View>
-          
-
         </View>
       </ScrollView>
     );
