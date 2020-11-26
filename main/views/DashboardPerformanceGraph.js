@@ -1,19 +1,19 @@
 import React, { useEffect ,useState} from "react";
 import {styles} from '../styles/dasboardStyles'
 import {Text, View} from 'react-native';
-import { LineChart, YAxis, XAxis} from 'react-native-svg-charts'
+import { LineChart} from 'react-native-svg-charts'
 import {performancegraphApiPath} from '../endpoints'
 import {getAccessToken} from '../utils/Authenticator'
 import axios from 'axios'
 
 function DashboardPerformanceGraph (props){
-const [resolved,setResolved] = useState('')
-const [traffic,setTraffic] = useState('')
+const [resolved,setResolved] = useState([])
+const [traffic,setTraffic] = useState([])
 const token = getAccessToken()
-const data1 = [10,4,24,14,3,0,45  ]
-const data2 = [1,14,40,4,3,20,45  ]
+
 useEffect(() => {
     resolvedData()
+    trafficData()
    
 },[]);
 const resolvedData = () =>
@@ -33,12 +33,45 @@ const resolvedData = () =>
       {
         if(res.length>0)
         {
+          
+                Object.keys(res).map((key, i) => (
+                    performanceData.push(i)
+                ))
+                
+          
+            setResolved(performanceData)
+        }
+      }
+     
+    }
+
+})
+}
+const trafficData = () =>
+{
+  let data =
+  {
+    "access_token": token ,
+    "request_type":"ticket_traffic"
+  }
+
+  axios.post(performancegraphApiPath, data)
+.then((resp) => {
+  let trafficArray = []
+  if (resp.data.status === "success") {
+      let res = resp.data.payload.data
+      if(res)
+      {
+        if(res.length>0)
+        {
             res.map((per) =>
             {
+                Object.keys(res).map((key, i) => (
+                    trafficArray.push(i)
+                ))
                 
-                performanceData.push(per[0])
             })
-            setResolved(performanceData)
+            setTraffic(trafficArray)
         }
       }
      
@@ -48,12 +81,12 @@ const resolvedData = () =>
 }
 const data = [
     {
-        data: data1,
+        data: resolved,
         svg: { stroke: '#3BB9FF'
      },
     },
     {
-        data: data2,
+        data: traffic,
         svg: { stroke: '#95B9C7' },
     },
 ]
