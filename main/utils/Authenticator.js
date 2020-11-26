@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { loginApiPath, logoutApiPath, credValidateApiPath } from "../endpoints";
+import { loginApiPath, logoutApiPath } from "../endpoints";
 import axios from "axios";
 import store from "../states/store";
 import {

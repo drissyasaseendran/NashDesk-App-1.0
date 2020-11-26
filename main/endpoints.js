@@ -1,5 +1,4 @@
 import urljoin from "url-join";
-
 export const domainUrl = "http://195.181.244.26:5000";
 // export const domainUrl = "http://127.0.0.1:5000"
 export const apiPath = urljoin(domainUrl, "/api");
@@ -11,7 +10,8 @@ export const credValidateApiPath = urljoin(apiPath, "/credvalidation");
 
 //Statuscard Analytics
 export const statuscardanalytics = urljoin(apiPath,'/statuscardanalytics')
-
+// performancegraph
+export const performancegraphApiPath = urljoin(apiPath,'/performancegraph') 
 //notification api
 export const notificationApiPath = urljoin(apiPath, "/notification");
 
@@ -24,7 +24,6 @@ export const leadershipApiPath = urljoin(apiPath, "/leadershipboard");
 export const broadcastApiPath = urljoin(apiPath, "/messagememos");
 
 //company_ext_id endpoint
-
 export const fetchCompanyExtIdApiPath = urljoin(apiPath, "/fetchcompanyextid");
 
 //Analytics endpoints
