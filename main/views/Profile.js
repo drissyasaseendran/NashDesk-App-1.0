@@ -1,36 +1,38 @@
-import React from 'react';
+import React, { useEffect ,useState} from "react";
 import {ScrollView ,TouchableOpacity,Title,Text,View,Image} from 'react-native';
-// import { TabView,TabBar, SceneMap } from 'react-native-tab-view';
 import {styles} from '../styles/profileStyles'
-import { Dimensions } from 'react-native';
 import ProfileAbout from './ProfileAbout'
 import ProfileStatus from './ProfileStatus'
-// const initialLayout = { width: Dimensions.get('window').width };
+import {profileApiPath} from '../endpoints'
+import {getAccessToken} from '../utils/Authenticator'
+import axios from 'axios'
+
 function Profile ({navigation}){
-  // const [index, setIndex] = React.useState(0);
-  // const [routes] = React.useState([
-  //   { key: 'About', title: 'About' },
-  //   { key: 'Password', title: 'Password' },
-  //   { key: 'Status', title: 'Status' },
-  // ]);
+  const token = getAccessToken()
 
-
-  // const renderTabBar = props => (
-  //   <TabBar
-  //     {...props}
-  //     labelStyle={{color: '#888', fontSize: 14}}
-  //     indicatorStyle={{ backgroundColor: '#0187CA',color:"#888" }}
-  //     style={{ backgroundColor: 'none',color:"#888" }}
-  //   />
-  // );
-   
-  // const renderScene = SceneMap({
-  //   About: ProfileAbout,
-  //   Password: ProfilePassword,
-  //   Status:ProfileStatus
-  // });
- 
-
+    useEffect(() => {
+        profileView()
+       
+    },[]);
+    const profileView = () =>
+    {
+        let data =
+        {
+          "access_token": token ,
+          "request_type":"view"
+        }
+      
+        axios.post(profileApiPath, data)
+      .then((resp) => {
+        alert(JSON.stringify(resp))
+        if (resp.data.status === "success") {
+            let res = resp.data.payload.data
+          
+           
+          }
+      
+      })
+      }
     return (
       <ScrollView>
           <View style={styles.header}></View>

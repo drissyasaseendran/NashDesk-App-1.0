@@ -78,9 +78,14 @@ const styles = StyleSheet.create({
         {
             flexGrow:1,
             justifyContent:'space-between'
+        },
+
+        leaderContentFeildImage:
+        {
+            flexGrow:0,
+            flexBasis:50,
+            flexShrink:0
         }
-
-
 
 
 
