@@ -6,6 +6,7 @@ import {ScrollView} from 'react-native';
 import StatusCard from './DashboardStatusCard';
 import PerformanceGraph from './DashboardPerformanceGraph'
 import {getAccessToken} from '../utils/Authenticator'
+import moment from 'moment';
 import axios from 'axios'
 function Dashboard ({navigation}){
     const token = getAccessToken()
@@ -15,9 +16,9 @@ function Dashboard ({navigation}){
     const [unassigned, setunassigned] = useState('')
     const [resolved, setresolved] = useState('')
     const [closed, setclosed] = useState('')
-    const [today,setToday] = useState('')
+    const today = moment(new Date()).format('YYYY-MM-DD')
     useEffect(() => {
-       
+    
       dueTodayData()
       overDueData()
       assignedData()
@@ -68,10 +69,10 @@ function Dashboard ({navigation}){
               {
             
             
+            
               if(today == dt.date)
               {
               
-
                 setdueToday(dt.due_today_cnt)
               }
             } )
