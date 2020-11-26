@@ -12,17 +12,13 @@ function Profile ({navigation}){
   const [profileFeild,setprofileFeild] = useState({
     address: "",
     image:"",
-    agent_type: "",
-    agt_sett_id: "",
     city: "",
     code: "",
-    company_id: "",
     country: "",
     email_id: "",
     first_name: "",
-    last_name: "",
     mobile: "",
-    password: "",
+  
   
 })
     useEffect(() => {
