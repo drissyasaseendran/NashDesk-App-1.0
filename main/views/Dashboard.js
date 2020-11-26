@@ -1,6 +1,6 @@
 import React, { useEffect ,useState} from "react";
 import {styles} from '../styles/dasboardStyles'
-import {statuscardanalytics} from '../endpoints'
+import {statuscardanalytics,profileApiPath} from '../endpoints'
 import {Text, View} from 'react-native';
 import {ScrollView} from 'react-native';
 import StatusCard from './DashboardStatusCard';
@@ -16,9 +16,10 @@ function Dashboard ({navigation}){
     const [unassigned, setunassigned] = useState('')
     const [resolved, setresolved] = useState('')
     const [closed, setclosed] = useState('')
+    const [agentType, setagentType] = useState('')
     const today = moment(new Date()).format('YYYY-MM-DD')
     useEffect(() => {
-    
+      profileView()
       dueTodayData()
       overDueData()
       assignedData()
@@ -27,26 +28,24 @@ function Dashboard ({navigation}){
       closedData()
      
     },[]);
-    const setTodayData = () =>
+    const profileView = () =>
     {
-      var today = new Date();
-      var dd = today.getDate();
-
-      var mm = today.getMonth()+1; 
-      var yyyy = today.getFullYear();
-      if(dd<10) 
+      let data =
       {
-          dd='0'+dd;
-      } 
+        "access_token": token ,
+        "request_type":"view"
+      }
+   
+      axios.post(profileApiPath, data)
+    .then((resp) => {
 
-      if(mm<10) 
-      {
-          mm='0'+mm;
-      } 
-      today = yyyy+'-' +mm+'-'+dd;
-      setToday(today)
-    
-    }
+      if (resp.data.status === "success") {
+          let res = resp.data.payload.data
+          setagentType(res[0].agent_type)
+        }
+  
+    })
+  }
     const dueTodayData = () =>
     {
            
@@ -67,9 +66,6 @@ function Dashboard ({navigation}){
             {
               res.map((dt)=>
               {
-            
-            
-            
               if(today == dt.date)
               {
               
@@ -169,24 +165,19 @@ function Dashboard ({navigation}){
           {
             res.map((dt)=>
             {
-              
-            var today = new Date();
-            var dd = today.getDate();
-
-            var mm = today.getMonth()+1; 
-            var yyyy = today.getFullYear();
+          
        
             if(today == dt.date)
             {
-              // if(agenttype == 'agent')
-              //            {
+              if(agentType == 'agent')
+                         {
                            
-              //             setunassigned(dt.pending_cnt)
-              //            }else
-              //            {
+                          setunassigned(dt.pending_cnt)
+                         }else
+                         {
                           
-              //             setunassigned(dt.unassigned_cnt)
-              //            }
+                          setunassigned(dt.unassigned_cnt)
+                         }
                        
 
             }
