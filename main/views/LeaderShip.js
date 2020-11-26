@@ -23,13 +23,13 @@ function Leader (){
           "request_type":"view"
         }
       
-        axios.post(leadershipApiPath, data)
+      axios.post(leadershipApiPath, data)
       .then((resp) => {
        
         if (resp.data.status === "success") {
             let res = resp.data.payload.data
          
-           
+            
           }
       
       })

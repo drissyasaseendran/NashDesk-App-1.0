@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from "react";
-import {ScrollView ,TouchableOpacity,Title,Text,View,Image} from 'react-native';
+import {ScrollView ,TouchableOpacity,Text,View,Image} from 'react-native';
 import {styles} from '../styles/profileStyles'
 import ProfileAbout from './ProfileAbout'
 import ProfileStatus from './ProfileStatus'
@@ -9,7 +9,22 @@ import axios from 'axios'
 
 function Profile ({navigation}){
   const token = getAccessToken()
-
+  const [profileFeild,setprofileFeild] = useState({
+    address: "",
+    image:"",
+    agent_type: "",
+    agt_sett_id: "",
+    city: "",
+    code: "",
+    company_id: "",
+    country: "",
+    email_id: "",
+    first_name: "",
+    last_name: "",
+    mobile: "",
+    password: "",
+  
+})
     useEffect(() => {
         profileView()
        
@@ -24,11 +39,15 @@ function Profile ({navigation}){
       
         axios.post(profileApiPath, data)
       .then((resp) => {
-        alert(JSON.stringify(resp))
+    
         if (resp.data.status === "success") {
             let res = resp.data.payload.data
-          
-           
+            setprofileFeild({ ...profileFeild,image:res[0].image,
+            email_id:res[0].email_id,first_name:res[0].first_name, 
+            mobile:res[0].mobile,address:res[0].address, city:res[0].city ,
+            code: res[0].code,country:res[0].country,group:res[0].group_name,
+            agent_type:res[0].agent_type
+          });
           }
       
       })
@@ -39,17 +58,17 @@ function Profile ({navigation}){
           <View style={styles.canvasBody}>
                 <View style={styles.ProfileBody}> 
                     <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-                    <Text style={styles.Profilename} >Jenifer Lopus</Text>
-                    <Text style={styles.Profilename}>Jeniferlopus@gmail.com</Text>
+                    <Text style={styles.Profilename} >{profileFeild.first_name}</Text>
+                    <Text style={styles.Profilename}>{profileFeild.email_id}</Text>
                 </View>
                 <View style={styles.ProfileAboutBody}>
                 <View style={styles.ProfileContentInside}>
                 <View style={styles.ProfileContent}>
-                    <ProfileAbout Icon='phone' Feilds='9879794947964'/>
-                    <ProfileAbout Icon='home'  Feilds='st josphp nhoi chrush bushvilla'/>
-                    <ProfileAbout Icon='city'  Feilds='Amstredam'/>
-                    <ProfileAbout Icon='globe-model' Feilds='Uk'/>
-                    <ProfileAbout Icon='globe-model' Feilds='621577'/>
+                    <ProfileAbout Icon='phone' Feilds={profileFeild.mobile}/>
+                    <ProfileAbout Icon='home'  Feilds={profileFeild.address}/>
+                    <ProfileAbout Icon='city'  Feilds={profileFeild.city}/>
+                    <ProfileAbout Icon='globe-model' Feilds={profileFeild.country}/>
+                    <ProfileAbout Icon='globe-model' Feilds={profileFeild.code}/>
                     <TouchableOpacity style={styles.ProfileContentInside} onPress={() => navigation.navigate('ProfileUpdate')}  >
                       <Text  style={styles.ProfileBtn}>EDIT</Text>      
                     </TouchableOpacity>
@@ -59,14 +78,8 @@ function Profile ({navigation}){
                 
               </View>
                   
-                  <ProfileStatus/>
-                {/* <TabView
-                      renderTabBar={renderTabBar}
-                      navigationState={{ index, routes }}
-                      renderScene={renderScene}
-                      onIndexChange={setIndex}
-                      initialLayout={initialLayout}
-                /> */}
+              <ProfileStatus/>
+         
      
           </View>
       </ScrollView >
