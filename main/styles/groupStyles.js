@@ -106,8 +106,48 @@ const styles = StyleSheet.create({
                 {
                     color:'#fff',
                     fontWeight:'bold'
+                },
+                agenttextColor:
+                {
+                    color:'#666',
+                    fontSize:14
+                },
+                GroupAgentView:
+                {
+                    backgroundColor:'#fff',
+                    display:'flex',
+                    flexDirection:'column',
+                    padding:10
+                },
+                GroupAgents:
+                {
+                        height:30,
+                       
+                },
+                agentText:
+                {
+                    color:'#666',
+                    fontWeight:'bold',
+                    fontSize:16
+                },
+                GroupAgentContent:
+                {
+                    display:'flex',
+                    flexDirection:'row',
+                   flex:1,
+                   paddingBottom:10,
+                   borderBottomWidth:1,
+                    borderBottomColor:'#ccc'
+               
+                 
+                },
+                GroupAgentIcon:
+                {
+                    display:'flex',
+                    flexDirection:'row',
+                   flex:1,
+                   justifyContent:'flex-end'
                 }
-
 });
 export {
     styles
