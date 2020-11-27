@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
                    btnEdit:
                    {
                     backgroundColor:'#98bc98',
-                    width:80,
-                   
-                    height:40,
+                    width:50,
+                    paddingTop:10,
+                    paddingBottom:10,
                     alignItems:'center',
                     justifyContent:'center',
             
@@ -89,8 +89,9 @@ const styles = StyleSheet.create({
                    btnDelete:
                    {
                     backgroundColor:'#ff6961',
-                    width:80,
-                    height:40,
+                    width:50,
+                    paddingTop:10,
+                    paddingBottom:10,
                     borderRadius:5,
                     alignItems:'center',
                     justifyContent:'center',
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
                 },
                 textTitle:{
                     fontWeight:'bold',
-                    fontSize:17,
+                    fontSize:14,
                     color:'#666'
                 },
                 textColor:

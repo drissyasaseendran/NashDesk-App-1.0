@@ -25,7 +25,7 @@ function Group ({navigation}){
         }
 		
         axios.post(groupApiPath, data)
-      .then((resp) => {	alert(JSON.stringify(resp))
+      .then((resp) => {	
         if (resp.data.status === "success") {
 			let res = resp.data.payload.data
 			
@@ -49,23 +49,13 @@ function Group ({navigation}){
 				   {
 				return (<TouchableOpacity   onLongPress={()=>pressLong()}  style={styles.GroupBlock}>
 				
-				{afterPress?<View style={styles.View}>
+				<View style={styles.View}>
 						<View style={styles.GroupBlockView}>
 						<Text style={styles.GroupTitle}>{group.group_name}</Text>
 												</View>
 					
 						<View   style={styles.GroupBlockAgents}> 
-						<Text style={styles.Groupcount}>2 Agnets</Text>
-						</View>
-					</View>
-					:
-					<View style={styles.View}>
-					<View style={styles.GroupBlockView}>
-					<Text style={styles.GroupTitle}>Gorup</Text>
-					
-					</View>
-					<View   style={styles.GroupBlockAgents}> 
-					<View  style={styles.BtnView}> 
+						{afterPress?<Text style={styles.Groupcount}>{group.count} Agents</Text>:<View  style={styles.BtnView}> 
 							
 							<TouchableOpacity  style={styles.btnEdit}   >
 								<Text style={styles.textColor}>Edit</Text>
@@ -73,9 +63,10 @@ function Group ({navigation}){
 							<TouchableOpacity   style={styles.btnDelete} >
 							<Text style={styles.textColor}>Delete</Text>
 							</TouchableOpacity>          
-					</View> 
+				   </View> }
+						</View>
 					</View>
-				</View>}
+					
 
 				</TouchableOpacity>)
 				   })
