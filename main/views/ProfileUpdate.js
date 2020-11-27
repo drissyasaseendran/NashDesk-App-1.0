@@ -4,6 +4,9 @@ import {styles} from '../styles/profileStyles'
 import {profileApiPath} from '../endpoints'
 import {getAccessToken} from '../utils/Authenticator'
 import axios from 'axios'
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 function ProfileUpdate (props){
     const token = getAccessToken()
     const [profileFeild,setprofileFeild] = useState({
@@ -94,9 +97,10 @@ function ProfileUpdate (props){
             })
         }
     return (
+      <View>
         <ScrollView>
-        <View style={styles.header}></View>
-        <View style={styles.canvasBody}>
+        {/* <View style={styles.header}></View> */}
+        <View >
         <View style={styles.ProfileBody}> 
                     <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
                    
@@ -178,21 +182,17 @@ function ProfileUpdate (props){
         </View>    
           
      </View>
-     <View style={{
-          position: 'absolute',
-          zIndex: 99,
-          bottom: 5,
-          alignSelf: 'center',
-          shadowColor: 'black',
-          shadowOpacity: 0.15,
-          shadowOffset: { width: 0, height: 2 },
-          shadowRadius: 8,
-          elevation: 3 //Because shadow only work on iOS, elevation is same thing but for android.
-        }}> 
-        <TouchableOpacity  onPress={() => ProfileUpdate()}  >
-                      <Text  >EDIT</Text>      
-                    </TouchableOpacity></View>  
+
      </ScrollView>
+     <View style={styles.BtnView}> 
+        <TouchableOpacity  style={styles.btnCancel} onPress={() => ProfileUpdate()}  >
+                      <Text  style={styles.btnTextCancel}>CANCEL</Text>      
+                    </TouchableOpacity>
+        <TouchableOpacity   style={styles.btnUpdate} onPress={() => ProfileUpdate()}  >
+                      <Text  style={styles.btnText} >UPDATE</Text>      
+                    </TouchableOpacity>          
+      </View>  
+     </View>
     );
 
 }

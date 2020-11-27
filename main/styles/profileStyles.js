@@ -172,15 +172,85 @@ const styles = StyleSheet.create({
         fontSize:11,
         marginBottom:-12,
         color:'#888'
-      }
+      },
+
+      BtnView:
+      {
+        display:'flex',
+           flexDirection:'row',
+           position: 'absolute',
+           // width: 50,
+           // height: 50,
+           backgroundColor:'#fff',
+           bottom: 0,
+           paddingTop:15,
+           justifyContent:'center',
+         
+           width: windowWidth,
+           height:80,
+           zIndex: 100,
+         },
+   
+            btnText:
+            {
+              textAlign:'center',
+              alignContent:'center',
+              color:'#fff'
+            
+                   },
+
+                   btnCancel:
+
+                   {
+                    fontWeight: 'bold' ,
+                    shadowColor: "#ccc", shadowOffset: { width: 0, height: 1, }, shadowOpacity: 0.15, shadowRadius: 1.84,
+                    elevation: 3,
+                    borderWidth:1,
+                    marginRight:15,
+                    width: 180,
+                    height: 50,
+                    borderRadius:10,
+                    backgroundColor:'#fff',
+                    borderColor:'#888',
+                    textAlign:'center',
+                    alignContent:'center',
+                    bottom: 0,
+                
+                    justifyContent:'center',
 
 
+                 
+                         },
+                         btnTextCancel:
+                         {
+                          fontWeight: 'bold' ,
+                          textAlign:'center',
+                          alignContent:'center',
+                          color:'#888'
+                         },
+                         btnUpdate:
 
+                         {
+                          fontWeight: 'bold' ,
+                          shadowColor: "#ccc", shadowOffset: { width: 0, height: 1, }, shadowOpacity: 0.15, shadowRadius: 1.84,
+                          elevation: 3,
+                          borderWidth:1,
+                          borderWidth:1,
+                          width: 180,
+                          height: 50,
+                          borderRadius:10,
+                          backgroundColor:'#000',
+                          borderColor:'#000',
+                          color:'#fff',
+                          textAlign:'center',
+                          alignContent:'center',
+                          bottom: 0,
+                  
+                          justifyContent:'center',
 
-
-
-
-
+                               },
+      
+      
 
 
 
