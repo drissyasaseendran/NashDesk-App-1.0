@@ -28,8 +28,7 @@ const styles = StyleSheet.create({
 
       canvasBody: {
         width: windowWidth,
-   //   height:windowHeight,
-     display:'flex',
+       display:'flex',
      flexDirection:'column',
       backgroundColor: "rgb(242, 242, 242)",
       borderRadius: 50,
@@ -41,12 +40,31 @@ const styles = StyleSheet.create({
       position: 'relative',
       top:-85
       },
-
+      canvasEditBody:
+      {
+        width: windowWidth,
+        height:windowHeight,
+        display:'flex',
+      flexDirection:'column',
+       backgroundColor: "rgb(242, 242, 242)",
+       borderRadius: 50,
+       borderWidth: 4,
+       borderColor: "rgb(242, 242, 242)",
+       borderWidth: 4,
+      //  marginBottom:10,
+       alignSelf:'center',
+      //  position: 'relative',
+      //  top:-85
+      },
        ProfileBody:
        {
         paddingTop:30,
         paddingBottom:30
        },   
+       ProfileBodyEdit:
+       {
+        // paddingTop:30,
+       },
        ProfileImage: {
         width: 130,
         height: 130,
@@ -145,7 +163,7 @@ const styles = StyleSheet.create({
       editProfile:
       {
         margin: 15,
-        height: 40,
+        height: 50,
         borderColor: '#7a42f4',
         color:'#666',
         borderWidth: 1,
@@ -158,12 +176,14 @@ const styles = StyleSheet.create({
 
       EditBody:
       {
+        // width: windowWidth,
+        // height:windowHeight,
         // border:'1px solid #ccc',
         borderRadius:15,
-        padding:15,
+        // padding:15,
         // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
-        margin:28
+        // margin:18
       },
   
       editlabel:

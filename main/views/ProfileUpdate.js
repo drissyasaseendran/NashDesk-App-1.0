@@ -100,11 +100,8 @@ function ProfileUpdate (props){
       <View>
         <ScrollView>
         {/* <View style={styles.header}></View> */}
-        <View >
-        <View style={styles.ProfileBody}> 
-                    <Image style={styles.ProfileImage} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-                   
-        </View>
+        <View  style={styles.canvasEditBody}>
+       
         <View style={styles.EditBody}> 
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Name</Text>
