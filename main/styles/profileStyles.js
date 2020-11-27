@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
        display:'flex',
      flexDirection:'column',
       backgroundColor: "rgb(242, 242, 242)",
-      borderRadius:100,
+      borderRadius:50,
       borderWidth: 4,
       borderColor: "rgb(242, 242, 242)",
       borderWidth: 4,
