@@ -9,7 +9,7 @@ import {groupApiPath} from '../../endpoints'
 import {getAccessToken} from '../../utils/Authenticator'
 import axios from 'axios'
 function Group ({navigation}){
-	const [afterPress , setafterPress] = useState(true)
+	const [afterPress , setafterPress] = useState(false)
 	const token = getAccessToken()
 	const [group,setgroup] = useState([])
 	useEffect(() => {
@@ -25,50 +25,78 @@ function Group ({navigation}){
         }
 		
         axios.post(groupApiPath, data)
-      .then((resp) => {	
-        if (resp.data.status === "success") {
-			let res = resp.data.payload.data
+		.then((resp) => {	
+			if (resp.data.status === "success") {
+				let res = resp.data.payload.data
+				
+				setgroup(res)
 			
-			setgroup(res)
-          
-          }
-      
-      })
+			}
+		
+		})
       }
-	const  pressLong = () =>
+	const  pressLong = (id) =>
 	{
-		setafterPress(!afterPress)
+		setafterPress({ ["afterPress" + id] :true })
+	
+	}
+	const editGroup = () =>
+	{
+		alert("dgys")
+	}
+	const deleteGroup = (id) =>
+	{
+		alert("yd")
+		let data =
+		{
+		  "access_token":token,
+		  "grp_id_list": [id],
+		  "request_type": "delete"
+		 
+	  }
+	  axios.post(groupApiPath, data).then((respData) => {
+		alert(respData.data)
+		if(respData.data.status == "success")
+		{
+		alert("succes")
+		}
+		else
+		{
+	
+		}
+	
+	  });
+   
 	}
     return (
 		<ScrollView>
 			<View style={styles.GroupView}>
 			{
-					
-					group && group.map((group) =>
-					
-				   {
-				return (<TouchableOpacity   onLongPress={()=>pressLong()}  style={styles.GroupBlock}>
+			group && group.map((group) =>
+			   {
+				return (
 				
-					<View style={styles.View}>
-						<View style={styles.GroupBlockView}>
-							<Text style={styles.GroupTitle}>{group.group_name}</Text>
-						</View>
-						<View   style={styles.GroupBlockAgents}> 
-						{afterPress?<Text style={styles.Groupcount}>{group.count} Agents</Text>:
-						<View  style={styles.BtnView}> 
-							<View  style={styles.btnEdit}   >
-								<Text style={styles.textColor}>Edit</Text>
-							</View>
-							<View   style={styles.btnDelete} >
-							<Text style={styles.textColor}>Delete</Text>
-							</View>          
-						   </View>
-					    }
-						</View>
-					</View>
+					<TouchableOpacity   onLongPress={()=>pressLong(group.grp_id)}  style={styles.GroupBlock}>
 					
-
-				</TouchableOpacity>)
+						<View style={styles.View}>
+							<View style={styles.GroupBlockView}>
+								<Text style={styles.GroupTitle}>{group.group_name}</Text>
+							</View>
+							<View   style={styles.GroupBlockAgents}> 
+							{!afterPress["afterPress" + group.grp_id] ?<Text style={styles.Groupcount}>{group.count} Agents</Text>:
+							<View  style={styles.BtnView}> 
+								<View  onPress={() => editGroup(group.grp_id)}  style={styles.btnEdit}   >
+									<Text style={styles.textColor}>Edit</Text>
+								</View>
+								<View onPress={() => deleteGroup(group.grp_id)}    style={styles.btnDelete} >
+								<Text style={styles.textColor}>Delete</Text>
+								</View>          
+							</View>
+							}
+							</View>
+						</View>
+					</TouchableOpacity>
+				)
 				   })
 				}
 				
