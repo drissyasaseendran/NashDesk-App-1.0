@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
                 agenttextColor:
                 {
                     color:'#666',
-                    fontSize:14
+                    fontSize:14,
+                   
                 },
                 GroupAgentView:
                 {
@@ -124,6 +125,10 @@ const styles = StyleSheet.create({
                         height:30,
                        
                 },
+                Iconcolortrash:
+                {
+                    color:'red'
+                },  
                 agentText:
                 {
                     color:'#666',
@@ -132,20 +137,25 @@ const styles = StyleSheet.create({
                 },
                 GroupAgentContent:
                 {
-                    display:'flex',
-                    flexDirection:'row',
-                   flex:1,
-                   paddingBottom:10,
+                     height:80,
+                 justifyContent:'center',
                    borderBottomWidth:1,
                     borderBottomColor:'#ccc'
                
                  
+                },
+                GroupAgentContentInside:
+                {
+                    display:'flex',
+                    flexDirection:'column',
+                    justifyContent:'center',
                 },
                 GroupAgentIcon:
                 {
                     display:'flex',
                     flexDirection:'row',
                    flex:1,
+                   alignItems:'center',
                    justifyContent:'flex-end'
                 }
 });

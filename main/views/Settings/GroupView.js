@@ -95,7 +95,25 @@ function GroupView ({navigation}){
                         <Text style={styles.agenttextColor}>drissyasaseendran@gmail.com</Text>
                     </View>
                     <View style={styles.GroupAgentIcon}>
-                        <Icon name="trash-can-outline"/>
+                        <Icon name="trash-can-outline" style={styles.Iconcolortrash} color='inherit'/>
+                    </View>
+                </View>
+                <View style={styles.GroupAgentContent}>
+                    <View  style={styles.GroupAgentContentInside}>
+                        <Text style={styles.agenttextColor}>Drissya</Text>
+                        <Text style={styles.agenttextColor}>drissyasaseendran@gmail.com</Text>
+                    </View>
+                    <View style={styles.GroupAgentIcon}>
+                        <Icon name="trash-can-outline" style={styles.Iconcolortrash} color='inherit'/>
+                    </View>
+                </View>
+                <View style={styles.GroupAgentContent}>
+                    <View  style={styles.GroupAgentContentInside}>
+                        <Text style={styles.agenttextColor}>Drissya</Text>
+                        <Text style={styles.agenttextColor}>drissyasaseendran@gmail.com</Text>
+                    </View>
+                    <View style={styles.GroupAgentIcon}>
+                        <Icon name="trash-can-outline" style={styles.Iconcolortrash} color='inherit'/>
                     </View>
                 </View>
 			</View>
