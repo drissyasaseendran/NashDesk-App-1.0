@@ -137,18 +137,16 @@ const styles = StyleSheet.create({
                 },
                 GroupAgentContent:
                 {
-                     height:80,
-                 justifyContent:'center',
+                   height:80,
+                   justifyContent:'center',
                    borderBottomWidth:1,
-                    borderBottomColor:'#ccc'
+                   borderBottomColor:'#ccc'
                
                  
                 },
                 GroupAgentContentInside:
                 {
-                    display:'flex',
-                    flexDirection:'column',
-                    justifyContent:'center',
+                  
                 },
                 GroupAgentIcon:
                 {
