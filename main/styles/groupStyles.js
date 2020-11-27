@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
                   display:'flex',
                      flexDirection:'row',
                     flex:1,
+                
                     justifyContent:'flex-end'
                   
                    },
@@ -78,11 +79,10 @@ const styles = StyleSheet.create({
                    {
                     backgroundColor:'#98bc98',
                     width:50,
-                    paddingTop:10,
-                    paddingBottom:10,
+                    paddingTop:5,
+                    paddingBottom:5,
                     alignItems:'center',
                     justifyContent:'center',
-            
                     borderRadius:5,
                     marginRight:15
                    },
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
                    {
                     backgroundColor:'#ff6961',
                     width:50,
-                    paddingTop:10,
-                    paddingBottom:10,
+                    paddingTop:5,
+                    paddingBottom:5,
                     borderRadius:5,
                     alignItems:'center',
                     justifyContent:'center',

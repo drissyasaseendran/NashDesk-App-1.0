@@ -49,21 +49,21 @@ function Group ({navigation}){
 				   {
 				return (<TouchableOpacity   onLongPress={()=>pressLong()}  style={styles.GroupBlock}>
 				
-				<View style={styles.View}>
+					<View style={styles.View}>
 						<View style={styles.GroupBlockView}>
-						<Text style={styles.GroupTitle}>{group.group_name}</Text>
-												</View>
-					
+							<Text style={styles.GroupTitle}>{group.group_name}</Text>
+						</View>
 						<View   style={styles.GroupBlockAgents}> 
-						{afterPress?<Text style={styles.Groupcount}>{group.count} Agents</Text>:<View  style={styles.BtnView}> 
-							
-							<TouchableOpacity  style={styles.btnEdit}   >
+						{afterPress?<Text style={styles.Groupcount}>{group.count} Agents</Text>:
+						<View  style={styles.BtnView}> 
+							<View  style={styles.btnEdit}   >
 								<Text style={styles.textColor}>Edit</Text>
-							</TouchableOpacity>
-							<TouchableOpacity   style={styles.btnDelete} >
+							</View>
+							<View   style={styles.btnDelete} >
 							<Text style={styles.textColor}>Delete</Text>
-							</TouchableOpacity>          
-				   </View> }
+							</View>          
+						   </View>
+					    }
 						</View>
 					</View>
 					
