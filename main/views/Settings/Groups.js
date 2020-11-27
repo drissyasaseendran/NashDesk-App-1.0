@@ -5,15 +5,10 @@ import {
 ScrollView,Text, TouchableOpacity
 } from 'react-native';
 import {styles} from '../../styles/groupStyles'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function Group ({navigation}){
 	const [afterPress , setafterPress] = useState(true)
-	const press = () =>
-	{
-		
-		
-	}
+
 	const  pressLong = () =>
 	{
 		setafterPress(!afterPress)
@@ -45,6 +40,7 @@ function Group ({navigation}){
 					</View>
 					}
 				</TouchableOpacity>
+				
 			</View>
 		</ScrollView>
     );

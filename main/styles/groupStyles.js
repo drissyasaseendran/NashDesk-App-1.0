@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         shadowRadius: 16.00,
         
         elevation: 24,
-        padding:20,
+        padding:23,
        
      
     },
@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
                    },
                    btnEdit:
                    {
-                    backgroundColor:'green',
+                    backgroundColor:'#98bc98',
                     width:80,
                    
-                    height:30,
+                    height:40,
                     alignItems:'center',
                     justifyContent:'center',
             
@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
                    },
                    btnDelete:
                    {
-                    backgroundColor:'red',
+                    backgroundColor:'#ff6961',
                     width:80,
-                    height:30,
+                    height:40,
                     borderRadius:5,
                     alignItems:'center',
                     justifyContent:'center',
