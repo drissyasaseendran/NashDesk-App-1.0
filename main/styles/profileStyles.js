@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         marginBottom:-12,
         color:'#888'
       },
-
+    
       BtnView:
       {
         display:'flex',

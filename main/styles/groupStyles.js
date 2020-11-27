@@ -14,19 +14,23 @@ const styles = StyleSheet.create({
         borderRadius:5,
         marginTop:20,
         // height:80,
-        shadowColor: "#000",
+        shadowColor: "#ccc",
         shadowOffset: {
             width: 0,
-            height: 12,
+            height: 1,
         },
         shadowOpacity: 0.58,
         shadowRadius: 16.00,
         
         elevation: 24,
         padding:20,
+       
+     
+    },
+    View:
+    {
         display:'flex',
         flexDirection:'row',
-     
     },
     GroupTitle:
     {
@@ -54,7 +58,55 @@ const styles = StyleSheet.create({
     {
         fontSize:12,
         color:'#888'
-    }
+    },
+
+    AftrePresView:
+    {
+      display:'flex',
+      flexDirection:'row',
+    },
+        
+                BtnView:
+                {
+                  display:'flex',
+                     flexDirection:'row',
+                    flex:1,
+                    justifyContent:'flex-end'
+                  
+                   },
+                   btnEdit:
+                   {
+                    backgroundColor:'green',
+                    width:80,
+                   
+                    height:30,
+                    alignItems:'center',
+                    justifyContent:'center',
+            
+                    borderRadius:5,
+                    marginRight:15
+                   },
+                   btnDelete:
+                   {
+                    backgroundColor:'red',
+                    width:80,
+                    height:30,
+                    borderRadius:5,
+                    alignItems:'center',
+                    justifyContent:'center',
+                   
+                },
+                textTitle:{
+                    fontWeight:'bold',
+                    fontSize:17,
+                    color:'#666'
+                },
+                textColor:
+                {
+                    color:'#fff',
+                    fontWeight:'bold'
+                }
+
 });
 export {
     styles
