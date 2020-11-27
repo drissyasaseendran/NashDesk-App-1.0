@@ -176,11 +176,22 @@ function ProfileUpdate (props){
         />
         </View>
         </View>    
-             
+          
+     </View>
+     <View style={{
+          position: 'absolute',
+          zIndex: 99,
+          bottom: 5,
+          alignSelf: 'center',
+          shadowColor: 'black',
+          shadowOpacity: 0.15,
+          shadowOffset: { width: 0, height: 2 },
+          shadowRadius: 8,
+          elevation: 3 //Because shadow only work on iOS, elevation is same thing but for android.
+        }}> 
         <TouchableOpacity  onPress={() => ProfileUpdate()}  >
                       <Text  >EDIT</Text>      
-                    </TouchableOpacity>
-     </View>
+                    </TouchableOpacity></View>  
      </ScrollView>
     );
 
