@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
        display:'flex',
      flexDirection:'column',
       backgroundColor: "rgb(242, 242, 242)",
-      borderRadius: 50,
+      borderRadius:100,
       borderWidth: 4,
       borderColor: "rgb(242, 242, 242)",
       borderWidth: 4,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         display:'flex',
       flexDirection:'column',
        backgroundColor: "rgb(242, 242, 242)",
-       borderRadius: 50,
+       borderRadius:100,
        borderWidth: 4,
        borderColor: "rgb(242, 242, 242)",
        borderWidth: 4,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
        ProfileImage: {
         width: 130,
         height: 130,
-        borderRadius: 63,
+        borderRadius:63,
         borderWidth: 4,
         borderColor: "white",
         marginBottom:10,
@@ -133,21 +133,21 @@ const styles = StyleSheet.create({
       ProfileContent:
       {
         // border:'1px solid #ccc',
-        borderRadius:15,
+        borderRadius:10,
         padding: 15,
       // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
-        margin: 28
+        margin:10
       },
 
       ProfileStatusContent:
       {
         // border:'1px solid #ccc',
-        borderRadius:15,
+        borderRadius:10,
         padding:15,
       // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',
-        margin:28
+        margin:10
       },
       ProfileStatustitle:
       {
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
         // width: windowWidth,
         // height:windowHeight,
         // border:'1px solid #ccc',
-        borderRadius:15,
+        borderRadius:10,
         // padding:15,
         // boxShadow: '0 2px 6px -2px #ccc',
         backgroundColor:'#fff',

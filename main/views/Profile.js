@@ -57,7 +57,6 @@ function Profile ({navigation}){
                     <Text style={styles.Profilename} >{profileFeild.first_name}</Text>
                     <Text style={styles.Profilename}>{profileFeild.email_id}</Text>
                 </View>
-                <View style={styles.ProfileAboutBody}>
                 <View style={styles.ProfileContentInside}>
                 <View style={styles.ProfileContent}>
                     <ProfileAbout Icon='phone' Feilds={profileFeild.mobile}/>
@@ -69,8 +68,7 @@ function Profile ({navigation}){
                       <Text  style={styles.ProfileBtn}>EDIT</Text>      
                     </TouchableOpacity>
                     </View>
-                  
-                </View>
+              
                 
               </View>
                   
