@@ -4,14 +4,18 @@ import {
   View,
 ScrollView,Text, TouchableOpacity
 } from 'react-native';
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {styles} from '../../styles/groupStyles'
 import {groupApiPath} from '../../endpoints'
 import {getAccessToken} from '../../utils/Authenticator'
 import axios from 'axios'
+import {groupView,groupEditData,groupAgentView,groupStatus} from '../../states/group/groupAction'
 function Group ({navigation}){
 	const [afterPress , setafterPress] = useState(false)
 	const token = getAccessToken()
 	const [group,setgroup] = useState([])
+	const dispatch = useDispatch()
 	useEffect(() => {
         GroupView()
        
@@ -40,9 +44,22 @@ function Group ({navigation}){
 		setafterPress({ ["afterPress" + id] :true })
 	
 	}
-	const editGroup = () =>
+	const editGroup = (group) =>
 	{
-		
+		let data = {   
+			"access_token": token,
+			"grp_id":group.grp_id,
+			"group_name":group.group_name,
+			"request_type":"view"
+		 }
+		  axios.post(groupApiPath, data).then((respData) => {
+			if(respData.data.status == "success")
+			{
+			let res = respData.data.payload.data
+			dispatch(groupEditData(res))
+			}
+		  });
+		  dispatch(groupStatus("Edit"))
 	}
 	const deleteGroup = (id) =>
 	{
@@ -86,7 +103,7 @@ function Group ({navigation}){
 							<View   style={styles.GroupBlockAgents}> 
 							{!afterPress["afterPress" + group.grp_id] ?<Text style={styles.Groupcount}>{group.count} Agents</Text>:
 							<View  style={styles.BtnView}> 
-								<TouchableOpacity  onPress={() => editGroup(group.grp_id)}    style={styles.btnEdit}   >
+								<TouchableOpacity  onPress={() => editGroup(group)}    style={styles.btnEdit}   >
 									<Text style={styles.textColor}>Edit</Text>
 								</TouchableOpacity>
 								<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}    style={styles.btnDelete} >
