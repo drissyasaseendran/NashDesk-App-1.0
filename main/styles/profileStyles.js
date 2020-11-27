@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         margin: 15,
         height: 40,
         borderColor: '#7a42f4',
-        color:'#888',
+        color:'#666',
         borderWidth: 1,
         paddingLeft:12,
         backgroundColor:'#F5F5F6',
@@ -203,8 +203,7 @@ const styles = StyleSheet.create({
 
                    {
                     fontWeight: 'bold' ,
-                    shadowColor: "#ccc", shadowOffset: { width: 0, height: 1, }, shadowOpacity: 0.15, shadowRadius: 1.84,
-                    elevation: 3,
+                   
                     borderWidth:1,
                     marginRight:15,
                     width: 180,
@@ -232,8 +231,7 @@ const styles = StyleSheet.create({
 
                          {
                           fontWeight: 'bold' ,
-                          shadowColor: "#ccc", shadowOffset: { width: 0, height: 1, }, shadowOpacity: 0.15, shadowRadius: 1.84,
-                          elevation: 3,
+                         
                           borderWidth:1,
                           borderWidth:1,
                           width: 180,

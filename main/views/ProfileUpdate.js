@@ -111,6 +111,7 @@ function ProfileUpdate (props){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Name"
+               placeholderTextColor = "#666"
                name="first_name"
                value={profileFeild.first_name} 
                autoCapitalize = "none"
@@ -124,6 +125,7 @@ function ProfileUpdate (props){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Home"
+               placeholderTextColor = "#666"
                name="address"
                value={profileFeild.address} 
                autoCapitalize = "none"
@@ -136,6 +138,7 @@ function ProfileUpdate (props){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "City"
+               placeholderTextColor = "#666"
                name="city"
                value={profileFeild.city} 
                autoCapitalize = "none"    
@@ -148,6 +151,7 @@ function ProfileUpdate (props){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Country"
+               placeholderTextColor = "#666"
                name="country"
                value={profileFeild.country} 
                autoCapitalize = "none"
@@ -160,6 +164,7 @@ function ProfileUpdate (props){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Code"
+               placeholderTextColor = "#666"
                name="code"
                value={profileFeild.code}  
                autoCapitalize = "none"
@@ -173,6 +178,8 @@ function ProfileUpdate (props){
                underlineColorAndroid = "transparent"
                placeholder = "Password"
                name="password"
+               placeholderTextColor = "#666"
+
                value={profileFeild.password}  
                autoCapitalize = "none"
                onChangeText={(text)=>onProfileChange(text, 'password')}
