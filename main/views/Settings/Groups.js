@@ -60,6 +60,7 @@ function Group ({navigation}){
 			}
 		  });
 		  dispatch(groupStatus("Edit"))
+		  navigation.navigate('GroupView')
 	}
 	const deleteGroup = (id) =>
 	{

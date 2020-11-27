@@ -18,6 +18,7 @@ import Category from '../views/Settings/Category'
 import AddGroup from '../views/Settings/AddGroup'
 import AddAgents from '../views/Settings/AddAgents'
 import AddCategory from '../views/Settings/AddCategory'
+import GroupView from '../views/Settings/GroupView'
 import AddCannedResponse from '../views/Settings/AddCannedResponse'
 import Analytics from '../views/Analytics'
 import Notification from '../views/Settings/Notification'
@@ -276,6 +277,22 @@ AddCategory:{
   }
   }
 
+},
+GroupView:{
+  screen:GroupView,
+  navigationOptions:({navigation}) => {
+     
+    return{
+      headerStyle: {
+     
+          borderBottomWidth: 0,
+          backgroundColor: '#0187CA'
+        },
+        headerTintColor: 'white',
+        // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
+
+  }
+  }
 },
 AddGroup:{
   screen:AddGroup,

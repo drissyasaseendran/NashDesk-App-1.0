@@ -37,6 +37,7 @@ const SettingStack = createStackNavigator(
             }
         }
     },
+
     Tags:{
         screen:Tags,
       
