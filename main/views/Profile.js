@@ -67,7 +67,7 @@ function Profile ({navigation}){
                     <TouchableOpacity style={styles.ProfileContentInside} onPress={() => navigation.navigate('ProfileUpdate')}  >
                       <Text  style={styles.ProfileBtn}>EDIT</Text>      
                     </TouchableOpacity>
-                    </View>
+                </View>
               
                 
               </View>
