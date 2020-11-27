@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from "react";
-import {TextInput , Modal, Text,Image,ScrollView,View} from 'react-native';
+import {TextInput , TouchableOpacity,Modal, Text,Image,ScrollView,View} from 'react-native';
 import {styles} from '../styles/profileStyles'
 import {profileApiPath} from '../endpoints'
 import {getAccessToken} from '../utils/Authenticator'
@@ -18,33 +18,37 @@ function ProfileUpdate (props){
         
     
         })
+      const [Feilds, setFeilds] = useState({});
       useEffect(() => {
           profileView()
          
       },[]);
-      const onProfileChange = (e,name, value) =>
+      const onProfileChange = (text ,stateProp) =>
       {
-          setprofileFeild({ ...profileFeild, [e.target.name]: e.target.value });
-         
-          if (e.target.value !== "" && e.target.value !== '') {
-          if (!Feilds.hasOwnProperty(e.target.value)) {
+    
+      
+          setprofileFeild({ ...profileFeild, [stateProp]: text });
+      
+        
+          if (text !== "" && text !== '') {
+          if (!Feilds.hasOwnProperty(text)) {
               setFeilds({ 
                ...Feilds,
-               [e.target.name]:e.target.value
+               [stateProp]:text
             }); 
           }
-            else if (Feilds.hasOwnProperty(e.target.name)) {
-              if (Feilds[e.target.name] === e.target.value) {
+            else if (Feilds.hasOwnProperty(stateProp)) {
+              if (Feilds[stateProp] === text) {
       
-                delete Feilds[e.target.name]
+                delete Feilds[stateProp]
               }
               else {
-                  Feilds[e.target.name] = e.target.value
+                  Feilds[stateProp] = text
               }
             }
           }
-          else if (Feilds.hasOwnProperty(e.target.name)) {
-            delete Feilds[e.target.name]
+          else if (Feilds.hasOwnProperty(stateProp)) {
+            delete Feilds[stateProp]
       
           }
       }
@@ -79,7 +83,7 @@ function ProfileUpdate (props){
                 "fields": Feilds,   
                 "request_type":"update"   
             }
-           
+       
             axios.post(profileApiPath, data)
             .then((resp) => {
           
@@ -102,11 +106,12 @@ function ProfileUpdate (props){
         <Text style={styles.editlabel} >Name</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "Name"
                name="first_name"
                value={profileFeild.first_name} 
                autoCapitalize = "none"
-               onChangeText = {onProfileChange}
+               onChangeText={(text)=>onProfileChange(text, 'first_name')}
+    
                
         />
         </View>
@@ -114,11 +119,11 @@ function ProfileUpdate (props){
         <Text style={styles.editlabel} >Home</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "Home"
                name="address"
                value={profileFeild.address} 
                autoCapitalize = "none"
-               onChangeText = {onProfileChange}
+               onChangeText={(text)=>onProfileChange(text, 'address')}
                
         />
         </View>
@@ -126,11 +131,11 @@ function ProfileUpdate (props){
         <Text style={styles.editlabel} >City</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "City"
                name="city"
                value={profileFeild.city} 
-               autoCapitalize = "none"
-               onChangeText = {onProfileChange}
+               autoCapitalize = "none"    
+               onChangeText={(text)=>onProfileChange(text, 'city')}
                
         />
         </View>
@@ -138,11 +143,11 @@ function ProfileUpdate (props){
         <Text style={styles.editlabel} >Country</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "Country"
                name="country"
                value={profileFeild.country} 
                autoCapitalize = "none"
-               onChangeText = {onProfileChange}
+               onChangeText={(text)=>onProfileChange(text, 'country')}
                
         />
         </View>
@@ -150,11 +155,11 @@ function ProfileUpdate (props){
         <Text style={styles.editlabel} >Code</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "Code"
                name="code"
                value={profileFeild.code}  
                autoCapitalize = "none"
-               onChangeText = {onProfileChange}
+               onChangeText={(text)=>onProfileChange(text, 'code')}
                
         />
         </View>
@@ -162,17 +167,19 @@ function ProfileUpdate (props){
         <Text style={styles.editlabel} >Password</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "Password"
                name="password"
                value={profileFeild.password}  
                autoCapitalize = "none"
-               onChangeText = {onProfileChange}
+               onChangeText={(text)=>onProfileChange(text, 'password')}
                
         />
         </View>
         </View>    
              
-      
+        <TouchableOpacity  onPress={() => ProfileUpdate()}  >
+                      <Text  >EDIT</Text>      
+                    </TouchableOpacity>
      </View>
      </ScrollView>
     );
