@@ -42,11 +42,11 @@ function Group ({navigation}){
 	}
 	const editGroup = () =>
 	{
-		alert("dgys")
+		
 	}
 	const deleteGroup = (id) =>
 	{
-		alert("yd")
+		
 		let data =
 		{
 		  "access_token":token,
@@ -55,10 +55,10 @@ function Group ({navigation}){
 		 
 	  }
 	  axios.post(groupApiPath, data).then((respData) => {
-		alert(respData.data)
+		
 		if(respData.data.status == "success")
 		{
-		alert("succes")
+		
 		}
 		else
 		{
@@ -72,8 +72,9 @@ function Group ({navigation}){
 		<ScrollView>
 			<View style={styles.GroupView}>
 			{
-			group && group.map((group) =>
-			   {
+				group && group.map((group) =>
+					
+				   {
 				return (
 				
 					<TouchableOpacity   onLongPress={()=>pressLong(group.grp_id)}  style={styles.GroupBlock}>
@@ -85,12 +86,12 @@ function Group ({navigation}){
 							<View   style={styles.GroupBlockAgents}> 
 							{!afterPress["afterPress" + group.grp_id] ?<Text style={styles.Groupcount}>{group.count} Agents</Text>:
 							<View  style={styles.BtnView}> 
-								<View  onPress={() => editGroup(group.grp_id)}  style={styles.btnEdit}   >
+								<TouchableOpacity  onPress={() => editGroup(group.grp_id)}    style={styles.btnEdit}   >
 									<Text style={styles.textColor}>Edit</Text>
-								</View>
-								<View onPress={() => deleteGroup(group.grp_id)}    style={styles.btnDelete} >
+								</TouchableOpacity>
+								<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}    style={styles.btnDelete} >
 								<Text style={styles.textColor}>Delete</Text>
-								</View>          
+								</TouchableOpacity>          
 							</View>
 							}
 							</View>
