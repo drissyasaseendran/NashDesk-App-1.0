@@ -11,6 +11,7 @@ import {groupApiPath} from '../../endpoints'
 import {getAccessToken} from '../../utils/Authenticator'
 import axios from 'axios'
 import {groupView,groupEditData,groupAgentView,groupStatus} from '../../states/group/groupAction'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 function Group ({navigation}){
 	const [afterPress , setafterPress] = useState(false)
 	const token = getAccessToken()
@@ -89,7 +90,9 @@ function Group ({navigation}){
     return (
 		<ScrollView>
 			<View style={styles.GroupView}>
+		
 			{
+				
 				group && group.map((group) =>
 					
 				   {
@@ -99,10 +102,10 @@ function Group ({navigation}){
 					
 						<View style={styles.View}>
 							<View style={styles.GroupBlockView}>
-								<Text style={styles.GroupTitle}>{group.group_name}</Text>
+							<Icon style={styles.GroupBlockIcon} name="account-group"/>	<Text style={styles.GroupTitle}>{group.group_name}</Text>
 							</View>
 							<View   style={styles.GroupBlockAgents}> 
-							{!afterPress["afterPress" + group.grp_id] ?<Text style={styles.Groupcount}>{group.count} Agents</Text>:
+							{!afterPress["afterPress" + group.grp_id] ?<View  style={styles.BtnView}> <Text style={styles.Groupcount}>{group.count} Agents</Text></View>:
 							<View  style={styles.BtnView}> 
 								<TouchableOpacity  onPress={() => editGroup(group)}    style={styles.btnEdit}   >
 									<Text style={styles.textColor}>Edit</Text>

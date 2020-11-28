@@ -13,16 +13,10 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff',
         borderRadius:5,
         marginTop:20,
-        // height:80,
-        shadowColor: "#ccc",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.58,
-        shadowRadius: 16.00,
-        
-        elevation: 24,
+        shadowOffset:{  width: 2,  height: 1,  },
+        shadowColor: '#ccc',
+        shadowOpacity: 0.25,
+        elevation: 11,
         padding:23,
        
      
@@ -31,18 +25,26 @@ const styles = StyleSheet.create({
     {
         display:'flex',
         flexDirection:'row',
+       
     },
     GroupTitle:
     {
-        fontSize:16,
+        fontSize:14,
         color:'#666',
-       
-        fontWeight:'bold'
+        paddingLeft:'12px'
+        // fontWeight:'bold'
+    },
+    GroupBlockIcon:
+    {
+        color:'#0187CA',
+        fontSize:18
     },
     GroupBlockView:
     {
         flex:1,
-        justifyContent:'center',
+        flexDirection:'row',
+        alignItems:'center'
+        // justifyContent:'center',
       
     },
     GroupBlockAgents:
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
                 {
                     color:'#666',
                     fontSize:14,
+                  lineHeight:18
                    
                 },
                 GroupAgentView:
@@ -123,7 +126,7 @@ const styles = StyleSheet.create({
                 GroupAgents:
                 {
                         height:30,
-                       
+                        padding:8
                 },
                 Iconcolortrash:
                 {
@@ -137,16 +140,18 @@ const styles = StyleSheet.create({
                 },
                 GroupAgentContent:
                 {
-                   height:80,
+                  
                    justifyContent:'center',
                    borderBottomWidth:1,
-                   borderBottomColor:'#ccc'
-               
+                   borderBottomColor:'#ccc',
+                   display:'flex',
+                   flexDirection:'row',
+                  flex:1,
                  
                 },
                 GroupAgentContentInside:
                 {
-                  
+                  padding:8
                 },
                 GroupAgentIcon:
                 {
