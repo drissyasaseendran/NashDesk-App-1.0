@@ -64,7 +64,22 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-
+  GroupView:{
+    screen:GroupView,
+    navigationOptions:({navigation}) => {
+       
+      return{
+        headerStyle: {
+       
+            borderBottomWidth: 0,
+            backgroundColor: '#0187CA'
+          },
+          headerTintColor: 'white',
+          // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
+  
+    }
+    }
+  },
     Dashboard: {
       screen: Dashboard,
       navigationOptions:({navigation}) => {

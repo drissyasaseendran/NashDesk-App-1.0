@@ -47,6 +47,7 @@ function Group ({navigation}){
 	}
 	const editGroup = (group) =>
 	{
+		dispatch(groupStatus("Edit"))
 		let data = {   
 			"access_token": token,
 			"grp_id":group.grp_id,
@@ -58,10 +59,11 @@ function Group ({navigation}){
 			{
 			let res = respData.data.payload.data
 			dispatch(groupEditData(res))
+			navigation.navigate('GroupView')
 			}
 		  });
-		  dispatch(groupStatus("Edit"))
-		  navigation.navigate('GroupView')
+		
+		 
 	}
 	const deleteGroup = (id) =>
 	{
@@ -90,7 +92,7 @@ function Group ({navigation}){
     return (
 		<ScrollView>
 			<View style={styles.GroupView}>
-		
+	
 			{
 				
 				group && group.map((group) =>

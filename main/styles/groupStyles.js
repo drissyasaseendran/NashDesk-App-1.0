@@ -27,17 +27,30 @@ const styles = StyleSheet.create({
         flexDirection:'row',
        
     },
+    groupProfile:
+    {
+      margin: 15,
+      height: 50,
+      borderColor: '#7a42f4',
+      color:'#666',
+      borderWidth: 1,
+      paddingLeft:12,
+      backgroundColor:'#F5F5F6',
+      // boxShadow: '0 2px 6px -2px #F5F5F6',
+      borderColor: '#eee',
+      borderWidth: 1,
+    },
     GroupTitle:
     {
         fontSize:14,
         color:'#666',
-        paddingLeft:'12px'
+        paddingLeft:12
         // fontWeight:'bold'
     },
     GroupBlockIcon:
     {
         color:'#0187CA',
-        fontSize:18
+        fontSize:28
     },
     GroupBlockView:
     {
@@ -70,12 +83,19 @@ const styles = StyleSheet.create({
         
                 BtnView:
                 {
-                  display:'flex',
-                     flexDirection:'row',
-                    flex:1,
-                
-                    justifyContent:'flex-end'
+                    display:'flex',
+                    flexDirection:'row',
+                    position: 'absolute',
+                    // width: 50,
+                    // height: 50,
+                    backgroundColor:'#fff',
+                    bottom: 0,
+                    paddingTop:15,
+                    justifyContent:'center',
                   
+                    width: windowWidth,
+                    height:80,
+                    zIndex: 100,
                    },
                    btnEdit:
                    {
@@ -116,8 +136,15 @@ const styles = StyleSheet.create({
                   lineHeight:18
                    
                 },
+                agenttextColorEmail:
+                {
+                    color:'#666',
+                    fontSize:12,
+                },
                 GroupAgentView:
                 {
+                    width: windowWidth,
+                     height:windowHeight,
                     backgroundColor:'#fff',
                     display:'flex',
                     flexDirection:'column',
@@ -126,11 +153,11 @@ const styles = StyleSheet.create({
                 GroupAgents:
                 {
                         height:30,
-                        padding:8
+                        padding:12
                 },
                 Iconcolortrash:
                 {
-                    color:'red'
+                    color:'#ff6961'
                 },  
                 agentText:
                 {
@@ -146,12 +173,16 @@ const styles = StyleSheet.create({
                    borderBottomColor:'#ccc',
                    display:'flex',
                    flexDirection:'row',
-                  flex:1,
+                   paddingTop:12,
+                   paddingBottom:12
+                //   flex:1,
                  
                 },
                 GroupAgentContentInside:
                 {
-                  padding:8
+                  padding:8,
+                  fontSize:14,
+                  justifyContent:'center'
                 },
                 GroupAgentIcon:
                 {
@@ -160,7 +191,53 @@ const styles = StyleSheet.create({
                    flex:1,
                    alignItems:'center',
                    justifyContent:'flex-end'
-                }
+                },
+                BtnView:
+                {
+                  display:'flex',
+                     flexDirection:'row',
+                     position: 'absolute',
+                     // width: 50,
+                     // height: 50,
+                     backgroundColor:'#fff',
+                     bottom: 0,
+                     paddingTop:15,
+                     justifyContent:'center',
+                   
+                     width: windowWidth,
+                     height:80,
+                     zIndex: 100,
+                   },
+                   btnUpdate:
+
+                   {
+                    fontWeight: 'bold' ,
+                   
+                    borderWidth:1,
+                    borderWidth:1,
+                    width: 180,
+                    height: 50,
+                    borderRadius:10,
+                    backgroundColor:'#000',
+                    borderColor:'#000',
+                    color:'#fff',
+                    textAlign:'center',
+                    alignContent:'center',
+                    bottom: 0,
+            
+                    justifyContent:'center',
+
+                         },
+
+                btnText:
+                   {
+                    textAlign:'center',
+                    alignContent:'center',
+                    color:'#fff'
+                         
+                   },
+             
+             
 });
 export {
     styles
