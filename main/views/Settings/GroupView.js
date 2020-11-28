@@ -6,7 +6,7 @@ ScrollView
 } from 'react-native';
 import {styles} from '../../styles/groupStyles'
 import {getAccessToken} from '../../utils/Authenticator'
-import {agentApiPath} from '../../endpoints'
+import {agentApiPath,groupApiPath} from '../../endpoints'
 import axios from 'axios'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -16,10 +16,11 @@ function GroupView ({navigation}){
     const [group,setgroup] = useState([])
     const [Agents,setAgents] = useState([])
 
-	useEffect(() => {
-        fetchAgentdata()
-       
+    useEffect(() => {
+          fetchAgentdata()
+          fetchGroupAgent()
     },[]);
+
     const fetchAgentdata = () =>
     {
         const data = {
