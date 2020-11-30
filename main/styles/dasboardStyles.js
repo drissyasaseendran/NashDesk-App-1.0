@@ -65,6 +65,15 @@ const styles = StyleSheet.create({
         height:120,
         borderColor:'red',
         borderRadius: 20,
+        shadowColor: "#ccc",
+        shadowOffset: {
+          width: 0,
+          height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 24,
         // border:'1px solid #ccc',
         // boxShadow: '0 2px 6px -2px #ccc',
      

@@ -53,6 +53,15 @@ const styles = StyleSheet.create({
        settingsCardBox:
        {
         display:"flex",
+        shadowColor: "#ccc",
+        shadowOffset: {
+          width: 0,
+          height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 24,
         flexDirection:'column',
         justifyContent: 'center',
         alignItems: 'center',

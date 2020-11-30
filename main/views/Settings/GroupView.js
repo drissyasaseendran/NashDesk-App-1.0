@@ -90,43 +90,41 @@ function GroupView ({navigation}){
     })
   }
     return (
-      <View>
-		<ScrollView>
-			<View style={styles.GroupAgentView}>
-                
-                <View>   
-                <Text style={styles.editlabel} >Group Name</Text>
-                <TextInput 
-                style = {styles.groupProfile}
-                underlineColorAndroid = "transparent"
-                placeholder = "Code"
-                placeholderTextColor = "#666"
-                name="code"
-                value={groupFeilds.grpname} 
-                autoCapitalize = "none"
-                onChangeText={(text)=>onGroupChange(text, 'grpname')}
-                />
-                </View>
-                <View>   
-                <Text style={styles.editlabel} >Group Description</Text>
-                <TextInput
-                  placeholder="Type Comment"
-                  style = {styles.groupProfileTextarea}
-                  value={groupFeilds.description} 
-                  multiline={true}
-                  numberOfLines={90}
-                  onChangeText={(text)=>onGroupChange(text, 'description')}
-                />
-                </View>
-                <GroupAgentData/>
-			</View>
-		</ScrollView>
-    <View style={styles.BtnViewEdit}> 
-      
-        <TouchableOpacity   style={styles.btnUpdate} onPress={() => groupUpdate()}  >
-                      <Text  style={styles.btnText} >UPDATE</Text>      
-                    </TouchableOpacity>          
-      </View>  
+    <View>
+      <ScrollView>
+        <View style={styles.GroupAgentView}>
+                  <View>   
+                  <Text style={styles.editlabel} >Group Name</Text>
+                  <TextInput 
+                  style = {styles.groupProfile}
+                  underlineColorAndroid = "transparent"
+                  placeholder = "Code"
+                  placeholderTextColor = "#666"
+                  name="code"
+                  value={groupFeilds.grpname} 
+                  autoCapitalize = "none"
+                  onChangeText={(text)=>onGroupChange(text, 'grpname')}
+                  />
+                  </View>
+                  <View>   
+                  <Text style={styles.editlabel} >Group Description</Text>
+                  <TextInput
+                    placeholder="Type Comment"
+                    style = {styles.groupProfileTextarea}
+                    value={groupFeilds.description} 
+                    multiline={true}
+                    numberOfLines={90}
+                    onChangeText={(text)=>onGroupChange(text, 'description')}
+                  />
+                  </View>
+                  <GroupAgentData/>
+        </View>
+      </ScrollView>
+        <View style={styles.BtnViewEdit}> 
+          <TouchableOpacity   style={styles.btnUpdate} onPress={() => groupUpdate()}  >
+              <Text  style={styles.btnText} >UPDATE</Text>      
+          </TouchableOpacity>          
+        </View>  
     </View>
     );
 
