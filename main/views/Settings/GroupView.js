@@ -36,20 +36,20 @@ function GroupView ({navigation}){
                 name="code"
                 // value={profileFeild.code}  
                 autoCapitalize = "none"
-                onChangeText={(text)=>onProfileChange(text, 'code')}
+                // onChangeText={(text)=>onProfileChange(text, 'code')}
                />
                 </View>
                 <View>   
-                <TextInput 
-                style = {styles.groupProfile}
-                underlineColorAndroid = "transparent"
-                placeholder = "Code"
-                placeholderTextColor = "#666"
-                name="code"
-                // value={profileFeild.code}  
-                autoCapitalize = "none"
-                onChangeText={(text)=>onProfileChange(text, 'code')}
-               />
+                <TextInput
+                  placeholder="Type Comment"
+                  style = {styles.groupProfileTextarea}
+                  // value={this.state.comment.value}
+                  // onChangeText={value => this.onChangeComment(value)}
+                  // onPress={() => this.uploadComment()}
+                  multiline={true}
+                  // maxLength={200}
+                  numberOfLines={90}
+                />
                 </View>
                 <View style={styles.GroupAgents}>
                     <Text style={styles.agentText}>Agents</Text>

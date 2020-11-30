@@ -40,6 +40,21 @@ const styles = StyleSheet.create({
       borderColor: '#eee',
       borderWidth: 1,
     },
+    groupProfileTextarea:
+    
+    {
+      paddingTop:15,
+      margin: 15,
+      height: 150,
+      borderColor: '#7a42f4',
+      color:'#666',
+      borderWidth: 1,
+      paddingLeft:12,
+      backgroundColor:'#F5F5F6',
+      // boxShadow: '0 2px 6px -2px #F5F5F6',
+      borderColor: '#eee',
+      borderWidth: 1,
+},
     GroupTitle:
     {
         fontSize:14,
