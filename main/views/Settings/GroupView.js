@@ -28,6 +28,7 @@ function GroupView ({navigation}){
 			<View style={styles.GroupAgentView}>
                 
                 <View>   
+                <Text style={styles.editlabel} >Group Name</Text>
                 <TextInput 
                 style = {styles.groupProfile}
                 underlineColorAndroid = "transparent"
@@ -40,6 +41,7 @@ function GroupView ({navigation}){
                />
                 </View>
                 <View>   
+                <Text style={styles.editlabel} >Group Description</Text>
                 <TextInput
                   placeholder="Type Comment"
                   style = {styles.groupProfileTextarea}

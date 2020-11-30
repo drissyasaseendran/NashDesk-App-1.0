@@ -27,9 +27,16 @@ const styles = StyleSheet.create({
         flexDirection:'row',
        
     },
+    editlabel:
+    {
+        margin: 10,
+        fontSize:11,
+        marginBottom:-5,
+        color:'#888'
+    },
     groupProfile:
     {
-      margin: 15,
+      margin: 10,
       height: 50,
       borderColor: '#7a42f4',
       color:'#666',
@@ -44,7 +51,7 @@ const styles = StyleSheet.create({
     
     {
       paddingTop:15,
-      margin: 15,
+      margin: 10,
       height: 150,
       borderColor: '#7a42f4',
       color:'#666',
