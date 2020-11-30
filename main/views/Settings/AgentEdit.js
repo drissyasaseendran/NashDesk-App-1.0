@@ -62,8 +62,21 @@ function AgentEdit ({navigation}){
                
         />
         </View>
- 
-      
+        <View style={styles.EditField}> 
+        <SwitchSelector
+            initial={0}
+            // onPress={value => setState({ gender: value })}
+            // textColor= '#7a44cf'
+            // selectedColor='blue'
+            // buttonColor='red'
+            borderColor='#eef'
+            hasPadding
+            options={[
+                { label: "Feminino", value: "f", imageIcon: <Icon  fontColor='red' name="account-group"/>},
+            { label: "Masculino", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> },
+            { label: "Masculino", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> }
+            ]}
+            /></View>
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Password</Text>
         <TextInput style = {styles.editProfile}
@@ -92,23 +105,7 @@ function AgentEdit ({navigation}){
                     </TouchableOpacity>          
       </View>  
      </View>
-			/* <View  style={styles.AgentContentBg}>
-            <SwitchSelector
-            initial={0}
-            // onPress={value => setState({ gender: value })}
-            // textColor= '#7a44cf'
-            // selectedColor='blue'
-            // buttonColor='red'
-            // borderColor='yellow'
-            hasPadding
-            options={[
-                { label: "Feminino", value: "f", imageIcon: <Icon  fontColor='red' name="account-group"/>},
-            { label: "Masculino", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> }
-            ]}
-            />
-			</View> */
-	
-		
+
 	  );
   
   }
