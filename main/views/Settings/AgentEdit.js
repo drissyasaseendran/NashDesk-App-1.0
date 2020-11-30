@@ -77,6 +77,19 @@ function AgentEdit ({navigation}){
             { label: "Supervisor", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> }
             ]}
             /></View>
+        <View style={styles.EditField}>
+        <Dropdown
+            label=''
+            value="Pure Austin Fitness"
+            // data={this.state.userTypes.sampleState}
+            baseColor="#fff"
+            textColor="#fff"
+            itemColor="#000"
+            selectedItemColor="#000"
+            fontSize={18}
+            dropdownPosition={0}
+        />
+        </View>
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Password</Text>
         <TextInput style = {styles.editProfile}
