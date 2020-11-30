@@ -6,7 +6,7 @@ import {
 
 } from 'react-native';
 import {styles} from '../../styles/agentStlyes'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 function Agents ({navigation}){
 
 

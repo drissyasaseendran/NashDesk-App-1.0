@@ -44,6 +44,7 @@
     "react-native-selectbox": "^0.1.2",
     "react-native-svg": "^12.1.0",
     "react-native-svg-charts": "^5.4.0",
+    "react-native-switch-selector": "^2.0.6",
     "react-native-tab-view": "^2.15.2",
     "react-native-textarea": "^1.0.4",
     "react-native-timeline-flatlist": "^0.7.3",

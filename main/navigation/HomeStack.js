@@ -16,7 +16,7 @@ import Leader from '../views/LeaderShip'
 import MessageMemo from '../views/MessageMemmo'
 import Category from '../views/Settings/Category'
 import AddGroup from '../views/Settings/AddGroup'
-import AddAgents from '../views/Settings/AddAgents'
+import AgentEdit from '../views/Settings/AgentEdit'
 import AddCategory from '../views/Settings/AddCategory'
 import GroupView from '../views/Settings/GroupView'
 import AddCannedResponse from '../views/Settings/AddCannedResponse'
@@ -64,8 +64,8 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-  Agents:{
-    screen:Agents,
+  AgentEdit:{
+    screen:AgentEdit,
     navigationOptions:({navigation}) => {
        
       return{
