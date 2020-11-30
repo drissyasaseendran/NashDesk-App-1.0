@@ -1,17 +1,10 @@
 import React, { useEffect ,useState} from "react";
-import {
-    Text,
-  View,
-  TextInput,TouchableOpacity,
-ScrollView
-} from 'react-native';
+import {Text, View} from 'react-native';
 import {styles} from '../../styles/groupStyles'
 import { useSelector } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Select from "react-select-native";
-import GroupAgentData from './GroupAgentData'
-// import Dropd from 'react-dropd'
-function GroupView ({navigation}){
+
+function GroupViewData ({navigation}){
 
     const GroupEditData = useSelector(state => state.group.group.groupedit)
     const GroupStatus = useSelector(state => state.group.group.groupStatus)
@@ -26,16 +19,22 @@ function GroupView ({navigation}){
     });
     useEffect(() => {
      
-      
+      if(GroupStatus != "Add")
+      {
         fetchGroupdata()
-     
-      },[]);
+       
+      }
+      },[GroupEditData]);
       const fetchGroupdata = () =>
       {
        
-        if(GroupStatus == "Edit")
+        if(GroupStatus == "Edit" || GroupStatus == "View")
         {
          
+          if(GroupStatus == 'View')
+          {
+            setDisable(true)
+          }
           if(GroupEditData)
           {
             if(GroupEditData.length>0)
@@ -90,46 +89,34 @@ function GroupView ({navigation}){
     })
   }
     return (
-      <View>
-		<ScrollView>
-			<View style={styles.GroupAgentView}>
-                
-                <View>   
-                <Text style={styles.editlabel} >Group Name</Text>
-                <TextInput 
-                style = {styles.groupProfile}
-                underlineColorAndroid = "transparent"
-                placeholder = "Code"
-                placeholderTextColor = "#666"
-                name="code"
-                value={groupFeilds.grpname} 
-                autoCapitalize = "none"
-                onChangeText={(text)=>onGroupChange(text, 'grpname')}
-                />
-                </View>
-                <View>   
-                <Text style={styles.editlabel} >Group Description</Text>
-                <TextInput
-                  placeholder="Type Comment"
-                  style = {styles.groupProfileTextarea}
-                  value={groupFeilds.description} 
-                  multiline={true}
-                  numberOfLines={90}
-                  onChangeText={(text)=>onGroupChange(text, 'description')}
-                />
-                </View>
-                <GroupAgentData/>
-			</View>
-		</ScrollView>
-    <View style={styles.BtnViewEdit}> 
-      
-        <TouchableOpacity   style={styles.btnUpdate} onPress={() => groupUpdate()}  >
-                      <Text  style={styles.btnText} >UPDATE</Text>      
-                    </TouchableOpacity>          
-      </View>  
+<View>
+<View style={styles.GroupAgents}>
+    <Text style={styles.agentText}>Agents</Text>
+</View>
+<View style={styles.GroupAgentContent}>
+  <View  style={styles.GroupAgentContentInside}><Icon style={styles.GroupBlockIcon} name="face-agent"/></View>
+    <View  style={styles.GroupAgentContentInside}>
+        <Text style={styles.agenttextColor}>Drissya</Text>
+        <Text style={styles.agenttextColorEmail}>drissyasaseendran@gmail.com</Text>
     </View>
+    <View style={styles.GroupAgentIcon}>
+        <Icon name="trash-can-outline" style={styles.Iconcolortrash} color='inherit'/>
+    </View>
+</View>
+<View style={styles.GroupAgentContent}>
+    <View  style={styles.GroupAgentContentInside}><Icon style={styles.GroupBlockIcon} name="face-agent"/></View>
+ 
+    <View  style={styles.GroupAgentContentInside}>
+        <Text style={styles.agenttextColor}>Drissya</Text>
+        <Text style={styles.agenttextColorEmail}>drissyasaseendran@gmail.com</Text>
+    </View>
+    <View style={styles.GroupAgentIcon}>
+        <Icon name="trash-can-outline" style={styles.Iconcolortrash} color='inherit'/>
+    </View>
+</View>
+</View>
     );
 
 }
 
-export default GroupView;
+export default GroupViewData;

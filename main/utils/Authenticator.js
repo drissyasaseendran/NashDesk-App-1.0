@@ -21,7 +21,7 @@ export const loginCall = (username, password) => {
   axios
     .post(loginApiPath, loginInput)
     .then((resp) => {
-      if (resp.data.status === "success") {
+       if (resp.data.status === "success") {
         const fivedays = 5;
         Cookies.set("access_token", resp.data.payload.data[0].access_token, {
           expires: fivedays,

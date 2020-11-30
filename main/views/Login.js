@@ -57,9 +57,9 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
    return (
 
         <View style={styles.container}>
-       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
-      </View>
+        <View style={styles.logoContainer}>
+          <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
+        </View>
              
         <View style={styles.inputView} >
                     
