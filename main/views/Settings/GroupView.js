@@ -22,14 +22,13 @@ function GroupView ({navigation}){
       grpname: '',
       description: '',
       id:'',
-      descid:''
+      descid:'',
+      groupAgents:[]
     });
     useEffect(() => {
-     
-      
         fetchGroupdata()
      
-      },[]);
+      },[GroupEditData]);
       const fetchGroupdata = () =>
       {
        
@@ -42,11 +41,15 @@ function GroupView ({navigation}){
             {
               if(GroupEditData[0].description == "")
               {
-              setgroupFeilds({ ...groupFeilds,  grpname: GroupEditData[0].group_name,id:GroupEditData[0].grp_id });
+              
+              setgroupFeilds({ ...groupFeilds,  grpname: GroupEditData[0].group_name,id:GroupEditData[0].grp_id 
+                ,groupAgents:GroupEditData[0].username});
               }
               else
               {
-                setgroupFeilds({ ...groupFeilds,  grpname: GroupEditData[0].group_name,id:GroupEditData[0].grp_id ,description: GroupEditData[0].description[0].description,descid:GroupEditData[0].description[0].about_id });
+                setgroupFeilds({ ...groupFeilds,  grpname: GroupEditData[0].group_name,id:GroupEditData[0].grp_id ,description: GroupEditData[0].description[0].description,descid:GroupEditData[0].description[0].about_id
+                  ,groupAgents:GroupEditData[0].username
+                });
             
               }
                
@@ -117,7 +120,7 @@ function GroupView ({navigation}){
                     onChangeText={(text)=>onGroupChange(text, 'description')}
                   />
                   </View>
-                  <GroupAgentData/>
+                  <GroupAgentData Agents={GroupEditData[0].username}/>
         </View>
       </ScrollView>
         <View style={styles.BtnViewEdit}> 

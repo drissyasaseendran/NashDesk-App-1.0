@@ -76,7 +76,7 @@ function Group ({navigation}){
 		
 		if(respData.data.status == "success")
 		{
-		
+			GroupView()
 		}
 		else
 		{
