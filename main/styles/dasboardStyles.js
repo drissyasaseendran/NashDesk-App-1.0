@@ -72,11 +72,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.58,
         shadowRadius: 16.00,
-
         elevation: 24,
-        // border:'1px solid #ccc',
-        // boxShadow: '0 2px 6px -2px #ccc',
-     
 
     },
     statusContentinside:
@@ -94,7 +90,6 @@ const styles = StyleSheet.create({
     statusText:
     {
       fontSize:30,
-      // fontWeight:700,
       color:'#888'
     },
     statusTitlebody:
@@ -116,7 +111,6 @@ const styles = StyleSheet.create({
       paddingTop:15,
       fontSize:20,
       paddingBottom:20,
-      // fontWeight:700,
       color:'#888'
     },
     performanceBg:
@@ -128,8 +122,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderColor:'red',
         borderRadius: 20,
-        // border:'1px solid #ccc',
-        // boxShadow: '0 2px 6px -2px #ccc',
     }
   });
 export {
