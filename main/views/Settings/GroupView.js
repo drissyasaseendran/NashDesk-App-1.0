@@ -79,7 +79,7 @@ function GroupView ({navigation}){
                 </View>
 			</View>
 		</ScrollView>
-    <View style={styles.BtnView}> 
+    <View style={styles.BtnViewEdit}> 
       
         <TouchableOpacity   style={styles.btnUpdate} onPress={() => ProfileUpdate()}  >
                       <Text  style={styles.btnText} >UPDATE</Text>      

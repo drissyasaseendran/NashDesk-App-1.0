@@ -7,7 +7,10 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
- 
+    View:
+    {
+        width:windowWidth,
+    },
     GroupBlock:
     {
         backgroundColor:'#fff',
@@ -18,7 +21,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         elevation: 11,
         padding:23,
-       
+ 
      
     },
     View:
@@ -42,6 +45,7 @@ const styles = StyleSheet.create({
       color:'#666',
       borderWidth: 1,
       paddingLeft:12,
+      fontSize: 14,
       backgroundColor:'#F5F5F6',
       // boxShadow: '0 2px 6px -2px #F5F5F6',
       borderColor: '#eee',
@@ -107,17 +111,14 @@ const styles = StyleSheet.create({
                 {
                     display:'flex',
                     flexDirection:'row',
-                    position: 'absolute',
+                    // position: 'absolute',
                     // width: 50,
                     // height: 50,
-                    backgroundColor:'#fff',
+                    // backgroundColor:'#fff',
                     bottom: 0,
                     paddingTop:15,
                     justifyContent:'center',
-                  
-                    width: windowWidth,
-                    height:80,
-                    zIndex: 100,
+                
                    },
                    btnEdit:
                    {
@@ -172,6 +173,12 @@ const styles = StyleSheet.create({
                     flexDirection:'column',
                     padding:10
                 },
+                GroupView:
+                {
+                  width: windowWidth,
+                  height:windowHeight,
+            
+                },
                 GroupAgents:
                 {
                         height:30,
@@ -214,7 +221,7 @@ const styles = StyleSheet.create({
                    alignItems:'center',
                    justifyContent:'flex-end'
                 },
-                BtnView:
+                BtnViewEdit:
                 {
                   display:'flex',
                      flexDirection:'row',

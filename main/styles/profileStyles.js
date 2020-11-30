@@ -196,19 +196,16 @@ const styles = StyleSheet.create({
     
       BtnView:
       {
-        display:'flex',
+           display:'flex',
            flexDirection:'row',
-           position: 'absolute',
-           // width: 50,
-           // height: 50,
-           backgroundColor:'#fff',
-           bottom: 0,
-           paddingTop:15,
-           justifyContent:'center',
-         
-           width: windowWidth,
-           height:80,
-           zIndex: 100,
+          //  position: 'absolute',
+          //  backgroundColor:'#fff',
+          //  bottom: 0,
+          //  paddingTop:15,
+          //  justifyContent:'center',
+          //  width: windowWidth,
+          //  height:80,
+          //  zIndex: 100,
          },
    
             btnText:

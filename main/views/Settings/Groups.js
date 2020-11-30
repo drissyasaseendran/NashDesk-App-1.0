@@ -42,6 +42,7 @@ function Group ({navigation}){
       }
 	const  pressLong = (id) =>
 	{
+	
 		setafterPress({ ["afterPress" + id] :true })
 	
 	}
@@ -91,32 +92,34 @@ function Group ({navigation}){
 	}
     return (
 		<ScrollView>
+		
 			<View style={styles.GroupView}>
-	
 			{
-				
 				group && group.map((group) =>
-					
-				   {
+				{
 				return (
 				
 					<TouchableOpacity   onLongPress={()=>pressLong(group.grp_id)}  style={styles.GroupBlock}>
-					
-						<View style={styles.View}>
+					<View style={styles.View}>
 							<View style={styles.GroupBlockView}>
-							<Icon style={styles.GroupBlockIcon} name="account-group"/>	<Text style={styles.GroupTitle}>{group.group_name}</Text>
+								<Icon style={styles.GroupBlockIcon} name="account-group"/>
+									<Text style={styles.GroupTitle}>{group.group_name}</Text>
 							</View>
 							<View   style={styles.GroupBlockAgents}> 
-							{!afterPress["afterPress" + group.grp_id] ?<View  style={styles.BtnView}> <Text style={styles.Groupcount}>{group.count} Agents</Text></View>:
-							<View  style={styles.BtnView}> 
-								<TouchableOpacity  onPress={() => editGroup(group)}    style={styles.btnEdit}   >
-									<Text style={styles.textColor}>Edit</Text>
-								</TouchableOpacity>
-								<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}    style={styles.btnDelete} >
-								<Text style={styles.textColor}>Delete</Text>
-								</TouchableOpacity>          
-							</View>
-							}
+								{!afterPress["afterPress" + group.grp_id] ?
+								<View  style={styles.BtnView}> 
+									<Text style={styles.Groupcount}>{group.count} Agents</Text>
+								</View>
+								:
+								<View  style={styles.BtnView}> 
+									<TouchableOpacity  onPress={() => editGroup(group)}    style={styles.btnEdit}   >
+										<Text style={styles.textColor}>Edit</Text>
+									</TouchableOpacity>
+									<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}    style={styles.btnDelete} >
+										<Text style={styles.textColor}>Delete</Text>
+									</TouchableOpacity>          
+								</View>
+								}
 							</View>
 						</View>
 					</TouchableOpacity>
