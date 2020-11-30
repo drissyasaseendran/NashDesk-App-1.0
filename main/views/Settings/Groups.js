@@ -99,7 +99,7 @@ function Group ({navigation}){
 						<View style={styles.View}>
 								<View style={styles.GroupBlockView}>
 									<Icon style={styles.GroupBlockIcon} name="account-group"/>
-										<Text style={styles.GroupTitle}>{group.group_name}</Text>
+									<Text style={styles.GroupTitle}>{group.group_name}</Text>
 								</View>
 								<View   style={styles.GroupBlockAgents}> 
 									{!afterPress["afterPress" + group.grp_id] ?

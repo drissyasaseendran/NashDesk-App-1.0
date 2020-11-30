@@ -7,10 +7,8 @@ ScrollView
 } from 'react-native';
 import {styles} from '../../styles/groupStyles'
 import { useSelector } from 'react-redux'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Select from "react-select-native";
 import GroupAgentData from './GroupAgentData'
-// import Dropd from 'react-dropd'
+
 function GroupView ({navigation}){
 
     const GroupEditData = useSelector(state => state.group.group.groupedit)
@@ -92,7 +90,11 @@ function GroupView ({navigation}){
         }
     })
   }
-    return (
+  const agentDelete = (emailid) =>
+  {
+  
+  }
+  return (
     <View>
       <ScrollView>
         <View style={styles.GroupAgentView}>
@@ -120,7 +122,7 @@ function GroupView ({navigation}){
                     onChangeText={(text)=>onGroupChange(text, 'description')}
                   />
                   </View>
-                  <GroupAgentData Agents={GroupEditData[0].username}/>
+                  <GroupAgentData Agents={GroupEditData[0].username} agentDelete={agentDelete}/>
         </View>
       </ScrollView>
         <View style={styles.BtnViewEdit}> 
