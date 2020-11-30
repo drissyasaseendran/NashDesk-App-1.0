@@ -8,9 +8,12 @@ ScrollView
 import {styles} from '../../styles/groupStyles'
 import { useSelector } from 'react-redux'
 import GroupAgentData from './GroupAgentData'
+import {getAccessToken} from '../../utils/Authenticator'
+import {groupApiPath,agentApiPath} from '../../endpoints'
+import axios from "axios";
 
 function GroupView ({navigation}){
-
+    const token = getAccessToken()
     const GroupEditData = useSelector(state => state.group.group.groupedit)
     const GroupStatus = useSelector(state => state.group.group.groupStatus)
     const AgentList = useSelector(state => state.group.group.groupedit)
@@ -90,9 +93,55 @@ function GroupView ({navigation}){
         }
     })
   }
-  const agentDelete = (emailid) =>
+  const agentDelete = (email) =>
   {
-  
+    const data = {
+      access_token: token,
+      "request_type":"view"
+    };
+    axios.post(agentApiPath, data).then((respData) => {
+      if(respData.data.status == "success")
+      {
+        let res = respData.data.payload.data
+        if(res)
+        {
+          if(res.length>0)
+          {
+            res.map((agent)=>
+            {
+              if(agent.email_id == email)
+              {
+                  deleteAgent(agent.agt_sett_id)
+              }
+            })
+          }
+        }
+      }
+    })
+
+  }
+  const deleteAgent = (id) =>
+  {
+        const data = {
+      "access_token": token,
+      "agt_sett_id": id,
+      "grp_id": groupFeilds.id,
+      "request_type": "agent_delete"
+  }
+   
+  axios.post(groupApiPath, data).then((respData) => {
+
+    if(respData.data.status == "success")
+    {
+    
+     
+    }
+    else
+    {
+      
+    }
+
+  });
   }
   return (
     <View>
