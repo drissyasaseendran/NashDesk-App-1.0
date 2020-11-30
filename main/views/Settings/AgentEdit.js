@@ -66,15 +66,15 @@ function AgentEdit ({navigation}){
         <SwitchSelector
             initial={0}
             // onPress={value => setState({ gender: value })}
-            // textColor= '#7a44cf'
-            // selectedColor='blue'
-            // buttonColor='red'
+            textColor= '#888'
+            selectedColor='#fff'
+            buttonColor='#0187CA'
             borderColor='#eef'
             hasPadding
             options={[
-                { label: "Feminino", value: "f", imageIcon: <Icon  fontColor='red' name="account-group"/>},
-            { label: "Masculino", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> },
-            { label: "Masculino", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> }
+                { label: "Admin", value: "f", imageIcon: <Icon  fontColor='red' name="account-group"/>},
+            { label: "Agent", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> },
+            { label: "Supervisor", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> }
             ]}
             /></View>
         <View style={styles.EditField}> 
