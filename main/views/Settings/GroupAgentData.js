@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from "react";
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {styles} from '../../styles/groupStyles'
 import { useSelector } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -22,9 +22,9 @@ return(<View style={styles.GroupAgentContent}>
         <Text style={styles.agenttextColor}>{agents.first_name}</Text>
                 <Text style={styles.agenttextColorEmail}>{agents.username}</Text>
     </View>
-    <TouchableOpacity onPress={() => props.agentDelete(agents.username)} style={styles.GroupAgentIcon}>
+    <View style={styles.GroupAgentIcon}>
         <Icon name="trash-can-outline" style={styles.Iconcolortrash} color='inherit'/>
-    </TouchableOpacity>
+    </View>
 </View>)
 })}
 

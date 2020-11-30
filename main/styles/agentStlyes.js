@@ -4,214 +4,100 @@ import {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    agentText:
+    {
+        fontSize:20,
+        fontWeight:'bold',
+        color:'#666'
     },
-
-    input: {
-
-        borderRadius: 20,
-        paddingLeft: 15,
-        width: "2",
-        width: 342,
-        height: 43,
-        margin: 12,
-        borderWidth: 1,
-        borderColor: '#13636485',
-
+    Agents:
+    {
+            // height:30,
+            padding:12
     },
-
-    image: {
-        width: 107,
-        height: 165,
-
-    },
-
-    loginScreenButton: {
-        width: 340,
-        height: 40,
-        marginRight: 40,
-        marginLeft: 40,
-        marginTop: 10,
-        paddingTop: 10,
-        backgroundColor: '#136364',
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: '#fff'
-    },
-    loginText: {
-        color: '#fff',
-        textAlign: 'center',
-        paddingLeft: 10,
-        paddingRight: 10
-    },
-    login: {
-        color: '#136364'
-    },
-
-
-    titleContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1
-    },
-    title: {
-        fontSize: 20
-    },
-    //-------------------
-    // NAV STYLESSSS
-    //-------------------
-    NavView: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    NavDirection: {
-        flexDirection: 'row',
-        height: 80
-    },
-    NavCoulmn: {
-        flexDirection: 'column',
-        padding: 12,
-        paddingTop: 20,
-        height: 40,
-        width: 40,
-    },
-    NavMenuImage: {
-        height: 30,
-        width: 30
-    },
-    NavLogoImage: {
+    agenttextColor:
+    {
+        color:'#666',
+        fontSize:14,
+      lineHeight:20,
+      fontWeight:'bold'
        
     },
-    NavLogoView: {
-        flexDirection: 'column',
-        padding: 12,
-        height: 40,
-        width: 40,
-    },
-    NavIconsRight: {
-
-        width: 100,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        textAlign: "right",
-
-
-    },
-    NavViewRight: {
-        flexDirection: 'row'
-    },
-  
-    //SPARKLINE
-    SparkboxSimple: {
-        backgroundColor: '#fff',
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#13636485',
-        padding: 20,
-        margin: 30,
-        paddingTop: 15,
-    },
-    Sparktext: {
-        fontSize: 16,
-        backgroundColor: '#fff',
-        padding: 10,
-        margin: 20,
-    },
-    //Memo text
-
-
-    //
-    agentsContainer:
+    AgentContent:
     {
-        width: 400,
-        backgroundColor: '#fff',
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#13636485',
-        fontSize: 16,
-        padding: 20,
-        margin: 10,
-    },
-    agentsText:{
-   
+      
+    
+       display:'flex',
+       flexDirection:'row',
        
-        fontSize: 16,
-        padding: 10,
-       
-    },
-    agentsearch:
-    {
-        flex:1,
-        padding: 10,
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#13636485',
-    },
-    //Settings 
-    Settingscontainer:
-    {
-        // backgroundColor: '#fcfcf0',
-        flexDirection:'row'
-    },
-
-    SettingsText:{
-        paddingLeft:2,
-        alignSelf:'center',
-        textAlign: 'center', // <-- the magic
-        fontWeight: 'bold',
-        fontSize: 14,
-       
-    },
-    //Agents
-    agentsview:
-    {
-        padding:20,
-       
-    },
-    agentColumn:
-    {
-        height: 40,
-    },
-    agentheading:
-    {
-        padding:2,
-        alignSelf:'center',
-        textAlign: 'center', // <-- the magic
-        fontWeight: 'bold',
-        fontSize: 14,
-       
-    },
-    agentlist:{
-        padding:2,
-        alignSelf:'center',
-        textAlign: 'center', // <-- the magic
      
-        fontSize: 12,
-       
     },
-    // Canned Respoonse
-    card:{
-        borderRadius:6,
-        elevation:3,
+    AgentSidebtn:
+    {
+        display:'flex',
+        flexDirection:'row',
+        borderTopWidth:1,
+        borderTopColor:'#eef',
+        padding:10,
+        justifyContent:'flex-end'
+        
+    },
+    AgentContentBg:
+    {
         backgroundColor:'#fff',
-        shadowOffset:{width:1,height:1},
-        shadowColor:'#333',
-        shadowOpacity:0.3,
-        shadowRadius:2,
-        marginHorizontal:4,
-        marginVertical:6,
-
+        shadowOffset:{  width: 2,  height: 1,  },
+        shadowColor: '#ccc',
+        shadowOpacity: 0.25,
+        borderBottomWidth:1,
+        borderBottomColor:'#ccc',
+        marginBottom:15
     },
-    cardContent:{
-        marginHorizontal:30,
-        marginVertical:20,
-    }
-   
+    AgentContentInside:
+    {
+      padding:15,
+      fontSize:14,
+      justifyContent:'center'
+    },
+    agenttextColorEmail:
+                {
+                    color:'#666',
+                    fontSize:12,
+                    lineHeight:18
+                
+                },
+  
+                AgentIcon:
+                {
+                    display:'flex',
+                    flexDirection:'row',
+                   flex:1,
+                   alignItems:'center',
+                   justifyContent:'flex-end'
+                },
+                Iconcolortrash:
+                {
+                    color:'#ff6961',
+                    fontSize:18
+                }, 
+                BlockIcon:
+                {
+                    color:'#0187CA',
+                    fontSize:28
+                },
+                agentEdit:
+                {
+                    width:50,
+                    fontSize:15,
+                    fontWeight:'bold',
+                    color:'#98bc98'
+                },
+                agentDelete:
+                {
+                    color:'#ff6961',
+                    fontSize:15,
+                    fontWeight:'bold',
+                    width:50
+                }
 });
 
 export {

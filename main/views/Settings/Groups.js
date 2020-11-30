@@ -3,10 +3,11 @@ import { View,ScrollView,Text, TouchableOpacity
 } from 'react-native';
 import { useDispatch } from 'react-redux'
 import {styles} from '../../styles/groupStyles'
-import {groupApiPath} from '../../endpoints'
+import {groupApiPath,agentApiPath} from '../../endpoints'
 import {getAccessToken} from '../../utils/Authenticator'
 import axios from 'axios'
-import {groupEditData,groupStatus} from '../../states/group/groupAction'
+import {groupView,groupEditData,groupAgentView,groupStatus} from '../../states/group/groupAction'
+import {agentViewData} from '../../states/agents/agentAction'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 function Group ({navigation}){
 	const [afterPress , setafterPress] = useState(false)
@@ -14,28 +15,45 @@ function Group ({navigation}){
 	const [group,setgroup] = useState([])
 	const dispatch = useDispatch()
 	useEffect(() => {
-        GroupView()
-       
-    },[]);
-    const GroupView = () =>
-    {
-        let data =
-        {
-          "access_token": token ,
-          "request_type":"view_grp_name"
-        }
-		
-        axios.post(groupApiPath, data)
-		.then((resp) => {	
-			if (resp.data.status === "success") {
-				let res = resp.data.payload.data
-				
-				setgroup(res)
-			
-			}
-		
-		})
-      }
+  
+		fetchGroupdata()
+		fetchAgentdata()
+	 
+		},[]);
+  
+	  const fetchGroupdata = () =>
+	  {
+		const data = {
+		  access_token: token,
+		  "request_type":"view_grp_name"
+		};
+		axios.post(groupApiPath, data).then((respData) => {
+		 
+		  if(respData.data.status == "success")
+		  {
+	   
+		  let res = respData.data.payload.data
+		  setgroup(res)
+		  }
+	  
+		});
+	  }
+	  const fetchAgentdata = () =>
+	  {
+		const data = {
+		  access_token: token,
+		  "request_type":"view"
+		};
+		axios.post(agentApiPath, data).then((respData) => {
+		  if(respData.data.status == "success")
+		  {
+			let res = respData.data.payload.data
+			dispatch(agentViewData(res))
+		  }
+		});
+	  }
+
+
 	const  pressLong = (id) =>
 	{
 	

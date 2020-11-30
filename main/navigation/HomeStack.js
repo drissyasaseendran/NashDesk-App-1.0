@@ -64,7 +64,23 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-
+  Agents:{
+    screen:Agents,
+    navigationOptions:({navigation}) => {
+       
+      return{
+        headerStyle: {
+          
+            borderBottomWidth: 0,
+            backgroundColor: '#0187CA'
+          },
+          headerTintColor: 'white',
+          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+         
+    }
+    }
+   
+},
     Dashboard: {
       screen: Dashboard,
       navigationOptions:({navigation}) => {
@@ -311,23 +327,7 @@ AddGroup:{
   }
 
 },
-AddAgents:{
-  screen:AddAgents,
-  navigationOptions:({navigation}) => {
-     
-    return{
-      headerStyle: {
 
-          borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
-        },
-        headerTintColor: 'white',
-        // headerTitle: () => <Header navigation={navigation} title='AddAgents'/>
-        
-  }
-  }
-
-},
 CannedResponse:{
     screen:CannedResponse,
     navigationOptions:({navigation}) => {
