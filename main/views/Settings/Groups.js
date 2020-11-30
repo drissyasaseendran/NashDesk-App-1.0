@@ -1,8 +1,5 @@
 import React, { useEffect ,useState} from "react";
-import {
-
-  View,
-ScrollView,Text, TouchableOpacity
+import { View,ScrollView,Text, TouchableOpacity
 } from 'react-native';
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
@@ -59,6 +56,7 @@ function Group ({navigation}){
 			if(respData.data.status == "success")
 			{
 			let res = respData.data.payload.data
+			alert(JSON.stringify(res))
 			dispatch(groupEditData(res))
 			navigation.navigate('GroupView')
 			}
