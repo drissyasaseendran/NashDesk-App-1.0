@@ -20,7 +20,7 @@ function SettingsBlock (props){
            
         </View>
         <View >
-          <Text >{props.title}</Text>
+          <Text  style={styles.settingsText}>{props.title}</Text>
         </View>
         
       </View>

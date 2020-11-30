@@ -71,6 +71,12 @@ const styles = StyleSheet.create({
         height:120,
         borderColor:'red',
         borderRadius: 20,
+       },
+       settingsText:
+       {
+        color:'#888',
+        fontWeight:'bold',
+        textAlign:'center'
        }
   });
   export {
