@@ -12,19 +12,15 @@ import {styles} from '../styles/settingsStyles'
 function SettingsBlock (props){
 
     return (
-        <TouchableOpacity   onPress={() => props.navigate(props.destination) } >
+      <TouchableOpacity   onPress={() => props.navigate(props.destination) } >
         <View style={styles.settingsCardBox} >
-          
-        <View >
-            <Icon  name={props.icon} size={40} color='rgb(1, 135, 202)'   type={props.type}/>
-           
+          <View>
+              <Icon  name={props.icon} size={40} color='rgb(1, 135, 202)'   type={props.type}/>
+          </View>
+          <View>
+            <Text  style={styles.settingsText}>{props.title}</Text>
+          </View>
         </View>
-        <View >
-          <Text  style={styles.settingsText}>{props.title}</Text>
-        </View>
-        
-      </View>
-
       </TouchableOpacity>
   
     );
