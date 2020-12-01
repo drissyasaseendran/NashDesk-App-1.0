@@ -5,7 +5,7 @@ import {
   View,TextInput,TouchableOpacity,
   ScrollView
 } from 'react-native';
-import DropDown from 'react-native-paper-dropdown';
+// import DropDown from 'react-native-paper-dropdown';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -14,44 +14,47 @@ import { useSelector } from 'react-redux'
 
 function AgentEdit ({navigation}){
    const [groupSelected,setgroupSelected] = useState([])
-   const [showDropDown, setShowDropDown] = useState(false);
-   const [gender, setGender] = useState();
+   const [checked, setChecked] = React.useState(false);
    const [role, setRole] = useState('agent');
-   const genderList = [
-      { label: 'Male', value: 'male' },
-      { label: 'Female', value: 'female' },
-      { label: 'Others', value: 'others' },
-    ];
-    const items = [{
-      id: '92iijs7yta',
-      name: 'Ondo'
-    }, {
-      id: 'a0s0a8ssbsd',
-      name: 'Ogun'
-    }, {
-      id: '16hbajsabsd',
-      name: 'Calabar'
-    }, {
-      id: 'nahs75a5sg',
-      name: 'Lagos'
-    }, {
-      id: '667atsas',
-      name: 'Maiduguri'
-    }, {
-      id: 'hsyasajs',
-      name: 'Anambra'
-    }, {
-      id: 'djsjudksjd',
-      name: 'Benue'
-    }, {
-      id: 'sdhyaysdj',
-      name: 'Kaduna'
-    }, {
-      id: 'suudydjsjd',
-      name: 'Abuja'
-      }
-  ];
-   
+   const agentEditData = useSelector(state => state.agent.agent.agentedit)
+   const [selectedTeam, setSelectedTeam] = useState({})
+  const [selectedTeams, setSelectedTeams] = useState([])
+  const items = [
+   // this is the parent or 'item'
+   {
+     name: 'Fruits',
+     id: 0,
+     // these are the children or 'sub items'
+     children: [
+       {
+         name: 'Apple',
+         id: 10,
+       },
+       {
+         name: 'Strawberry',
+         id: 17,
+       },
+       {
+         name: 'Pineapple',
+         id: 13,
+       },
+       {
+         name: 'Banana',
+         id: 14,
+       },
+       {
+         name: 'Watermelon',
+         id: 15,
+       },
+       {
+         name: 'Kiwi fruit',
+         id: 16,
+       },
+     ],
+   },
+
+ ];
+  
    const [agentFeilds, setagentFeilds] = useState({
          agt_sett_id:'',
          first_name:'',
@@ -63,7 +66,6 @@ function AgentEdit ({navigation}){
          group:[]
         
    });
-   const agentEditData =  useSelector(state => state.agent.agent.agentedit)
    useEffect(() => {
       if(agentEditData)
       {
@@ -172,7 +174,10 @@ function AgentEdit ({navigation}){
                ]}
                />
          </View>
-        <View style={styles.EditField}>
+         <View style={styles.EditField}>
+
+         </View>
+        {/* <View style={styles.EditField}>
          <DropDown
             //  label={'Gender'}
             mode={'outlined'}
@@ -186,7 +191,7 @@ function AgentEdit ({navigation}){
                right: <TextInput.Icon name={'menu-down'} />,
             }}
          />
-        </View>
+        </View> */}
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Password</Text>
         <TextInput style = {styles.editProfile}
