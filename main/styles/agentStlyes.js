@@ -160,7 +160,49 @@ const styles = StyleSheet.create({
                     marginBottom:-12,
                     color:'#888'
                   },
-       
+                  ViewAgentEditbtn:
+                  {
+                    display:'flex',
+                    flexDirection:'row',
+                    position: 'absolute',
+                    backgroundColor:'#fff',
+                    bottom: 0,
+                    paddingTop:15,
+                    justifyContent:'center',
+                    width: windowWidth,
+                    height:80,
+                    zIndex: 100,
+                  },
+                  btnText:
+                  {
+                    textAlign:'center',
+                    alignContent:'center',
+                    color:'#fff'
+                  
+                         },
+      
+                     
+                            
+                               btnUpdate:
+      
+                               {
+                                fontWeight: 'bold' ,
+                               
+                                borderWidth:1,
+                                borderWidth:1,
+                                width:400,
+                                height: 50,
+                                borderRadius:10,
+                                backgroundColor:'#000',
+                                borderColor:'#000',
+                                color:'#fff',
+                                textAlign:'center',
+                                alignContent:'center',
+                                bottom: 0,
+                        
+                                justifyContent:'center',
+      
+                                     },
                                   
                   
                   

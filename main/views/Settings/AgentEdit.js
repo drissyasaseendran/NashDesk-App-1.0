@@ -123,10 +123,8 @@ function AgentEdit ({navigation}){
      </View>
 
      </ScrollView>
-     <View style={styles.BtnView}> 
-        <TouchableOpacity  style={styles.btnCancel} onPress={() => ProfileUpdate()}  >
-                      <Text  style={styles.btnTextCancel}>CANCEL</Text>      
-                    </TouchableOpacity>
+     <View style={styles.ViewAgentEditbtn}> 
+       
         <TouchableOpacity   style={styles.btnUpdate} onPress={() => ProfileUpdate()}  >
                       <Text  style={styles.btnText} >UPDATE</Text>      
                     </TouchableOpacity>          
