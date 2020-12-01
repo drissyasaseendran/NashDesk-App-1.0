@@ -4,8 +4,10 @@ ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
 import {styles} from '../../styles/tagStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ModelBox from '../../reused/ModelBox'
 function Tags (){
 	const [afterPress , setafterPress] = useState(true)
+	const [visible,setVisible] = useState(true)
 	useEffect(() => {
 	})
 	const pressLong = () =>
@@ -100,6 +102,7 @@ function Tags (){
 			</TouchableOpacity>
 				
 			</View>
+			<ModelBox visible={visible}/>
 		</ScrollView>
 	  );
   
