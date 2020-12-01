@@ -46,7 +46,7 @@ const AnalyticsTab = createStackNavigator({
     screen: Analytics,
     navigationOptions:({navigation}) => {
 
-      return{
+      return {
           headerStyle: {
          
               borderBottomWidth: 0,
@@ -61,7 +61,23 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-
+  AgentEdit:{
+    screen:AgentEdit,
+    navigationOptions:({navigation}) => {
+       
+      return{
+        headerStyle: {
+          
+            borderBottomWidth: 0,
+            backgroundColor: '#0187CA'
+          },
+          headerTintColor: 'white',
+          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+         
+    }
+    }
+   
+  },
     Dashboard: {
       screen: Dashboard,
       navigationOptions:({navigation}) => {

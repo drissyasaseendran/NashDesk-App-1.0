@@ -5,14 +5,53 @@ import {
   View,TextInput,TouchableOpacity,
   ScrollView
 } from 'react-native';
+import DropDown from 'react-native-paper-dropdown';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector } from 'react-redux'
+
+
 function AgentEdit ({navigation}){
    const [groupSelected,setgroupSelected] = useState([])
+   const [showDropDown, setShowDropDown] = useState(false);
+   const [gender, setGender] = useState();
    const [role, setRole] = useState('agent');
-
+   const genderList = [
+      { label: 'Male', value: 'male' },
+      { label: 'Female', value: 'female' },
+      { label: 'Others', value: 'others' },
+    ];
+    const items = [{
+      id: '92iijs7yta',
+      name: 'Ondo'
+    }, {
+      id: 'a0s0a8ssbsd',
+      name: 'Ogun'
+    }, {
+      id: '16hbajsabsd',
+      name: 'Calabar'
+    }, {
+      id: 'nahs75a5sg',
+      name: 'Lagos'
+    }, {
+      id: '667atsas',
+      name: 'Maiduguri'
+    }, {
+      id: 'hsyasajs',
+      name: 'Anambra'
+    }, {
+      id: 'djsjudksjd',
+      name: 'Benue'
+    }, {
+      id: 'sdhyaysdj',
+      name: 'Kaduna'
+    }, {
+      id: 'suudydjsjd',
+      name: 'Abuja'
+      }
+  ];
+   
    const [agentFeilds, setagentFeilds] = useState({
          agt_sett_id:'',
          first_name:'',
@@ -118,22 +157,35 @@ function AgentEdit ({navigation}){
         />
         </View>
         <View style={styles.EditField}> 
-        <SwitchSelector
-            initial={0}
-            onPress={(value) => AgentRole(value)}
-            textColor= '#888'
-            selectedColor='#fff'
-            buttonColor='#0187CA'
-            borderColor='#eef'
-            hasPadding
-            options={[
-               { label: "Admin",      value: "admin",      imageIcon:  <Icon  fontColor='red' name="account-group"/>},
-               { label: "Agent",      value: "agent",      imageIcon:  <Icon fontColor='red' name="account-group"/> },
-               { label: "Supervisor", value: "supervisor", imageIcon:  <Icon fontColor='red' name="account-group"/> }
-            ]}
-            /></View>
+         <SwitchSelector
+               initial={0}
+               onPress={(value) => AgentRole(value)}
+               textColor= '#888'
+               selectedColor='#fff'
+               buttonColor='#0187CA'
+               borderColor='#eef'
+               hasPadding
+               options={[
+                  { label: "Admin",      value: "admin",      imageIcon:  <Icon  fontColor='red' name="account-group"/>},
+                  { label: "Agent",      value: "agent",      imageIcon:  <Icon fontColor='red' name="account-group"/> },
+                  { label: "Supervisor", value: "supervisor", imageIcon:  <Icon fontColor='red' name="account-group"/> }
+               ]}
+               />
+         </View>
         <View style={styles.EditField}>
-            
+         <DropDown
+            //  label={'Gender'}
+            mode={'outlined'}
+            value={gender}
+            setValue={setGender}
+            list={genderList}
+            visible={showDropDown}
+            showDropDown={() => setShowDropDown(true)}
+            onDismiss={() => setShowDropDown(false)}
+            inputProps={{
+               right: <TextInput.Icon name={'menu-down'} />,
+            }}
+         />
         </View>
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Password</Text>
