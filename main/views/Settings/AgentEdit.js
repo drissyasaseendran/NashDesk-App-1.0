@@ -10,6 +10,8 @@ import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector } from 'react-redux'
 function AgentEdit ({navigation}){
+   const [groupSelected,setgroupSelected] = useState([])
+   const [role, setRole] = useState('agent');
    const options = [
         { label: "01:00", value: "1" },
         { label: "01:30", value: "1.5" },
@@ -39,6 +41,36 @@ function AgentEdit ({navigation}){
    const onAgentChange = (text ,stateProp) =>
    {
       setagentFeilds({ ...agentFeilds, [stateProp]: text });
+   }
+   const UpdateAgents = () =>
+   {
+      let data = {
+   
+         "access_token":token,
+         "agt_sett_id":agentFeilds.agt_sett_id,      
+         "fields":{"first_name":agentFeilds.first_name,
+         "last_name":agentFeilds.last_name,
+         "agent_type":role,'image':agentFeilds.image,
+         "group":groupSelected},
+         "request_type":"update"   
+     
+      }
+   
+     axios.post(agentApiPath, data).then((respData) => {
+
+       if(respData.data.status == "success")
+       {
+         setUpdateSuccess(false)
+         props.GoBack()
+       }
+     else
+     {
+       setAlert()
+       setUpdateSuccess(false)
+ 
+     }
+
+     });
    }
 	return (
 	    <View>
@@ -124,10 +156,9 @@ function AgentEdit ({navigation}){
 
      </ScrollView>
      <View style={styles.ViewAgentEditbtn}> 
-       
-        <TouchableOpacity   style={styles.btnUpdate} onPress={() => ProfileUpdate()}  >
-                      <Text  style={styles.btnText} >UPDATE</Text>      
-                    </TouchableOpacity>          
+        <TouchableOpacity  style={styles.btnUpdate} onPress={() => UpdateAgents()}  >
+                  <Text  style={styles.btnText} >UPDATE</Text>      
+         </TouchableOpacity>          
       </View>  
      </View>
 

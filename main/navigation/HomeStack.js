@@ -15,11 +15,8 @@ import CannedResponse from '../views/Settings/cannedResponse'
 import Leader from '../views/LeaderShip'
 import MessageMemo from '../views/MessageMemmo'
 import Category from '../views/Settings/Category'
-import AddGroup from '../views/Settings/AddGroup'
 import AgentEdit from '../views/Settings/AgentEdit'
-import AddCategory from '../views/Settings/AddCategory'
 import GroupView from '../views/Settings/GroupView'
-import AddCannedResponse from '../views/Settings/AddCannedResponse'
 import Analytics from '../views/Analytics'
 import Notification from '../views/Settings/Notification'
 import ProfileUpdate from '../views/ProfileUpdate'
@@ -64,23 +61,7 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-  AgentEdit:{
-    screen:AgentEdit,
-    navigationOptions:({navigation}) => {
-       
-      return{
-        headerStyle: {
-          
-            borderBottomWidth: 0,
-            backgroundColor: '#0187CA'
-          },
-          headerTintColor: 'white',
-          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
-         
-    }
-    }
-   
-  },
+
     Dashboard: {
       screen: Dashboard,
       navigationOptions:({navigation}) => {
@@ -294,23 +275,7 @@ Category:{
   }
 
 },
-AddCategory:{
-  screen:AddCategory,
-  navigationOptions:({navigation}) => {
-     
-    return{
-      headerStyle: {
-     
-          borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
-        },
-        headerTintColor: 'white',
-        // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
 
-  }
-  }
-
-},
 GroupView:{
   screen:GroupView,
   navigationOptions:({navigation}) => {
@@ -326,23 +291,6 @@ GroupView:{
 
   }
   }
-},
-AddGroup:{
-  screen:AddGroup,
-  navigationOptions:({navigation}) => {
-     
-    return{
-      headerStyle: {
-     
-          borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
-        },
-        headerTintColor: 'white',
-        // headerTitle: () => <Header navigation={navigation} title='AddGroup'/>
-     
-  }
-  }
-
 },
 
 CannedResponse:{
@@ -362,24 +310,7 @@ CannedResponse:{
     }
   
 },
-AddCannedResponse:{
-  screen:AddCannedResponse,
-  navigationOptions:({navigation}) => {
-     
-    return{
-      headerStyle: {
- 
-          
-          borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
-        },
-        headerTintColor: 'white',
-        // headerTitle: () => <Header navigation={navigation} title='AddCannedResponse'/>
 
-  }
-  }
-
-},
 });
 
 const Tabs = createBottomTabNavigator({
