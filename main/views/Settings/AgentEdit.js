@@ -12,11 +12,7 @@ import { useSelector } from 'react-redux'
 function AgentEdit ({navigation}){
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
-   const options = [
-        { label: "01:00", value: "1" },
-        { label: "01:30", value: "1.5" },
-        { label: "02:00", value: "2" }
-      ];
+
    const [agentFeilds, setagentFeilds] = useState({
          agt_sett_id:'',
          first_name:'',
@@ -60,17 +56,19 @@ function AgentEdit ({navigation}){
 
        if(respData.data.status == "success")
        {
-         setUpdateSuccess(false)
-         props.GoBack()
+    
        }
      else
      {
-       setAlert()
-       setUpdateSuccess(false)
+       
  
      }
 
      });
+   }
+   const AgentRole = (value) =>
+   {
+      setRole(value)
    }
 	return (
 	    <View>
@@ -122,16 +120,16 @@ function AgentEdit ({navigation}){
         <View style={styles.EditField}> 
         <SwitchSelector
             initial={0}
-            // onPress={value => setState({ gender: value })}
+            onPress={(value) => AgentRole(value)}
             textColor= '#888'
             selectedColor='#fff'
             buttonColor='#0187CA'
             borderColor='#eef'
             hasPadding
             options={[
-                { label: "Admin", value: "f", imageIcon: <Icon  fontColor='red' name="account-group"/>},
-            { label: "Agent", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> },
-            { label: "Supervisor", value: "m", imageIcon:  <Icon fontColor='red' name="account-group"/> }
+               { label: "Admin",      value: "admin",      imageIcon:  <Icon  fontColor='red' name="account-group"/>},
+               { label: "Agent",      value: "agent",      imageIcon:  <Icon fontColor='red' name="account-group"/> },
+               { label: "Supervisor", value: "supervisor", imageIcon:  <Icon fontColor='red' name="account-group"/> }
             ]}
             /></View>
         <View style={styles.EditField}>
