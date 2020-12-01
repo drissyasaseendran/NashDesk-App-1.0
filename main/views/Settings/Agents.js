@@ -83,22 +83,24 @@ function Agents ({navigation}){
 			{
 			Agents && Agents.map((agent) =>
 				{
-					return(<View  style={styles.AgentContentBg}>
+					return(
+					<View  style={styles.AgentContentBg}>
 					<View style={styles.AgentContent}>
 					<View  style={styles.AgentContentInside}>
 						<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
 					</View>
 						<View  style={styles.AgentContentInside}>
 							<Text style={styles.agenttextColor}>{agent.first_name}</Text>
-									<Text style={styles.agenttextColorEmail}>{agent.email_id}</Text>
-					<Text style={styles.agenttextColorEmail}>{agent.agent_type.charAt(0).toUpperCase() +agent.agent_type.slice(1)}</Text>
+							<Text style={styles.agenttextColorEmail}>{agent.email_id}</Text>
+							<Text style={styles.agenttextColorEmail}>{agent.agent_type.charAt(0).toUpperCase() +agent.agent_type.slice(1)}</Text>
 						</View>
 					</View>
 					<View  style={styles.AgentSidebtn}>
 							<Text style={styles.agentEdit} onPress={()=>editAgents(agent)}>Edit</Text>
 							<Text style={styles.agentDelete} onPress={()=>deleteAgents(agent.agt_sett_id)} >Delete</Text>
 					</View>
-					</View>)
+					</View>
+					)
 				})	
 			}
 	

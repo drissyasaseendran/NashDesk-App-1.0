@@ -96,7 +96,34 @@ const styles = StyleSheet.create({
         justifyContent:'center',
        
     },
-             
+    groupcontent:
+    {
+        display:'flex',
+        flexDirection:'column'
+    } , 
+    AgentContent:
+    {
+      
+    
+       display:'flex',
+       flexDirection:'row',
+       
+     
+    },
+    AgentContentInside:
+    {
+      padding:15,
+      fontSize:14,
+      justifyContent:'center'
+    },
+    agenttextColor:
+    {
+        color:'#666',
+        fontSize:14,
+      lineHeight:20,
+      fontWeight:'bold'
+       
+    },
 });
 export {
     styles
