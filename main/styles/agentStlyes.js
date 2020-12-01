@@ -53,9 +53,14 @@ const styles = StyleSheet.create({
     {
        
         backgroundColor:'#fff',
-        shadowOffset:{  width: 2,  height: 1,  },
-        shadowColor: '#ccc',
-        shadowOpacity: 0.25,
+        shadowColor: "#ccc",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.01,
+        shadowRadius: 1.00,
+        elevation: 1,
         borderBottomWidth:1,
         borderBottomColor:'#ccc',
         marginBottom:15
@@ -114,6 +119,7 @@ const styles = StyleSheet.create({
                   {
                     width: windowWidth,
                     height:windowHeight,
+                  
                     display:'flex',
                   flexDirection:'column',
                    backgroundColor: "rgb(242, 242, 242)",

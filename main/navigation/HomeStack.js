@@ -244,6 +244,23 @@ Agents:{
     }
    
 },
+AgentEdit:{
+  screen:AgentEdit,
+  navigationOptions:({navigation}) => {
+     
+    return{
+      headerStyle: {
+        
+          borderBottomWidth: 0,
+          backgroundColor: '#0187CA'
+        },
+        headerTintColor: 'white',
+        // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+       
+  }
+  }
+ 
+},
 Category:{
   screen:Category,
   navigationOptions:({navigation}) => {

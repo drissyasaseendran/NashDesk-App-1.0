@@ -1,9 +1,11 @@
 import { createStore, combineReducers } from "redux";
 import loginReducer from "./login/loginReducer";
 import group from './group/groupReducer'
+import agent from './agents/agentReducer'
 const rootReducer = combineReducers({
   login: loginReducer,
-  group:group
+  group:group,
+  agent:agent
 });
 
 /* Remember to remove redux extension in production.... */

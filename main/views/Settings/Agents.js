@@ -101,7 +101,7 @@ function Agents ({navigation}){
 					</View>)
 				})	
 			}
-		
+	
 		</View>
 				
 			</ScrollView>

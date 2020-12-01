@@ -56,12 +56,11 @@ const styles = StyleSheet.create({
         shadowColor: "#ccc",
         shadowOffset: {
           width: 0,
-          height: 12,
+          height: 1,
         },
-        shadowOpacity: 0.58,
-        shadowRadius: 16.00,
-
-        elevation: 24,
+        shadowOpacity: 0.01,
+        shadowRadius: 1.00,
+        elevation: 1,
         flexDirection:'column',
         justifyContent: 'center',
         alignItems: 'center',

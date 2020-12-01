@@ -68,11 +68,11 @@ const styles = StyleSheet.create({
         shadowColor: "#ccc",
         shadowOffset: {
           width: 0,
-          height: 12,
+          height: 1,
         },
-        shadowOpacity: 0.58,
-        shadowRadius: 16.00,
-        elevation: 24,
+        shadowOpacity: 0.01,
+        shadowRadius: 1.00,
+        elevation: 1,
 
     },
     statusContentinside:
@@ -120,6 +120,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin:5,
         backgroundColor: '#fff',
+        shadowColor: "#ccc",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.01,
+        shadowRadius: 1.00,
+        elevation: 1,
         borderColor:'red',
         borderRadius: 20,
     }
