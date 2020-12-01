@@ -18,19 +18,21 @@ function Tags (){
 	return (
 		<ScrollView>
 	
-			<View style={styles.GroupView}>
+			<View style={styles.tagView}>
 			
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.GroupBlock}>
+			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
 						<View style={styles.View}>
 								
-								<View style={styles.GroupBlockView}>
-									<View><Icon style={styles.GroupBlockIcon} name="tag-outline"/></View>
-									<View style={styles.groupcontent}><Text style={styles.GroupTitle}>dsadsda</Text>
-									<Text style={styles.GroupTitle}>Used in 50 Tickets</Text>
+								<View style={styles.tagBlockView}>
+									<View><Icon style={styles.tagBlockIcon} name="tag-outline"/></View>
+									<View style={styles.tagcontent}>
+									<Text style={styles.tagTitle}>dsadsda</Text>
+									<Text style={styles.tagTitlesub}>Used in 50 Tickets</Text>
+									<Text style={styles.tagTitleHash}>#reused,#refund</Text>
 									</View>	
 								</View>
 							
-								<View  style={styles.GroupBlockAgents}> 
+								<View  style={styles.tagBlockUpdation}> 
 									<View  style={styles.BtnView}> 
 										<TouchableOpacity  style={styles.btnEdit}   >
 											<Text style={styles.textColor}>Edit</Text>

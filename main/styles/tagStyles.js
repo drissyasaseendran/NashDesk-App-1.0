@@ -8,7 +8,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 
-    GroupView:
+    tagView:
     {
       width: windowWidth,
       height:windowHeight,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
 
 
-    GroupBlock:
+    tagBlock:
     {
         backgroundColor:'#fff',
         borderRadius:5,
@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
         justifyContent:'center'
    
     },
-    GroupBlockIcon:
+    tagBlockIcon:
     {
         color:'#0187CA',
         fontSize:28
     },
-    GroupBlockView:
+    tagBlockView:
     {
         flex:1,
         flexDirection:'row',
@@ -46,12 +46,28 @@ const styles = StyleSheet.create({
      
       
     },
-    GroupTitle:
+    tagTitle:
     {
-        fontSize:14,
+        fontSize:16,
         color:'#666',
-        paddingLeft:12
-        // fontWeight:'bold'
+        paddingLeft:12,
+        fontWeight:'bold'
+    },
+    tagTitlesub:
+    {
+        backgroundColor:'#86d8f7',
+        fontSize:12,
+        color:'#fff',
+        padding:4,
+        borderRadius:10,
+        marginLeft:10
+
+    },
+    tagTitleHash:
+    {
+        fontSize:12,
+        color:'#888',
+        marginLeft:10
     },
     textColor:
     {
@@ -70,7 +86,7 @@ const styles = StyleSheet.create({
         // justifyContent:'center',
     
        },
-       GroupBlockAgents:
+       tagBlockUpdation:
        {
            justifyContent:'center',
        },
@@ -96,7 +112,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
        
     },
-    groupcontent:
+    tagcontent:
     {
         display:'flex',
         flexDirection:'column'
