@@ -1,10 +1,12 @@
 import React, { useState ,useEffect} from "react";
 import {
   Image,
+	ScrollView,
   Text,
   View,
 
 } from 'react-native';
+import { useDispatch } from 'react-redux'
 import {styles} from '../../styles/agentStlyes'
 import {agentViewData,agentEditData,agentStatus} from '../../states/agents/agentAction'
 import {agentApiPath,agentdeleteApiPath,groupApiPath} from '../../endpoints'
@@ -13,6 +15,7 @@ import axios from "axios";
 function Agents ({navigation}){
 	const token = getAccessToken()
 	const [Agents,setAgents] = useState([])
+	const dispatch = useDispatch()
 	useEffect(() => {
     
 		fetchAgentdata()
@@ -20,7 +23,7 @@ function Agents ({navigation}){
 			  
 		},[]);
   
-	  const fetchAgentdata = () =>
+	const fetchAgentdata = () =>
 	  {
 		const data = {
 		  access_token: token,
@@ -33,6 +36,7 @@ function Agents ({navigation}){
 		   
 		  let res = respData.data.payload.data
 		  setAgents(res)
+
 		  }
 		  else
 		  {
@@ -40,67 +44,67 @@ function Agents ({navigation}){
 		  }
 		});
 	 
-	   }
+	}
+	const editAgents = (agent) =>
+	{
+		dispatch(agentEditData([agent]))
+		dispatch(agentStatus("Edit"))
+		navigation.navigate('AgentEdit')
+	}
+	const deleteAgents = (id) =>
+	{
+		
+      let data = 
+      {
+        "access_token": token,
+        "agt_sett_id_lst":[id],
+        "request_type":"delete"
+     } 
+  
+     axios.post(agentdeleteApiPath, data).then((respData) => {
 
+      if(respData.data.status == "success")
+      {
+      
+        
+      }
+     
+      else
+      {
+        
+      }
+  
+    });
+	}
 	return (
-			<View>
-			<View style={styles.Agents}>
-				<Text style={styles.agentText}>Agents</Text>
-			</View>
+			<ScrollView >
+			<View style={styles.Content}>
+
 			{
 			Agents && Agents.map((agent) =>
 				{
-			return(<View  style={styles.AgentContentBg}>
-			<View style={styles.AgentContent}>
-			<View  style={styles.AgentContentInside}>
-				<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
-			</View>
-				<View  style={styles.AgentContentInside}>
-					<Text style={styles.agenttextColor}>{agent.first_name}</Text>
-							<Text style={styles.agenttextColorEmail}>{agent.email_id}</Text>
-			<Text style={styles.agenttextColorEmail}>{agent.role}</Text>
-				</View>
-			</View>
-			<View  style={styles.AgentSidebtn}>
-					<Text style={styles.agentEdit}>Edit</Text>
-					<Text style={styles.agentDelete}>Delete</Text>
-			</View>
-			</View>)
+					return(<View  style={styles.AgentContentBg}>
+					<View style={styles.AgentContent}>
+					<View  style={styles.AgentContentInside}>
+						<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
+					</View>
+						<View  style={styles.AgentContentInside}>
+							<Text style={styles.agenttextColor}>{agent.first_name}</Text>
+									<Text style={styles.agenttextColorEmail}>{agent.email_id}</Text>
+					<Text style={styles.agenttextColorEmail}>{agent.agent_type.charAt(0).toUpperCase() +agent.agent_type.slice(1)}</Text>
+						</View>
+					</View>
+					<View  style={styles.AgentSidebtn}>
+							<Text style={styles.agentEdit} onPress={()=>editAgents(agent)}>Edit</Text>
+							<Text style={styles.agentDelete} onPress={()=>deleteAgents(agent.agt_sett_id)} >Delete</Text>
+					</View>
+					</View>)
 				})	
-		}
-			<View  style={styles.AgentContentBg}>
-			<View style={styles.AgentContent}>
-			<View  style={styles.AgentContentInside}>
-				<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
-			</View>
-				<View  style={styles.AgentContentInside}>
-					<Text style={styles.agenttextColor}>Drissya</Text>
-							<Text style={styles.agenttextColorEmail}>drissyasaseendran@gmail.com</Text>
-							<Text style={styles.agenttextColorEmail}>Admin</Text>
-				</View>
-			</View>
-			<View  style={styles.AgentSidebtn}>
-					<Text style={styles.agentEdit}>Edit</Text>
-					<Text style={styles.agentDelete}>Delete</Text>
-			</View>
-			</View>
-			<View  style={styles.AgentContentBg}>
-			<View style={styles.AgentContent}>
-			<View  style={styles.AgentContentInside}>
-				<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
-			</View>
-				<View  style={styles.AgentContentInside}>
-					<Text style={styles.agenttextColor}>Drissya</Text>
-							<Text style={styles.agenttextColorEmail}>drissyasaseendran@gmail.com</Text>
-							<Text style={styles.agenttextColorEmail}>Admin</Text>
-				</View>
-			</View>
-			<View  style={styles.AgentSidebtn}>
-					<Text style={styles.agentEdit}>Edit</Text>
-					<Text style={styles.agentDelete}>Delete</Text>
-			</View>
-			</View>
-			</View>
+			}
+		
+		</View>
+				
+			</ScrollView>
 	  );
   
   }

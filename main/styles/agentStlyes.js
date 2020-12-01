@@ -45,8 +45,13 @@ const styles = StyleSheet.create({
         justifyContent:'flex-end'
         
     },
+    Content:
+    {
+      margin:15
+    },
     AgentContentBg:
     {
+       
         backgroundColor:'#fff',
         shadowOffset:{  width: 2,  height: 1,  },
         shadowColor: '#ccc',
