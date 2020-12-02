@@ -1,5 +1,7 @@
 import React, { useEffect,useRef, useState } from "react";
-import {View,TouchableOpacity,TextInput,Text} from 'react-native';
+import {TextInput,
+ScrollView,View,TouchableOpacity,Text
+} from 'react-native';
 import {styles} from '../../styles/categoryStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
