@@ -161,9 +161,13 @@ const styles = StyleSheet.create({
         textAlign:'center',
         backgroundColor:'#98bc98'
     },
+    inputFeildLabel:
+    {
+        flex:1
+    },  
     categoryLabel:
     {
-        width:400,
+        
         height: 50,
         borderColor: '#ccc',
         color:'#666',
@@ -175,17 +179,14 @@ const styles = StyleSheet.create({
     CategoryInput:
     {
       
-      width:400,
-      height: 50,
-      borderColor: '#ccc',
-      color:'#666',
-      borderWidth: 1,
    
-      paddingLeft:12,
-      backgroundColor:'#F5F5F6',
-      // boxShadow: '0 2px 6px -2px #F5F5F6',
-      borderColor: '#eee',
-      borderWidth: 1,
+        height: 50,
+        borderColor: '#ccc',
+        color:'#666',
+        borderWidth: 1,
+     
+        paddingLeft:12,
+        backgroundColor:'#F5F5F6',
     },
     textlabel:
     {

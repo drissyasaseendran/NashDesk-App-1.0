@@ -14,11 +14,11 @@ function CategoryAdd (){
 
 	return (
         <View>  
-            <View style={styles.center}>  <Text style={styles.clustername} >Cluster Name</Text></View>
-                      
+            <View style={styles.center}> 
+			   <Text style={styles.clustername} >Cluster Name</Text>
+			</View>
             <View style = {styles.inputBtn} >
-           
-                <View >
+                <View  style={styles.inputFeildLabel} >
                     <TextInput style = {styles.categoryLabel}
                     underlineColorAndroid = "transparent"
                     placeholder = "Samples"
@@ -33,11 +33,12 @@ function CategoryAdd (){
                 </View>
           
             </View>
-            <View style={styles.center}> <Text style={styles.clustername} >Samples</Text></View>
-            
+            <View style={styles.center}>
+				 <Text style={styles.clustername} >Samples</Text>
+			</View>
             <View style = {styles.inputBtn} >
           
-                <View >
+                <View  style={styles.inputFeildLabel} >
                     <TextInput style = {styles.CategoryInput}
                     underlineColorAndroid = "transparent"
                     placeholder = "Samples"
