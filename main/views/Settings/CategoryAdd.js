@@ -11,10 +11,13 @@ function CategoryAdd (){
     
 
 	return (
-        <View>
-               <View style = {styles.inputBtn} >
+        <View>  
+            <View style={styles.center}>  <Text style={styles.clustername} >Cluster Name</Text></View>
+                      
+            <View style = {styles.inputBtn} >
+           
                 <View >
-                    <TextInput style = {styles.editProfile}
+                    <TextInput style = {styles.categoryLabel}
                     underlineColorAndroid = "transparent"
                     placeholder = "Samples"
                     name="password"
@@ -22,15 +25,18 @@ function CategoryAdd (){
                     autoCapitalize = "none"
                 
                     />
-                </View>
+                </View >
                 <View style={styles.textSend}> 
-                    <Text style={styles.textlabel} >Send</Text>
+                    <Text style={styles.textlabel} >Save</Text>
                 </View>
           
             </View>
+            <View style={styles.center}> <Text style={styles.clustername} >Samples</Text></View>
+            
             <View style = {styles.inputBtn} >
+          
                 <View >
-                    <TextInput style = {styles.editProfile}
+                    <TextInput style = {styles.CategoryInput}
                     underlineColorAndroid = "transparent"
                     placeholder = "Samples"
                     name="password"
@@ -40,7 +46,7 @@ function CategoryAdd (){
                     />
                 </View>
                 <View style={styles.textSend}> 
-                    <Text style={styles.textlabel} >Send</Text>
+                    <Text style={styles.textlabel} >Save</Text>
                 </View>
           
             </View>

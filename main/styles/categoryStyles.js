@@ -161,12 +161,23 @@ const styles = StyleSheet.create({
         textAlign:'center',
         backgroundColor:'#98bc98'
     },
-    editProfile:
+    categoryLabel:
+    {
+        width:400,
+        height: 50,
+        borderColor: '#ccc',
+        color:'#666',
+        borderWidth: 1,
+     
+        paddingLeft:12,
+        backgroundColor:'#F5F5F6',
+    },
+    CategoryInput:
     {
       
       width:400,
       height: 50,
-      borderColor: '#7a42f4',
+      borderColor: '#ccc',
       color:'#666',
       borderWidth: 1,
    
@@ -183,7 +194,19 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         textAlign:'center',
     },
+    clustername:
+    {
+      
+        fontSize:15,
+        fontWeight:'bold',
+        color:'#888',
+    },
+    center:{
+         height:50,
 
+        //  alignItems:'center',
+         justifyContent:'center',
+    },
     btnText:
     {
         textAlign:'center',
