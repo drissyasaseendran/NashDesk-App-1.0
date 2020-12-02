@@ -140,6 +140,67 @@ const styles = StyleSheet.create({
       fontWeight:'bold'
        
     },
+    editProfile:
+    {
+    //   margin: 15,
+    margin:15,
+      height: 50,
+      borderColor: '#7a42f4',
+      color:'#666',
+      borderWidth: 1,
+      paddingLeft:12,
+      backgroundColor:'#F5F5F6',
+      // boxShadow: '0 2px 6px -2px #F5F5F6',
+      borderColor: '#eee',
+      borderWidth: 1,
+    },
+    btnText:
+    {
+        textAlign:'center',
+        alignContent:'center',
+        justifyContent:'center',
+        color:'#fff'
+    },
+    btnUpdate:
+    {
+        fontWeight: 'bold' ,
+        borderWidth:1,
+        borderWidth:1,
+        margin:15,
+        width: 350,
+        height: 45,
+        borderRadius:10,
+        backgroundColor:'#000',
+        borderColor:'#000',
+        color:'#fff',
+        textAlign:'center',
+        bottom: 0,
+        textAlign:'center',
+        alignContent:'center',
+        justifyContent:'center',
+
+    },
+    modlView:
+    {
+         display:'flex',
+         flexDirection:'row',
+         position: 'absolute',
+         backgroundColor:'#fff',
+         bottom: 0,
+         paddingTop:15,
+         justifyContent:'center',
+         width: windowWidth,
+         height:80,
+         zIndex: 100,
+       },
+       EditFeild:
+       {
+       
+			backgroundColor: 'white',
+			padding: 15,
+			height: 500,
+		  
+       }
 });
 export {
     styles

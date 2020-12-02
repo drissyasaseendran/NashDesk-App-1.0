@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
-import {
+import React, { useEffect,useRef, useState } from "react";
+import {TextInput,
 ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
 import {styles} from '../../styles/tagStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ModelBox from '../../reused/ModelBox'
+import BottomSheet from 'reanimated-bottom-sheet';
 function Tags (){
 	const [afterPress , setafterPress] = useState(true)
 	const [visible,setVisible] = useState(true)
+	const [tagFeild,settagFeild] = useState({
+		tag: "", })
+	const sheetRef = useRef(null)
 	useEffect(() => {
 	})
 	const pressLong = () =>
@@ -16,9 +20,32 @@ function Tags (){
 		setafterPress(false)
 		
 	}
-  
+    const renderContent = () => (
+		<View style={styles.EditFeild}>
+				<TextInput style = {styles.editProfile}
+					underlineColorAndroid = "transparent"
+					placeholder = "Code"
+					placeholderTextColor = "#666"
+					name="tag"
+					value={tagFeild.tag}
+					autoCapitalize = "none"
+					onChangeText={(text)=>onTagChange(text, 'tag')} 
+				/>
+				<TouchableOpacity   style={styles.btnUpdate} onPress={() => ProfileUpdate()}  >
+						<Text  style={styles.btnText} >UPDATE</Text>      
+				</TouchableOpacity>  
+		</View>
+	  );
+	  const onTagChange = (text ,stateProp) =>
+      {
+		settagFeild({ ...tagFeild, [stateProp]: text });
+        
+	 }
+	 const EditPress = () =>
+	 {
+		sheetRef.current.snapTo(1)
+	 }
 	return (
-		<ScrollView>
 	
 			<View style={styles.tagView}>
 			
@@ -36,7 +63,7 @@ function Tags (){
 							
 								<View  style={styles.tagBlockUpdation}> 
 									<View  style={styles.BtnView}> 
-										<TouchableOpacity  style={styles.btnEdit}   >
+										<TouchableOpacity onPress={EditPress}  style={styles.btnEdit}   >
 											<Text style={styles.textColor}>Edit</Text>
 										</TouchableOpacity>
 										<TouchableOpacity   style={styles.btnDelete} >
@@ -62,7 +89,7 @@ function Tags (){
 							
 								<View  style={styles.tagBlockUpdation}> 
 									<View  style={styles.BtnView}> 
-										<TouchableOpacity  style={styles.btnEdit}   >
+										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
 											<Text style={styles.textColor}>Edit</Text>
 										</TouchableOpacity>
 										<TouchableOpacity   style={styles.btnDelete} >
@@ -88,7 +115,7 @@ function Tags (){
 							
 								<View  style={styles.tagBlockUpdation}> 
 									<View  style={styles.BtnView}> 
-										<TouchableOpacity  style={styles.btnEdit}   >
+										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
 											<Text style={styles.textColor}>Edit</Text>
 										</TouchableOpacity>
 										<TouchableOpacity   style={styles.btnDelete} >
@@ -100,10 +127,15 @@ function Tags (){
 							
 						</View>
 			</TouchableOpacity>
-				
+			<BottomSheet
+        ref={sheetRef}
+        snapPoints={[500, 300, 0]}
+        borderRadius={10}
+        renderContent={renderContent}
+      />
 			</View>
-			<ModelBox visible={visible}/>
-		</ScrollView>
+	
+	
 	  );
   
   }
