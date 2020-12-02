@@ -24,7 +24,7 @@ const windowHeight = Dimensions.get('window').height;
 import { useDispatch, useSelector } from "react-redux";
 function CannedResponse ({navigation}){
 	const [content, setData] = useState([]);
-	const Tags = useSelector(state => state.Tags.Tags)
+	// const Tags = useSelector(state => state.Tags.Tags)
 	// const content = useSelector(state => state.data);
 	// let windowSize = Dimensions.get('window')
 	const dispatch = useDispatch(); //this hook gives us dispatch method
