@@ -2,107 +2,39 @@ import React, { useEffect,useRef, useState } from "react";
 import {TextInput,
 ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
-import {styles} from '../../styles/tagStyles'
+import {styles} from '../../styles/categoryStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import ModelBox from '../../reused/ModelBox'
-import BottomSheet from 'reanimated-bottom-sheet';
-function CannedResponseAdd (){
-	const [afterPress , setafterPress] = useState(true)
-	const [visible,setVisible] = useState(true)
-	const [tagFeild,settagFeild] = useState({
-		tag: "", })
-	const sheetRef = useRef(null)
-	useEffect(() => {
-	})
-	const pressLong = () =>
-	{
-	
-		setafterPress(false)
-		
-	}
 
-	  const onTagChange = (text ,stateProp) =>
-      {
-		settagFeild({ ...tagFeild, [stateProp]: text });
-        
-	 }
-	 const EditPress = () =>
-	 {
-		sheetRef.current.snapTo(1)
-	 }
+function CannedResponseAdd (){
+    const EditPress = () =>
+    {
+
+    }
+    
+
 	return (
-	
-			<View style={styles.tagView}>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
-						<View style={styles.View}>
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="reply-all-outline" /></View>
-									<View style={styles.tagcontent}>
-										<Text style={styles.tagTitle}>dsadsda</Text>
-									
-									</View>	
-								</View>
-								<View  style={styles.tagBlockUpdation}> 
-									<View  style={styles.BtnView}> 
-										<TouchableOpacity onPress={EditPress}  style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
-										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
-										</TouchableOpacity>          
-									</View>
-								</View>
-						</View>
-			</TouchableOpacity>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
-						<View style={styles.View}>
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="reply-all-outline"/></View>
-									<View style={styles.tagcontent}>
-										<Text style={styles.tagTitle}>dsadsda</Text>
-									
-										<Text style={styles.tagTitleHash}>Size:50</Text>
-									</View>	
-								</View>
-								<View  style={styles.tagBlockUpdation}> 
-									<View  style={styles.BtnView}> 
-										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
-										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
-										</TouchableOpacity>          
-									</View>
-								</View>
-						</View>
-			</TouchableOpacity>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
-						<View style={styles.View}>
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="reply-all-outline"/></View>
-									<View style={styles.tagcontent}>
-										<Text style={styles.tagTitle}>dsadsda</Text>
-									
-									</View>	
-								</View>
-							
-								<View  style={styles.tagBlockUpdation}> 
-									<View  style={styles.BtnView}> 
-										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
-										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
-										</TouchableOpacity>          
-									</View>
-								</View>
-							
-						</View>
-			</TouchableOpacity>
-	
+        <View>  
+            <View style={styles.center}> 
+			   <Text style={styles.clustername} >CannedResponse Name</Text>
 			</View>
+            <View style = {styles.inputBtn} >
+                <View  style={styles.inputFeildLabel} >
+                    <TextInput style = {styles.categoryLabel}
+                    underlineColorAndroid = "transparent"
+                    placeholder = "Samples"
+                    name="password"
+                    placeholderTextColor = "#666"
+                    autoCapitalize = "none"
+                
+                    />
+                </View >
+          
+            </View>
+       
+        
+
 	
-	
+            </View>
 	  );
   
   }

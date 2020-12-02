@@ -8,7 +8,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 
-    tagView:
+   cannedView:
     {
       width: windowWidth,
       height:windowHeight,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
 
 
-    tagBlock:
+   cannedBlock:
     {
         backgroundColor:'#fff',
         borderRadius:5,
@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
         justifyContent:'center'
    
     },
-    tagBlockIcon:
+   cannedBlockIcon:
     {
         color:'#0187CA',
         fontSize:28
     },
-    tagBlockView:
+   cannedBlockView:
     {
         flex:1,
         flexDirection:'row',
@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
      
       
     },
-    tagTitle:
+   cannedTitle:
     {
         fontSize:16,
         color:'#666',
         paddingLeft:12,
         fontWeight:'bold'
     },
-    tagTitlesub:
+   cannedTitlesub:
     {
         backgroundColor:'#86d8f7',
         fontSize:12,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         marginLeft:10
 
     },
-    tagTitleHash:
+   cannedTitleHash:
     {
         fontSize:12,
         color:'#888',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         // justifyContent:'center',
     
        },
-       tagBlockUpdation:
+      cannedBlockUpdation:
        {
            justifyContent:'center',
        },
@@ -112,95 +112,91 @@ const styles = StyleSheet.create({
         justifyContent:'center',
        
     },
-    tagcontent:
+   cannedcontent:
     {
         display:'flex',
         flexDirection:'column'
     } , 
-    AgentContent:
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    inputFeildLabel:
+    {
+        flex:1
+    },  
+    categoryLabel:
+    {
+        
+        height: 50,
+        borderColor: '#ccc',
+        color:'#666',
+        borderWidth: 1,
+     
+        paddingLeft:12,
+        backgroundColor:'#F5F5F6',
+    },
+    CategoryInput:
     {
       
-    
-       display:'flex',
-       flexDirection:'row',
-       
-     
-    },
-    AgentContentInside:
-    {
-      padding:15,
-      fontSize:14,
-      justifyContent:'center'
-    },
-    agenttextColor:
-    {
+   
+        height: 50,
+        borderColor: '#ccc',
         color:'#666',
-        fontSize:14,
-      lineHeight:20,
-      fontWeight:'bold'
-       
+        borderWidth: 1,
+     
+        paddingLeft:12,
+        backgroundColor:'#F5F5F6',
     },
-    editProfile:
+    textlabel:
     {
-    //   margin: 15,
-    margin:15,
-      height: 50,
-      borderColor: '#7a42f4',
-      color:'#666',
-      borderWidth: 1,
-      paddingLeft:12,
-      backgroundColor:'#F5F5F6',
-      // boxShadow: '0 2px 6px -2px #F5F5F6',
-      borderColor: '#eee',
-      borderWidth: 1,
-    },
-    btnText:
-    {
-        textAlign:'center',
-        alignContent:'center',
-        justifyContent:'center',
-        color:'#fff'
-    },
-    btnUpdate:
-    {
-        fontWeight: 'bold' ,
-        borderWidth:1,
-        borderWidth:1,
-        margin:15,
-        width: 350,
-        height: 45,
-        borderRadius:10,
-        backgroundColor:'#000',
-        borderColor:'#000',
         color:'#fff',
-        textAlign:'center',
-        bottom: 0,
-        textAlign:'center',
-        alignContent:'center',
+        alignItems:'center',
         justifyContent:'center',
-
+        textAlign:'center',
     },
-    modlView:
+    clustername:
     {
-         display:'flex',
-         flexDirection:'row',
-         position: 'absolute',
-         backgroundColor:'#fff',
-         bottom: 0,
-         paddingTop:15,
+      
+        fontSize:15,
+        fontWeight:'bold',
+        color:'#888',
+    },
+    center:{
+         height:50,
+
+        //  alignItems:'center',
          justifyContent:'center',
-         width: windowWidth,
-         height:80,
-         zIndex: 100,
-       },
-       EditFeild:
-       {
-       
-			backgroundColor: 'white',
-			padding: 15,
-			height: 500,
-		  
-       }
+    },
+
+ 
 });
 export {
     styles
