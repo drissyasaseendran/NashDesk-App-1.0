@@ -11,7 +11,7 @@ import Groups from  '../views/Settings/Groups'
 import Agents from  '../views/Settings/Agents'
 import Tags from  '../views/Settings/Tags'
 import Header from './HeaderMenu'
-import CannedResponse from '../views/Settings/cannedResponse'
+import CannedResponse from '../views/Settings/CannedResponse'
 import Leader from '../views/LeaderShip'
 import MessageMemo from '../views/MessageMemmo'
 import Category from '../views/Settings/Category'
@@ -21,6 +21,9 @@ import Analytics from '../views/Analytics'
 import Notification from '../views/Settings/Notification'
 import ProfileUpdate from '../views/ProfileUpdate'
 import ProfileAbout from '../views/ProfileAbout'
+import CategoryAdd from '../views/Settings/CategoryAdd'
+import CannedResponseAdd from '../views/Settings/CannedResponseAdd'
+
 const NotificationTab = createStackNavigator({
 
   Notification: {
@@ -275,7 +278,40 @@ Category:{
   }
 
 },
+CategoryAdd:{
+  screen:CategoryAdd,
+  navigationOptions:({navigation}) => {
+     
+    return{
+      headerStyle: {
+    
+          borderBottomWidth: 0,
+          backgroundColor: '#0187CA'
+        },
+        headerTintColor: 'white',
+        // headerTitle: () => <Header navigation={navigation} title='Category'/>
+     
+  }
+  }
 
+},
+CannedResponseAdd:
+{
+  screen:CannedResponseAdd,
+  navigationOptions:({navigation}) => {
+     
+    return{
+      headerStyle: {
+    
+          borderBottomWidth: 0,
+          backgroundColor: '#0187CA'
+        },
+        headerTintColor: 'white',
+        // headerTitle: () => <Header navigation={navigation} title='Category'/>
+     
+  }
+  }
+},
 GroupView:{
   screen:GroupView,
   navigationOptions:({navigation}) => {

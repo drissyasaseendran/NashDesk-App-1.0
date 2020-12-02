@@ -8,7 +8,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 
-    tagView:
+    categoryView:
     {
       width: windowWidth,
       height:windowHeight,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
 
 
-    tagBlock:
+    categoryBlock:
     {
         backgroundColor:'#fff',
         borderRadius:5,
@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
         justifyContent:'center'
    
     },
-    tagBlockIcon:
+    categoryBlockIcon:
     {
         color:'#0187CA',
         fontSize:28
     },
-    tagBlockView:
+    categoryBlockView:
     {
         flex:1,
         flexDirection:'row',
@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
      
       
     },
-    tagTitle:
+    categoryTitle:
     {
         fontSize:16,
         color:'#666',
         paddingLeft:12,
         fontWeight:'bold'
     },
-    tagTitlesub:
+    categoryTitlesub:
     {
         backgroundColor:'#86d8f7',
         fontSize:12,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         marginLeft:10
 
     },
-    tagTitleHash:
+    categoryTitleHash:
     {
         fontSize:12,
         color:'#888',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         // justifyContent:'center',
     
        },
-       tagBlockUpdation:
+       categoryBlockUpdation:
        {
            justifyContent:'center',
        },
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
        
     },
-    tagcontent:
+    categorycontent:
     {
         display:'flex',
         flexDirection:'column'

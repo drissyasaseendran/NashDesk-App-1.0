@@ -7,7 +7,7 @@ import Groups from  '../views/Settings/Groups'
 import Agents from  '../views/Settings/Agents'
 import Tags from  '../views/Settings/Tags'
 import Header from './HeaderMenu'
-import CannedResponse from '../views/Settings/cannedResponse'
+import CannedResponse from '../views/Settings/CannedResponse'
 import GoBack from '../views/GoBack'
 
 const SettingStack = createStackNavigator(

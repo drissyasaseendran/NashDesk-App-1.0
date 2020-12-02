@@ -3,10 +3,10 @@ import {TextInput,
 ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
 import {styles} from '../../styles/tagStyles'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Fontisto';
 import ModelBox from '../../reused/ModelBox'
 import BottomSheet from 'reanimated-bottom-sheet';
-function Tags (){
+function CategoryAdd (){
 	const [afterPress , setafterPress] = useState(true)
 	const [visible,setVisible] = useState(true)
 	const [tagFeild,settagFeild] = useState({
@@ -38,10 +38,11 @@ function Tags (){
 						<View style={styles.View}>
 								
 								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="reply-all-outline" /></View>
+									<View><Icon style={styles.tagBlockIcon} name="nav-icon-grid-a"/></View>
 									<View style={styles.tagcontent}>
 										<Text style={styles.tagTitle}>dsadsda</Text>
 									
+										<Text style={styles.tagTitleHash}>Size:50</Text>
 									</View>	
 								</View>
 							
@@ -63,7 +64,7 @@ function Tags (){
 						<View style={styles.View}>
 								
 								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="reply-all-outline"/></View>
+									<View><Icon style={styles.tagBlockIcon} name="nav-icon-grid-a"/></View>
 									<View style={styles.tagcontent}>
 										<Text style={styles.tagTitle}>dsadsda</Text>
 									
@@ -88,10 +89,11 @@ function Tags (){
 						<View style={styles.View}>
 								
 								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="reply-all-outline"/></View>
+									<View><Icon style={styles.tagBlockIcon} name="nav-icon-grid-a"/></View>
 									<View style={styles.tagcontent}>
 										<Text style={styles.tagTitle}>dsadsda</Text>
 									
+										<Text style={styles.tagTitleHash}>Size:50</Text>
 									</View>	
 								</View>
 							
@@ -118,5 +120,5 @@ function Tags (){
   }
   
  
-  export default Tags;
+  export default CategoryAdd;
   
