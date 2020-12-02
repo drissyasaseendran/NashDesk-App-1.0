@@ -1,219 +1,207 @@
 import {
     StyleSheet
 } from 'react-native';
-
+import { Dimensions } from 'react-native';
+import { color } from 'react-native-reanimated';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
 
-    input: {
-
-        borderRadius: 20,
-        paddingLeft: 15,
-        width: "2",
-        width: 342,
-        height: 43,
-        margin: 12,
-        borderWidth: 1,
-        borderColor: '#13636485',
-
-    },
-
-    image: {
-        width: 107,
-        height: 165,
-
-    },
-
-    loginScreenButton: {
-        width: 340,
-        height: 40,
-        marginRight: 40,
-        marginLeft: 40,
-        marginTop: 10,
-        paddingTop: 10,
-        backgroundColor: '#136364',
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: '#fff'
-    },
-    loginText: {
-        color: '#fff',
-        textAlign: 'center',
-        paddingLeft: 10,
-        paddingRight: 10
-    },
-    login: {
-        color: '#136364'
-    },
-
-
-    titleContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1
-    },
-    title: {
-        fontSize: 20
-    },
-    //-------------------
-    // NAV STYLESSSS
-    //-------------------
-    NavView: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    NavDirection: {
-        flexDirection: 'row',
-        height: 80
-    },
-    NavCoulmn: {
-        flexDirection: 'column',
-        padding: 12,
-        paddingTop: 20,
-        height: 40,
-        width: 40,
-    },
-    NavMenuImage: {
-        height: 30,
-        width: 30
-    },
-    NavLogoImage: {
-       
-    },
-    NavLogoView: {
-        flexDirection: 'column',
-        padding: 12,
-        height: 40,
-        width: 40,
-    },
-    NavIconsRight: {
-
-        width: 100,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        textAlign: "right",
-
-
-    },
-    NavViewRight: {
-        flexDirection: 'row'
-    },
-  
-    //SPARKLINE
-    SparkboxSimple: {
-        backgroundColor: '#fff',
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#13636485',
-        padding: 20,
-        margin: 30,
-        paddingTop: 15,
-    },
-    Sparktext: {
-        fontSize: 16,
-        backgroundColor: '#fff',
-        padding: 10,
-        margin: 20,
-    },
-    //Memo text
-
-
-    //
-    agentsContainer:
+    tagView:
     {
-        width: 400,
-        backgroundColor: '#fff',
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#13636485',
-        fontSize: 16,
-        padding: 20,
-        margin: 10,
+      width: windowWidth,
+      height:windowHeight,
+
     },
-    agentsText:{
+
+
+    tagBlock:
+    {
+        backgroundColor:'#fff',
+        borderRadius:5,
+        marginTop:2,
+        
+        padding:15,
+ 
+     
+    },
+    View:
+    {
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center'
    
-       
-        fontSize: 16,
-        padding: 10,
-       
     },
-    agentsearch:
+    tagBlockIcon:
+    {
+        color:'#0187CA',
+        fontSize:28
+    },
+    tagBlockView:
     {
         flex:1,
-        padding: 10,
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#13636485',
-    },
-    //Settings 
-    Settingscontainer:
-    {
-        // backgroundColor: '#fcfcf0',
-        flexDirection:'row'
-    },
-
-    SettingsText:{
-        paddingLeft:2,
-        alignSelf:'center',
-        textAlign: 'center', // <-- the magic
-        fontWeight: 'bold',
-        fontSize: 14,
-       
-    },
-    //Agents
-    agentsview:
-    {
-        padding:20,
-       
-    },
-    agentColumn:
-    {
-        height: 40,
-    },
-    agentheading:
-    {
-        padding:2,
-        alignSelf:'center',
-        textAlign: 'center', // <-- the magic
-        fontWeight: 'bold',
-        fontSize: 14,
-       
-    },
-    agentlist:{
-        padding:2,
-        alignSelf:'center',
-        textAlign: 'center', // <-- the magic
+        flexDirection:'row',
+        alignItems:'center'
      
-        fontSize: 12,
+      
+    },
+    tagTitle:
+    {
+        fontSize:16,
+        color:'#666',
+        paddingLeft:12,
+        fontWeight:'bold'
+    },
+    tagTitlesub:
+    {
+        backgroundColor:'#86d8f7',
+        fontSize:12,
+        color:'#fff',
+        padding:4,
+        borderRadius:5,
+        marginLeft:10
+
+    },
+    tagTitleHash:
+    {
+        fontSize:12,
+        color:'#888',
+        marginLeft:10
+    },
+    textColor:
+    {
+        color:'#fff'
+    },
+    BtnView:
+    {
+        display:'flex',
+        flexDirection:'row',
+        // position: 'absolute',
+        // width: 50,
+        // height: 50,
+        // backgroundColor:'#fff',
+        bottom: 0,
+        // paddingTop:15,
+        // justifyContent:'center',
+    
+       },
+       tagBlockUpdation:
+       {
+           justifyContent:'center',
+       },
+       btnEdit:
+       {
+        backgroundColor:'#98bc98',
+        width:50,
+        paddingTop:5,
+        paddingBottom:5,
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:5,
+        marginRight:15
+       },
+       btnDelete:
+       {
+        backgroundColor:'#ff6961',
+        width:50,
+        paddingTop:5,
+        paddingBottom:5,
+        borderRadius:5,
+        alignItems:'center',
+        justifyContent:'center',
        
     },
-    // Canned Respoonse
-    card:{
-        borderRadius:6,
-        elevation:3,
-        backgroundColor:'#fff',
-        shadowOffset:{width:1,height:1},
-        shadowColor:'#333',
-        shadowOpacity:0.3,
-        shadowRadius:2,
-        marginHorizontal:4,
-        marginVertical:6,
+    tagcontent:
+    {
+        display:'flex',
+        flexDirection:'column'
+    } , 
+    AgentContent:
+    {
+      
+    
+       display:'flex',
+       flexDirection:'row',
+       
+     
+    },
+    AgentContentInside:
+    {
+      padding:15,
+      fontSize:14,
+      justifyContent:'center'
+    },
+    agenttextColor:
+    {
+        color:'#666',
+        fontSize:14,
+      lineHeight:20,
+      fontWeight:'bold'
+       
+    },
+    editProfile:
+    {
+    //   margin: 15,
+    margin:15,
+      height: 50,
+      borderColor: '#7a42f4',
+      color:'#666',
+      borderWidth: 1,
+      paddingLeft:12,
+      backgroundColor:'#F5F5F6',
+      // boxShadow: '0 2px 6px -2px #F5F5F6',
+      borderColor: '#eee',
+      borderWidth: 1,
+    },
+    btnText:
+    {
+        textAlign:'center',
+        alignContent:'center',
+        justifyContent:'center',
+        color:'#fff'
+    },
+    btnUpdate:
+    {
+        fontWeight: 'bold' ,
+        borderWidth:1,
+        borderWidth:1,
+        margin:15,
+        width: 350,
+        height: 45,
+        borderRadius:10,
+        backgroundColor:'#000',
+        borderColor:'#000',
+        color:'#fff',
+        textAlign:'center',
+        bottom: 0,
+        textAlign:'center',
+        alignContent:'center',
+        justifyContent:'center',
 
     },
-    cardContent:{
-        marginHorizontal:30,
-        marginVertical:20,
-    }
-   
+    modlView:
+    {
+         display:'flex',
+         flexDirection:'row',
+         position: 'absolute',
+         backgroundColor:'#fff',
+         bottom: 0,
+         paddingTop:15,
+         justifyContent:'center',
+         width: windowWidth,
+         height:80,
+         zIndex: 100,
+       },
+       EditFeild:
+       {
+       
+			backgroundColor: 'white',
+			padding: 15,
+			height: 500,
+		  
+       }
 });
-
 export {
     styles
 }
