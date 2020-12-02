@@ -4,19 +4,17 @@ ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
 import {styles} from '../../styles/categoryStyles'
 import Icon from 'react-native-vector-icons/Fontisto';
-import ModelBox from '../../reused/ModelBox'
-import BottomSheet from 'reanimated-bottom-sheet';
-function Category (){
+
+function Category ({navigation}){
 
 	 const EditPress = () =>
 	 {
-		
+		navigation.navigate('CategoryAdd')
 	 }
 	return (
 	
 			<View style={styles.categoryView}>
-			
-			<TouchableOpacity      style={styles.categoryBlock}>
+			<TouchableOpacity style={styles.categoryBlock}>
 						<View style={styles.View}>
 								
 								<View style={styles.categoryBlockView}>
@@ -40,7 +38,7 @@ function Category (){
 								</View>
 						</View>
 			</TouchableOpacity>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.categoryBlock}>
+			<TouchableOpacity    style={styles.categoryBlock}>
 						<View style={styles.View}>
 								
 								<View style={styles.categoryBlockView}>
@@ -64,7 +62,7 @@ function Category (){
 								
 						</View>
 			</TouchableOpacity>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.categoryBlock}>
+			<TouchableOpacity    style={styles.categoryBlock}>
 						<View style={styles.View}>
 								<View style={styles.categoryBlockView}>
 									<View><Icon style={styles.categoryBlockIcon} name="nav-icon-grid-a"/></View>

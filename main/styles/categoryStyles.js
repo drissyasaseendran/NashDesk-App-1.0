@@ -14,8 +14,16 @@ const styles = StyleSheet.create({
       height:windowHeight,
 
     },
-
-
+    categorytrashIcon:
+    {
+        fontSize:14,
+        color:'red'
+    },
+    text:
+    {
+        fontSize:14,
+        color:'#888'
+    },
     categoryBlock:
     {
         backgroundColor:'#fff',
@@ -140,20 +148,42 @@ const styles = StyleSheet.create({
       fontWeight:'bold'
        
     },
+    inputBtn:
+    {
+        display:'flex',
+        flexDirection:'row'
+    },
+    textSend:
+    {
+        width:50,
+        alignItems:'center',
+        justifyContent:'center',
+        textAlign:'center',
+        backgroundColor:'#98bc98'
+    },
     editProfile:
     {
-    //   margin: 15,
-    margin:15,
+      
+      width:400,
       height: 50,
       borderColor: '#7a42f4',
       color:'#666',
       borderWidth: 1,
+   
       paddingLeft:12,
       backgroundColor:'#F5F5F6',
       // boxShadow: '0 2px 6px -2px #F5F5F6',
       borderColor: '#eee',
       borderWidth: 1,
     },
+    textlabel:
+    {
+        color:'#fff',
+        alignItems:'center',
+        justifyContent:'center',
+        textAlign:'center',
+    },
+
     btnText:
     {
         textAlign:'center',

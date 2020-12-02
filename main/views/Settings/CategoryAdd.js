@@ -1,58 +1,63 @@
 import React, { useEffect,useRef, useState } from "react";
-import {TextInput,
-ScrollView,View,TouchableOpacity,Text
-} from 'react-native';
-import {styles} from '../../styles/tagStyles'
-import Icon from 'react-native-vector-icons/Fontisto';
-import ModelBox from '../../reused/ModelBox'
-import BottomSheet from 'reanimated-bottom-sheet';
-function CategoryAdd (){
-	const [afterPress , setafterPress] = useState(true)
-	const [visible,setVisible] = useState(true)
-	const [tagFeild,settagFeild] = useState({
-		tag: "", })
-	const sheetRef = useRef(null)
-	useEffect(() => {
-	})
-	const pressLong = () =>
-	{
-	
-		setafterPress(false)
-		
-	}
+import {View,TouchableOpacity,TextInput,Text} from 'react-native';
+import {styles} from '../../styles/categoryStyles'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-	  const onTagChange = (text ,stateProp) =>
-      {
-		settagFeild({ ...tagFeild, [stateProp]: text });
-        
-	 }
-	 const EditPress = () =>
-	 {
-		sheetRef.current.snapTo(1)
-	 }
+function CategoryAdd (){
+    const EditPress = () =>
+    {
+
+    }
+    
+
 	return (
-	
-			<View style={styles.tagView}>
+        <View>
+               <View style = {styles.inputBtn} >
+                <View >
+                    <TextInput style = {styles.editProfile}
+                    underlineColorAndroid = "transparent"
+                    placeholder = "Samples"
+                    name="password"
+                    placeholderTextColor = "#666"
+                    autoCapitalize = "none"
+                
+                    />
+                </View>
+                <View style={styles.textSend}> 
+                    <Text style={styles.textlabel} >Send</Text>
+                </View>
+          
+            </View>
+            <View style = {styles.inputBtn} >
+                <View >
+                    <TextInput style = {styles.editProfile}
+                    underlineColorAndroid = "transparent"
+                    placeholder = "Samples"
+                    name="password"
+                    placeholderTextColor = "#666"
+                    autoCapitalize = "none"
+                
+                    />
+                </View>
+                <View style={styles.textSend}> 
+                    <Text style={styles.textlabel} >Send</Text>
+                </View>
+          
+            </View>
+
+			<View style={styles.categoryView}>
 			
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
+			<TouchableOpacity    style={styles.categoryBlock}>
 						<View style={styles.View}>
-								
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="nav-icon-grid-a"/></View>
-									<View style={styles.tagcontent}>
-										<Text style={styles.tagTitle}>dsadsda</Text>
-									
-										<Text style={styles.tagTitleHash}>Size:50</Text>
-									</View>	
+								<View style={styles.categoryBlockView}>
+									<Text style={styles.text}>dsadsda</Text>
 								</View>
-							
-								<View  style={styles.tagBlockUpdation}> 
+								<View  style={styles.categoryBlockUpdation}> 
 									<View  style={styles.BtnView}> 
-										<TouchableOpacity onPress={EditPress}  style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
-										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+									
+										<TouchableOpacity   >
+                                        <Icon style={styles.categorytrashIcon} name="trash-can-outline"/>
+									
 										</TouchableOpacity>          
 									</View>
 								</View>
@@ -60,24 +65,18 @@ function CategoryAdd (){
 							
 						</View>
 			</TouchableOpacity>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
+         
+			<TouchableOpacity    style={styles.categoryBlock}>
 						<View style={styles.View}>
-								
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="nav-icon-grid-a"/></View>
-									<View style={styles.tagcontent}>
-										<Text style={styles.tagTitle}>dsadsda</Text>
-									
-										<Text style={styles.tagTitleHash}>Size:50</Text>
-									</View>	
+								<View style={styles.categoryBlockView}>
+									<Text style={styles.text}>dsadsda</Text>
 								</View>
-								<View  style={styles.tagBlockUpdation}> 
+								<View  style={styles.categoryBlockUpdation}> 
 									<View  style={styles.BtnView}> 
-										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
-										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+									
+										<TouchableOpacity   >
+                                        <Icon style={styles.categorytrashIcon} name="trash-can-outline"/>
+									
 										</TouchableOpacity>          
 									</View>
 								</View>
@@ -85,25 +84,18 @@ function CategoryAdd (){
 							
 						</View>
 			</TouchableOpacity>
-			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
+       
+			<TouchableOpacity    style={styles.categoryBlock}>
 						<View style={styles.View}>
-								
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="nav-icon-grid-a"/></View>
-									<View style={styles.tagcontent}>
-										<Text style={styles.tagTitle}>dsadsda</Text>
-									
-										<Text style={styles.tagTitleHash}>Size:50</Text>
-									</View>	
+								<View style={styles.categoryBlockView}>
+									<Text style={styles.text}>dsadsda</Text>
 								</View>
-							
-								<View  style={styles.tagBlockUpdation}> 
+								<View  style={styles.categoryBlockUpdation}> 
 									<View  style={styles.BtnView}> 
-										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
-										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+									
+										<TouchableOpacity   >
+                                        <Icon style={styles.categorytrashIcon} name="trash-can-outline"/>
+									
 										</TouchableOpacity>          
 									</View>
 								</View>
@@ -114,7 +106,7 @@ function CategoryAdd (){
 	
 			</View>
 	
-	
+            </View>
 	  );
   
   }
