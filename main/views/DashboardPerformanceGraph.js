@@ -24,18 +24,17 @@ const chartConfig = {
   backgroundGradientTo: "#fff",
   backgroundGradientToOpacity: 0.5,
   color: (opacity = 1) => `rgba(26, 105, 106, ${opacity})`,
-  strokeWidth: 2, // optional, default 3
-  barPercentage: 0.5,
-  useShadowColorFromDataset: false // optional
+  strokeWidth: 0.5, 
+  useShadowColorFromDataset: false 
 };
 const data = { 
   legend: ["Rainy Days","Sunny day"], 
-  labels: ['05', '08', '09', '10', '11', '12'],
-  datasets: [{ data: [ 4, 15, 2, 9, 20, 5 ],
+  labels: ['05', '08' ,'05', '08', '09', '10', '11', '12'],
+  datasets: [{ data: [ 4, 15, 2, 9, 20, 5,20,8 ],
   
-    color: (opacity = 1) => `#0187CA`, 
+    color: (opacity = 1) => `rgb(0, 138, 209)`, 
   },
-  { data: [ 0, 20, 16, 40, 30, 20 ], color: (opacity = 1) => `#0181AD`,  }] ,
+  { data: [ 0, 20, 16, 40, 30, 20 ,14,12], color: (opacity = 1) => `rgb(128, 201, 232)`,  }] ,
 };
 
 
@@ -118,7 +117,7 @@ const trafficData = () =>
                   data={data}
                   width={screenWidth}
                   height={256}
-                  verticalLabelRotation={30}
+                  // verticalLabelRotation={30}
                   chartConfig={chartConfig}
                   bezier
                 />
