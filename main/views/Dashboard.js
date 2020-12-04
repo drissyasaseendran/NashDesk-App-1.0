@@ -19,6 +19,7 @@ function Dashboard ({navigation}){
     const [agentType, setagentType] = useState('')
     const today = moment(new Date()).format('YYYY-MM-DD')
     useEffect(() => {
+      
       profileView()
       dueTodayData()
       overDueData()

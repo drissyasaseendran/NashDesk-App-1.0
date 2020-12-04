@@ -21,17 +21,32 @@ function CannedResponseAdd (){
                 <View  style={styles.inputFeildLabel} >
                     <TextInput style = {styles.categoryLabel}
                     underlineColorAndroid = "transparent"
-                    placeholder = "Samples"
+                    placeholder = "Canned Response name"
                     name="password"
                     placeholderTextColor = "#666"
                     autoCapitalize = "none"
                 
                     />
                 </View >
-          
+            
             </View>
        
-        
+            <View style={styles.center}> 
+			   <Text style={styles.clustername} >Description</Text>
+			</View>
+            <View style = {styles.inputBtn} >
+                <View  style={styles.inputFeildLabel} >
+                 <TextInput
+                    style={styles.textArea}
+                    underlineColorAndroid="transparent"
+                    placeholder="Type something"
+                    placeholderTextColor="grey"
+                    numberOfLines={10}
+                    multiline={true}
+                    />
+                </View >
+            
+            </View>
 
 	
             </View>

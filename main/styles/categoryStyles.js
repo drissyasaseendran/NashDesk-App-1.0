@@ -254,6 +254,14 @@ const styles = StyleSheet.create({
 			padding: 15,
 			height: 500,
 		  
+       },
+       textArea:
+       {
+        // height: 50,
+        borderColor: '#ccc',
+        color:'#888',
+        borderWidth: 1,
+             backgroundColor:'#F5F5F6'
        }
 });
 export {

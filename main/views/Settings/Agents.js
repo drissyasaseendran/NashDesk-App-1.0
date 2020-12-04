@@ -4,7 +4,6 @@ import {
 	ScrollView,
   Text,
   View,
-
 } from 'react-native';
 import { useDispatch } from 'react-redux'
 import {styles} from '../../styles/agentStlyes'
@@ -76,10 +75,22 @@ function Agents ({navigation}){
   
     });
 	}
+
+	onSubmit = () => {
+		let { current: field } = fieldRef;
+	 
+		console.log(field.value());
+	  };
 	return (
 			<ScrollView >
 			<View style={styles.Content}>
-
+			<OutlinedTextField
+				label='Phone number'
+				keyboardType='phone-pad'
+				// formatText={this.formatText}
+				// onSubmitEditing={this.onSubmit}
+				// ref={this.fieldRef}
+			/>
 			{
 			Agents && Agents.map((agent) =>
 				{
@@ -96,7 +107,7 @@ function Agents ({navigation}){
 						</View>
 					</View>
 					<View  style={styles.AgentSidebtn}>
-							<Text style={styles.agentEdit} onPress={()=>editAgents(agent)}>Edit</Text>
+					<Text style={styles.agentEdit} onPress={()=>editAgents(agent)}>Edit</Text>
 							<Text style={styles.agentDelete} onPress={()=>deleteAgents(agent.agt_sett_id)} >Delete</Text>
 					</View>
 					</View>

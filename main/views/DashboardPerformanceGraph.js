@@ -1,15 +1,43 @@
 import React, { useEffect ,useState} from "react";
 import {styles} from '../styles/dasboardStyles'
 import {Text, View} from 'react-native';
-import { LineChart} from 'react-native-svg-charts'
 import {performancegraphApiPath} from '../endpoints'
 import {getAccessToken} from '../utils/Authenticator'
 import axios from 'axios'
-
+import { Dimensions } from "react-native";
+const screenWidth = Dimensions.get("window").width;
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
 function DashboardPerformanceGraph (props){
 const [resolved,setResolved] = useState([])
 const [traffic,setTraffic] = useState([])
 const token = getAccessToken()
+const chartConfig = {
+  backgroundGradientFrom: "#fff",
+  backgroundGradientFromOpacity: 0,
+  backgroundGradientTo: "#fff",
+  backgroundGradientToOpacity: 0.5,
+  color: (opacity = 1) => `rgba(26, 105, 106, ${opacity})`,
+  strokeWidth: 2, // optional, default 3
+  barPercentage: 0.5,
+  useShadowColorFromDataset: false // optional
+};
+const data = { 
+  legend: ["Rainy Days","Sunny day"], 
+  labels: ['05', '08', '09', '10', '11', '12'],
+  datasets: [{ data: [ 4, 15, 2, 9, 20, 5 ],
+  
+    color: (opacity = 1) => `#0187CA`, 
+  },
+  { data: [ 0, 20, 16, 40, 30, 20 ], color: (opacity = 1) => `#0181AD`,  }] ,
+};
+
 
 useEffect(() => {
     resolvedData()
@@ -79,41 +107,21 @@ const trafficData = () =>
 
 })
 }
-const data = [
-    {
-        data: resolved,
-        svg: { stroke: '#3BB9FF'
-     },
-    },
-    {
-        data: traffic,
-        svg: { stroke: '#95B9C7' },
-    },
-]
+
     return (
         <View style={styles.performanceContent}>
             <View>
               <Text style={styles.performanceText}>Performance Graph</Text>
               
                 <View style={styles.performanceBg} >
-             
-                 <View style={ { height: 200 ,width:300,} }>
-             
-                 <LineChart
-            style={{ height: 200 }}
-            stroke={ {
-                curve: 'smooth',
-              }}
-            gridMin={0}
-            contentInset={{ top: 10, bottom: 10 }}
-            svg={{ stroke: 'rgb(1, 135, 202)' }}
-            data={ data }
-          
-        >
-          
-        </LineChart>
-           
-            </View>
+                <LineChart
+                  data={data}
+                  width={screenWidth}
+                  height={256}
+                  verticalLabelRotation={30}
+                  chartConfig={chartConfig}
+                  bezier
+                />
                 </View>
                
             </View>
