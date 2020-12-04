@@ -25,6 +25,7 @@ const chartConfig = {
   backgroundGradientToOpacity: 0.5,
   color: (opacity = 1) => `rgba(26, 105, 106, ${opacity})`,
   strokeWidth: 0.5, 
+  propsForBackgroundLines:{strokeWidth: 0},
   useShadowColorFromDataset: false 
 };
 const data = { 
