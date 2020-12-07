@@ -58,71 +58,31 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
           <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
      </View>
       <TextInput
-        // value={this.state.email}
         keyboardType = 'email-address'
         placeholder='Email'
-        // placeholderTextColor = 'white'
         style={styles.input}
         placeholderTextColor="#666"
         onChangeText={username => setUsername(username)}
       />
       <TextInput
-        // value={this.state.password}
         onChangeText={password => setPassword(password)}
         placeholder='Password'
         secureTextEntry={true}
         placeholderTextColor="#666"
-        // placeholderTextColor = 'white'
         style={styles.input}
       />
-      
-   
-        <TouchableOpacity>
+      <TouchableOpacity>
            <Text style={styles.forgot}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
            <Text style={styles.loginText}>LOGIN</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
+      </TouchableOpacity>
+      <TouchableOpacity>
            <Text style={styles.loginSignup}>Signup</Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
       
     </View>
-      //   <View style={styles.container}>
-      //   <View style={styles.logoContainer}>
-      //     <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
-      //   </View>
-             
-      //   <View style={styles.inputView} >
-                    
-      //     <TextInput  
-      //       style={styles.inputText}
-      //       placeholder="Email..." 
-      //       value={username}
-      //       placeholderTextColor="#003f5c"
-      //       onChangeText={username => setUsername(username)}
-      //       />
-      //   </View>
-      //   <View style={styles.inputView} >
-      //     <TextInput  
-      //       secureTextEntry
-      //       value={password}
-      //       style={styles.inputText}
-      //       placeholder="Password..." 
-      //       placeholderTextColor="#003f5c"
-      //       onChangeText={password => setPassword(password)}
-      //   />
-      //   </View>
-      //   <TouchableOpacity>
-      //     <Text style={styles.forgot}>Forgot Password?</Text>
-      //   </TouchableOpacity>
-      //   <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
-      //     <Text style={styles.loginText}>LOGIN</Text>
-      //   </TouchableOpacity>
-      //   <TouchableOpacity>
-      //     <Text style={styles.loginSignup}>Signup</Text>
-      //   </TouchableOpacity>
-      // </View>
+
     );
   
 }
