@@ -9,8 +9,8 @@ import AsyncStorage from '@react-native-community/async-storage'
 import {LineChart,} from "react-native-chart-kit";
 const screenWidth = Dimensions.get("window").width;
 function DashboardPerformanceGraph (props){
-const [resolved,setResolved] = useState([])
-const [traffic,setTraffic] = useState([])
+const [resolved,setResolved] = useState([0])
+const [traffic,setTraffic] = useState([0])
 // const token = getAccessToken()
 const token =  props.token
 const chartConfig = {

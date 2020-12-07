@@ -30,6 +30,7 @@ function Dashboard ({navigation}){
    
     }
     useEffect(() => {
+      alert(token)
       getAccessToken()
       profileView()
       dueTodayData()
