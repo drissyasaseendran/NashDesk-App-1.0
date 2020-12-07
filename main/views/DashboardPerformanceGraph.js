@@ -6,18 +6,11 @@ import {getAccessToken} from '../utils/Authenticator'
 import axios from 'axios'
 import { Dimensions } from "react-native";
 const screenWidth = Dimensions.get("window").width;
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart
-} from "react-native-chart-kit";
+import {LineChart,} from "react-native-chart-kit";
 function DashboardPerformanceGraph (props){
 const [resolved,setResolved] = useState([])
 const [traffic,setTraffic] = useState([])
-const token = getAccessToken()
+const token = getAccessToken
 const chartConfig = {
   backgroundGradientFrom: "#fff",
   backgroundGradientFromOpacity: 0,
@@ -32,13 +25,10 @@ const data = {
   legend: ["Rainy Days","Sunny day"], 
   labels: ['05', '08' ,'05', '08', '09', '10', '11', '12'],
   datasets: [{ data: [ 4, 15, 2, 9, 20, 5,20,8 ],
-  
     color: (opacity = 1) => `rgb(0, 138, 209)`, 
   },
   { data: [ 0, 20, 16, 40, 30, 20 ,14,12], color: (opacity = 1) => `rgb(128, 201, 232)`,  }] ,
 };
-
-
 useEffect(() => {
     resolvedData()
     trafficData()
@@ -52,7 +42,7 @@ const resolvedData = () =>
     "request_type":"resolved_view"
   }
 
-  axios.post(performancegraphApiPath, data)
+axios.post(performancegraphApiPath, data)
 .then((resp) => {
   let performanceData = []
   if (resp.data.status === "success") {
@@ -118,7 +108,6 @@ const trafficData = () =>
                   data={data}
                   width={screenWidth}
                   height={256}
-                  // verticalLabelRotation={30}
                   chartConfig={chartConfig}
                   bezier
                 />

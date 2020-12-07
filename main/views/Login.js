@@ -21,12 +21,10 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
     dispatch(setLogout());
   }, [dispatch]);
   useEffect(() => {
-    
+  
     switch (loginStatus) {
       case "error":
-        setPwdErrorCode(0);
-        setLoading(false);
-        setNetworkErrorCode(1);
+       
         break;
       case "failed":
         setPwdErrorCode(2);

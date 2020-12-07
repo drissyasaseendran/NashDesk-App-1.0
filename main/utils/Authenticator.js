@@ -1,18 +1,17 @@
 import Cookies from "js-cookie";
+import AsyncStorage from '@react-native-community/async-storage'
 import { loginApiPath, logoutApiPath } from "../endpoints";
 import axios from "axios";
 import store from "../states/store";
 import {
   setLogout,
+  setLoginWait,
   setLoginSuccess,
   setLoginFailure,
   setLoginError,
 } from "../states/login/loginAction";
-
-export const getAccessToken = () => Cookies.get("access_token");
-export const getUserDetails = () => Cookies.get("user_details");
-export const isAuthenticated = () => !!getAccessToken() && !!getUserDetails();
-
+import { acc } from "react-native-reanimated";
+export const isAuthenticated = () => !!getAccessToken()
 export const loginCall = (username, password) => {
   const loginInput = {
     username: username,
@@ -21,41 +20,38 @@ export const loginCall = (username, password) => {
   axios
     .post(loginApiPath, loginInput)
     .then((resp) => {
-       if (resp.data.status === "success") {
-        const fivedays = 5;
-        Cookies.set("access_token", resp.data.payload.data[0].access_token, {
-          expires: fivedays,
-        });
-        Cookies.set("user_details", JSON.stringify(resp.data.payload.data[0]));
-        store.dispatch(setLoginSuccess(resp.data.payload.data[0]));
-      }
-      
-      else {
-        store.dispatch(setLoginFailure());
-      }
+       if (resp.data.status === "success") 
+        {
+          store.dispatch(setLoginSuccess(resp.data.payload.data[0]));
+          storeData(resp.data.payload.data[0].access_token)
+        }
+      else {}
     })
     .catch((e) => {
-      store.dispatch(setLoginError());
     });
 };
+const storeData =  (token) => {
+        try {
+          AsyncStorage.setItem('access_token',token);
+        } catch (error) {}
+}
 
-export const logout = () => {
-  const accessToken = Cookies.get("access_token");
-  const requestData = {
-    access_token: accessToken,
-    request_type: "delete",
-  };
-  axios.post(logoutApiPath, requestData).then((data) => {
-    store.dispatch(setLogout());
-  });
-
-  Cookies.remove("access_token");
-  Cookies.remove("user_details");
-};
-
-
-export const restErrorMsgValidation = (msgJson) => {
-  if (msgJson.status === "fail" && msgJson.error_code === 102) {
-    logout();
+export const getAccessToken = async () => {
+  let userId = '';
+  try {
+    userId = await AsyncStorage.getItem('access_token') || 'none';
+  } catch (error) {
+    // Error retrieving data
+    console.log(error.message);
   }
-};
+  return userId;
+}
+
+const clearStorage = async () => {
+  try {
+    await AsyncStorage.clear()
+    alert('Storage successfully cleared!')
+  } catch (e) {
+    alert('Failed to clear the async storage.')
+  }
+}

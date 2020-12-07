@@ -8,8 +8,9 @@ import PerformanceGraph from './DashboardPerformanceGraph'
 import {getAccessToken} from '../utils/Authenticator'
 import moment from 'moment';
 import axios from 'axios'
+import AsyncStorage from '@react-native-community/async-storage'
 function Dashboard ({navigation}){
-    const token = getAccessToken()
+  
     const [dueToday, setdueToday] = useState('')
     const [overDue, setoverDue] = useState('')
     const [assigned, setassigned] = useState('')
@@ -18,8 +19,18 @@ function Dashboard ({navigation}){
     const [closed, setclosed] = useState('')
     const [agentType, setagentType] = useState('')
     const today = moment(new Date()).format('YYYY-MM-DD')
+    const [token,setToken] =  useState('')
+     const getAccessToken = async () => {
+      let userId = '';
+      try {
+        userId = await AsyncStorage.getItem('access_token') || 'none';
+        setToken(userId)
+      } catch (error) {
+      }
+      return userId;
+    }
     useEffect(() => {
-      
+      getAccessToken()
       profileView()
       dueTodayData()
       overDueData()
@@ -28,7 +39,7 @@ function Dashboard ({navigation}){
       resolvedData()
       closedData()
      
-    },[]);
+    },[token]);
     const profileView = () =>
     {
       let data =
@@ -132,8 +143,6 @@ function Dashboard ({navigation}){
           {
             res.map((dt)=>
             {
-              
-       
             if(today == dt.date)
             {
             
@@ -242,15 +251,11 @@ function Dashboard ({navigation}){
           {
             res.map((dt)=>
             {
-              
-           
-            if(today == dt.date)
-            {
-            
-
-              setclosed(dt.closed_date_cnt)
-            }
-          } )
+              if(today == dt.date)
+              {
+                setclosed(dt.closed_date_cnt)
+              }
+          })
         }
     }
   }
