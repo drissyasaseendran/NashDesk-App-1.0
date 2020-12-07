@@ -27,7 +27,7 @@ function Dashboard ({navigation}){
         setToken(userId)
       } catch (error) {
       }
-      return userId;
+   
     }
     useEffect(() => {
       getAccessToken()
@@ -279,7 +279,7 @@ function Dashboard ({navigation}){
               <StatusCard  title="Closed"     type="simple-line-icon"        icon="like"           count={closed}  />
             </View>
             <View style={styles.PerformanceBody}>
-              <PerformanceGraph/>
+              <PerformanceGraph token = {token}/>
             </View>
             </View>
       </ScrollView>

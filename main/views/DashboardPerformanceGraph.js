@@ -5,12 +5,14 @@ import {performancegraphApiPath} from '../endpoints'
 import {getAccessToken} from '../utils/Authenticator'
 import axios from 'axios'
 import { Dimensions } from "react-native";
-const screenWidth = Dimensions.get("window").width;
+import AsyncStorage from '@react-native-community/async-storage'
 import {LineChart,} from "react-native-chart-kit";
+const screenWidth = Dimensions.get("window").width;
 function DashboardPerformanceGraph (props){
 const [resolved,setResolved] = useState([])
 const [traffic,setTraffic] = useState([])
-const token = getAccessToken
+// const token = getAccessToken()
+const token =  props.token
 const chartConfig = {
   backgroundGradientFrom: "#fff",
   backgroundGradientFromOpacity: 0,
@@ -22,18 +24,19 @@ const chartConfig = {
   useShadowColorFromDataset: false 
 };
 const data = { 
-  legend: ["Rainy Days","Sunny day"], 
-  labels: ['05', '08' ,'05', '08', '09', '10', '11', '12'],
-  datasets: [{ data: [ 4, 15, 2, 9, 20, 5,20,8 ],
+  legend: ["Ticket  Traffic","Resolved"], 
+  // labels: ['05', '08' ,'05', '08', '09', '10', '11', '12'],
+  datasets: [{ data: traffic,
     color: (opacity = 1) => `rgb(0, 138, 209)`, 
   },
-  { data: [ 0, 20, 16, 40, 30, 20 ,14,12], color: (opacity = 1) => `rgb(128, 201, 232)`,  }] ,
+  { data: resolved, color: (opacity = 1) => `rgb(128, 201, 232)`,  }] ,
 };
 useEffect(() => {
-    resolvedData()
-    trafficData()
-   
-},[]);
+
+  resolvedData()
+  trafficData()
+},[props.token]);
+
 const resolvedData = () =>
 {
   let data =
@@ -53,11 +56,14 @@ axios.post(performancegraphApiPath, data)
         {
           
                 Object.keys(res).map((key, i) => (
+                  
                     performanceData.push(i)
+                    
                 ))
                 
           
             setResolved(performanceData)
+          
         }
       }
      
@@ -77,23 +83,24 @@ const trafficData = () =>
 .then((resp) => {
   let trafficArray = []
   if (resp.data.status === "success") {
-      let res = resp.data.payload.data
-      if(res)
+    let res = resp.data.payload.data
+    if(res)
+    {
+      if(res.length>0)
       {
-        if(res.length>0)
-        {
-            res.map((per) =>
-            {
-                Object.keys(res).map((key, i) => (
-                    trafficArray.push(i)
-                ))
-                
-            })
-            setTraffic(trafficArray)
-        }
+        
+              Object.keys(res).map((key, i) => (
+               
+                trafficArray.push(i)
+              ))
+           
+        
+              setTraffic(trafficArray)
+        
       }
-     
     }
+   
+  }
 
 })
 }
