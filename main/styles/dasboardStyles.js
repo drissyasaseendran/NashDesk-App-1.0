@@ -113,9 +113,11 @@ const styles = StyleSheet.create({
       paddingBottom:20,
       color:'#888'
     },
+   
     performanceBg:
     {
         display:"flex",
+        paddingTop:15,
         justifyContent: 'center',
         alignItems: 'center',
         margin:5,

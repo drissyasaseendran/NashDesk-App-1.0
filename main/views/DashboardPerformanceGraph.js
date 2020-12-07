@@ -54,14 +54,9 @@ axios.post(performancegraphApiPath, data)
       {
         if(res.length>0)
         {
-          
-                Object.keys(res).map((key, i) => (
-                  
-                    performanceData.push(i)
-                    
-                ))
-                
-          
+            Object.keys(res).map((key, i) => (
+              performanceData.push(i)
+            ))
             setResolved(performanceData)
           
         }
@@ -88,14 +83,10 @@ const trafficData = () =>
     {
       if(res.length>0)
       {
-        
-              Object.keys(res).map((key, i) => (
-               
-                trafficArray.push(i)
-              ))
-           
-        
-              setTraffic(trafficArray)
+          Object.keys(res).map((key, i) => (
+          trafficArray.push(i)
+          ))
+          setTraffic(trafficArray)
         
       }
     }
