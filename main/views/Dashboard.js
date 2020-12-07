@@ -30,7 +30,6 @@ function Dashboard ({navigation}){
    
     }
     useEffect(() => {
-      alert(token)
       getAccessToken()
       profileView()
       dueTodayData()
@@ -43,6 +42,7 @@ function Dashboard ({navigation}){
     },[token]);
     const profileView = () =>
     {
+      
       let data =
       {
         "access_token": token ,
@@ -55,9 +55,11 @@ function Dashboard ({navigation}){
       if (resp.data.status === "success") {
           let res = resp.data.payload.data
           setagentType(res[0].agent_type)
+          unassignedData()
         }
   
     })
+    
   }
     const dueTodayData = () =>
     {
