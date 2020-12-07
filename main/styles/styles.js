@@ -4,37 +4,63 @@ import {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
+ 
       logoContainer:
       {
         paddingBottom:50
       },
+      container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+      },
       logo:{
         width: 501,
-
+    
     height: 51,
     resizeMode: 'contain'
       },
-      inputView:{
+      titleText:{
+        fontSize: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      button: {
+        alignItems: 'center',
+        backgroundColor: 'powderblue',
+        width: 200,
+        height: 44,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: 'white',
+        borderRadius: 25,
+        marginBottom: 10,
+      },
+      buttonText:{
+        fontSize: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      input: {
         width:"80%",
+        fontSize: 14,
+        height: 44,
+        padding: 10,
         backgroundColor:"#fff",
         borderColor:'#0187CA',
-        borderWidth:1,
-        height:50,
-        marginBottom:20,
-        borderRadius:25,
-        justifyContent:"center",
-        padding:20
+      
+        borderWidth: 1,
+        borderRadius:20,
+     
+        marginVertical: 10,
       },
-      inputText:{
-        height:50,
-        color:"#0187CA"
+      logo:{
+        width: 501,
+        height: 51,
+        resizeMode: 'contain'
       },
+  
       forgot:{
         color:"#0187CA",
         fontSize:11
@@ -42,7 +68,7 @@ const styles = StyleSheet.create({
       loginBtn:{
         width:"80%",
         backgroundColor:"#0187CA",
-        borderRadius:25,
+        borderRadius:20,
         height:50,
         alignItems:"center",
         justifyContent:"center",

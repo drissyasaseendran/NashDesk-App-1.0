@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Text,Image,TouchableOpacity, View , TextInput} from 'react-native';
 import { styles } from '../styles/styles' 
+import { Alert, Button, Text, Image,TouchableOpacity, TextInput, View, StyleSheet } from 'react-native';
 import { setLogout } from "../states/login/loginAction"
 import { loginCall, isAuthenticated } from "../utils/Authenticator";
   function Login({navigation}) {
@@ -53,42 +53,76 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
    
   };
    return (
-
-        <View style={styles.container}>
-        <View style={styles.logoContainer}>
+    <View style={styles.container}>
+    <View style={styles.logoContainer}>
           <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
-        </View>
-             
-        <View style={styles.inputView} >
-                    
-          <TextInput  
-            style={styles.inputText}
-            placeholder="Email..." 
-            value={username}
-            placeholderTextColor="#003f5c"
-            onChangeText={username => setUsername(username)}
-            />
-        </View>
-        <View style={styles.inputView} >
-          <TextInput  
-            secureTextEntry
-            value={password}
-            style={styles.inputText}
-            placeholder="Password..." 
-            placeholderTextColor="#003f5c"
-            onChangeText={password => setPassword(password)}
-        />
-        </View>
+     </View>
+      <TextInput
+        // value={this.state.email}
+        keyboardType = 'email-address'
+        placeholder='Email'
+        // placeholderTextColor = 'white'
+        style={styles.input}
+        placeholderTextColor="#666"
+        onChangeText={username => setUsername(username)}
+      />
+      <TextInput
+        // value={this.state.password}
+        onChangeText={password => setPassword(password)}
+        placeholder='Password'
+        secureTextEntry={true}
+        placeholderTextColor="#666"
+        // placeholderTextColor = 'white'
+        style={styles.input}
+      />
+      
+   
         <TouchableOpacity>
-          <Text style={styles.forgot}>Forgot Password?</Text>
+           <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
-          <Text style={styles.loginText}>LOGIN</Text>
+           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.loginSignup}>Signup</Text>
+           <Text style={styles.loginSignup}>Signup</Text>
         </TouchableOpacity>
-      </View>
+      
+    </View>
+      //   <View style={styles.container}>
+      //   <View style={styles.logoContainer}>
+      //     <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
+      //   </View>
+             
+      //   <View style={styles.inputView} >
+                    
+      //     <TextInput  
+      //       style={styles.inputText}
+      //       placeholder="Email..." 
+      //       value={username}
+      //       placeholderTextColor="#003f5c"
+      //       onChangeText={username => setUsername(username)}
+      //       />
+      //   </View>
+      //   <View style={styles.inputView} >
+      //     <TextInput  
+      //       secureTextEntry
+      //       value={password}
+      //       style={styles.inputText}
+      //       placeholder="Password..." 
+      //       placeholderTextColor="#003f5c"
+      //       onChangeText={password => setPassword(password)}
+      //   />
+      //   </View>
+      //   <TouchableOpacity>
+      //     <Text style={styles.forgot}>Forgot Password?</Text>
+      //   </TouchableOpacity>
+      //   <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
+      //     <Text style={styles.loginText}>LOGIN</Text>
+      //   </TouchableOpacity>
+      //   <TouchableOpacity>
+      //     <Text style={styles.loginSignup}>Signup</Text>
+      //   </TouchableOpacity>
+      // </View>
     );
   
 }

@@ -25,26 +25,21 @@ import CategoryAdd from '../views/Settings/CategoryAdd'
 import CannedResponseAdd from '../views/Settings/CannedResponseAdd'
 
 const NotificationTab = createStackNavigator({
-
   Notification: {
     screen: Notification,
     navigationOptions:({navigation}) => {
-
       return{
           headerStyle: {
-         
               borderBottomWidth: 0,
               backgroundColor: '#0187CA'
             },
             headerTintColor: 'white',
-           
       }
   }
   },
 
 })
 const AnalyticsTab = createStackNavigator({
-
   Analytics: {
     screen: Analytics,
     navigationOptions:({navigation}) => {

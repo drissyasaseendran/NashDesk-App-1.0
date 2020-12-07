@@ -2,18 +2,8 @@ import React from 'react';
 import {styles} from '../styles/SidebarStyles'
 import { logout } from "../utils/Authenticator";
 import { View,ScrollView ,Image} from 'react-native';
-import {
-    useTheme,
-    Title,
-    Caption,
-    Drawer,
-
-    
-} from 'react-native-paper';
-import {
- 
-    DrawerItem
-} from '@react-navigation/drawer';
+import {useTheme, Title, Caption, Drawer} from 'react-native-paper';
+import { DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const SideBar = ({navigation})=> {
 
