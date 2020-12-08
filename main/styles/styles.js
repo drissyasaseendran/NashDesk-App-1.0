@@ -46,13 +46,11 @@ const styles = StyleSheet.create({
         width:"80%",
         fontSize: 14,
         height: 44,
-        padding: 10,
+        paddingLeft: 20,
         backgroundColor:"#fff",
         borderColor:'#0187CA',
-      
         borderWidth: 1,
         borderRadius:20,
-     
         marginVertical: 10,
       },
       logo:{
@@ -63,7 +61,7 @@ const styles = StyleSheet.create({
   
       forgot:{
         color:"#0187CA",
-        fontSize:11
+        paddingBottom:20
       },
       loginBtn:{
         width:"80%",
@@ -72,12 +70,13 @@ const styles = StyleSheet.create({
         height:50,
         alignItems:"center",
         justifyContent:"center",
-        marginTop:40,
         color:'white',
         marginBottom:10
       },
       loginText:{
-        color:"#fff"
+        color:"#fff",
+        fontWeight:'bold'
+
       }   ,
       loginSignup:
       {
