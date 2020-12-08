@@ -5,10 +5,7 @@ import Home from '../navigation/HomeStack'
 import Login from './LoginStack'
 import Sidebar from './SideBar'
 const DrawNavigator = createDrawerNavigator({
-  //  Login:
-  //  {
-  //   screen:Login,
-  //  },
+ 
     Home:
       {
           screen:Home,
