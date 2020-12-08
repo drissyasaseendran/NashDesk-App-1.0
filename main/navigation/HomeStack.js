@@ -59,15 +59,10 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-    Login: {
-        screen: Login,
-        navigationOptions: {
-            title: 'Home',
-            header: null //this will hide the header
-          },
-    },
+ 
     Dashboard: {
       screen: Dashboard,
+      
       navigationOptions:({navigation}) => {
         return{
           headerStyle: {
