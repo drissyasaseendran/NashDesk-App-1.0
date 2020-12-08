@@ -52,6 +52,10 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       loginCall(username, password);
    
   };
+  const Navigate = () =>
+  {
+    navigation.navigate('Signup')
+  }
    return (
     <View style={styles.container}>
     <View style={styles.logoContainer}>
@@ -77,7 +81,7 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
            <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={Navigate}>
            <Text style={styles.loginSignup}>Signup</Text>
       </TouchableOpacity>
       
