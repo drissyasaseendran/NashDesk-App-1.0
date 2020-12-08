@@ -7,11 +7,13 @@ const styles = StyleSheet.create({
  
       logoContainer:
       {
-        paddingBottom:25
+        paddingBottom:25,
+        alignItems: 'center',
       },
       container: {
         flex: 1,
-        alignItems: 'center',
+        
+        // alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
       },
@@ -50,6 +52,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
+      center:
+      {
+
+      },
       input: {
         width:"80%",
         borderRadius:20,
@@ -80,6 +86,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         color:'white',
+        alignSelf:'center',
         marginBottom:10
       },
       loginText:{
@@ -90,6 +97,14 @@ const styles = StyleSheet.create({
       loginSignup:
       {
         color:"#0187CA"
+      },
+      Error:
+      {
+        color:'red',
+        fontSize:12,
+        alignSelf:'flex-start',
+          marginHorizontal:50
+      
       }
 });
 

@@ -44,33 +44,47 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   }
    return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-            <Text style={styles.LoginText}>LOGIN</Text>
-            {/* <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/> */}
-      </View>
-      <TextInput
-        keyboardType = 'email-address'
-        placeholder='Email'
-        style={styles.input}
-        placeholderTextColor="#888"
-        onChangeText={username => setUsername(username)}
-      />
-      <TextInput
-        onChangeText={password => setPassword(password)}
-        placeholder='Password'
-        secureTextEntry={true}
-        placeholderTextColor="#888"
-        style={styles.input}
-      />
-      <TouchableOpacity>
-           <Text style={styles.forgot}>Forgot Password?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
-           <Text style={styles.loginText}>LOGIN</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={Navigate}>
-           <Text style={styles.loginSignup}>Signup</Text>
-      </TouchableOpacity>
+          <View style={styles.logoContainer}>
+                <Text style={styles.LoginText}>LOGIN</Text>
+                {/* <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/> */}
+          </View>
+          <View style={styles.logoContainer}>
+          <TextInput
+            keyboardType = 'email-address'
+            placeholder='Email'
+            style={styles.input}
+            placeholderTextColor="#888"
+            onChangeText={username => setUsername(username)}
+          />
+           <Text style={styles.Error} >vfdbvfd</Text>
+          </View>
+      
+           
+         
+          <View style={styles.logoContainer}>
+          <TextInput
+            onChangeText={password => setPassword(password)}
+            placeholder='Password'
+            secureTextEntry={true}
+            placeholderTextColor="#888"
+            style={styles.input}
+          />
+           <Text  style={styles.Error}>vfdbvfd</Text>
+          </View>
+     
+         
+      
+          <View style={styles.logoContainer}>
+          <TouchableOpacity >
+              <Text style={styles.forgot}>Forgot Password?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
+              <Text style={styles.loginText}>LOGIN</Text>
+          </TouchableOpacity>
+          <TouchableOpacity   onPress={Navigate}>
+              <Text style={styles.loginSignup}>Signup</Text>
+          </TouchableOpacity>
+        </View>
     </View>
 
     );

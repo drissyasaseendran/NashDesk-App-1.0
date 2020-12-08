@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
        top:-85
       //  marginTop:130
     },
+    
     statusBody:
     {
         display:'flex',

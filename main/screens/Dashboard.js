@@ -273,17 +273,17 @@ function Dashboard ({navigation}){
               <Text style={styles.headingTitle}>Dashboard</Text>
             </View>
             <View style={styles.canvasBody}>
-            <View style={styles.statusBody}>
-              <StatusCard  title="Due today"  type='simple-line-icon'        icon="check"          count={dueToday} />
-              <StatusCard  title="OverDue"    type="simple-line-icon"        icon="like"           count={overDue} />
-              <StatusCard  title="Assigned"   type="simple-line-icon"        icon="like"           count={assigned} />
-              <StatusCard  title="Unassigned" type="simple-line-icon"        icon="check"          count={unassigned} />
-              <StatusCard  title="Resolved"   type="simple-line-icon"        icon="check"          count={resolved} />
-              <StatusCard  title="Closed"     type="simple-line-icon"        icon="like"           count={closed}  />
-            </View>
-            <View style={styles.PerformanceBody}>
-              <PerformanceGraph token = {token}/>
-            </View>
+              <View style={styles.statusBody}>
+                <StatusCard  title="Due today"  type='simple-line-icon'        icon="check"          count={dueToday} />
+                <StatusCard  title="OverDue"    type="simple-line-icon"        icon="like"           count={overDue} />
+                <StatusCard  title="Assigned"   type="simple-line-icon"        icon="like"           count={assigned} />
+                <StatusCard  title="Unassigned" type="simple-line-icon"        icon="check"          count={unassigned} />
+                <StatusCard  title="Resolved"   type="simple-line-icon"        icon="check"          count={resolved} />
+                <StatusCard  title="Closed"     type="simple-line-icon"        icon="like"           count={closed}  />
+              </View>
+              <View style={styles.PerformanceBody}>
+                <PerformanceGraph token = {token}/>
+              </View>
             </View>
       </ScrollView>
     );
