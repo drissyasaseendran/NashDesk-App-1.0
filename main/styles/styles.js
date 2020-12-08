@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
  
       logoContainer:
       {
-        paddingBottom:50
+        paddingBottom:25
       },
       container: {
         flex: 1,
@@ -17,9 +17,17 @@ const styles = StyleSheet.create({
       },
       logo:{
         width: 501,
-    
-    height: 51,
-    resizeMode: 'contain'
+        height: 51,
+        resizeMode: 'contain'
+      },
+      LoginText:
+      {
+
+        fontSize:28,
+        fontWeight:'bold',
+      
+        color:"#0187CA"
+       
       },
       titleText:{
         fontSize: 50,

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { styles } from '../styles/styles' 
 import { Text, Image,TouchableOpacity, TextInput, View} from 'react-native';
 import { setLogout } from "../states/login/loginAction"
+import { validateEmail, validatePassword } from "../utils/validator";
 import { loginCall, isAuthenticated } from "../utils/Authenticator";
   function Login({navigation}) {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       loginCall(username, password);
    
   };
+
   const Navigate = () =>
   {
     navigation.navigate('Signup')
@@ -43,7 +45,8 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
    return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-            <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/>
+            <Text style={styles.LoginText}>LOGIN</Text>
+            {/* <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/> */}
       </View>
       <TextInput
         keyboardType = 'email-address'
@@ -68,7 +71,6 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       <TouchableOpacity onPress={Navigate}>
            <Text style={styles.loginSignup}>Signup</Text>
       </TouchableOpacity>
-      
     </View>
 
     );
