@@ -1,14 +1,14 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react'
-import Settings from '../views/Settings'
+import Settings from '../screens/Settings'
 import {Button } from 'react-native';
-import Dashboard from '../views/Dashboard'
-import Groups from  '../views/Settings/Groups'
-import Agents from  '../views/Settings/Agents'
-import Tags from  '../views/Settings/Tags'
+import Dashboard from '../screens/Dashboard'
+import Groups from  '../screens/Settings/Groups'
+import Agents from  '../screens/Settings/Agents'
+import Tags from  '../screens/Settings/Tags'
 import Header from './HeaderMenu'
-import CannedResponse from '../views/Settings/CannedResponse'
-import GoBack from '../views/GoBack'
+import CannedResponse from '../screens/Settings/CannedResponse'
+import GoBack from '../screens/GoBack'
 
 const SettingStack = createStackNavigator(
     {
