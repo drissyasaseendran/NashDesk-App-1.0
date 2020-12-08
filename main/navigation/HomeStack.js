@@ -2,7 +2,6 @@ import { createAppContainer, } from 'react-navigation'
 import { createBottomTabNavigator, } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import Login from '../screens/Login'
 import Dashboard from '../screens/Dashboard'
 import Profile from '../screens/Profile'
 import React from 'react'
@@ -51,7 +50,6 @@ const AnalyticsTab = createStackNavigator({
               backgroundColor: '#0187CA'
             },
             headerTintColor: 'white',
-      
       }
   }
   },
@@ -59,21 +57,16 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
- 
     Dashboard: {
       screen: Dashboard,
-      
       navigationOptions:({navigation}) => {
         return{
           headerStyle: {
-         
-              
               borderBottomWidth: 0,
               backgroundColor: '#0187CA'
             },
             headerTintColor: 'white',
             headerTitle: () => <Header navigation={navigation} title='Settings'/>
-        
       }
     }
   },
@@ -201,7 +194,7 @@ Groups:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+          
      
     }
     }
@@ -217,7 +210,7 @@ Tags:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+          
         
     }
     }
@@ -234,7 +227,7 @@ Agents:{
             backgroundColor: '#0187CA'
           },
           headerTintColor: 'white',
-          // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+          
          
     }
     }
@@ -251,7 +244,7 @@ AgentEdit:{
           backgroundColor: '#0187CA'
         },
         headerTintColor: 'white',
-        // headerTitle: () => <Header navigation={navigation} title='Settings'/>
+        
        
   }
   }
@@ -433,21 +426,16 @@ const Tabs = createBottomTabNavigator({
             <Icon name="settings" color='#c7c5c5' size={20}/>
         )  ,
         tabBarOptions: {
-
           style: {
-
               height: 55,
               borderTopColor: '#c7c5c5',
               borderTopWidth: 1,
               paddingRight: 10,
               paddingLeft: 10,
               borderTopWidth: 1,
-            
           },
           showLabel: false,
-
-
-       showIcon : true,
+          showIcon : true,
       },
       }  
     },  
