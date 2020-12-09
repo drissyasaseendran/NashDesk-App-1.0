@@ -38,7 +38,7 @@ function Dashboard ({navigation}){
     const headerBackgroundColor = offset.interpolate(
       {
         inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
-        outputRange: ['#e91e63', '#1DA1F2'],
+        outputRange: ['#0187CA', '#0187CA'],
         extrapolate: 'clamp'
       });
        const getAccessToken = async () => {
@@ -289,38 +289,37 @@ function Dashboard ({navigation}){
   
     return (
       <View style={styles.container} >
-         <ScrollView  
-          contentContainerStyle={{
-            // alignItems: 'center',
-            // paddingTop: 2,
-            // paddingHorizontal: 20
-          }}
-          showsVerticalScrollIndicator={false}
-          scrollEventThrottle={189}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: offset } } }],
-            { useNativeDriver: false }
-          )} >
-          <View style={styles.canvasBody}>
-              <View style={styles.statusBody}>
-                <StatusCard  title="Due today"  type='simple-line-icon'        icon="check"          count={dueToday} />
-                <StatusCard  title="OverDue"    type="simple-line-icon"        icon="like"           count={overDue} />
-                <StatusCard  title="Assigned"   type="simple-line-icon"        icon="like"           count={assigned} />
-                <StatusCard  title="Unassigned" type="simple-line-icon"        icon="check"          count={unassigned} />
-                <StatusCard  title="Resolved"   type="simple-line-icon"        icon="check"          count={resolved} />
-                <StatusCard  title="Closed"     type="simple-line-icon"        icon="like"           count={closed}  />
-              </View>
-              <View style={styles.PerformanceBody}>
-                <PerformanceGraph token = {token}/>
-              </View>
-              </View>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT }}
+                scrollEventThrottle={16}
+                onScroll={Animated.event(
+                  [{ nativeEvent: { contentOffset: { y: offset} } }]
+                )}>
 
+              <View style={styles.canvasBody}>
+                <View style={styles.statusBody}>
+                  <StatusCard  title="Due today"  type='simple-line-icon'        icon="check"          count={dueToday} />
+                  <StatusCard  title="OverDue"    type="simple-line-icon"        icon="like"           count={overDue} />
+                  <StatusCard  title="Assigned"   type="simple-line-icon"        icon="like"           count={assigned} />
+                  <StatusCard  title="Unassigned" type="simple-line-icon"        icon="check"          count={unassigned} />
+                  <StatusCard  title="Resolved"   type="simple-line-icon"        icon="check"          count={resolved} />
+                  <StatusCard  title="Closed"     type="simple-line-icon"        icon="like"           count={closed}  />
+                </View>
+              
+                <View style={styles.PerformanceBody}>
+                  <PerformanceGraph token = {token}/>
+                </View>
+              </View>
+              <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
+                <Text style={styles.headerText}>Animated Header</Text>
+                <View style={styles.Animatedcontainer}>
+				        <View style={styles.first} />
+			
+	        		</View>
+             </Animated.View>
+             {/* <AnimatedHeader offset={offset}/> */}
         </ScrollView>
-
-        <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
-          <Text style={styles.headerText}>Animated Header</Text>
-        </Animated.View>
-
       </View>
     );
         }

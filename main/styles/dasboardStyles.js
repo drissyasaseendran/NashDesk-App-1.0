@@ -38,13 +38,14 @@ const styles = StyleSheet.create({
        marginBottom:10,
        alignSelf:'center',
        
-      //  position: 'relative',
+       position: 'relative',
       //  top:80,
 
 
       //  marginTop:130
     },
-    
+ 
+ 
     statusBody:
     {
         display:'flex',
@@ -143,14 +144,8 @@ const styles = StyleSheet.create({
       justifyContent: "center",
 
     },
-    animatedHeaderContainer: {
-      position: 'absolute',
-      top: (Platform.OS == 'ios') ? 20 : 0,
-      left: 0,
-      right: 0,
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
+
+
     headerText: {
       color: 'white',
       fontSize: 22
@@ -165,8 +160,31 @@ const styles = StyleSheet.create({
     itemText: {
       color: 'black',
       fontSize: 16
-    }
-    
+    },
+    animatedHeaderContainer: {
+      position: 'absolute',
+      // top: (Platform.OS == 'ios') ? 20 : 0,
+      
+      left: 0,
+      right: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor:'white',
+    },
+    first: {
+      backgroundColor: '#f5f5f5',
+      alignSelf: 'center',
+      // width: 100,
+      height: 30,
+      top:75,
+      width: windowWidth,
+      borderTopRightRadius: 50,
+      borderTopLeftRadius: 50,
+      // transform: [{ scaleX: 14 }],
+      zIndex: 1,
+    },
+
+ 
   });
 export {
     styles
