@@ -1,5 +1,5 @@
 import {
-    StyleSheet
+    StyleSheet,Platform
 } from 'react-native';
 import { Dimensions } from 'react-native';
 const windowWidth = Dimensions.get('window').width;
@@ -37,9 +37,16 @@ const styles = StyleSheet.create({
        borderWidth: 4,
        marginBottom:10,
        alignSelf:'center',
+       backgroundColor: '#f5f5f5',
+       alignSelf: 'center',
+       // width: 100,
+      //  height: 30,
+      //  top:75,
+      //  width: windowWidth,
+       borderTopRightRadius: 50,
+       borderTopLeftRadius: 50,
+      //  position: 'relative',
        
-       position: 'relative',
-      //  top:80,
 
 
       //  marginTop:130
@@ -172,16 +179,16 @@ const styles = StyleSheet.create({
       backgroundColor:'white',
     },
     first: {
-      backgroundColor: '#f5f5f5',
-      alignSelf: 'center',
-      // width: 100,
-      height: 30,
-      top:75,
-      width: windowWidth,
-      borderTopRightRadius: 50,
-      borderTopLeftRadius: 50,
+      // backgroundColor: '#f5f5f5',
+      // alignSelf: 'center',
+      // // width: 100,
+      // height: 30,
+      // top:75,
+      // width: windowWidth,
+      // borderTopRightRadius: 50,
+      // borderTopLeftRadius: 50,
       // transform: [{ scaleX: 14 }],
-      zIndex: 1,
+      // zIndex: 1000,
     },
 
  
