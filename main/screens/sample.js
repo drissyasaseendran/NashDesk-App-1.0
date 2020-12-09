@@ -1,10 +1,8 @@
 import React, { useRef } from "react";
-import {  Text, View, StyleSheet, Platform, Animated, ScrollView, } from 'react-native';
+import {Text, View, StyleSheet, Platform, Animated, ScrollView, } from 'react-native';
 const HEADER_MIN_HEIGHT = 50;
 const HEADER_MAX_HEIGHT = 200;
-
 function sample ({navigation}){
-
     const offset = useRef(new Animated.Value(0)).current;
     const headerHeight = offset.interpolate(
       {
@@ -12,7 +10,6 @@ function sample ({navigation}){
         outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
         extrapolate: 'clamp'
       });
-
     const headerBackgroundColor = offset.interpolate(
       {
         inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],

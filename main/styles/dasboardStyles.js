@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     },
     animatedHeaderContainer: {
       position: 'absolute',
-      // top: (Platform.OS == 'ios') ? 20 : 0,
+      top: (Platform.OS == 'ios') ? 20 : 0,
       
       left: 0,
       right: 0,

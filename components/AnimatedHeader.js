@@ -1,11 +1,8 @@
 import React from 'react';
-import {
-  Animated,
- 
-} from 'react-native';
+
 import {styles} from '../main/styles/dasboardStyles'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
+import {  Text, View, Animated, } from 'react-native';
 
 const AnimatedHeader = ({ offset }) => {
 
@@ -21,13 +18,17 @@ const AnimatedHeader = ({ offset }) => {
   const headerBackgroundColor = offset.interpolate(
     {
       inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
-      outputRange: ['#e91e63', '#1DA1F2'],
+      outputRange: ['#0187CA', '#0187CA'],
       extrapolate: 'clamp'
     });
   return (
     <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
-       <Text style={styles.headerText}>Animated Header</Text>
-    </Animated.View>
+    <Text style={styles.headerText}>Animated Header</Text>
+    <View style={styles.Animatedcontainer}>
+    <View style={styles.first} />
+
+  </View>
+ </Animated.View>
   );
 };
 

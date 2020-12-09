@@ -11,12 +11,12 @@ import moment from 'moment';
 import axios from 'axios'
 import AsyncStorage from '@react-native-community/async-storage'
 import {  Text, View, StyleSheet, Platform, Animated, ScrollView, } from 'react-native';
-const HEADER_MIN_HEIGHT = 50;
-const HEADER_MAX_HEIGHT = 200;
+
 
 function Dashboard ({navigation}){
 
-    
+      const HEADER_MIN_HEIGHT = 50;
+      const HEADER_MAX_HEIGHT = 200;
       const [dueToday, setdueToday] = useState('')
       const [overDue, setoverDue] = useState('')
       const [assigned, setassigned] = useState('')
@@ -28,19 +28,7 @@ function Dashboard ({navigation}){
       const today = moment(new Date()).format('YYYY-MM-DD')
       const [token,setToken] =  useState('')
       const offset = useRef(new Animated.Value(0)).current;
-    const headerHeight = offset.interpolate(
-      {
-        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
-        outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
-        extrapolate: 'clamp'
-      });
-
-    const headerBackgroundColor = offset.interpolate(
-      {
-        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
-        outputRange: ['#0187CA', '#0187CA'],
-        extrapolate: 'clamp'
-      });
+   
        const getAccessToken = async () => {
         let userId = '';
         try {
@@ -311,15 +299,10 @@ function Dashboard ({navigation}){
                   <PerformanceGraph token = {token}/>
                 </View>
               </View>
-              <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
-                <Text style={styles.headerText}>Animated Header</Text>
-                <View style={styles.Animatedcontainer}>
-				        <View style={styles.first} />
-			
-	        		</View>
-             </Animated.View>
-             {/* <AnimatedHeader offset={offset}/> */}
+       
+             
         </ScrollView>
+        <AnimatedHeader offset={offset}/>
       </View>
     );
         }

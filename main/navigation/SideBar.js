@@ -50,6 +50,17 @@ const SideBar = ({navigation})=> {
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
+                                name="account-check-outline" 
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="sample"
+                            onPress={() => {navigation.navigate('sample')}}
+                        />
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Icon 
                                 name="account-outline" 
                                 color={color}
                                 size={size}

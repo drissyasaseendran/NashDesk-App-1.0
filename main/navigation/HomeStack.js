@@ -57,10 +57,7 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
-  // sample: {
-  //       screen: sample,
-       
-  //   },
+ 
     Dashboard: {
       screen: Dashboard,
       
@@ -168,7 +165,10 @@ const HomeTab = createStackNavigator({
         }
     }
     },
-  
+   sample: {
+        screen: sample,
+       
+    },
   
 });
 
