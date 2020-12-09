@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
     },
     canvasBody:
     {
+      
       width: windowWidth,
+      height:windowHeight,
       display:'flex',
       flexDirection:'column',
        backgroundColor: "#f5f5f5",
@@ -35,8 +37,11 @@ const styles = StyleSheet.create({
        borderWidth: 4,
        marginBottom:10,
        alignSelf:'center',
-       position: 'relative',
-       top:-85
+       
+      //  position: 'relative',
+      //  top:80,
+
+
       //  marginTop:130
     },
     
@@ -132,7 +137,36 @@ const styles = StyleSheet.create({
         elevation: 1,
         borderColor:'red',
         borderRadius: 20,
+    },
+    container: {
+      flex: 1,
+      justifyContent: "center",
+
+    },
+    animatedHeaderContainer: {
+      position: 'absolute',
+      top: (Platform.OS == 'ios') ? 20 : 0,
+      left: 0,
+      right: 0,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    headerText: {
+      color: 'white',
+      fontSize: 22
+    },
+    item: {
+      backgroundColor: '#ff9e80',
+      margin: 8,
+      height: 45,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    itemText: {
+      color: 'black',
+      fontSize: 16
     }
+    
   });
 export {
     styles

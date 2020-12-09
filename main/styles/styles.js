@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
  
       logoContainer:
       {
-        paddingBottom:12,
+        paddingBottom:1,
         alignItems: 'center',
       },
       container: {

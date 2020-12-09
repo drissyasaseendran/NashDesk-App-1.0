@@ -22,7 +22,7 @@ import ProfileUpdate from '../screens/ProfileUpdate'
 import ProfileAbout from '../screens/ProfileAbout'
 import CategoryAdd from '../screens/Settings/CategoryAdd'
 import CannedResponseAdd from '../screens/Settings/CannedResponseAdd'
-
+import sample from '../screens/sample'
 const NotificationTab = createStackNavigator({
   Notification: {
     screen: Notification,
@@ -57,8 +57,14 @@ const AnalyticsTab = createStackNavigator({
 
 })
 const HomeTab = createStackNavigator({
+  // sample: {
+  //       screen: sample,
+        
+        
+  //   },
     Dashboard: {
       screen: Dashboard,
+      
       navigationOptions:({navigation}) => {
         return{
           headerStyle: {

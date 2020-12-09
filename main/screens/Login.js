@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { styles } from '../styles/styles' 
 import { Text,TouchableOpacity, TextInput, View} from 'react-native';
 import { setLogout } from "../states/login/loginAction"
 import { validateEmail, validatePassword } from "../utils/validator";
 import { loginCall, isAuthenticated } from "../utils/Authenticator";
   function Login({navigation}) {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [usrErrorCode, setUsrErrorCode] = useState(0);
@@ -37,12 +36,15 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   }, [loginStatus]);
 
   const handleSubmit = () => {
+    if(username != '')
+    {
     if(usrErrorCode === 0 && pwdErrorCode === 0)
     { 
       loginCall(username, password)
       setuserError('')
       setpassError('')
     }
+    
     else if(usrErrorCode === 1)
     {
       setuserError('Enter Valid Email id required')
@@ -51,6 +53,18 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
     {
       setpassError("Enter Valid password")
     }
+  }
+  else
+  {
+    if(username == '')
+    {
+      setuserError('Enter  Email id ')
+    }
+    else
+    {
+      setpassError("Enter  password")
+    }
+  }
   };
   const Navigate = () =>
   {
@@ -62,10 +76,12 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
     {
       validateEmail(username) ? setUsrErrorCode(0):setUsrErrorCode(1)
     }
+  
     if(password != '')
     {
       validatePassword(password) ? setPwdErrorCode(0) :setPwdErrorCode(1)
     }
+  
   }
    return (
     <View style={styles.container}>

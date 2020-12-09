@@ -1,73 +1,159 @@
-import React, { useEffect ,useState} from "react";
+import React, { useEffect , useRef ,useState} from "react";
 import {styles} from '../styles/dasboardStyles'
 import {statuscardanalytics,profileApiPath} from '../endpoints'
-import {Text, View} from 'react-native';
-import {ScrollView} from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import SafeAreaView from 'react-native-safe-area-view';
 import StatusCard from './DashboardStatusCard';
 import PerformanceGraph from './DashboardPerformanceGraph'
 import {getAccessToken} from '../utils/Authenticator'
+import AnimatedHeader from '../../components/AnimatedHeader'
 import moment from 'moment';
 import axios from 'axios'
 import AsyncStorage from '@react-native-community/async-storage'
-function Dashboard ({navigation}){
-  
-    const [dueToday, setdueToday] = useState('')
-    const [overDue, setoverDue] = useState('')
-    const [assigned, setassigned] = useState('')
-    const [unassigned, setunassigned] = useState('')
-    const [resolved, setresolved] = useState('')
-    const [closed, setclosed] = useState('')
-    const [agentType, setagentType] = useState('')
-    const today = moment(new Date()).format('YYYY-MM-DD')
-    const [token,setToken] =  useState('')
-     const getAccessToken = async () => {
-      let userId = '';
-      try {
-        userId = await AsyncStorage.getItem('access_token') || 'none';
-        setToken(userId)
-      } catch (error) {
-      }
-   
-    }
-    useEffect(() => {
-      getAccessToken()
-      profileView()
-      dueTodayData()
-      overDueData()
-      assignedData()
-      unassignedData()
-      resolvedData()
-      closedData()
-     
-    },[token]);
-    const profileView = () =>
-    {
-      
-      let data =
-      {
-        "access_token": token ,
-        "request_type":"view"
-      }
-   
-      axios.post(profileApiPath, data)
-    .then((resp) => {
+import {  Text, View, StyleSheet, Platform, Animated, ScrollView, } from 'react-native';
+const HEADER_MIN_HEIGHT = 50;
+const HEADER_MAX_HEIGHT = 200;
 
-      if (resp.data.status === "success") {
-          let res = resp.data.payload.data
-          setagentType(res[0].agent_type)
-          unassignedData()
-        }
-  
-    })
+function Dashboard ({navigation}){
+
     
-  }
-    const dueTodayData = () =>
+      const [dueToday, setdueToday] = useState('')
+      const [overDue, setoverDue] = useState('')
+      const [assigned, setassigned] = useState('')
+      const [unassigned, setunassigned] = useState('')
+      const [resolved, setresolved] = useState('')
+      const [closed, setclosed] = useState('')
+    
+      const [agentType, setagentType] = useState('')
+      const today = moment(new Date()).format('YYYY-MM-DD')
+      const [token,setToken] =  useState('')
+      const offset = useRef(new Animated.Value(0)).current;
+    const headerHeight = offset.interpolate(
+      {
+        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
+        outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
+        extrapolate: 'clamp'
+      });
+
+    const headerBackgroundColor = offset.interpolate(
+      {
+        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
+        outputRange: ['#e91e63', '#1DA1F2'],
+        extrapolate: 'clamp'
+      });
+       const getAccessToken = async () => {
+        let userId = '';
+        try {
+          userId = await AsyncStorage.getItem('access_token') || 'none';
+          setToken(userId)
+        } catch (error) {
+        }
+     
+      }
+      useEffect(() => {
+        getAccessToken()
+        profileView()
+        dueTodayData()
+        overDueData()
+        assignedData()
+        unassignedData()
+        resolvedData()
+        closedData()
+       
+      },[token]);
+      const profileView = () =>
+      {
+        
+        let data =
+        {
+          "access_token": token ,
+          "request_type":"view"
+        }
+     
+        axios.post(profileApiPath, data)
+      .then((resp) => {
+  
+        if (resp.data.status === "success") {
+            let res = resp.data.payload.data
+            setagentType(res[0].agent_type)
+            unassignedData()
+          }
+    
+      })
+      
+    }
+      const dueTodayData = () =>
+      {
+             
+        let data =
+        {
+          "access_token": token ,
+          "dashboard_type":{"status_card_dashboard_types":"dash_due_today"},
+          "request_type":"view"
+        }
+     
+        axios.post(statuscardanalytics, data)
+      .then((resp) => {
+        if (resp.data.status === "success") {
+            let res = resp.data.payload.data
+            if(res)
+            {
+              if(res.length>0)
+              {
+                res.map((dt)=>
+                {
+                if(today == dt.date)
+                {
+                
+                  setdueToday(dt.due_today_cnt)
+                }
+              } )
+            }
+        }
+      }
+    
+      })
+    }
+    const overDueData = () =>
     {
-           
+      let data =
+        {
+          "access_token": token ,
+          "dashboard_type":{"status_card_dashboard_types":"dash_over_due"},
+          "request_type":"view"
+        }
+     
+        axios.post(statuscardanalytics, data)
+      .then((resp) => {
+        if (resp.data.status === "success") {
+            let res = resp.data.payload.data
+            if(res)
+            {
+              if(res.length>0)
+              {
+                res.map((dt)=>
+                {
+                  
+              
+                if(today == dt.date)
+                {
+                
+  
+                  setoverDue(dt.over_due_cnt)
+                }
+              } )
+            }
+        }
+      }
+    
+      })
+    }
+    const assignedData = () =>
+    {
       let data =
       {
         "access_token": token ,
-        "dashboard_type":{"status_card_dashboard_types":"dash_due_today"},
+        "dashboard_type":{"status_card_dashboard_types":"dash_assigned"},
         "request_type":"view"
       }
    
@@ -84,7 +170,8 @@ function Dashboard ({navigation}){
               if(today == dt.date)
               {
               
-                setdueToday(dt.due_today_cnt)
+  
+                setassigned(dt.assigned_cnt)
               }
             } )
           }
@@ -92,13 +179,55 @@ function Dashboard ({navigation}){
     }
   
     })
-  }
-  const overDueData = () =>
-  {
-    let data =
+    }
+    const unassignedData = () =>
+    {
+      let data =
       {
         "access_token": token ,
-        "dashboard_type":{"status_card_dashboard_types":"dash_over_due"},
+        "dashboard_type":{"status_card_dashboard_types":"dash_unassigned"},
+        "request_type":"view"
+      }
+   
+      axios.post(statuscardanalytics, data)
+    .then((resp) => {
+      if (resp.data.status === "success") {
+          let res = resp.data.payload.data
+          if(res)
+          {
+            if(res.length>0)
+            {
+              res.map((dt)=>
+              {
+            
+         
+              if(today == dt.date)
+              {
+                if(agentType == 'agent')
+                           {
+                             
+                            setunassigned(dt.pending_cnt)
+                           }else
+                           {
+                            
+                            setunassigned(dt.unassigned_cnt)
+                           }
+                         
+  
+              }
+            } )
+          }
+      }
+    }
+  
+    })
+    }
+    const resolvedData = () =>
+    {
+      let data =
+      {
+        "access_token": token ,
+        "dashboard_type":{"status_card_dashboard_types":"dash_resolved"},
         "request_type":"view"
       }
    
@@ -113,12 +242,12 @@ function Dashboard ({navigation}){
               res.map((dt)=>
               {
                 
-            
+       
               if(today == dt.date)
               {
               
-
-                setoverDue(dt.over_due_cnt)
+  
+                setresolved(dt.resolved_date_cnt)
               }
             } )
           }
@@ -126,153 +255,53 @@ function Dashboard ({navigation}){
     }
   
     })
-  }
-  const assignedData = () =>
-  {
-    let data =
+    }
+    const closedData = () =>
     {
-      "access_token": token ,
-      "dashboard_type":{"status_card_dashboard_types":"dash_assigned"},
-      "request_type":"view"
-    }
- 
-    axios.post(statuscardanalytics, data)
-  .then((resp) => {
-    if (resp.data.status === "success") {
-        let res = resp.data.payload.data
-        if(res)
-        {
-          if(res.length>0)
+      let data =
+      {
+        "access_token": token ,
+        "dashboard_type":{"status_card_dashboard_types":"dash_closed"},
+        "request_type":"view"
+      }
+   
+      axios.post(statuscardanalytics, data)
+    .then((resp) => {
+      if (resp.data.status === "success") {
+          let res = resp.data.payload.data
+          if(res)
           {
-            res.map((dt)=>
+            if(res.length>0)
             {
-            if(today == dt.date)
-            {
-            
-
-              setassigned(dt.assigned_cnt)
-            }
-          } )
-        }
-    }
-  }
-
-  })
-  }
-  const unassignedData = () =>
-  {
-    let data =
-    {
-      "access_token": token ,
-      "dashboard_type":{"status_card_dashboard_types":"dash_unassigned"},
-      "request_type":"view"
-    }
- 
-    axios.post(statuscardanalytics, data)
-  .then((resp) => {
-    if (resp.data.status === "success") {
-        let res = resp.data.payload.data
-        if(res)
-        {
-          if(res.length>0)
-          {
-            res.map((dt)=>
-            {
-          
-       
-            if(today == dt.date)
-            {
-              if(agentType == 'agent')
-                         {
-                           
-                          setunassigned(dt.pending_cnt)
-                         }else
-                         {
-                          
-                          setunassigned(dt.unassigned_cnt)
-                         }
-                       
-
-            }
-          } )
-        }
-    }
-  }
-
-  })
-  }
-  const resolvedData = () =>
-  {
-    let data =
-    {
-      "access_token": token ,
-      "dashboard_type":{"status_card_dashboard_types":"dash_resolved"},
-      "request_type":"view"
-    }
- 
-    axios.post(statuscardanalytics, data)
-  .then((resp) => {
-    if (resp.data.status === "success") {
-        let res = resp.data.payload.data
-        if(res)
-        {
-          if(res.length>0)
-          {
-            res.map((dt)=>
-            {
-              
-     
-            if(today == dt.date)
-            {
-            
-
-              setresolved(dt.resolved_date_cnt)
-            }
-          } )
-        }
-    }
-  }
-
-  })
-  }
-  const closedData = () =>
-  {
-    let data =
-    {
-      "access_token": token ,
-      "dashboard_type":{"status_card_dashboard_types":"dash_closed"},
-      "request_type":"view"
-    }
- 
-    axios.post(statuscardanalytics, data)
-  .then((resp) => {
-    if (resp.data.status === "success") {
-        let res = resp.data.payload.data
-        if(res)
-        {
-          if(res.length>0)
-          {
-            res.map((dt)=>
-            {
-              if(today == dt.date)
+              res.map((dt)=>
               {
-                setclosed(dt.closed_date_cnt)
-              }
-          })
-        }
+                if(today == dt.date)
+                {
+                  setclosed(dt.closed_date_cnt)
+                }
+            })
+          }
+      }
     }
-  }
-
-  })
-  }
-
+  
+    })
+    }
+  
     return (
-      <ScrollView >
-            <View style={styles.header}></View>
-            <View style={styles.heading}>
-              <Text style={styles.headingTitle}>Dashboard</Text>
-            </View>
-            <View style={styles.canvasBody}>
+      <View style={styles.container} >
+         <ScrollView  
+          contentContainerStyle={{
+            // alignItems: 'center',
+            // paddingTop: 2,
+            // paddingHorizontal: 20
+          }}
+          showsVerticalScrollIndicator={false}
+          scrollEventThrottle={189}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: offset } } }],
+            { useNativeDriver: false }
+          )} >
+          <View style={styles.canvasBody}>
               <View style={styles.statusBody}>
                 <StatusCard  title="Due today"  type='simple-line-icon'        icon="check"          count={dueToday} />
                 <StatusCard  title="OverDue"    type="simple-line-icon"        icon="like"           count={overDue} />
@@ -284,15 +313,15 @@ function Dashboard ({navigation}){
               <View style={styles.PerformanceBody}>
                 <PerformanceGraph token = {token}/>
               </View>
-            </View>
-      </ScrollView>
+              </View>
+
+        </ScrollView>
+
+        <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
+          <Text style={styles.headerText}>Animated Header</Text>
+        </Animated.View>
+
+      </View>
     );
-
-  
-}
-
-
-export default Dashboard;
-
-
-
+        }
+    export default Dashboard
