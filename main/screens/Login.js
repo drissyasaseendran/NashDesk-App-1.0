@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { styles } from '../styles/styles' 
-import { Text,TouchableOpacity, TextInput, View} from 'react-native';
-import { setLogout } from "../states/login/loginAction"
+import { styles } from '../styles/loginStyles' 
+import { 
+  View, 
+  Text, 
+  TouchableOpacity, 
+  TextInput,
+  ScrollView,
+  StatusBar
+} from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
 import { validateEmail, validatePassword } from "../utils/validator";
 import { loginCall, isAuthenticated } from "../utils/Authenticator";
   function Login({navigation}) {
+    const [data, setData] = React.useState({
+   
+      check_textInputChange: false,
+      secureTextEntry: true,
+      confirm_secureTextEntry: true,
+  });
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [usrErrorCode, setUsrErrorCode] = useState(0);
@@ -84,52 +99,121 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   
   }
    return (
-     
     <View style={styles.container}>
-          <View style={styles.logoContainer}>
-                <Text style={styles.LoginText}>LOGIN</Text>
-                {/* <Image style={styles.logo} source={require('../../images/nash_logo.svg')}/> */}
-          </View>
-          <View style={styles.logoContainer}>
-          <TextInput
-            keyboardType = 'email-address'
-            placeholder='Email'
-            style={styles.input}
-            placeholderTextColor="#888"
-            onChangeText={username => setUsername(username)}
+    <StatusBar backgroundColor='#0187CA' barStyle="light-content"/>
+  <View style={styles.header}>
+      <Text style={styles.text_header}>Login</Text>
+  </View>
+  <Animatable.View 
+      animation="fadeInUpBig"
+      style={styles.footer}
+  >
+      <ScrollView>
+      <Text style={styles.text_footer}>Username</Text>
+      <View style={styles.action}>
+          <FontAwesome 
+              name="user-o"
+              color="#05375a"
+              size={20}
           />
-           <Text style={styles.Error} >{userError}</Text>
-          </View>
-      
+          <TextInput 
+              placeholder="Your Username"
+              style={styles.textInput}
+              autoCapitalize="none"
+              onChangeText={username => setUsername(username)}
+          />
+          {data.check_textInputChange ? 
+          <Animatable.View
+              animation="bounceIn"
+          >
+              <Feather 
+                  name="check-circle"
+                  color="green"
+                  size={20}
+              />
+          </Animatable.View>
+          : null}
+      </View>
+      <Text style={styles.Error} >{userError}</Text>
+      <Text style={[styles.text_footer, {
+          marginTop: 35
+      }]}>Password</Text>
+      <View style={styles.action}>
+          <Feather 
+              name="lock"
+              color="#05375a"
+              size={20}
+          />
+          <TextInput 
+              placeholder="Your Password"
+              secureTextEntry={data.secureTextEntry ? true : false}
+              style={styles.textInput}
+              autoCapitalize="none"
+              onChangeText={password => setPassword(password)}
+          />
+          <TouchableOpacity
            
-         
-          <View style={styles.logoContainer}>
-          <TextInput
-            onChangeText={password => setPassword(password)}
-            placeholder='Password'
-            secureTextEntry={true}
-            placeholderTextColor="#888"
-            style={styles.input}
-          />
-           <Text  style={styles.Error}>{pwdError}</Text>
-          </View>
-     
-         
-      
-          <View style={styles.logoContainer}>
-          <TouchableOpacity >
-              <Text style={styles.forgot}>Forgot Password?</Text>
+          >
+              {data.secureTextEntry ? 
+              <Feather 
+                  name="eye-off"
+                  color="grey"
+                  size={20}
+              />
+              :
+              <Feather 
+                  name="eye"
+                  color="grey"
+                  size={20}
+              />
+              }
           </TouchableOpacity>
-          <TouchableOpacity style={styles.loginBtn}  onPress={handleSubmit}>
-              <Text style={styles.loginText}>LOGIN</Text>
-          </TouchableOpacity>
-          <TouchableOpacity   onPress={Navigate}>
-              <Text style={styles.loginSignup}>Signup</Text>
-          </TouchableOpacity>
-        </View>
-    </View>
+      </View>
+      <Text style={styles.Error} >{pwdError}</Text>
 
-    );
+      <View style={styles.textPrivate}>
+          <Text style={styles.color_textPrivate}>
+              By signing up you agree to our
+          </Text>
+          <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Terms of service</Text>
+          <Text style={styles.color_textPrivate}>{" "}and</Text>
+          <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Privacy policy</Text>
+      </View>
+      <View style={styles.button}>
+          <TouchableOpacity
+              style={styles.signIn}
+              onPress={() => {}}
+          >
+          <Text style={[styles.textSign, {
+                  color:'#fff'
+              }]}>Sign Up</Text>
+           </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={handleSubmit}
+              style={[styles.signIn, {
+                  borderColor: '#0187CA',
+                  borderWidth: 1,
+                  marginTop: 15
+              }]}
+          >
+              <Text style={[styles.textSign, {
+                  color: '#0187CA'
+              }]}>LOGIN</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={Navigate}>
+          
+          <Text style={styles.color_textPrivate}>
+              Signup
+          </Text>
+          </TouchableOpacity>
+         
+     
+      </View>
+      </ScrollView>
+  </Animatable.View>
+</View>
+);
   
 }
 

@@ -213,11 +213,9 @@ const SignInScreen = ({navigation}) => {
                         color: '#0187CA'
                     }]}>Sign In</Text>
                 </TouchableOpacity>
-                <TouchableOpacity
+                {/* <TouchableOpacity
                     onPress={() => navigation.goBack()}>
-                <Text style={[ {
-                       
-                    }]}>Login</Text> </TouchableOpacity>
+                <Text>Login</Text> </TouchableOpacity> */}
             </View>
             </ScrollView>
         </Animatable.View>
