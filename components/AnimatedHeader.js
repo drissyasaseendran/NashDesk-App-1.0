@@ -1,8 +1,9 @@
 import React from 'react';
-
 import {styles} from '../main/styles/dasboardStyles'
+
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import {  Text, View, Animated, } from 'react-native';
+import { TouchableOpacity, Text, View, Animated, } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const AnimatedHeader = ({ offset }) => {
 
@@ -24,7 +25,7 @@ const AnimatedHeader = ({ offset }) => {
   return (
     <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
     <Text style={styles.headerText}>Animated Header</Text>
-    <View style={styles.Animatedcontainer}>
+       <View style={styles.Animatedcontainer}>
     <View style={styles.first} />
 
   </View>

@@ -84,6 +84,7 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
   
   }
    return (
+     
     <View style={styles.container}>
           <View style={styles.logoContainer}>
                 <Text style={styles.LoginText}>LOGIN</Text>

@@ -277,7 +277,8 @@ function Dashboard ({navigation}){
   
     return (
       <View style={styles.container} >
-            <ScrollView
+       
+            <ScrollView 
               showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT }}
                 scrollEventThrottle={16}
@@ -302,6 +303,7 @@ function Dashboard ({navigation}){
        
              
         </ScrollView>
+       
         <AnimatedHeader offset={offset}/>
       </View>
     );

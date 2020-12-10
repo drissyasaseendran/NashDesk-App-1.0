@@ -106,6 +106,10 @@ const styles = StyleSheet.create({
           marginHorizontal:50
       
       }
+
+      // LOGIN
+
+      
 });
 
 export {
