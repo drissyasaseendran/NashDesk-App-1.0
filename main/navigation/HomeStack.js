@@ -62,11 +62,13 @@ const HomeTab = createStackNavigator({
       screen: Dashboard,
       
       navigationOptions:({navigation}) => {
+        
         return{
           headerStyle: {
               borderBottomWidth: 0,
               backgroundColor: '#0187CA'
             },
+            headerShown: false,
             headerTintColor: 'white',
             headerTitle: () => <Header navigation={navigation} title='Settings'/>
       }

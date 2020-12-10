@@ -152,10 +152,19 @@ const styles = StyleSheet.create({
 
     },
 
-
+    NavCoulmn:
+    {
+      marginTop:60,
+      marginLeft:20
+    },
     headerText: {
       color: 'white',
-      fontSize: 22
+      fontSize: 28,
+      paddingTop:35,
+        //  justifyContent: 'center',
+      // alignItems: 'center',
+      textAlign:'center',
+      fontWeight:'bold'
     },
     item: {
       backgroundColor: '#ff9e80',
@@ -170,12 +179,12 @@ const styles = StyleSheet.create({
     },
     animatedHeaderContainer: {
       position: 'absolute',
-      top: (Platform.OS == 'ios') ? 20 : 0,
+      top: (Platform.OS == 'ios') ? 50 :0,
       
       left: 0,
       right: 0,
-      justifyContent: 'center',
-      alignItems: 'center',
+      // justifyContent: 'center',
+      // alignItems: 'center',
       backgroundColor:'white',
     },
     first: {

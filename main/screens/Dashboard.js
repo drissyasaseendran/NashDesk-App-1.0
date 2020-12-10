@@ -1,21 +1,18 @@
 import React, { useEffect , useRef ,useState} from "react";
 import {styles} from '../styles/dasboardStyles'
 import {statuscardanalytics,profileApiPath} from '../endpoints'
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import SafeAreaView from 'react-native-safe-area-view';
 import StatusCard from './DashboardStatusCard';
 import PerformanceGraph from './DashboardPerformanceGraph'
-import {getAccessToken} from '../utils/Authenticator'
 import AnimatedHeader from '../../components/AnimatedHeader'
 import moment from 'moment';
 import axios from 'axios'
 import AsyncStorage from '@react-native-community/async-storage'
-import {  Text, View, StyleSheet, Platform, Animated, ScrollView, } from 'react-native';
+import {   View, Animated, ScrollView, } from 'react-native';
 
 
 function Dashboard ({navigation}){
 
-      const HEADER_MIN_HEIGHT = 50;
+      const HEADER_MIN_HEIGHT = 100;
       const HEADER_MAX_HEIGHT = 200;
       const [dueToday, setdueToday] = useState('')
       const [overDue, setoverDue] = useState('')

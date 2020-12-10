@@ -1,13 +1,13 @@
 import React from 'react';
 import {styles} from '../main/styles/dasboardStyles'
-
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { TouchableOpacity, Text, View, Animated, } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {  TouchableOpacity,Text, View, Animated, } from 'react-native';
 
-const AnimatedHeader = ({ offset }) => {
-
-  const HEADER_MIN_HEIGHT = 50;
+const AnimatedHeader = ({ navigation,offset }) => {
+  const openMenu = () => {
+    navigation.openDrawer();
+  };
+  const HEADER_MIN_HEIGHT = 100;
   const HEADER_MAX_HEIGHT = 200;
   const headerHeight = offset.interpolate(
     {
@@ -24,10 +24,25 @@ const AnimatedHeader = ({ offset }) => {
     });
   return (
     <Animated.View style={[styles.animatedHeaderContainer, { height: headerHeight, backgroundColor: headerBackgroundColor }]}>
-    <Text style={styles.headerText}>Animated Header</Text>
+      
+            <TouchableOpacity  style={styles.NavCoulmn} onPress={openMenu}>
+            <Icon name="menu" color='#fff' size={30}                        
+                               / >
+            </TouchableOpacity>
+            
+      
+    <Text style={styles.headerText}>Dashboard</Text>
        <View style={styles.Animatedcontainer}>
     <View style={styles.first} />
-
+    <View  style={{flexDirection:'row'}}> 
+        <View  style={styles.NavView}>
+          <View  style={styles.NavDirection}>
+          
+         
+          </View>
+          </View>
+    
+        </View>
   </View>
  </Animated.View>
   );
