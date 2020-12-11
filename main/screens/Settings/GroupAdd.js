@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from "react";
-import { View,Text, TouchableOpacity
+import { View,Text,TextInput, TouchableOpacity
 } from 'react-native';
 import Modal from 'react-native-modal';
 import {styles} from '../../styles/groupStyles'
@@ -29,6 +29,18 @@ function GroupAdd (props){
               <Icon style={styles.modelCloseicon}  name="close"/>
                   
               </View>
+                 <TextInput style = {styles.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               placeholderTextColor = "#9a73ef"
+               autoCapitalize = "none"
+              />
+                  <TextInput style = {styles.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "Email"
+               placeholderTextColor = "#9a73ef"
+               autoCapitalize = "none"
+              />
               <View style={styles.button}><Text style={styles.textcolor}>Add</Text></View>
         </TouchableOpacity>
   </Modal>
