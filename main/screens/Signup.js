@@ -71,7 +71,10 @@ const SignInScreen = ({navigation}) => {
             confirm_secureTextEntry: !data.confirm_secureTextEntry
         });
     }
-
+    const Navigate = () =>
+    {
+        navigation.navigate('Login')
+    }
     return (
       <View style={styles.container}>
           <StatusBar backgroundColor='#0187CA' barStyle="light-content"/>
@@ -87,8 +90,8 @@ const SignInScreen = ({navigation}) => {
             <View style={styles.action}>
                 <FontAwesome 
                     name="user-o"
-                    color="#05375a"
-                    size={20}
+                      color="rgb(1, 135, 202)"
+                    size={17}
                 />
                 <TextInput 
                     placeholder="Your Username"
@@ -103,7 +106,7 @@ const SignInScreen = ({navigation}) => {
                     <Feather 
                         name="check-circle"
                         color="green"
-                        size={20}
+                        size={17}
                     />
                 </Animatable.View>
                 : null}
@@ -115,8 +118,8 @@ const SignInScreen = ({navigation}) => {
             <View style={styles.action}>
                 <Feather 
                     name="lock"
-                    color="#05375a"
-                    size={20}
+                      color="rgb(1, 135, 202)"
+                    size={17}
                 />
                 <TextInput 
                     placeholder="Your Password"
@@ -132,13 +135,13 @@ const SignInScreen = ({navigation}) => {
                     <Feather 
                         name="eye-off"
                         color="grey"
-                        size={20}
+                        size={17}
                     />
                     :
                     <Feather 
                         name="eye"
                         color="grey"
-                        size={20}
+                        size={17}
                     />
                     }
                 </TouchableOpacity>
@@ -150,8 +153,8 @@ const SignInScreen = ({navigation}) => {
             <View style={styles.action}>
                 <Feather 
                     name="lock"
-                    color="#05375a"
-                    size={20}
+                      color="rgb(1, 135, 202)"
+                    size={17}
                 />
                 <TextInput 
                     placeholder="Confirm Your Password"
@@ -167,13 +170,13 @@ const SignInScreen = ({navigation}) => {
                     <Feather 
                         name="eye-off"
                         color="grey"
-                        size={20}
+                        size={17}
                     />
                     :
                     <Feather 
                         name="eye"
                         color="grey"
-                        size={20}
+                        size={17}
                     />
                     }
                 </TouchableOpacity>
@@ -191,14 +194,10 @@ const SignInScreen = ({navigation}) => {
                     style={styles.signIn}
                     onPress={() => {}}
                 >
-                {/* <LinearGradient
-                    colors={['#FFA07A', '#FF6347']}
-                    style={styles.signIn}
-                > */}
+             
                     <Text style={[styles.textSign, {
                         color:'#fff'
                     }]}>Sign Up</Text>
-                {/* </LinearGradient> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -213,10 +212,14 @@ const SignInScreen = ({navigation}) => {
                         color: '#0187CA'
                     }]}>Sign In</Text>
                 </TouchableOpacity>
-                {/* <TouchableOpacity
-                    onPress={() => navigation.goBack()}>
-                <Text>Login</Text> </TouchableOpacity> */}
+               
             </View>
+            <TouchableOpacity style={styles.signUp} onPress={Navigate}>
+          
+          <Text style={styles.color_textPrivate}>
+              Login
+          </Text>
+          </TouchableOpacity>
             </ScrollView>
         </Animatable.View>
       </View>

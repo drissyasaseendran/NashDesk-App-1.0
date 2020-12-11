@@ -2,17 +2,21 @@ import React, { useEffect ,useState} from "react";
 import { View,ScrollView,Text, TouchableOpacity
 } from 'react-native';
 import { useDispatch } from 'react-redux'
+import { FAB } from 'react-native-paper';
 import {styles} from '../../styles/groupStyles'
 import {groupApiPath,agentApiPath} from '../../endpoints'
 import {getAccessToken} from '../../utils/Authenticator'
 import axios from 'axios'
-import {groupView,groupEditData,groupAgentView,groupStatus} from '../../states/group/groupAction'
+import {groupEditData,groupStatus} from '../../states/group/groupAction'
 import {agentViewData} from '../../states/agents/agentAction'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import GroupAdd from '../Settings/GroupAdd'
+
 function Group ({navigation}){
 	const [afterPress , setafterPress] = useState(false)
-	const token = getAccessToken()
+	const token = '2d9cc2e28cdae62ec7c6'
 	const [group,setgroup] = useState([])
+	const [visible,setVisible] = useState(false)
 	const dispatch = useDispatch()
 	useEffect(() => {
   
@@ -104,22 +108,30 @@ function Group ({navigation}){
 	  });
    
 	}
+	const navigateGroup = () =>
+	{
+		setVisible(true)
+	}
     return (
-		<ScrollView>
+		<View>
+			<GroupAdd visible={visible}/>	
+		<ScrollView  
+		    showsVerticalScrollIndicator={false}
+            rollEventThrottle={16}
+            >
 		
 			<View style={styles.GroupView}>
 			{
 				group && group.map((group) =>
 				{
 				return (
-				
 					<TouchableOpacity   onLongPress={()=>pressLong(group.grp_id)}  style={styles.GroupBlock}>
 						<View style={styles.View}>
 								<View style={styles.GroupBlockView}>
 									<Icon style={styles.GroupBlockIcon} name="account-group"/>
 									<Text style={styles.GroupTitle}>{group.group_name}</Text>
 								</View>
-								<View   style={styles.GroupBlockAgents}> 
+								<View style={styles.GroupBlockAgents}> 
 									{!afterPress["afterPress" + group.grp_id] ?
 									<View  style={styles.BtnView}> 
 										<Text style={styles.Groupcount}>{group.count} Agents</Text>
@@ -140,9 +152,21 @@ function Group ({navigation}){
 				)
 				   })
 				}
-				
+		   
 			</View>
+		
+			         
+		
 		</ScrollView>
+				<FAB
+				style={styles.fab}
+				icon="plus"
+				onPress={navigateGroup}
+			/>    
+			
+		
+			</View>
+			
     );
 
 }

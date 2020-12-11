@@ -16,6 +16,7 @@ import MessageMemo from '../screens/MessageMemmo'
 import Category from '../screens/Settings/Category'
 import AgentEdit from '../screens/Settings/AgentEdit'
 import GroupView from '../screens/Settings/GroupView'
+import GroupAdd from "../screens/Settings/GroupAdd";
 import Analytics from '../screens/Analytics'
 import Notification from '../screens/Settings/Notification'
 import ProfileUpdate from '../screens/ProfileUpdate'
@@ -206,6 +207,38 @@ Groups:{
     }
     }
 },
+GroupView:{
+  screen:GroupView,
+  navigationOptions:({navigation}) => {
+     
+    return{
+      headerStyle: {
+     
+          borderBottomWidth: 0,
+          backgroundColor: '#0187CA'
+        },
+        headerTintColor: 'white',
+        // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
+
+  }
+  }
+},
+GroupAdd:{
+  screen:GroupAdd,
+  navigationOptions:({navigation}) => {
+     
+    return{
+      headerStyle: {
+     
+          borderBottomWidth: 0,
+          backgroundColor: '#0187CA'
+        },
+        headerTintColor: 'white',
+        // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
+
+  }
+  }
+},
 Tags:{
     screen:Tags,
     navigationOptions:({navigation}) => {
@@ -308,22 +341,7 @@ CannedResponseAdd:
   }
   }
 },
-GroupView:{
-  screen:GroupView,
-  navigationOptions:({navigation}) => {
-     
-    return{
-      headerStyle: {
-     
-          borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
-        },
-        headerTintColor: 'white',
-        // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
 
-  }
-  }
-},
 
 CannedResponse:{
     screen:CannedResponse,

@@ -1,5 +1,5 @@
 import {
-    StyleSheet
+    StyleSheet,Platform
 } from 'react-native';
 import { Dimensions } from 'react-native';
 import { color } from 'react-native-reanimated';
@@ -13,17 +13,32 @@ const styles = StyleSheet.create({
     },
     GroupBlock:
     {
-        backgroundColor:'#fff',
-        borderRadius:5,
-        marginTop:20,
-        shadowOffset:{  width: 2,  height: 1,  },
-        shadowColor: '#ccc',
-        shadowOpacity: 0.25,
-        elevation: 11,
-        padding:23,
- 
-     
+      
+        shadowColor: '#402583',
+        backgroundColor: '#ffffff',
+        shadowOffset: {
+        width: 0,
+        height: 0,
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+        elevation: 1,
+        borderRadius: 5,
+        marginHorizontal: 8,
+        marginTop: 12,
+        paddingHorizontal: 16,
+        paddingVertical: 12,
+        
     },
+    fab: {
+        backgroundColor:'rgb(1, 135, 202)',
+        color:'#fff',
+        position: 'absolute',
+        margin: 16,
+        right: 0,
+        bottom: 0,
+       
+      },
     View:
     {
         display:'flex',
@@ -265,8 +280,44 @@ const styles = StyleSheet.create({
                     color:'#fff'
                          
                    },
-             
-             
+                   MainContainer :{
+ 
+                    flex:1,
+                    paddingTop: (Platform.OS) === 'ios' ? 20 : 0,
+                    justifyContent: 'center',
+                    margin:20
+                      
+                    },
+                   
+                    TextInputStyleClass:{
+                   
+                      textAlign: 'center',
+                    //   height: 50,
+                      borderWidth: 2,
+                      borderColor: '#9E9E9E',
+                      borderRadius: 20 ,
+                      backgroundColor : "#FFFFFF",
+                      height: 150
+                       
+                      },
+                      button: {
+                        display: 'flex',
+                        height: 60,
+                        borderRadius: 6,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%',
+                        backgroundColor: '#2AC062',
+                        shadowColor: '#2AC062',
+                        shadowOpacity: 0.5,
+                        shadowOffset: { 
+                          height: 10, 
+                          width: 0 
+                        },
+                        shadowRadius: 25,
+                      }, 
+                      
+                   
 });
 export {
     styles

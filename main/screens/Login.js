@@ -16,7 +16,6 @@ import { validateEmail, validatePassword } from "../utils/validator";
 import { loginCall, isAuthenticated } from "../utils/Authenticator";
   function Login({navigation}) {
     const [data, setData] = React.useState({
-   
       check_textInputChange: false,
       secureTextEntry: true,
       confirm_secureTextEntry: true,
@@ -49,7 +48,12 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       break;
     }
   }, [loginStatus]);
-
+  const updateSecureTextEntry = () => {
+    setData({
+        ...data,
+        secureTextEntry: !data.secureTextEntry
+    });
+}
   const handleSubmit = () => {
     if(username != '')
     {
@@ -101,9 +105,9 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
    return (
     <View style={styles.container}>
     <StatusBar backgroundColor='#0187CA' barStyle="light-content"/>
-  <View style={styles.header}>
-      <Text style={styles.text_header}>Login</Text>
-  </View>
+    <View style={styles.header}>
+        <Text style={styles.text_header}>Login</Text>
+    </View>
   <Animatable.View 
       animation="fadeInUpBig"
       style={styles.footer}
@@ -113,8 +117,8 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       <View style={styles.action}>
           <FontAwesome 
               name="user-o"
-              color="#05375a"
-              size={20}
+              color="rgb(1, 135, 202)"
+              size={17}
           />
           <TextInput 
               placeholder="Your Username"
@@ -128,8 +132,8 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
           >
               <Feather 
                   name="check-circle"
-                  color="green"
-                  size={20}
+                  color="rgb(1, 135, 202)"
+                  size={17}
               />
           </Animatable.View>
           : null}
@@ -141,8 +145,8 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
       <View style={styles.action}>
           <Feather 
               name="lock"
-              color="#05375a"
-              size={20}
+              color="rgb(1, 135, 202)"
+              size={17}
           />
           <TextInput 
               placeholder="Your Password"
@@ -152,19 +156,19 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
               onChangeText={password => setPassword(password)}
           />
           <TouchableOpacity
-           
+               onPress={updateSecureTextEntry}
           >
               {data.secureTextEntry ? 
               <Feather 
                   name="eye-off"
-                  color="grey"
-                  size={20}
+                  color="rgb(1, 135, 202)"
+                  size={17}
               />
               :
               <Feather 
                   name="eye"
-                  color="grey"
-                  size={20}
+                  color="rgb(1, 135, 202)"
+                  size={17}
               />
               }
           </TouchableOpacity>
@@ -180,14 +184,7 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
           <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Privacy policy</Text>
       </View>
       <View style={styles.button}>
-          <TouchableOpacity
-              style={styles.signIn}
-              onPress={() => {}}
-          >
-          <Text style={[styles.textSign, {
-                  color:'#fff'
-              }]}>Sign Up</Text>
-           </TouchableOpacity>
+ 
 
           <TouchableOpacity
             onPress={handleSubmit}
@@ -201,15 +198,16 @@ import { loginCall, isAuthenticated } from "../utils/Authenticator";
                   color: '#0187CA'
               }]}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={Navigate}>
+       
+         
+     
+      </View>
+      <TouchableOpacity style={styles.signUp} onPress={Navigate}>
           
           <Text style={styles.color_textPrivate}>
               Signup
           </Text>
           </TouchableOpacity>
-         
-     
-      </View>
       </ScrollView>
   </Animatable.View>
 </View>

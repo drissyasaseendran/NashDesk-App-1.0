@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
+        marginTop: 50,
+      
     },
     signIn: {
         width: '100%',
@@ -70,9 +72,8 @@ const styles = StyleSheet.create({
     },
     signUp:
     {
-        color:'grey',
         textAlign:'center',
-        paddingTop:18
+        paddingTop:20
     },
     Error:
     {
