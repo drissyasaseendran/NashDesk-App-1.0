@@ -303,20 +303,65 @@ const styles = StyleSheet.create({
                       button: {
                         display: 'flex',
                         height: 60,
+                        width:340,
                         borderRadius: 6,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        width: '100%',
+                        alignSelf:'center',
                         backgroundColor: '#2AC062',
                         shadowColor: '#2AC062',
-                        shadowOpacity: 0.5,
+                        shadowOpacity: 1.28,
                         shadowOffset: { 
-                          height: 10, 
+                          height: 19, 
                           width: 0 
                         },
-                        shadowRadius: 25,
+                        shadowRadius: 55,
                       }, 
+                      textcolor:
+                      {
+                            color:'#fff',
+                            fontSize:20
+                      },
+                      modelClose:
+                      {
+                        display:'flex',
+                        flexDirection:'row',
+                        padding:20,
+                        paddingTop:28
+                      },
+                      modlTextAdd:
+                      {
+                        flexGrow:1,
+                        fontSize:18,
+                        color:'#888',
+                        fontWeight:'bold'
+                      },
+                      modelCloseicon:
+                      {
+                            color:'grey',
+                            fontSize:20
+                      },
+                      addGroupModal:
+                      {
+                        margin: 0,
                       
+                        
+                      },
+                      GroupModal:
+                      {
+                          top:165,
+                          borderTopRightRadius:30,
+                          borderTopLeftRadius:30,
+                          shadowOffset: {
+                            width: 0,
+                            height: 0,
+                            },
+                            shadowOpacity: 0.1,
+                            shadowRadius: 6,
+                            elevation: 1,
+                          backgroundColor:'#fff',
+                          height:'50%'
+                      }
                    
 });
 export {

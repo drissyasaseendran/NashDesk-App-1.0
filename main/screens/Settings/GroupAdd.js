@@ -4,6 +4,7 @@ import { View,Text, TouchableOpacity
 import Modal from 'react-native-modal';
 import {styles} from '../../styles/groupStyles'
 import { Dimensions } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const window = Dimensions.get('window');
 const screenHeight = window.height;
@@ -14,30 +15,23 @@ function GroupAdd (props){
 	 
 		},[props.visible]);
     return (
-        <View style={styles.modilecontainer}>
-        <Modal
+        <Modal style={styles.addGroupModal}
         animationType="slide"
+        transparent={true}
         visible={props.visible}
-        onRequestClose={() => {
-            // this.closeButtonFunction()
-        }}
-        >
-        <View
-            style={{
-            height: '50%',
-        //    width :screenWidth,
-            marginTop: 8,
-            backgroundColor:'#fff'
-            }}>
-            <View style={styles.footer}>
-            <Text style={styles.headerText}>This is Half Modal</Text>
-            </View>
-            <TouchableOpacity  style={styles.button}
-          >
-            <Text style={styles.addButtonText}>Close</Text>
-            </TouchableOpacity>
-        </View>
-        </Modal></View>
+        onRequestClose={() => {}}>
+        <TouchableOpacity
+          style={styles.GroupModal}
+          activeOpacity={1}
+          onPressOut={() => {}}>
+              <View style={styles.modelClose} >
+                  <Text style={styles.modlTextAdd}>Add Group</Text>
+              <Icon style={styles.modelCloseicon}  name="close"/>
+                  
+              </View>
+              <View style={styles.button}><Text style={styles.textcolor}>Add</Text></View>
+        </TouchableOpacity>
+  </Modal>
     );
 
 }
