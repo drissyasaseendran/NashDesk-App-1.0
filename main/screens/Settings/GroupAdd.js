@@ -10,13 +10,15 @@ import axios from "axios";
 function GroupAdd (props){
   const [groupname, setGroupname] = useState("");
   const [description, setDescrition] = useState("");
+  const [grperror,setgrpError] = useState('')
+  const [visible,setVisible] = useState(false)
   const [username, setUsername] = useState("");
   const [agentType, setagentType] = useState("");
   const token = "2d9cc2e28cdae62ec7c6"
 
 	useEffect(() => {
      fetchProfile()
-	 
+     setVisible(props.visible)
     },[props.visible]);
     const fetchProfile = () =>
     {
@@ -30,41 +32,49 @@ function GroupAdd (props){
         {
         let res = respData.data.payload.data
         setUsername(res[0].username)
-        setagentType(res[0].agentType) 
+        setagentType(res[0].agent_type) 
       }
        
     
       });
     }
     const handleSubmit = () => {
-      alert(agentType)
-      let data =
-      { 
-  
-        "access_token": token,
-        "fields":{
-            "agt_sett_id":"",
-            "group_name":groupname,
-            "description":description,
-            "agent_username":[username]
-           },
-        "agent_type":agentType,	   
-        "request_type":"add"  
-     
-     }
-     axios.post(groupApiPath, data).then((respData) => {
-       
-      if(respData.data.status == "success")
+      if(groupname != '')
       {
-        props.fetchGroupdata()
+          setgrpError('')
+          let data =
+          { 
+      
+            "access_token": token,
+            "fields":{
+                "agt_sett_id":"",
+                "group_name":groupname,
+                "description":description,
+                "agent_username":[username]
+              },
+            "agent_type":agentType,	   
+            "request_type":"add"  
+        
+        }
+        axios.post(groupApiPath, data).then((respData) => {
+          
+          if(respData.data.status == "success")
+          {
+            props.fetchGroupdata()
+            setVisible(false)
+          }
+          else
+          {
+      
+          }
+      
+        });
       }
       else
-      {
-   
+        {
+          setgrpError('Group name required')
+        }
       }
-  
-    });
-  }
     return (
         <Modal
         style={styles.addGroupModal}
@@ -73,7 +83,7 @@ function GroupAdd (props){
         hasBackdrop={true}
         backdropColor="black"
         backdropOpacity= {1}
-        visible={props.visible}
+        visible={visible}
         onRequestClose={() => {}}>
         <View
           style={styles.GroupModal}
@@ -91,7 +101,7 @@ function GroupAdd (props){
                autoCapitalize = "none"
                onChangeText={groupname => setGroupname(groupname)}
                />
-                <Text style={styles.Error}>Group name required</Text>
+                <Text style={styles.Error}>{grperror}</Text>
                 <TextInput
                 placeholder="Type Comment"
                 style = {styles.inputTextarea}
