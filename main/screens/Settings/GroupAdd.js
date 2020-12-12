@@ -19,7 +19,7 @@ function GroupAdd (props){
 	useEffect(() => {
      fetchProfile()
      setVisible(props.visible)
-    },[props.visible]);
+    },[props.visible,]);
     const fetchProfile = () =>
     {
       const data = {
@@ -42,6 +42,8 @@ function GroupAdd (props){
       if(groupname != '')
       {
           setgrpError('')
+          if(props.status == 'Add')
+          {
           let data =
           { 
       
@@ -74,6 +76,32 @@ function GroupAdd (props){
         {
           setgrpError('Group name required')
         }
+      }
+      else
+
+      {
+        const data =
+        {
+          // "grp_id": groupadd.id,
+          // "access_token": token,
+          // "fields": { "group_name":  groupadd.grpname, "description":  groupadd.description },
+          // "request_type": "update"
+        }
+        
+        axios.post(groupApiPath, data).then((respData) => {
+          if(respData.data.status == "success")
+          {
+       
+          
+          }
+          else
+          {
+       
+           
+          }
+      
+        });
+      }
       }
     return (
         <Modal

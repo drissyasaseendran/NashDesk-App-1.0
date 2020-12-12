@@ -16,6 +16,11 @@ function Group ({navigation}){
 	const [afterPress , setafterPress] = useState(false)
 	const token = '2d9cc2e28cdae62ec7c6'
 	const [group,setgroup] = useState([])
+	const [groupname, setGroupname] = useState("");
+	const [description, setDescrition] = useState("");
+	const [abtid,setAbtid] = useState('')
+	const [grpId,setGroupid] = useState('')
+	const [status ,setStatus] = useState('Add')
 	const [visible,setVisible] = useState(false)
 	const dispatch = useDispatch()
 	useEffect(() => {
@@ -66,7 +71,7 @@ function Group ({navigation}){
 	}
 	const editGroup = (group) =>
 	{
-		dispatch(groupStatus("Edit"))
+
 		let data = {   
 			"access_token": token,
 			"grp_id":group.grp_id,
@@ -76,9 +81,15 @@ function Group ({navigation}){
 		  axios.post(groupApiPath, data).then((respData) => {
 			if(respData.data.status == "success")
 			{
-			let res = respData.data.payload.data
-			dispatch(groupEditData(res))
-			navigation.navigate('GroupView')
+			let res = respData.data.payload.data[0].description
+			alert(res[0].about_id)
+			setGroupid(group.grp_id)
+			setGroupname(group.group_name)
+			setDescrition(res[0].description)
+			setAbtid(res[0].about_id)
+			setStatus('Edit')
+
+				
 			}
 		  });
 		
@@ -112,11 +123,22 @@ function Group ({navigation}){
 
     return (
 		<View>
-			<GroupAdd visible={visible} Close={()=>setVisible(false)} fetchGroupdata={fetchGroupdata}/>	
-		<ScrollView  
-		    showsVerticalScrollIndicator={false}
-            rollEventThrottle={16}
-            >
+			<GroupAdd 
+				visible={visible}
+				Close={()=>setVisible(false)}
+				groupname={groupname}
+				description={description}
+				abtid={abtid}
+				grpId={grpId}
+				status={status}
+				fetchGroupdata={fetchGroupdata}
+			/>	
+
+
+			<ScrollView  
+				showsVerticalScrollIndicator={false}
+				rollEventThrottle={16}
+				>
 		
 			<View style={styles.GroupView}>
 			{
