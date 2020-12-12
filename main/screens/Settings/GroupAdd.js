@@ -15,11 +15,13 @@ function GroupAdd (props){
 	 
 		},[props.visible]);
     return (
-        <Modal style={styles.addGroupModal}
+        <Modal
+        style={styles.addGroupModal}
+        animationType={"slide"}
         transparent={true} 
-        backdropColor="rgba(0,0,0,0.5)"
+        hasBackdrop={true}
+        backdropColor="black"
         backdropOpacity= {1}
-        animationType={"fade"}
         visible={props.visible}
         onRequestClose={() => {}}>
         <TouchableOpacity

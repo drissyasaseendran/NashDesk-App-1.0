@@ -137,11 +137,11 @@ function Group ({navigation}){
 								</View>
 								<View style={styles.GroupBlockAgents}> 
 									{!afterPress["afterPress" + group.grp_id] ?
-									<View  style={styles.BtnView}> 
+									<View  > 
 										<Text style={styles.Groupcount}>{group.count} Agents</Text>
 									</View>
 									:
-									<View  style={styles.BtnView}> 
+									<View > 
 										<TouchableOpacity  onPress={() => editGroup(group)} style={styles.btnEdit}   >
 											<Text style={styles.textColor}>Edit</Text>
 										</TouchableOpacity>

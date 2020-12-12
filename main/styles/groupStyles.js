@@ -97,13 +97,16 @@ const styles = StyleSheet.create({
     {
         flex:1,
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
         // justifyContent:'center',
       
     },
     GroupBlockAgents:
     {
-        justifyContent:'center',
+      // flex:1,  marginTop:-15,
+      flexDirection:'row',
+      alignItems:'center',
+        // justifyContent:'center',
     },
     Groupcount:
     {
@@ -124,8 +127,7 @@ const styles = StyleSheet.create({
         
                 BtnView:
                 {
-                    display:'flex',
-                    flexDirection:'row',
+                 
                     // position: 'absolute',
                     // width: 50,
                     // height: 50,
@@ -305,7 +307,7 @@ const styles = StyleSheet.create({
                         borderRadius: 6,
                         alignItems: 'center',
                         backgroundColor: '#1a73e8',
-                        shadowColor: '#2AC062',
+                        shadowColor: '#1a73e8',
                         shadowOpacity: 1.28,
                         shadowOffset: { 
                           height: 19, 
