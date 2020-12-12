@@ -81,8 +81,8 @@ function GroupAdd (props){
         animationType={"slide"}
         transparent={true} 
         hasBackdrop={true}
-        backdropColor="black"
-        backdropOpacity= {1}
+        backdropOpacity={0.5}
+        backdropColor={'rgba(0, 0, 0, 0.8)'}
         visible={visible}
         onRequestClose={() => {}}>
         <View

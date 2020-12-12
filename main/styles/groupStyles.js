@@ -201,10 +201,23 @@ const styles = StyleSheet.create({
                         height:30,
                         padding:12
                 },
+                btn:
+                {
+                  display:'flex',
+                  flexDirection:'row'
+                },
                 Iconcolortrash:
                 {
+                  padding:5,
+                  fontSize:14,
                     color:'#ff6961'
                 },  
+                IconcolorEdit:
+                {
+                  fontSize:16,
+                  padding:5,
+                  color:'#77DD77'
+                },
                 agentText:
                 {
                     color:'#666',

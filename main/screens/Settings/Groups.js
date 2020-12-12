@@ -135,12 +135,13 @@ function Group ({navigation}){
 										<Text style={styles.Groupcount}>{group.count} Agents</Text>
 									</View>
 									:
-									<View > 
-										<TouchableOpacity  onPress={() => editGroup(group)} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
+									<View  style={styles.btn} > 
+										<TouchableOpacity  onPress={() => editGroup(group)}   >
+										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
 										</TouchableOpacity>
-										<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}  style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+										<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}  >
+										<Icon name="trash-can-outline" style={styles.Iconcolortrash} fontSize='inherit' color='inherit'/>
+									
 										</TouchableOpacity>          
 									</View>
 									}
