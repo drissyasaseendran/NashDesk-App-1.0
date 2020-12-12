@@ -13,12 +13,22 @@ function GroupAdd (props){
   const [grperror,setgrpError] = useState('')
   const [visible,setVisible] = useState(false)
   const [username, setUsername] = useState("");
+  const [abtid,setAbtid] = useState('')
+  const [grpId,setGroupid] = useState('')
+  const [status ,setStatus] = useState('')
   const [agentType, setagentType] = useState("");
   const token = "2d9cc2e28cdae62ec7c6"
 
 	useEffect(() => {
-     fetchProfile()
-     setVisible(props.visible)
+      fetchProfile()
+      setVisible(props.visible)
+			setGroupid(props.grpId)
+			setGroupname(props.groupname)
+			setDescrition(props.description)
+			setAbtid(abtid)
+			setStatus(props.status)
+      setVisible(true)
+      alert(status)
     },[props.visible,]);
     const fetchProfile = () =>
     {
@@ -119,7 +129,7 @@ function GroupAdd (props){
           onPressOut={() => {}}>
               <View style={styles.modelClose} >
                   <Text style={styles.modlTextAdd}>Add Group</Text>
-              <Icon onPress={props.Close} style={styles.modelCloseicon}  name="close"/>
+              <Icon onPress={()=>setVisible(false)} style={styles.modelCloseicon}  name="close"/>
                   
               </View>
               <TextInput style = {styles.input}

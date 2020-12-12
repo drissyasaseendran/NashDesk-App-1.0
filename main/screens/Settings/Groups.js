@@ -82,12 +82,13 @@ function Group ({navigation}){
 			if(respData.data.status == "success")
 			{
 			let res = respData.data.payload.data[0].description
-			alert(res[0].about_id)
+		
 			setGroupid(group.grp_id)
 			setGroupname(group.group_name)
 			setDescrition(res[0].description)
 			setAbtid(res[0].about_id)
 			setStatus('Edit')
+			setVisible(true)
 
 				
 			}
