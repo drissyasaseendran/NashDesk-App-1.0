@@ -6,14 +6,36 @@ import {styles} from '../../styles/groupStyles'
 import { Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const window = Dimensions.get('window');
-const screenHeight = window.height;
-const screenWidth = window.width;
 function GroupAdd (props){
+  const [groupname, setGroupname] = useState("");
+  const [description, setDescrition] = useState("");
+
+
 	useEffect(() => {
      
 	 
-		},[props.visible]);
+    },[props.visible]);
+
+    const handleSubmit = () => {
+      if(username != '')
+      {
+      if(usrErrorCode === 0 && pwdErrorCode === 0)
+      { 
+        loginCall(username, password)
+        setuserError('')
+        setpassError('')
+      }
+      
+      else if(usrErrorCode === 1)
+      {
+        setuserError('Enter Valid Email id required')
+      }
+      else if(pwdErrorCode == 1)
+      {
+        setpassError("Enter Valid password")
+      }
+    }
+  }
     return (
         <Modal
         style={styles.addGroupModal}
@@ -38,21 +60,19 @@ function GroupAdd (props){
                placeholder = "Group Name"
                placeholderTextColor = "#888"
                autoCapitalize = "none"
-              //  onChangeText = {handleEmail}
+               onChangeText={groupname => setGroupname(groupname)}
                />
                 <Text style={styles.Error}>Group name required</Text>
                 <TextInput
             placeholder="Type Comment"
             style = {styles.inputTextarea}
-            // value={this.state.comment.value}
-            // onChangeText={value => this.onChangeComment(value)}
-            // onPress={() => this.uploadComment()}
             multiline={true}
             maxLength={200}
             numberOfLines={5}
+            onChangeText={description => setDescrition(description)}
           />
-           <Text style={styles.Error}>Group name required</Text>
-              <View style={styles.button}><Text style={styles.textcolor}>Add</Text></View>
+         
+             <TouchableOpacity onPress={handleSubmit} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
         </TouchableOpacity>
   </Modal>
     );
