@@ -16,8 +16,10 @@ function GroupAdd (props){
 		},[props.visible]);
     return (
         <Modal style={styles.addGroupModal}
-        animationType="slide"
-        transparent={true}
+        transparent={true} 
+        backdropColor="rgba(0,0,0,0.5)"
+        backdropOpacity= {1}
+        animationType={"fade"}
         visible={props.visible}
         onRequestClose={() => {}}>
         <TouchableOpacity
@@ -26,21 +28,26 @@ function GroupAdd (props){
           onPressOut={() => {}}>
               <View style={styles.modelClose} >
                   <Text style={styles.modlTextAdd}>Add Group</Text>
-              <Icon style={styles.modelCloseicon}  name="close"/>
+              <Icon onPress={props.Close} style={styles.modelCloseicon}  name="close"/>
                   
               </View>
-                 <TextInput style = {styles.input}
+              <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
-               placeholderTextColor = "#9a73ef"
+               placeholder = "Group Name"
+               placeholderTextColor = "#888"
                autoCapitalize = "none"
-              />
-                  <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = "Email"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-              />
+              //  onChangeText = {handleEmail}
+               />
+                <TextInput
+            placeholder="Type Comment"
+            style = {styles.inputTextarea}
+            // value={this.state.comment.value}
+            // onChangeText={value => this.onChangeComment(value)}
+            // onPress={() => this.uploadComment()}
+            multiline={true}
+            maxLength={200}
+            numberOfLines={5}
+          />
               <View style={styles.button}><Text style={styles.textcolor}>Add</Text></View>
         </TouchableOpacity>
   </Modal>

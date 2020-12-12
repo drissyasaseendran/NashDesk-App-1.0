@@ -112,9 +112,13 @@ function Group ({navigation}){
 	{
 		setVisible(true)
 	}
+	const Close = () =>
+	{
+		setVisible(false)
+	}
     return (
 		<View>
-			<GroupAdd visible={visible}/>	
+			<GroupAdd visible={visible} Close={Close}/>	
 		<ScrollView  
 		    showsVerticalScrollIndicator={false}
             rollEventThrottle={16}

@@ -301,13 +301,9 @@ const styles = StyleSheet.create({
                        
                       },
                       button: {
-                        display: 'flex',
-                        height: 60,
-                        width:340,
+                        
                         borderRadius: 6,
-                        justifyContent: 'center',
                         alignItems: 'center',
-                        alignSelf:'center',
                         backgroundColor: '#2AC062',
                         shadowColor: '#2AC062',
                         shadowOpacity: 1.28,
@@ -316,6 +312,11 @@ const styles = StyleSheet.create({
                           width: 0 
                         },
                         shadowRadius: 55,
+                        margin: 15,
+                        height: 50,
+                        padding:10,
+                        borderColor: '#ccc',
+                        borderWidth: 1
                       }, 
                       textcolor:
                       {
@@ -360,8 +361,23 @@ const styles = StyleSheet.create({
                             shadowRadius: 6,
                             elevation: 1,
                           backgroundColor:'#fff',
-                          height:'50%'
-                      }
+                          height:'60%'
+                      },
+                      input: {
+                        margin: 15,
+                        height: 50,
+                        padding:10,
+                        borderColor: '#ccc',
+                        borderWidth: 1,  borderRadius: 6,
+                     },
+                     inputTextarea:{
+                      margin: 15,
+                      borderRadius: 6,
+                      height: 100,
+                      padding:10,
+                      borderColor: '#ccc',
+                      borderWidth: 1
+                     }
                    
 });
 export {
