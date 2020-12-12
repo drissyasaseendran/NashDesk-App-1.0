@@ -108,17 +108,11 @@ function Group ({navigation}){
 	  });
    
 	}
-	const navigateGroup = () =>
-	{
-		setVisible(true)
-	}
-	const Close = () =>
-	{
-		setVisible(false)
-	}
+
+
     return (
 		<View>
-			<GroupAdd visible={visible} Close={Close}/>	
+			<GroupAdd visible={visible} Close={()=>setVisible(false)} fetchGroupdata={fetchGroupdata}/>	
 		<ScrollView  
 		    showsVerticalScrollIndicator={false}
             rollEventThrottle={16}
@@ -165,7 +159,7 @@ function Group ({navigation}){
 				<FAB
 				style={styles.fab}
 				icon="plus"
-				onPress={navigateGroup}
+				onPress={()=>setVisible(true)}
 			/>    
 			
 		
