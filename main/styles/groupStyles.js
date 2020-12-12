@@ -380,6 +380,11 @@ const styles = StyleSheet.create({
                       padding:10,
                       borderColor: '#ccc',
                       borderWidth: 1
+                     },
+                     Error:{
+                       fontSize:10,
+                       color:'red',
+                       marginLeft: 15,
                      }
                    
 });

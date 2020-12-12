@@ -40,6 +40,7 @@ function GroupAdd (props){
                autoCapitalize = "none"
               //  onChangeText = {handleEmail}
                />
+                <Text style={styles.Error}>Group name required</Text>
                 <TextInput
             placeholder="Type Comment"
             style = {styles.inputTextarea}
@@ -50,6 +51,7 @@ function GroupAdd (props){
             maxLength={200}
             numberOfLines={5}
           />
+           <Text style={styles.Error}>Group name required</Text>
               <View style={styles.button}><Text style={styles.textcolor}>Add</Text></View>
         </TouchableOpacity>
   </Modal>
