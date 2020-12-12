@@ -31,7 +31,7 @@ const NotificationTab = createStackNavigator({
       return{
           headerStyle: {
               borderBottomWidth: 0,
-              backgroundColor: '#0187CA'
+              backgroundColor: '#1a73e8'
             },
             headerTintColor: 'white',
       }
@@ -48,7 +48,7 @@ const AnalyticsTab = createStackNavigator({
           headerStyle: {
          
               borderBottomWidth: 0,
-              backgroundColor: '#0187CA'
+              backgroundColor: '#1a73e8'
             },
             headerTintColor: 'white',
       }
@@ -67,7 +67,7 @@ const HomeTab = createStackNavigator({
         return{
           headerStyle: {
               borderBottomWidth: 0,
-              backgroundColor: '#0187CA'
+              backgroundColor: '#1a73e8'
             },
             headerShown: false,
             headerTintColor: 'white',
@@ -83,7 +83,7 @@ const HomeTab = createStackNavigator({
             headerStyle: {
           
                 borderBottomWidth: 0,
-                backgroundColor: '#0187CA'
+                backgroundColor: '#1a73e8'
               },
               headerTintColor: 'white',
            
@@ -99,7 +99,7 @@ const HomeTab = createStackNavigator({
             headerStyle: {
           
                 borderBottomWidth: 0,
-                backgroundColor: '#0187CA'
+                backgroundColor: '#1a73e8'
               },
               headerTintColor: 'white',
            
@@ -114,7 +114,7 @@ const HomeTab = createStackNavigator({
             headerStyle: {
           
                 borderBottomWidth: 0,
-                backgroundColor: '#0187CA'
+                backgroundColor: '#1a73e8'
               },
               headerTintColor: 'white',
            
@@ -129,7 +129,7 @@ const HomeTab = createStackNavigator({
           headerStyle: {
           
               borderBottomWidth: 0,
-              backgroundColor: '#0187CA'
+              backgroundColor: '#1a73e8'
             },
             headerTintColor: 'white',
         
@@ -145,7 +145,7 @@ const HomeTab = createStackNavigator({
             headerStyle: {
              
                 borderBottomWidth: 0,
-                backgroundColor: '#0187CA'
+                backgroundColor: '#1a73e8'
               },
               headerTintColor: 'white',
       
@@ -160,7 +160,7 @@ const HomeTab = createStackNavigator({
             headerStyle: {
             
                 borderBottomWidth: 0,
-                backgroundColor: '#0187CA'
+                backgroundColor: '#1a73e8'
               },
               headerTintColor: 'white',
 
@@ -184,7 +184,7 @@ const SettingsTab = createStackNavigator({
           headerStyle: {
             
               borderBottomWidth: 0,
-              backgroundColor: '#0187CA'
+              backgroundColor: '#1a73e8'
             },
             headerTintColor: 'white',
             headerTitle: () => <Header navigation={navigation} title='Settings'/>
@@ -199,7 +199,7 @@ Groups:{
       return{
         headerStyle: {  
             borderBottomWidth: 0,
-            backgroundColor: '#0187CA'
+            backgroundColor: '#1a73e8'
           },
           headerTintColor: 'white',
           
@@ -215,7 +215,7 @@ GroupView:{
       headerStyle: {
      
           borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
+          backgroundColor: '#1a73e8'
         },
         headerTintColor: 'white',
         // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
@@ -231,7 +231,7 @@ GroupAdd:{
       headerStyle: {
      
           borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
+          backgroundColor: '#1a73e8'
         },
         headerTintColor: 'white',
         // headerTitle: () => <Header navigation={navigation} title='AddCategory'/>
@@ -247,7 +247,7 @@ Tags:{
         headerStyle: {
           
             borderBottomWidth: 0,
-            backgroundColor: '#0187CA'
+            backgroundColor: '#1a73e8'
           },
           headerTintColor: 'white',
           
@@ -264,7 +264,7 @@ Agents:{
         headerStyle: {
           
             borderBottomWidth: 0,
-            backgroundColor: '#0187CA'
+            backgroundColor: '#1a73e8'
           },
           headerTintColor: 'white',
           
@@ -281,7 +281,7 @@ AgentEdit:{
       headerStyle: {
         
           borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
+          backgroundColor: '#1a73e8'
         },
         headerTintColor: 'white',
         
@@ -298,7 +298,7 @@ Category:{
       headerStyle: {
     
           borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
+          backgroundColor: '#1a73e8'
         },
         headerTintColor: 'white',
         // headerTitle: () => <Header navigation={navigation} title='Category'/>
@@ -315,7 +315,7 @@ CategoryAdd:{
       headerStyle: {
     
           borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
+          backgroundColor: '#1a73e8'
         },
         headerTintColor: 'white',
         // headerTitle: () => <Header navigation={navigation} title='Category'/>
@@ -333,7 +333,7 @@ CannedResponseAdd:
       headerStyle: {
     
           borderBottomWidth: 0,
-          backgroundColor: '#0187CA'
+          backgroundColor: '#1a73e8'
         },
         headerTintColor: 'white',
         // headerTitle: () => <Header navigation={navigation} title='Category'/>
@@ -351,7 +351,7 @@ CannedResponse:{
         headerStyle: {
       
             borderBottomWidth: 0,
-            backgroundColor: '#0187CA'
+            backgroundColor: '#1a73e8'
           },
           headerTintColor: 'white',
           // headerTitle: () => <Header  navigation={navigation} title='Settings'/>

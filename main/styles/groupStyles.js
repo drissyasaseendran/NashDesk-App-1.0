@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         
     },
     fab: {
-        backgroundColor:'rgb(1, 135, 202)',
+        backgroundColor:'#1a73e8',
         color:'#fff',
         position: 'absolute',
         margin: 16,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     },
     GroupBlockIcon:
     {
-        color:'#0187CA',
+        color:'#1a73e8',
         fontSize:28
     },
     GroupBlockView:
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     Groupcount:
     {
         fontSize:12,
-        color:'rgb(64, 166, 209);'
+        color:'#1a73e8'
     },
     GroupDescription:
     {
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
                         
                         borderRadius: 6,
                         alignItems: 'center',
-                        backgroundColor: '#2AC062',
+                        backgroundColor: '#1a73e8',
                         shadowColor: '#2AC062',
                         shadowOpacity: 1.28,
                         shadowOffset: { 
@@ -368,7 +368,8 @@ const styles = StyleSheet.create({
                         height: 50,
                         padding:10,
                         borderColor: '#ccc',
-                        borderWidth: 1,  borderRadius: 6,
+                        borderWidth: 1,  
+                        borderRadius: 6,
                      },
                      inputTextarea:{
                       margin: 15,
