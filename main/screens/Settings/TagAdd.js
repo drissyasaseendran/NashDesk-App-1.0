@@ -11,7 +11,7 @@ import axios from "axios";
 function TagAdd (props){
 
   const [visible,setVisible] = useState(false)
-
+  const [tagerror,settagError] = useState('')
   const token = "2d9cc2e28cdae62ec7c6"
 
 	useEffect(() => {
@@ -46,7 +46,7 @@ function TagAdd (props){
                autoCapitalize = "none"
                onChangeText={groupname => setGroupname(groupname)}
                />
-                {/* <Text style={styles.Error}>{grperror}</Text> */}
+                <Text style={styles.Error}>{tagerror}</Text>
            
              <TouchableOpacity onPress={()=>handleSubmit()} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
         </View>
