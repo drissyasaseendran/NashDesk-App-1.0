@@ -1,25 +1,24 @@
 import React, { useEffect,useRef, useState } from "react";
-import {ScrollView,View,TouchableOpacity,Text
-} from 'react-native';
+import {View} from 'react-native';
 import { FAB } from 'react-native-paper';
-import Dialog from "react-native-dialog";
 import axios from 'axios'
 import {styles} from '../../styles/tagStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TagAdd from '../../screens/Settings/TagAdd'
 import {tagApiPath} from '../../endpoints'
-
+import DialogBox from '../../../components/DailogBox'
+import TagView from '../Settings/TagView'
 function Tags (){
 	const [visible,setVisible] = useState(true)
 	const token = '2d9cc2e28cdae62ec7c6'
 	const [tag,setTag] = useState([])
-	const sheetRef = useRef(null)
+	const [DailogVisible ,setDailogVisible] = useState(true)
+	const [tagId,setTagId] = useState('')
+	
 	useEffect(() => {
 		fetchTagdata()
 	},[])
-	const deleteGroupConfirm = (id) => {
-		
-	  };
+
 	const fetchTagdata = () =>
 	{
 		let data = {
@@ -49,15 +48,22 @@ function Tags (){
 		});
 	   
 	}
-	const  editGroup = () =>
+	const  editTag = () =>
 	{
 
 	} 
-	const deleteGroup = (id) =>
+
+
+	const deleteTagConfirm = (id) => 
 	{
-		alert(id)
+		setDailogVisible(true);
+		setTagId(id)
+	}
+	const deleteTag = () =>
+	{
+	
 		let data = { 
-			"tag_id_lst":[id] ,     
+			"tag_id_lst":[tagId] ,     
 			"access_token":token,   
 			"request_type":"delete"   
 		   }
@@ -77,55 +83,22 @@ function Tags (){
 		  
 			});
 	}
-	return (
-	
-		<View>
-			<ScrollView  
-				showsVerticalScrollIndicator={false}
-				rollEventThrottle={16}
-				>
-			<View style={styles.tagView}>
-			{tag && tag.map((tag) =>
-				{
-				return(<TouchableOpacity   style={styles.tagBlock}>
-						<View style={styles.View}>
-								<View style={styles.tagBlockView}>
-									<View><Icon style={styles.tagBlockIcon} name="tag-outline"/></View>
-									<View style={styles.tagcontent}>
-									<Text style={styles.tagTitle}>{tag.tag} </Text>
-									<Text style={styles.tagTitlesub}>Used in {tag.value.count} Tickets</Text>
-									<Text style={styles.tagTitleHash}>#reused,#refund</Text>
-									</View>	
-								</View>
-								<View  style={styles.btn} > 
-										<TouchableOpacity  onPress={() => editGroup(tag.value.tag_id)}   >
-										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
-										</TouchableOpacity>
-										<TouchableOpacity
-										 onPress={() => deleteGroupConfirm(tag.value.tag_id)}
-										//  onPress={() => deleteGroup(tag.value.tag_id)}
-										   >
-										<Icon name="trash-can-outline" style={styles.Iconcolortrash} fontSize='inherit' color='inherit'/>
-									
-										</TouchableOpacity>          
-									</View>
-									
-						</View>
-			</TouchableOpacity>)
-			 })
-			}
-	   
+	const hideDialog = () =>
+	{
+	setDailogVisible(false);
+	}
 
-			</View>
-			</ScrollView>
+	return (
+		<View>
+			<TagView tag={tag} editTag={editTag} deleteGroupConfirm={deleteTagConfirm}/>
+		 	<DialogBox DailogVisible={DailogVisible} delete={deleteTag} hideDialog={hideDialog}/>
 			<TagAdd visible={false}/>
 			<FAB
 				style={styles.fab}
 				icon="plus"
 				onPress={()=>setVisible(true)}
 			/> 
-		
-			</View>
+		</View>
 	
 	
 	  );
