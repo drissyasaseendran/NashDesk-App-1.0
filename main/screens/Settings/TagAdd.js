@@ -36,7 +36,7 @@ function TagAdd (props){
           activeOpacity={1}
           onPressOut={() => {}}>
               <View style={styles.modelClose} >
-                  <Text style={styles.modlTextAdd}>Add Group</Text>
+                  <Text style={styles.modlTextAdd}>Add Tag</Text>
                   <Icon onPress={()=>setVisible(false)} style={styles.modelCloseicon}  name="close"/>
               </View>
               <TextInput style = {styles.input}

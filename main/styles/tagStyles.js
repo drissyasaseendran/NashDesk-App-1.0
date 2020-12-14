@@ -205,6 +205,15 @@ const styles = StyleSheet.create({
        
          
        },
+       fab: {
+        backgroundColor:'#1a73e8',
+        color:'#fff',
+        position: 'absolute',
+        margin: 16,
+        right: 0,
+        bottom: 0,
+       
+      },
        tagModal:
        {
            top:200,
@@ -282,6 +291,12 @@ const styles = StyleSheet.create({
       {
             color:'#fff',
             fontSize:20
+      },
+      tagView:
+      {
+        width: windowWidth,
+        height:windowHeight,
+  
       },
 });
 export {

@@ -1,6 +1,7 @@
 import React, { useEffect,useRef, useState } from "react";
 import {TextInput,ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
+import { FAB } from 'react-native-paper';
 import {styles} from '../../styles/tagStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TagAdd from '../../screens/Settings/TagAdd'
@@ -45,7 +46,12 @@ function Tags (){
 	 }
 	return (
 	
-			<View style={styles.tagView}>
+		<View>
+			<ScrollView  
+				showsVerticalScrollIndicator={false}
+				rollEventThrottle={16}
+				>
+					<View style={styles.tagView}>
 			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
 						<View style={styles.View}>
 								<View style={styles.tagBlockView}>
@@ -119,7 +125,15 @@ function Tags (){
 						
 						</View>
 			</TouchableOpacity>
-			<TagAdd visible={true}/>
+			</View>
+			</ScrollView>
+			<TagAdd visible={false}/>
+			<FAB
+				style={styles.fab}
+				icon="plus"
+				onPress={()=>setVisible(true)}
+			/> 
+			  
 			</View>
 	
 	
