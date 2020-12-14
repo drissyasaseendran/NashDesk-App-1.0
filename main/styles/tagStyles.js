@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         fontSize:16,
         color:'#666',
         paddingLeft:12,
+        // padding:5,
         // fontWeight:'bold'
     },
     tagTitlesub:
