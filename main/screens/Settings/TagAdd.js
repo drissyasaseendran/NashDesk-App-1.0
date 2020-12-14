@@ -41,13 +41,12 @@ function TagAdd (props){
               </View>
               <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-               placeholder = "Group Name"
+               placeholder = "Tag Name"
                placeholderTextColor = "#888"
                autoCapitalize = "none"
                onChangeText={groupname => setGroupname(groupname)}
                />
                 <Text style={styles.Error}>{tagerror}</Text>
-           
              <TouchableOpacity onPress={()=>handleSubmit()} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
         </View>
   </Modal>

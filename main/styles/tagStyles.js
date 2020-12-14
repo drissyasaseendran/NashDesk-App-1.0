@@ -18,10 +18,17 @@ const styles = StyleSheet.create({
     {
         backgroundColor:'#fff',
         borderRadius:5,
-        marginTop:2,
-        
+        marginTop:8,
+        // borderBottomWidth:1,
+        // borderBottomColor:'#E0E0E0',
         padding:15,
- 
+        shadowOffset: {
+          width: 0,
+          height: 0,
+          },
+          shadowOpacity: 0.1,
+          shadowRadius: 6,
+          elevation: 1,
      
     },
     View:
@@ -33,8 +40,9 @@ const styles = StyleSheet.create({
     },
     tagBlockIcon:
     {
-        color:'#0187CA',
-        fontSize:28
+        color:'#1a73e8',
+        
+        fontSize:18
     },
     tagBlockView:
     {
@@ -53,9 +61,9 @@ const styles = StyleSheet.create({
     },
     tagTitlesub:
     {
-        backgroundColor:'#86d8f7',
+        backgroundColor:'#F8F8F8',
         fontSize:12,
-        color:'#fff',
+        color:'#666',
         padding:4,
         borderRadius:5,
         marginLeft:10
