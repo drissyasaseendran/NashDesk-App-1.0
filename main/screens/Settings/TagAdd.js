@@ -12,9 +12,13 @@ function TagAdd (props){
   const token = '2d9cc2e28cdae62ec7c6'
   const [visible,setVisible] = useState(false)
   const [tagerror,settagError] = useState('')
+  const tagData = useSelector(state => state.tag.tag.tagEdit)
+  const tagStatus = useSelector(state => state.tag.tag.tagStatus)
 	const [tagId,setTagId] = useState('')
-  const [tagname,setTagname]= useState('')
-  
+	const [tagname,setTagname]= useState('')
+  useEffect(() =>{
+    alert(tagStatus)
+  },[tagData])
 	useEffect(() => {
      setVisible(props.visible)
      

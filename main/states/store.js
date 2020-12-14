@@ -2,10 +2,12 @@ import { createStore, combineReducers } from "redux";
 import loginReducer from "./login/loginReducer";
 import group from './group/groupReducer'
 import agent from './agents/agentReducer'
+import tag from './tag/tagReducer'
 const rootReducer = combineReducers({
   login: loginReducer,
   group:group,
-  agent:agent
+  agent:agent,
+  tag:tag
 });
 
 /* Remember to remove redux extension in production.... */

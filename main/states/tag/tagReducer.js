@@ -1,4 +1,4 @@
-import * as types from './groupAction';
+import * as types from './tagAction';
 
 const tagData = {
   tag: {

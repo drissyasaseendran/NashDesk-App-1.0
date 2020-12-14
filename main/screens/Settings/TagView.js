@@ -6,7 +6,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function TagView (props){
 
-	
 	useEffect(() => {
 		
 	},[props.tag])
