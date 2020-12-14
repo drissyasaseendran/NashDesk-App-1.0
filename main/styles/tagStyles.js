@@ -320,6 +320,7 @@ const styles = StyleSheet.create({
         fontSize:14,
           color:'#ff6961'
       }, 
+ 
 });
 export {
     styles

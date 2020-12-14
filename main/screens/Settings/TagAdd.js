@@ -17,6 +17,7 @@ function TagAdd (props){
   
 	useEffect(() => {
      setVisible(props.visible)
+     
   },[props.visible]);
 
   const TagSubmit = () =>

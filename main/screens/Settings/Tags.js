@@ -7,6 +7,8 @@ import TagAdd from '../../screens/Settings/TagAdd'
 import {tagApiPath} from '../../endpoints'
 import DialogBox from '../../../components/DailogBox'
 import TagView from '../Settings/TagView'
+import { useDispatch } from 'react-redux'
+import {tagEdit,tagStatus} from '../../states/tag/tagAction'
 function Tags (){
 
 	const [visible,setVisible] = useState(false)
@@ -14,7 +16,8 @@ function Tags (){
 	const [tag,setTag] = useState([])
 	const [DailogVisible ,setDailogVisible] = useState(false)
 	const [tagId,setTagId] = useState('')
-
+	const [tagname,setTagname]= useState('')
+	const dispatch = useDispatch()
 	useEffect(() => {
 		fetchTagdata()
 	},[])
@@ -47,6 +50,8 @@ function Tags (){
 	}
 	const editTag = (tag) =>
 	{
+		dispatch(tagEdit(tag))
+		dispatch(tagStatus('Edit'))
 		setVisible(!visible)
 	} 
 	const deleteTagConfirm = (id) => 
