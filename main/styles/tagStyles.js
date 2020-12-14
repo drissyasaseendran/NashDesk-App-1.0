@@ -2,10 +2,8 @@ import {
     StyleSheet
 } from 'react-native';
 import { Dimensions } from 'react-native';
-import { color } from 'react-native-reanimated';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
 
     tagView:
@@ -200,7 +198,91 @@ const styles = StyleSheet.create({
 			padding: 15,
 			height: 500,
 		  
-       }
+       },
+       addtagModal:
+       {
+         margin: 0,
+       
+         
+       },
+       tagModal:
+       {
+           top:200,
+           borderTopRightRadius:30,
+           borderTopLeftRadius:30,
+           shadowOffset: {
+             width: 0,
+             height: 0,
+             },
+             shadowOpacity: 0.1,
+             shadowRadius: 6,
+             elevation: 1,
+           backgroundColor:'#fff',
+           height:'40%'
+       },
+       input: {
+         margin: 15,
+         height: 50,
+         padding:10,
+         borderColor: '#ccc',
+         borderWidth: 1,  
+         borderRadius: 6,
+      },
+      inputTextarea:{
+       margin: 15,
+       borderRadius: 6,
+       height: 100,
+       padding:10,
+       borderColor: '#ccc',
+       borderWidth: 1
+      },
+      Error:{
+        fontSize:10,
+        color:'red',
+        marginLeft: 15,
+      },
+      modelCloseicon:
+      {
+            color:'grey',
+            fontSize:20
+      },
+      modlTextAdd:
+      {
+        flexGrow:1,
+        fontSize:18,
+        color:'#888',
+        fontWeight:'bold'
+      },
+      modelClose:
+      {
+        display:'flex',
+        flexDirection:'row',
+        padding:20,
+        paddingTop:28
+      },
+      button: {
+                        
+        borderRadius: 6,
+        alignItems: 'center',
+        backgroundColor: '#1a73e8',
+        shadowColor: '#1a73e8',
+        shadowOpacity: 1.28,
+        shadowOffset: { 
+          height: 19, 
+          width: 0 
+        },
+        shadowRadius: 55,
+        margin: 15,
+        height: 50,
+        padding:10,
+        borderColor: '#ccc',
+        borderWidth: 1
+      }, 
+      textcolor:
+      {
+            color:'#fff',
+            fontSize:20
+      },
 });
 export {
     styles

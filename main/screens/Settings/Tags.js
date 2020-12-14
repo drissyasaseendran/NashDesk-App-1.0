@@ -1,11 +1,9 @@
 import React, { useEffect,useRef, useState } from "react";
-import {TextInput,
-ScrollView,View,TouchableOpacity,Text
+import {TextInput,ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
 import {styles} from '../../styles/tagStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import ModelBox from '../../reused/ModelBox'
-import BottomSheet from 'reanimated-bottom-sheet';
+import TagAdd from '../../screens/Settings/TagAdd'
 function Tags (){
 	const [afterPress , setafterPress] = useState(true)
 	const [visible,setVisible] = useState(true)
@@ -48,10 +46,8 @@ function Tags (){
 	return (
 	
 			<View style={styles.tagView}>
-			
 			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
 						<View style={styles.View}>
-								
 								<View style={styles.tagBlockView}>
 									<View><Icon style={styles.tagBlockIcon} name="tag-outline"/></View>
 									<View style={styles.tagcontent}>
@@ -60,7 +56,6 @@ function Tags (){
 									<Text style={styles.tagTitleHash}>#reused,#refund</Text>
 									</View>	
 								</View>
-							
 								<View  style={styles.tagBlockUpdation}> 
 									<View  style={styles.BtnView}> 
 										<TouchableOpacity onPress={EditPress}  style={styles.btnEdit}   >
@@ -71,8 +66,6 @@ function Tags (){
 										</TouchableOpacity>          
 									</View>
 								</View>
-							
-							
 						</View>
 			</TouchableOpacity>
 			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
@@ -123,16 +116,10 @@ function Tags (){
 										</TouchableOpacity>          
 									</View>
 								</View>
-							
-							
+						
 						</View>
 			</TouchableOpacity>
-			<BottomSheet
-        ref={sheetRef}
-        snapPoints={[500, 300, 0]}
-        borderRadius={10}
-        renderContent={renderContent}
-      />
+			<TagAdd visible={true}/>
 			</View>
 	
 	

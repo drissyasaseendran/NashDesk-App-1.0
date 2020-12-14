@@ -77,23 +77,17 @@ function Group ({navigation}){
 			"grp_id":group.grp_id,
 			"group_name":group.group_name,
 			"request_type":"view"
-		 }
-		  axios.post(groupApiPath, data).then((respData) => {
-			if(respData.data.status == "success")
-			{
-			let res = respData.data.payload.data[0].description
-		
-			setGroupid(group.grp_id)
-			setGroupname(group.group_name)
-			setDescrition(res[0].description)
-			setAbtid(res[0].about_id)
-			setStatus('Edit')
-			setVisible(true)
-
-				
-			}
-		  });
-		
+		}
+		axios.post(groupApiPath, data).then((respData) => {
+		  if(respData.data.status == "success")
+		  {
+		  let res = respData.data.payload.data
+		  dispatch(groupEditData(res))
+		 
+		  }
+		});
+		dispatch(groupStatus("Edit"))
+		setVisible(true)
 		 
 	}
 	const deleteGroup = (id) =>
@@ -127,12 +121,7 @@ function Group ({navigation}){
 			<GroupAdd 
 				visible={visible}
 				Close={()=>setVisible(false)}
-				groupname={groupname}
-				description={description}
-				abtid={abtid}
-				grpId={grpId}
-				status={status}
-				fetchGroupdata={fetchGroupdata}
+			    fetchGroupdata={fetchGroupdata}
 			/>	
 
 
@@ -176,9 +165,6 @@ function Group ({navigation}){
 				}
 		   
 			</View>
-		
-			         
-		
 		</ScrollView>
 				<FAB
 				style={styles.fab}

@@ -2,6 +2,7 @@ import React, { useEffect ,useState} from "react";
 import { View,Text,TextInput, TouchableOpacity
 } from 'react-native';
 import Modal from 'react-native-modal';
+import { useSelector } from 'react-redux'
 import {styles} from '../../styles/groupStyles'
 import {groupApiPath,profileApiPath} from '../../endpoints'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -11,6 +12,7 @@ function GroupAdd (props){
   const [groupname, setGroupname] = useState("");
   const [description, setDescrition] = useState("");
   const [grperror,setgrpError] = useState('')
+  const GroupEditData = useSelector(state => state.group.group.groupedit)
   const [visible,setVisible] = useState(false)
   const [username, setUsername] = useState("");
   const [abtid,setAbtid] = useState('')
@@ -20,6 +22,7 @@ function GroupAdd (props){
   const token = "2d9cc2e28cdae62ec7c6"
 
 	useEffect(() => {
+    
       fetchProfile()
       setVisible(props.visible)
 			setGroupid(props.grpId)
@@ -28,8 +31,8 @@ function GroupAdd (props){
 			setAbtid(abtid)
 			setStatus(props.status)
       setVisible(true)
-      alert(status)
-    },[props.visible,]);
+ 
+    },[props.visible]);
     const fetchProfile = () =>
     {
       const data = {
