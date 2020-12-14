@@ -22,7 +22,7 @@ function TagView (props){
 								<View style={styles.tagBlockView}>
 									<View><Icon style={styles.tagBlockIcon} name="tag-outline"/></View>
 									<View style={styles.tagcontent}>
-									<Text style={styles.tagTitle}>{tag.tag} </Text>
+									<Text style={styles.tagTitle}>{tag.tag.charAt(0).toUpperCase() + tag.tag.slice(1)}  </Text>
 									<Text style={styles.tagTitlesub}>Used in {tag.value.count} Tickets</Text>
 									<Text style={styles.tagTitleHash}>#reused,#refund</Text>
 									</View>	
