@@ -1,15 +1,14 @@
-import React, { useEffect,useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {View} from 'react-native';
 import { FAB } from 'react-native-paper';
 import axios from 'axios'
 import {styles} from '../../styles/tagStyles'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TagAdd from '../../screens/Settings/TagAdd'
 import {tagApiPath} from '../../endpoints'
 import DialogBox from '../../../components/DailogBox'
 import TagView from '../Settings/TagView'
 function Tags (){
-	const [visible,setVisible] = useState(true)
+	const [visible,setVisible] = useState(false)
 	const token = '2d9cc2e28cdae62ec7c6'
 	const [tag,setTag] = useState([])
 	const [DailogVisible ,setDailogVisible] = useState(true)
@@ -26,7 +25,7 @@ function Tags (){
 			"request_type":"view_count"
 		 } 
 		 axios.post(tagApiPath, data).then((respData) => {
-		   
+	
 		  if(respData.data.status == "success")
 		  {
 			let ar = []
@@ -40,20 +39,15 @@ function Tags (){
 				ar.push(data)
 	
 			  })
-	
 			  setTag(ar)
-		
-		  }
-	  
-		});
+		 }
+	 	});
 	   
 	}
 	const  editTag = () =>
 	{
 
 	} 
-
-
 	const deleteTagConfirm = (id) => 
 	{
 		setDailogVisible(true);
@@ -61,47 +55,38 @@ function Tags (){
 	}
 	const deleteTag = () =>
 	{
-	
-		let data = { 
-			"tag_id_lst":[tagId] ,     
-			"access_token":token,   
-			"request_type":"delete"   
-		   }
+	    	let data = { 
+				"tag_id_lst":[tagId] ,     
+				"access_token":token,   
+				"request_type":"delete"   
+		    }
 			axios.post(tagApiPath, data).then((respData) => {
-		 
-			  if(respData.data.status == "success")
-			  {
-				
-				fetchTagdata()
-		   
-			  }
-			  else
-			  {
-			 
-				fetchTagdata()
-			  }
+		 		if(respData.data.status == "success")
+				{
+					fetchTagdata()
+				}
+				else
+				{
+					fetchTagdata()
+				}
 		  
 			});
 	}
 	const hideDialog = () =>
 	{
-	setDailogVisible(false);
+		setDailogVisible(false);
 	}
-
+	const SetModelbox = () =>
+	{
+		setVisible(!visible)}
 	return (
 		<View>
 			<TagView tag={tag} editTag={editTag} deleteGroupConfirm={deleteTagConfirm}/>
 		 	<DialogBox DailogVisible={DailogVisible} delete={deleteTag} hideDialog={hideDialog}/>
-			<TagAdd visible={false}/>
-			<FAB
-				style={styles.fab}
-				icon="plus"
-				onPress={()=>setVisible(true)}
-			/> 
+			<TagAdd visible={visible} fetchTagdata={fetchTagdata} SetModelbox={SetModelbox}/>
+			<FAB style={styles.fab} icon="plus"	onPress={()=> SetModelbox()}/> 
 		</View>
-	
-	
-	  );
+	);
   
   }
   

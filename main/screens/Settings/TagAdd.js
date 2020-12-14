@@ -4,23 +4,42 @@ import { View,Text,TextInput, TouchableOpacity
 import Modal from 'react-native-modal';
 import { useSelector } from 'react-redux'
 import {styles} from '../../styles/tagStyles'
-import {groupApiPath,profileApiPath} from '../../endpoints'
+import {tagApiPath} from '../../endpoints'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from "axios";
 
 function TagAdd (props){
-
+  const token = '2d9cc2e28cdae62ec7c6'
   const [visible,setVisible] = useState(false)
   const [tagerror,settagError] = useState('')
-  const token = "2d9cc2e28cdae62ec7c6"
+  const [tagname ,setTagname] = useState('')
 
 	useEffect(() => {
-    
-   
-      setVisible(true)
- 
-    },[props.visible]);
+     setVisible(props.visible)
+  },[props.visible]);
 
+  const TagSubmit = () =>
+  {
+    let data =
+    { 
+
+      "access_token": token,
+      "tags":tagname,   
+      "request_type":"add"   
+    }
+   axios.post(tagApiPath, data).then((respData) => {
+    if(respData.data.status == "success")
+    {
+      props.fetchTagdata()
+      props.SetModelbox()
+    }
+    else
+    {
+     
+    }
+
+  });
+  }
     return (
         <Modal
         style={styles.addtagModal}
@@ -44,10 +63,10 @@ function TagAdd (props){
                placeholder = "Tag Name"
                placeholderTextColor = "#888"
                autoCapitalize = "none"
-               onChangeText={groupname => setGroupname(groupname)}
+               onChangeText={tagname => setTagname(tagname)}
                />
-                <Text style={styles.Error}>{tagerror}</Text>
-             <TouchableOpacity onPress={()=>handleSubmit()} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
+              <Text style={styles.Error}>{tagerror}</Text>
+             <TouchableOpacity onPress={()=>TagSubmit()} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
         </View>
   </Modal>
     );
