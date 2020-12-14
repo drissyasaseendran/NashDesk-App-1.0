@@ -8,12 +8,13 @@ import {tagApiPath} from '../../endpoints'
 import DialogBox from '../../../components/DailogBox'
 import TagView from '../Settings/TagView'
 function Tags (){
+
 	const [visible,setVisible] = useState(false)
 	const token = '2d9cc2e28cdae62ec7c6'
 	const [tag,setTag] = useState([])
-	const [DailogVisible ,setDailogVisible] = useState(true)
+	const [DailogVisible ,setDailogVisible] = useState(false)
 	const [tagId,setTagId] = useState('')
-	const [tagname,setTagname]= useState('')
+
 	useEffect(() => {
 		fetchTagdata()
 	},[])
@@ -44,15 +45,14 @@ function Tags (){
 	 	});
 	   
 	}
-	const  editTag = (tag) =>
+	const editTag = (tag) =>
 	{
 		setVisible(!visible)
 	} 
 	const deleteTagConfirm = (id) => 
 	{
-		setDailogVisible(true);
+		setDailogVisible(!DailogVisible);
 		setTagId(id)
-		
 	}
 	const deleteTag = () =>
 	{
@@ -64,14 +64,15 @@ function Tags (){
 			axios.post(tagApiPath, data).then((respData) => {
 		 		if(respData.data.status == "success")
 				{
+					setDailogVisible(!DailogVisible);
 					fetchTagdata()
 				}
 				else
 				{
+					setDailogVisible(!DailogVisible);
 					fetchTagdata()
 				}
-		  
-			});
+		  	});
 	}
 	const hideDialog = () =>
 	{
@@ -79,10 +80,11 @@ function Tags (){
 	}
 	const SetModelbox = () =>
 	{
-		setVisible(!visible)}
+		setVisible(!visible)
+	}
 	return (
 		<View>
-			<TagView tag={tag} editTag={editTag} deleteGroupConfirm={deleteTagConfirm}/>
+			<TagView tag={tag} editTag={editTag} deleteTagConfirm={deleteTagConfirm}/>
 		 	<DialogBox DailogVisible={DailogVisible} delete={deleteTag} hideDialog={hideDialog}/>
 			<TagAdd visible={visible} fetchTagdata={fetchTagdata} SetModelbox={SetModelbox}/>
 			<FAB style={styles.fab} icon="plus"	onPress={()=> SetModelbox()}/> 

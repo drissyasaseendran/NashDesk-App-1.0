@@ -42,7 +42,7 @@ function TagAdd (props){
   });
   }
     return (
-        <Modal
+      <Modal
         style={styles.addtagModal}
         animationType={"slide"}
         transparent={true} 
@@ -69,7 +69,7 @@ function TagAdd (props){
               <Text style={styles.Error}>{tagerror}</Text>
              <TouchableOpacity onPress={()=>TagSubmit()} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
         </View>
-  </Modal>
+      </Modal>
     );
 
 }
