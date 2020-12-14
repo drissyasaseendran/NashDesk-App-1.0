@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         fontSize:16,
         color:'#666',
         paddingLeft:12,
-        fontWeight:'bold'
+        // fontWeight:'bold'
     },
     tagTitlesub:
     {
@@ -298,6 +298,24 @@ const styles = StyleSheet.create({
         height:windowHeight,
   
       },
+      btn:
+      {
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center'
+      },
+      IconcolorEdit:
+      {
+        fontSize:16,
+        padding:5,
+        color:'#77DD77'
+      },
+      Iconcolortrash:
+      {
+        padding:5,
+        fontSize:14,
+          color:'#ff6961'
+      }, 
 });
 export {
     styles

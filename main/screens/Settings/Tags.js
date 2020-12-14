@@ -62,16 +62,15 @@ function Tags (){
 									<Text style={styles.tagTitleHash}>#reused,#refund</Text>
 									</View>	
 								</View>
-								<View  style={styles.tagBlockUpdation}> 
-									<View  style={styles.BtnView}> 
-										<TouchableOpacity onPress={EditPress}  style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
+								<View  style={styles.btn} > 
+										<TouchableOpacity  onPress={() => editGroup(group)}   >
+										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
 										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+										<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}  >
+										<Icon name="trash-can-outline" style={styles.Iconcolortrash} fontSize='inherit' color='inherit'/>
+									
 										</TouchableOpacity>          
 									</View>
-								</View>
 						</View>
 			</TouchableOpacity>
 			<TouchableOpacity  onLongPress={()=>pressLong()}    style={styles.tagBlock}>
@@ -86,16 +85,15 @@ function Tags (){
 									</View>	
 								</View>
 							
-								<View  style={styles.tagBlockUpdation}> 
-									<View  style={styles.BtnView}> 
-										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
+								<View  style={styles.btn} > 
+										<TouchableOpacity  onPress={() => editGroup(group)}   >
+										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
 										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+										<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}  >
+										<Icon name="trash-can-outline" style={styles.Iconcolortrash} fontSize='inherit' color='inherit'/>
+									
 										</TouchableOpacity>          
 									</View>
-								</View>
 							
 							
 						</View>
@@ -111,17 +109,15 @@ function Tags (){
 									<Text style={styles.tagTitleHash}>#reused,#refund</Text>
 									</View>	
 								</View>
-							
-								<View  style={styles.tagBlockUpdation}> 
-									<View  style={styles.BtnView}> 
-										<TouchableOpacity  onPress={EditPress} style={styles.btnEdit}   >
-											<Text style={styles.textColor}>Edit</Text>
+								<View  style={styles.btn} > 
+										<TouchableOpacity  onPress={() => editGroup(group)}   >
+										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
 										</TouchableOpacity>
-										<TouchableOpacity   style={styles.btnDelete} >
-											<Text style={styles.textColor}>Delete</Text>
+										<TouchableOpacity onPress={() => deleteGroup(group.grp_id)}  >
+										<Icon name="trash-can-outline" style={styles.Iconcolortrash} fontSize='inherit' color='inherit'/>
+									
 										</TouchableOpacity>          
 									</View>
-								</View>
 						
 						</View>
 			</TouchableOpacity>
