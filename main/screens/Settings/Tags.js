@@ -13,7 +13,7 @@ function Tags (){
 	const [tag,setTag] = useState([])
 	const [DailogVisible ,setDailogVisible] = useState(true)
 	const [tagId,setTagId] = useState('')
-	
+	const [tagname,setTagname]= useState('')
 	useEffect(() => {
 		fetchTagdata()
 	},[])
@@ -44,14 +44,15 @@ function Tags (){
 	 	});
 	   
 	}
-	const  editTag = () =>
+	const  editTag = (tag) =>
 	{
-
+		setVisible(!visible)
 	} 
 	const deleteTagConfirm = (id) => 
 	{
 		setDailogVisible(true);
 		setTagId(id)
+		
 	}
 	const deleteTag = () =>
 	{

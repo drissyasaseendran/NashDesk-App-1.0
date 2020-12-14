@@ -12,8 +12,9 @@ function TagAdd (props){
   const token = '2d9cc2e28cdae62ec7c6'
   const [visible,setVisible] = useState(false)
   const [tagerror,settagError] = useState('')
-  const [tagname ,setTagname] = useState('')
-
+	const [tagId,setTagId] = useState('')
+  const [tagname,setTagname]= useState('')
+  
 	useEffect(() => {
      setVisible(props.visible)
   },[props.visible]);
@@ -56,7 +57,7 @@ function TagAdd (props){
           onPressOut={() => {}}>
               <View style={styles.modelClose} >
                   <Text style={styles.modlTextAdd}>Add Tag</Text>
-                  <Icon onPress={()=>setVisible(false)} style={styles.modelCloseicon}  name="close"/>
+                  <Icon onPress={()=> props.SetModelbox()} style={styles.modelCloseicon}  name="close"/>
               </View>
               <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"

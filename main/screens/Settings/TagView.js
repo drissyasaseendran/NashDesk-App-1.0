@@ -28,7 +28,7 @@ function TagView (props){
 									</View>	
 								</View>
 								<View  style={styles.btn} > 
-										<TouchableOpacity  onPress={() => props.editTag(tag.value.tag_id)}   >
+										<TouchableOpacity  onPress={() => props.editTag(tag)}   >
 										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
 										</TouchableOpacity>
 										<TouchableOpacity
