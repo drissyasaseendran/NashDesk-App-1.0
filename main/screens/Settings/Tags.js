@@ -1,12 +1,14 @@
 import React, { useEffect,useRef, useState } from "react";
-import {TextInput,ScrollView,View,TouchableOpacity,Text
+import {ScrollView,View,TouchableOpacity,Text
 } from 'react-native';
 import { FAB } from 'react-native-paper';
+import Dialog from "react-native-dialog";
 import axios from 'axios'
 import {styles} from '../../styles/tagStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TagAdd from '../../screens/Settings/TagAdd'
 import {tagApiPath} from '../../endpoints'
+
 function Tags (){
 	const [visible,setVisible] = useState(true)
 	const token = '2d9cc2e28cdae62ec7c6'
@@ -15,7 +17,9 @@ function Tags (){
 	useEffect(() => {
 		fetchTagdata()
 	},[])
-
+	const deleteGroupConfirm = (id) => {
+		
+	  };
 	const fetchTagdata = () =>
 	{
 		let data = {
@@ -45,6 +49,34 @@ function Tags (){
 		});
 	   
 	}
+	const  editGroup = () =>
+	{
+
+	} 
+	const deleteGroup = (id) =>
+	{
+		alert(id)
+		let data = { 
+			"tag_id_lst":[id] ,     
+			"access_token":token,   
+			"request_type":"delete"   
+		   }
+			axios.post(tagApiPath, data).then((respData) => {
+		 
+			  if(respData.data.status == "success")
+			  {
+				
+				fetchTagdata()
+		   
+			  }
+			  else
+			  {
+			 
+				fetchTagdata()
+			  }
+		  
+			});
+	}
 	return (
 	
 		<View>
@@ -69,11 +101,15 @@ function Tags (){
 										<TouchableOpacity  onPress={() => editGroup(tag.value.tag_id)}   >
 										<Icon name="pencil-outline" style={styles.IconcolorEdit} fontSize='inherit' color='inherit'/>
 										</TouchableOpacity>
-										<TouchableOpacity onPress={() => deleteGroup(tag.value.tag_id)}  >
+										<TouchableOpacity
+										 onPress={() => deleteGroupConfirm(tag.value.tag_id)}
+										//  onPress={() => deleteGroup(tag.value.tag_id)}
+										   >
 										<Icon name="trash-can-outline" style={styles.Iconcolortrash} fontSize='inherit' color='inherit'/>
 									
 										</TouchableOpacity>          
 									</View>
+									
 						</View>
 			</TouchableOpacity>)
 			 })
@@ -88,7 +124,7 @@ function Tags (){
 				icon="plus"
 				onPress={()=>setVisible(true)}
 			/> 
-			  
+		
 			</View>
 	
 	
