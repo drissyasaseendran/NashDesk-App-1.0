@@ -60,7 +60,9 @@ const styles = StyleSheet.create({
     },
     Content:
     {
-      margin:15
+      margin:15,
+      // width: windowWidth,
+      height:windowHeight,
     },
     AgentContentBg:
     {

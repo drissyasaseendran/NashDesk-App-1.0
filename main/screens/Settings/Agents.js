@@ -82,7 +82,7 @@ function Agents ({navigation}){
 
 	return (
 		<View>
-		<ScrollView >
+		<ScrollView showsVerticalScrollIndicator={false} rollEventThrottle={16}>
 			<View style={styles.Content}>
 				{
 				Agents && Agents.map((agent) =>
