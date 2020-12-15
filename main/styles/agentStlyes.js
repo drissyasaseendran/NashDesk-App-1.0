@@ -7,6 +7,15 @@ import { color } from 'react-native-reanimated';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
+    fab: {
+      backgroundColor:'#1a73e8',
+      color:'#fff',
+      position: 'absolute',
+      margin: 16,
+      right: 0,
+      bottom: 0,
+    
+    },
     agentText:
     {
         fontSize:20,
@@ -53,6 +62,7 @@ const styles = StyleSheet.create({
     {
        
         backgroundColor:'#fff',
+        borderRadius:5,
         shadowColor: "#ccc",
         shadowOffset: {
           width: 0,
@@ -101,14 +111,14 @@ const styles = StyleSheet.create({
                 {
                     width:50,
                     fontSize:15,
-                    fontWeight:'bold',
-                    color:'#98bc98'
+                    // fontWeight:'bold',
+                    color:'#218321'
                 },
                 agentDelete:
                 {
-                    color:'#ff6961',
+                    color:'#E32828',
                     fontSize:15,
-                    fontWeight:'bold',
+                    // fontWeight:'bold',
                     width:50
                 },
 
