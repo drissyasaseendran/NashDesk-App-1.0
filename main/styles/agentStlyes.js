@@ -243,16 +243,25 @@ const styles = StyleSheet.create({
                                       margin:18,
                                       paddingTop:10
                                      },
-                                     EditFieldPass:
+                                     AgentPassword:
                                      {
                                       flexDirection: 'row',
                                       display:'flex',
-                                      marginTop: 10,
-                                      width:300,
-                                      borderBottomWidth: 1,
-                                      borderBottomColor: '#f2f2f2',
-                                      paddingBottom: 5,
-                                        paddingBottom:20
+                                      alignItems:'center'
+                                     },
+                                     EditFieldPass:
+                                     {
+                                        margin: 15,
+                                        // flexGrow:1,
+                                        width:300,
+                                        height: 50,
+                                        borderColor: '#fff',
+                                        color:'#666',
+                                        // borderWidth: 1,
+                                        paddingLeft:12,
+                                        // backgroundColor:'#F5F5F6',
+                                        borderBottomColor: '#eef',
+                                        borderWidth: 1,
                                      },
                                    
                   

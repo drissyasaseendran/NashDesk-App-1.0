@@ -181,11 +181,11 @@ function AgentEdit ({navigation}){
                ]}
                />
         </View>
-        <View style={styles.EditFieldPass}> 
+        <View > 
         
         <Text style={styles.editlabel} >Password</Text>
-        <View>
-        <TextInput style = {styles.editProfile}
+        <View style={styles.AgentPassword}>
+        <TextInput style = {styles.EditFieldPass}
                underlineColorAndroid = "transparent"
                placeholder = "Password"
                name="password"
