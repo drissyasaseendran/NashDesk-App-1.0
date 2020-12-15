@@ -149,14 +149,16 @@ function AgentEdit ({navigation}){
                initial={0}
                onPress={(value) => AgentRole(value)}
                textColor= '#888'
+               borderRadius={5}
+               buttonMargin={10}
                selectedColor='#fff'
                buttonColor='#0187CA'
                borderColor='#eef'
                hasPadding
                options={[
-                  { label: "Admin",      value: "admin",      imageIcon:  <Icon  fontColor='red' name="account-group"/>},
-                  { label: "Agent",      value: "agent",      imageIcon:  <Icon fontColor='red' name="account-group"/> },
-                  { label: "Supervisor", value: "supervisor", imageIcon:  <Icon fontColor='red' name="account-group"/> }
+                  { label: "Admin",      value: "admin",     },
+                  { label: "Agent",      value: "agent",     },
+                  { label: "Supervisor", value: "supervisor",}
                ]}
                />
         </View>
