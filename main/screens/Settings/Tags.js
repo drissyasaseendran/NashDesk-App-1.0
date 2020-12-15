@@ -18,6 +18,7 @@ function Tags (){
 	const [tagId,setTagId] = useState('')
 	const [tagname,setTagname]= useState('')
 	const dispatch = useDispatch()
+
 	useEffect(() => {
 		fetchTagdata()
 	},[])
@@ -86,6 +87,7 @@ function Tags (){
 	const SetModelbox = () =>
 	{
 		setVisible(!visible)
+		dispatch(tagStatus('Add'))
 	}
 	return (
 		<View>

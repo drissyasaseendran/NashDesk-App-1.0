@@ -7,6 +7,7 @@ import {styles} from '../../styles/tagStyles'
 import {tagApiPath} from '../../endpoints'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from "axios";
+import { useDispatch } from 'react-redux'
 
 function TagAdd (props){
   const token = '2d9cc2e28cdae62ec7c6'
@@ -15,36 +16,69 @@ function TagAdd (props){
   const tagData = useSelector(state => state.tag.tag.tagEdit)
   const tagStatus = useSelector(state => state.tag.tag.tagStatus)
 	const [tagId,setTagId] = useState('')
-	const [tagname,setTagname]= useState('')
+  const [tagname,setTagname]= useState('')
+  const dispatch = useDispatch()
+
   useEffect(() =>{
-    alert(tagStatus)
-  },[tagData])
-	useEffect(() => {
-     setVisible(props.visible)
-     
-  },[props.visible]);
+    alert(tagData)
+    if(tagStatus == 'Edit')
+    {
+      // setVisible(props.visible)
+      // alert(JSON.stringify(tagData))
+    }
+  },[tagStatus])
+	// useEffect(() => {
+  //    setVisible(props.visible)
+  // },[props.visible]);
 
   const TagSubmit = () =>
   {
-    let data =
-    { 
-
-      "access_token": token,
-      "tags":tagname,   
-      "request_type":"add"   
-    }
-   axios.post(tagApiPath, data).then((respData) => {
-    if(respData.data.status == "success")
+    if(tagStatus == 'Add')
     {
-      props.fetchTagdata()
-      props.SetModelbox()
+        let data =
+        { 
+
+          "access_token": token,
+          "tags":tagname,   
+          "request_type":"add"   
+        }
+        axios.post(tagApiPath, data).then((respData) => {
+        if(respData.data.status == "success")
+          {
+              props.fetchTagdata()
+              props.SetModelbox()
+              dispatch(tagStatus(''))
+          }
+          else
+          {
+            dispatch(tagStatus(''))
+          }
+          })
     }
     else
     {
+      const data = {
+        "tag_id": tagId,
+        "access_token": token,
+        "tags":tagname,
+        "request_type": "update"
+      }
      
+      axios.post(tagApiPath, data).then((respData) => {
+        if(respData.data.status == "success")
+        {
+          dispatch(tagStatus(''))
+        }
+        else
+        {
+          dispatch(tagStatus(''))
+        }
+    
+      }).catch(function(error) {
+   
+    });
     }
 
-  });
   }
     return (
       <Modal
