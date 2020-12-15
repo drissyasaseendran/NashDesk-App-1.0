@@ -17,6 +17,14 @@ function AgentEdit ({navigation}){
    const [groupData,setgroup] = useState([])
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
    const agentStatus = useSelector(state => state.agent.agent.agentStatus)
+   const [data, setData] = React.useState({
+    username: '',
+    password: '',
+    confirm_password: '',
+    check_textInputChange: false,
+    secureTextEntry: true,
+    confirm_secureTextEntry: true,
+});
    const [agentFeilds, setagentFeilds] = useState({
          agt_sett_id:'',
          first_name:'',
@@ -101,6 +109,12 @@ function AgentEdit ({navigation}){
     }
     })
   }
+  const updateConfirmSecureTextEntry = () => {
+    setData({
+        ...data,
+        confirm_secureTextEntry: !data.confirm_secureTextEntry
+    });
+}
 	return (
 	    <View>
         <ScrollView showsVerticalScrollIndicator={false} rollEventThrottle={16}>
@@ -192,25 +206,27 @@ function AgentEdit ({navigation}){
                placeholderTextColor = "#666"
                autoCapitalize = "none"
                value={agentFeilds.password} 
+               secureTextEntry={data.confirm_secureTextEntry ? true : false}
                onChangeText={(text)=>onAgentChange(text, 'password')}
                
         />
          <TouchableOpacity
-                    // onPress={updateConfirmSecureTextEntry}
+                    onPress={updateConfirmSecureTextEntry}
                 >
                     
+                    {data.secureTextEntry ? 
                     <Feather 
                         name="eye-off"
                         color="grey"
                         size={17}
                     />
-                    {/* :
+                    :
                     <Feather 
                         name="eye"
                         color="grey"
                         size={17}
                     />
-                    } */}
+                    }
                 </TouchableOpacity>
                 </View>
         </View>
