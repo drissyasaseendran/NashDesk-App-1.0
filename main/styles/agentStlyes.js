@@ -245,20 +245,16 @@ const styles = StyleSheet.create({
                                      },
                                      EditFieldPass:
                                      {
-                                      //  paddingTop:20,
+                                      flexDirection: 'row',
+                                      display:'flex',
+                                      marginTop: 10,
+                                      width:300,
+                                      borderBottomWidth: 1,
+                                      borderBottomColor: '#f2f2f2',
+                                      paddingBottom: 5,
                                         paddingBottom:20
                                      },
-
-                                picker: {
-                                  color: '#888',
-                                  borderRadius: 14,
-                                  borderWidth: 1,
-                                  fontSize:12,
-                                  borderColor: '#eef',
-                                  marginRight:16
-                                },
                                    
-                                    
                   
 });
 

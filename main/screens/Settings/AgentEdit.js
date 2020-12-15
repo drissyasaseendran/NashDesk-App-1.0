@@ -7,6 +7,7 @@ import {agentApiPath,groupApiPath} from '../../endpoints'
 import { useSelector } from 'react-redux'
 import { FAB } from 'react-native-paper';
 import axios from "axios";
+import Feather from 'react-native-vector-icons/Feather';
 
 function AgentEdit ({navigation}){
 
@@ -155,9 +156,7 @@ function AgentEdit ({navigation}){
 				groupData && groupData.map((group) =>
 				{
 				return (
-          <Picker.Item  style={{height: 130, width: 130}}
-         
-          style={{ color: 'red'}} label={group.group_name} value={group.group_name} />
+          <Picker.Item  label={group.group_name} value={group.group_name} />
         )
         })
       }
@@ -183,7 +182,9 @@ function AgentEdit ({navigation}){
                />
         </View>
         <View style={styles.EditFieldPass}> 
+        
         <Text style={styles.editlabel} >Password</Text>
+        <View>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Password"
@@ -194,6 +195,24 @@ function AgentEdit ({navigation}){
                onChangeText={(text)=>onAgentChange(text, 'password')}
                
         />
+         <TouchableOpacity
+                    // onPress={updateConfirmSecureTextEntry}
+                >
+                    
+                    <Feather 
+                        name="eye-off"
+                        color="grey"
+                        size={17}
+                    />
+                    {/* :
+                    <Feather 
+                        name="eye"
+                        color="grey"
+                        size={17}
+                    />
+                    } */}
+                </TouchableOpacity>
+                </View>
         </View>
         </View>    
         <View>
