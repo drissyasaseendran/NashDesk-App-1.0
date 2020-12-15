@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
                   {
                     // width: windowWidth,
                     height:windowHeight,
-                  
+                    
                   //   display:'flex',
                   // flexDirection:'column',
                   //  backgroundColor: "rgb(242, 242, 242)",
@@ -232,16 +232,21 @@ const styles = StyleSheet.create({
                                       borderBottomWidth:1,
                                       backgroundColor: '#fff',
                                       // borderWidth: 1,
-                                      // marginTop: 100,
+                                      marginTop: 10,
                                       marginLeft: 20,
                                       marginRight:20,
-                                      // marginBottom:30
+                                      marginBottom:10
                                       // width: 200,
                                       // padding:20
                                      }   ,
                                      EditFieldSwitch:{
                                       margin:18,
                                       paddingTop:10
+                                     },
+                                     EditFieldPass:
+                                     {
+                                      //  paddingTop:20,
+                                        paddingBottom:20
                                      }  
                                    
                                     

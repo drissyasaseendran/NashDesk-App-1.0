@@ -132,10 +132,8 @@ function AgentEdit ({navigation}){
        
         <View style={styles.EditFieldDropdown} >
         <Picker
-          
-          selectedValue={selectedValue}
-      
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+         selectedValue={selectedValue}
+         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
         >
           <Picker.Item label="Java" value="java" />
           <Picker.Item label="JavaScript" value="js" />
@@ -162,7 +160,7 @@ function AgentEdit ({navigation}){
                ]}
                />
         </View>
-        <View style={styles.EditField}> 
+        <View style={styles.EditFieldPass}> 
         <Text style={styles.editlabel} >Password</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
