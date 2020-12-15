@@ -2,18 +2,16 @@ import React, { useState ,useEffect} from "react";
 import {StyleSheet,Text,View,TextInput,TouchableOpacity, ScrollView,Picker} from 'react-native';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {agentApiPath,groupApiPath} from '../../endpoints'
 import { useSelector } from 'react-redux'
 import { FAB } from 'react-native-paper';
 import axios from "axios";
 
 function AgentEdit ({navigation}){
-  const options = [{name: 'Srigar', id: 1},{name: 'Sam', id: 2}]
-  const token = '2d9cc2e28cdae62ec7c6'
+   const token = '2d9cc2e28cdae62ec7c6'
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
-   const [group,setgroup] = useState([])
+   const [groupData,setgroup] = useState([])
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
    const agentStatus = useSelector(state => state.agent.agent.agentStatus)
    const [agentFeilds, setagentFeilds] = useState({
@@ -26,18 +24,18 @@ function AgentEdit ({navigation}){
          image:"",
          group:[]
   });
-  const [selectedValue,setSelectedValue] = useState('')
+
   useEffect(() => {
     fetchGroup()
     if(agentStatus == 'Edit')
     {
       if(agentEditData)
       {
-        if(agentEditData.length>0)
-        {
+      if(agentEditData.length>0)
+      {
       setagentFeilds({ ...agentFeilds, agt_sett_id:agentEditData[0].agt_sett_id,first_name:agentEditData[0].first_name,last_name:agentEditData[0].last_name,email_id:agentEditData[0].email_id,agent_type:agentEditData[0].agent_type,password:agentEditData[0].password,image:agentEditData[0].image  });
       }
-        }  
+      }  
       }
       else
       {
@@ -84,10 +82,7 @@ function AgentEdit ({navigation}){
 
     }
    }
-   const AgentRole = (value) =>
-   {
-      setRole(value)
-   }
+
    const fetchGroup = () =>
    {
       let data = {
@@ -151,14 +146,16 @@ function AgentEdit ({navigation}){
        
         <View style={styles.EditFieldDropdown} >
         <Picker
-         selectedValue={selectedValue}
-         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+         selectedValue={groupSelected}
+         onValueChange={(itemValue, itemIndex) => setgroupSelected(itemValue)}
         >
           {
-				group && group.map((group) =>
+				groupData && groupData.map((group) =>
 				{
 				return (
-          <Picker.Item label={group.group_name} value={group.group_name} />
+          <Picker.Item  style={{height: 130, width: 130}}
+         
+          style={{ color: 'red'}} label={group.group_name} value={group.group_name} />
         )
         })
       }
@@ -168,12 +165,12 @@ function AgentEdit ({navigation}){
         <View style={styles.EditFieldSwitch}> 
          <SwitchSelector
                initial={0}
-               onPress={(value) => AgentRole(value)}
+               onPress={(value) => setRole(value)}
                textColor= '#888'
                borderRadius={5}
                buttonMargin={10}
                selectedColor='#fff'
-               buttonColor='#0187CA'
+               buttonColor='#1a73e8'
                borderColor='#eef'
                hasPadding
                options={[
@@ -198,7 +195,6 @@ function AgentEdit ({navigation}){
         </View>
         </View>    
         <View>
-
         </View>
      </View>
      </ScrollView>
