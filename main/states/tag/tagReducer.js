@@ -3,7 +3,7 @@ import * as types from './tagAction';
 const tagData = {
   tag: {
  
-    tagedit:[],
+    tagEdit:[],
     tagStatus: "",
 
   },
@@ -17,7 +17,7 @@ export default function tagReducer(state = tagData, action)
     {
      
         case types.TAG_EDIT:
-          tagData.tagedit = action.data
+          tagData.tagEdit = action.data
         return {  ...state, tag: tagData };
         case types.TAG_STATUS:
          

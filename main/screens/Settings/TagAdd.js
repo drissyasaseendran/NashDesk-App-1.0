@@ -19,17 +19,22 @@ function TagAdd (props){
   const [tagname,setTagname]= useState('')
   const dispatch = useDispatch()
 
-  useEffect(() =>{
-    alert(tagData)
-    if(tagStatus == 'Edit')
-    {
-      // setVisible(props.visible)
-      // alert(JSON.stringify(tagData))
-    }
-  },[tagStatus])
-	// useEffect(() => {
-  //    setVisible(props.visible)
-  // },[props.visible]);
+	useEffect(() => {
+     setVisible(props.visible)
+     if(tagStatus == 'Edit')
+     {
+       if(tagData)
+       {
+          setTagname(tagData.tag)
+          setTagId(tagData.value.tag_id)
+        }
+     }
+     else
+     {
+      setTagname('')
+      setTagId('')
+     }
+  },[props.visible]);
 
   const TagSubmit = () =>
   {
@@ -51,6 +56,7 @@ function TagAdd (props){
           }
           else
           {
+            props.SetModelbox()
             dispatch(tagStatus(''))
           }
           })
@@ -67,10 +73,14 @@ function TagAdd (props){
       axios.post(tagApiPath, data).then((respData) => {
         if(respData.data.status == "success")
         {
+          props.fetchTagdata()
+          props.SetModelbox()
           dispatch(tagStatus(''))
         }
         else
         {
+          
+          props.SetModelbox()
           dispatch(tagStatus(''))
         }
     
@@ -101,12 +111,13 @@ function TagAdd (props){
               <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Tag Name"
+               value={tagname}
                placeholderTextColor = "#888"
                autoCapitalize = "none"
                onChangeText={tagname => setTagname(tagname)}
                />
               <Text style={styles.Error}>{tagerror}</Text>
-             <TouchableOpacity onPress={()=>TagSubmit()} style={styles.button}><Text style={styles.textcolor}>Add</Text></TouchableOpacity>
+             <TouchableOpacity onPress={()=>TagSubmit()} style={styles.button}><Text style={styles.textcolor}>{tagStatus =="Edit"?"Update":"Add"}</Text></TouchableOpacity>
         </View>
       </Modal>
     );

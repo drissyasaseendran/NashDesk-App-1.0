@@ -83,6 +83,7 @@ function Tags (){
 	const hideDialog = () =>
 	{
 		setDailogVisible(false);
+		dispatch(tagStatus(''))
 	}
 	const SetModelbox = () =>
 	{
