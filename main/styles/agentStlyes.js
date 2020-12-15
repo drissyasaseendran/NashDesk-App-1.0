@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
                     // borderWidth: 1,
                     paddingLeft:12,
                     // backgroundColor:'#F5F5F6',
-                    borderBottomColor: '#ccc',
+                    borderBottomColor: '#eef',
                     borderWidth: 1,
                   },
             
@@ -247,7 +247,16 @@ const styles = StyleSheet.create({
                                      {
                                       //  paddingTop:20,
                                         paddingBottom:20
-                                     }  
+                                     },
+
+                                picker: {
+                                  color: '#888',
+                                  borderRadius: 14,
+                                  borderWidth: 1,
+                                  fontSize:12,
+                                  borderColor: '#eef',
+                                  marginRight:16
+                                },
                                    
                                     
                   

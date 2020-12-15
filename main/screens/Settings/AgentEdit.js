@@ -2,13 +2,15 @@ import React, { useState ,useEffect} from "react";
 import {StyleSheet,Text,View,TextInput,TouchableOpacity, ScrollView,Picker} from 'react-native';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {agentApiPath,groupApiPath} from '../../endpoints'
 import { useSelector } from 'react-redux'
 import { FAB } from 'react-native-paper';
 import axios from "axios";
 
 function AgentEdit ({navigation}){
-   const token = '2d9cc2e28cdae62ec7c6'
+
+  const token = '2d9cc2e28cdae62ec7c6'
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
    const [groupData,setgroup] = useState([])
