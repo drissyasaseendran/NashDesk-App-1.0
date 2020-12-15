@@ -5,7 +5,6 @@ import {
   View,TextInput,TouchableOpacity,
   ScrollView
 } from 'react-native';
-// import DropDown from 'react-native-paper-dropdown';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -14,47 +13,8 @@ import { useSelector } from 'react-redux'
 
 function AgentEdit ({navigation}){
    const [groupSelected,setgroupSelected] = useState([])
-   const [checked, setChecked] = React.useState(false);
    const [role, setRole] = useState('agent');
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
-   const [selectedTeam, setSelectedTeam] = useState({})
-  const [selectedTeams, setSelectedTeams] = useState([])
-  const items = [
-   // this is the parent or 'item'
-   {
-     name: 'Fruits',
-     id: 0,
-     // these are the children or 'sub items'
-     children: [
-       {
-         name: 'Apple',
-         id: 10,
-       },
-       {
-         name: 'Strawberry',
-         id: 17,
-       },
-       {
-         name: 'Pineapple',
-         id: 13,
-       },
-       {
-         name: 'Banana',
-         id: 14,
-       },
-       {
-         name: 'Watermelon',
-         id: 15,
-       },
-       {
-         name: 'Kiwi fruit',
-         id: 16,
-       },
-     ],
-   },
-
- ];
-  
    const [agentFeilds, setagentFeilds] = useState({
          agt_sett_id:'',
          first_name:'',
@@ -64,9 +24,8 @@ function AgentEdit ({navigation}){
          password:'',
          image:"",
          group:[]
-        
-   });
-   useEffect(() => {
+  });
+  useEffect(() => {
       if(agentEditData)
       {
         if(agentEditData.length>0)
@@ -74,13 +33,13 @@ function AgentEdit ({navigation}){
       setagentFeilds({ ...agentFeilds, agt_sett_id:agentEditData[0].agt_sett_id,first_name:agentEditData[0].first_name,last_name:agentEditData[0].last_name,email_id:agentEditData[0].email_id,agent_type:agentEditData[0].agent_type,password:agentEditData[0].password,image:agentEditData[0].image  });
       }
         }     
-   },[]);
-   const onAgentChange = (text ,stateProp) =>
-   {
+  },[]);
+  const onAgentChange = (text ,stateProp) =>
+  {
       setagentFeilds({ ...agentFeilds, [stateProp]: text });
-   }
-   const UpdateAgents = () =>
-   {
+  }
+  const UpdateAgents = () =>
+  {
       let data = {
    
          "access_token":token,
@@ -114,9 +73,7 @@ function AgentEdit ({navigation}){
 	return (
 	    <View>
         <ScrollView>
-        {/* <View style={styles.header}></View> */}
         <View  style={styles.canvasEditBody}>
-       
         <View style={styles.EditBody}> 
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >First Name</Text>
@@ -152,7 +109,6 @@ function AgentEdit ({navigation}){
                value={agentFeilds.email_id} 
                placeholderTextColor = "#666"
                name="city"
-            //    value={profileFeild.city} 
                autoCapitalize = "none"    
                onChangeText={(text)=>onAgentChange(text, 'city')}
                
@@ -173,25 +129,7 @@ function AgentEdit ({navigation}){
                   { label: "Supervisor", value: "supervisor", imageIcon:  <Icon fontColor='red' name="account-group"/> }
                ]}
                />
-         </View>
-         <View style={styles.EditField}>
-
-         </View>
-        {/* <View style={styles.EditField}>
-         <DropDown
-            //  label={'Gender'}
-            mode={'outlined'}
-            value={gender}
-            setValue={setGender}
-            list={genderList}
-            visible={showDropDown}
-            showDropDown={() => setShowDropDown(true)}
-            onDismiss={() => setShowDropDown(false)}
-            inputProps={{
-               right: <TextInput.Icon name={'menu-down'} />,
-            }}
-         />
-        </View> */}
+        </View>
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Password</Text>
         <TextInput style = {styles.editProfile}
@@ -208,7 +146,6 @@ function AgentEdit ({navigation}){
         </View>    
           
      </View>
-
      </ScrollView>
      <View style={styles.ViewAgentEditbtn}> 
         <TouchableOpacity  style={styles.btnUpdate} onPress={() => UpdateAgents()}  >
