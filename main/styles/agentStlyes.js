@@ -133,17 +133,17 @@ const styles = StyleSheet.create({
 
                   canvasEditBody:
                   {
-                    width: windowWidth,
+                    // width: windowWidth,
                     height:windowHeight,
                   
-                    display:'flex',
-                  flexDirection:'column',
-                   backgroundColor: "rgb(242, 242, 242)",
-                   borderRadius:100,
-                   borderWidth: 4,
-                   borderColor: "rgb(242, 242, 242)",
-                   borderWidth: 4,
-                   alignSelf:'center',
+                  //   display:'flex',
+                  // flexDirection:'column',
+                  //  backgroundColor: "rgb(242, 242, 242)",
+                  //  borderRadius:100,
+                  //  borderWidth: 4,
+                  //  borderColor: "rgb(242, 242, 242)",
+                  //  borderWidth: 4,
+                  //  alignSelf:'center',
               
                   },
    
@@ -219,8 +219,25 @@ const styles = StyleSheet.create({
                                 justifyContent:'center',
       
                                      },
-                                  
-                  
+                                     EditFieldDropdown:
+                                     {
+                                      borderBottomColor: '#ccc',
+                                      borderBottomWidth:1,
+                                      backgroundColor: '#fff',
+                                      // borderWidth: 1,
+                                      // marginTop: 100,
+                                      marginLeft: 20,
+                                      marginRight:20,
+                                      // marginBottom:30
+                                      // width: 200,
+                                      // padding:20
+                                     }   ,
+                                     EditFieldSwitch:{
+                                      margin:18,
+                                      paddingTop:10
+                                     }  
+                                   
+                                    
                   
 });
 

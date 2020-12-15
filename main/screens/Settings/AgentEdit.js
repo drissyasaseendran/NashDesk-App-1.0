@@ -1,16 +1,14 @@
 import React, { useState ,useEffect} from "react";
-import {
-  Image,
-  Text,
-  View,TextInput,TouchableOpacity,
-  ScrollView
-} from 'react-native';
+import {StyleSheet,Text,View,TextInput,TouchableOpacity, ScrollView,Picker} from 'react-native';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
-
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector } from 'react-redux'
+import { FAB } from 'react-native-paper';
+
 function AgentEdit ({navigation}){
+  const options = [{name: 'Srigar', id: 1},{name: 'Sam', id: 2}]
+ 
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
@@ -25,6 +23,7 @@ function AgentEdit ({navigation}){
          image:"",
          group:[]
   });
+  const [selectedValue,setSelectedValue] = useState('')
   useEffect(() => {
     if(agentStatus == 'Edit')
     {
@@ -46,8 +45,10 @@ function AgentEdit ({navigation}){
   {
       setagentFeilds({ ...agentFeilds, [stateProp]: text });
   }
-  const UpdateAgents = () =>
+  const AgentEdits = () =>
   {
+    if(agentStatus == 'Edit')
+    {
       let data = {
    
          "access_token":token,
@@ -73,6 +74,11 @@ function AgentEdit ({navigation}){
      }
 
      });
+    }
+    else
+    {
+
+    }
    }
    const AgentRole = (value) =>
    {
@@ -80,7 +86,8 @@ function AgentEdit ({navigation}){
    }
 	return (
 	    <View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false} rollEventThrottle={16}>
+     
         <View  style={styles.canvasEditBody}>
         <View style={styles.EditBody}> 
         <View style={styles.EditField}> 
@@ -122,7 +129,24 @@ function AgentEdit ({navigation}){
                
         />
         </View>
-        <View style={styles.EditField}> 
+       
+        <View style={styles.EditFieldDropdown} >
+        <Picker
+          
+          selectedValue={selectedValue}
+      
+          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+        >
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+          <Picker.Item label="Java" value="java" />
+        </Picker>
+        </View>
+        <View style={styles.EditFieldSwitch}> 
          <SwitchSelector
                initial={0}
                onPress={(value) => AgentRole(value)}
@@ -152,19 +176,22 @@ function AgentEdit ({navigation}){
         />
         </View>
         </View>    
-          
+        <View>
+
+        </View>
      </View>
      </ScrollView>
-     <View style={styles.ViewAgentEditbtn}> 
-        <TouchableOpacity  style={styles.btnUpdate} onPress={() => UpdateAgents()}  >
-                  <Text  style={styles.btnText} >UPDATE</Text>      
-         </TouchableOpacity>          
-      </View>  
+     <FAB style={styles.fab} icon="check"	onPress={()=> AgentEdits()}/>  
      </View>
 
 	  );
   
   }
-  
+  const pickerStyle = StyleSheet.create({
+    picker: {
+      textDecorationLine: 'underline'
+    }
+  });
+
   export default AgentEdit;
   

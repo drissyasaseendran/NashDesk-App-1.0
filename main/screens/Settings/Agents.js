@@ -75,6 +75,7 @@ function Agents ({navigation}){
 	}
 	const openAgents = () =>
 	{
+		
 		dispatch(agentStatus("Add"))
 		navigation.navigate('AgentEdit')
 	}
