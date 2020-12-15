@@ -152,21 +152,28 @@ const styles = StyleSheet.create({
                   {
                     margin: 15,
                     height: 50,
-                    borderColor: '#7a42f4',
+                    borderColor: '#fff',
                     color:'#666',
-                    borderWidth: 1,
+                    // borderWidth: 1,
                     paddingLeft:12,
-                    backgroundColor:'#F5F5F6',
-                    borderColor: '#eee',
+                    // backgroundColor:'#F5F5F6',
+                    borderBottomColor: '#ccc',
                     borderWidth: 1,
                   },
             
                   EditBody:
                   {
-                    
+                    margin:20,
                     borderRadius:10,
                     backgroundColor:'#fff',
-                   
+                    shadowColor: "#ccc",
+                    shadowOffset: {
+                      width: 0,
+                      height: 1,
+                    },
+                    shadowOpacity: 0.01,
+                    shadowRadius: 1.00,
+                    elevation: 1,
                   },
               
                   editlabel:
