@@ -7,14 +7,14 @@ import {
 } from 'react-native';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector } from 'react-redux'
-
-
 function AgentEdit ({navigation}){
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
+   const agentStatus = useSelector(state => state.agent.agent.agentStatus)
    const [agentFeilds, setagentFeilds] = useState({
          agt_sett_id:'',
          first_name:'',
@@ -26,13 +26,21 @@ function AgentEdit ({navigation}){
          group:[]
   });
   useEffect(() => {
+    if(agentStatus == 'Edit')
+    {
       if(agentEditData)
       {
         if(agentEditData.length>0)
         {
       setagentFeilds({ ...agentFeilds, agt_sett_id:agentEditData[0].agt_sett_id,first_name:agentEditData[0].first_name,last_name:agentEditData[0].last_name,email_id:agentEditData[0].email_id,agent_type:agentEditData[0].agent_type,password:agentEditData[0].password,image:agentEditData[0].image  });
       }
-        }     
+        }  
+      }
+      else
+      {
+        setagentFeilds({ ...agentFeilds, agt_sett_id:'',first_name:'',last_name:'',email_id:'',agent_type:'',password:'',image:''});
+     
+      }   
   },[]);
   const onAgentChange = (text ,stateProp) =>
   {
