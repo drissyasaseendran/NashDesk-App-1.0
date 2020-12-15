@@ -51,6 +51,10 @@ const styles = StyleSheet.create({
         borderTopWidth:1,
         borderTopColor:'#eef',
         padding:10,
+        // marginBottom:10,
+        marginLeft:15,
+        marginRight:15,
+        // paddingBottom:10,
         justifyContent:'flex-end'
         
     },
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
                     color:'#E32828',
                     fontSize:15,
                     // fontWeight:'bold',
-                    width:50
+                    // width:50
                 },
 
 
