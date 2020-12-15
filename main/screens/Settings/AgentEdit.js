@@ -3,14 +3,17 @@ import {StyleSheet,Text,View,TextInput,TouchableOpacity, ScrollView,Picker} from
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {agentApiPath,groupApiPath} from '../../endpoints'
 import { useSelector } from 'react-redux'
 import { FAB } from 'react-native-paper';
+import axios from "axios";
 
 function AgentEdit ({navigation}){
   const options = [{name: 'Srigar', id: 1},{name: 'Sam', id: 2}]
- 
+  const token = '2d9cc2e28cdae62ec7c6'
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
+   const [group,setgroup] = useState([])
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
    const agentStatus = useSelector(state => state.agent.agent.agentStatus)
    const [agentFeilds, setagentFeilds] = useState({
@@ -25,6 +28,7 @@ function AgentEdit ({navigation}){
   });
   const [selectedValue,setSelectedValue] = useState('')
   useEffect(() => {
+    fetchGroup()
     if(agentStatus == 'Edit')
     {
       if(agentEditData)
@@ -84,6 +88,21 @@ function AgentEdit ({navigation}){
    {
       setRole(value)
    }
+   const fetchGroup = () =>
+   {
+      let data = {
+    
+        "access_token":token,
+        "request_type":"view_grp_name"
+       }
+    axios.post(groupApiPath, data).then((respData) => {
+    if(respData.data.status == "success")
+    {
+      let res = respData.data.payload.data
+		  setgroup(res)
+    }
+    })
+  }
 	return (
 	    <View>
         <ScrollView showsVerticalScrollIndicator={false} rollEventThrottle={16}>
@@ -135,13 +154,15 @@ function AgentEdit ({navigation}){
          selectedValue={selectedValue}
          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
         >
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
-          <Picker.Item label="Java" value="java" />
+          {
+				group && group.map((group) =>
+				{
+				return (
+          <Picker.Item label={group.group_name} value={group.group_name} />
+        )
+        })
+      }
+      
         </Picker>
         </View>
         <View style={styles.EditFieldSwitch}> 
