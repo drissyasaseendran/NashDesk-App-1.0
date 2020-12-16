@@ -278,6 +278,7 @@ const styles = StyleSheet.create({
                                         marginTop:5,
                                         borderRadius:5,
                                         color:'#fff',
+                                        fontSize:10,
                                         padding:5
                                       }
                   
