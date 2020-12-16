@@ -80,7 +80,7 @@ function AgentEdit ({navigation}){
 
        if(respData.data.status == "success")
        {
-    
+        navigation.navigate('Agents')
        }
      else
      {
@@ -92,7 +92,40 @@ function AgentEdit ({navigation}){
     }
     else
     {
+      let data = {
+        "access_token": token,
+        "fields":{
+         "first_name":agentFeilds.first_name,
+            "last_name":agentFeilds.last_name,
+            "mobile":"",
+            "email_id":agentFeilds.email_id,
+            "agent_username":agentFeilds.email_id,
+            "password":agentFeilds.password,
+            "address":"",
+            "image":agentFeilds.image,
+            "country":"",
+            "city":"",
+            "code":"",
+            "agent_type":role,
+            "group":groupSelected
+     
+                },
+        "request_type":"add" 
+     }
+   
+   axios.post(agentApiPath, data).then((respData) => {
 
+    if(respData.data.status == "success")
+    {
+      navigation.navigate('Agents')
+    }
+   else
+   {
+  
+   
+   }
+
+  });
     }
    }
 
@@ -183,10 +216,11 @@ function AgentEdit ({navigation}){
       
         </Picker>
         </View>
+       
         <View style={styles.EditFieldSwitch}> 
          <SwitchSelector
                initial={0}
-               value={role}
+               selectedValue={role}
                onPress={(value) => setRole(value)}
                textColor= '#888'
                borderRadius={5}
