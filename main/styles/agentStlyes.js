@@ -265,6 +265,7 @@ const styles = StyleSheet.create({
                                      },
                                      groupInAgents:{
                                         flex: 1,
+                                        width:300,
                                         flexDirection: 'row',
                                         flexWrap: 'wrap',
                                         alignItems: 'flex-start'

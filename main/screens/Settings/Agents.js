@@ -100,7 +100,6 @@ function Agents ({navigation}){
 								{
 									return(<View style={styles.groupInAgents}>
 												<Text style={styles.grpItem}>{grp.group_name}</Text>
-											
 											</View>)})}
 							</View>
 						</View>
