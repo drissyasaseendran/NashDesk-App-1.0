@@ -14,11 +14,8 @@ function Agents ({navigation}){
 	const [visible,setVisible] = useState(false)
 	const dispatch = useDispatch()
 	useEffect(() => {
-    
-		fetchAgentdata()
-		
-			  
-		},[]);
+    	fetchAgentdata()
+	},[]);
   
 	const fetchAgentdata = () =>
 	  {
@@ -32,6 +29,7 @@ function Agents ({navigation}){
 		  {
 		   
 		  let res = respData.data.payload.data
+		
 		  setAgents(res)
 
 		  }
@@ -82,7 +80,7 @@ function Agents ({navigation}){
 
 	return (
 		<View>
-		<ScrollView showsVerticalScrollIndicator={false} rollEventThrottle={16}>
+		<ScrollView showsVerticalScrollIndicator={false}>
 			<View style={styles.Content}>
 				{
 				Agents && Agents.map((agent) =>
@@ -97,6 +95,13 @@ function Agents ({navigation}){
 								<Text style={styles.agenttextColor}>{agent.first_name.charAt(0).toUpperCase() + agent.first_name.slice(1)}</Text>
 								<Text style={styles.agenttextColorEmail}>{agent.email_id}</Text>
 								<Text style={styles.agenttextColorEmail}>{agent.agent_type.charAt(0).toUpperCase() +agent.agent_type.slice(1)}</Text>
+							
+								{agent.group && agent.group.map((grp) =>
+								{
+									return(<View style={styles.groupInAgents}>
+												<Text style={styles.grpItem}>{grp.group_name}</Text>
+											
+											</View>)})}
 							</View>
 						</View>
 						<View  style={styles.AgentSidebtn}>

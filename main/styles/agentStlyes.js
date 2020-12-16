@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     {
       margin:15,
       // width: windowWidth,
-      height:windowHeight,
+      // height:windowHeight,
     },
     AgentContentBg:
     {
@@ -263,7 +263,22 @@ const styles = StyleSheet.create({
                                         borderBottomColor: '#eef',
                                         borderWidth: 1,
                                      },
-                                   
+                                     groupInAgents:{
+                                        flex: 1,
+                                        flexDirection: 'row',
+                                        flexWrap: 'wrap',
+                                        alignItems: 'flex-start'
+                                      },
+                                      grpItem:
+                                      {
+                                        width: 'auto' ,
+                                        backgroundColor:'#1a73e8',
+                                        marginRight:12,
+                                        marginTop:5,
+                                        borderRadius:5,
+                                        color:'#fff',
+                                        padding:5
+                                      }
                   
 });
 

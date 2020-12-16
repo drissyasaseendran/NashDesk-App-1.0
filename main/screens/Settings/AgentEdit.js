@@ -2,7 +2,6 @@ import React, { useState ,useEffect} from "react";
 import {StyleSheet,Text,View,TextInput,TouchableOpacity, ScrollView,Picker} from 'react-native';
 import {styles} from '../../styles/agentStlyes'
 import SwitchSelector from "react-native-switch-selector";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {agentApiPath,groupApiPath} from '../../endpoints'
 import { useSelector } from 'react-redux'
 import { FAB } from 'react-native-paper';
@@ -47,13 +46,14 @@ function AgentEdit ({navigation}){
       if(agentEditData.length>0)
       {
       setagentFeilds({ ...agentFeilds, agt_sett_id:agentEditData[0].agt_sett_id,first_name:agentEditData[0].first_name,last_name:agentEditData[0].last_name,email_id:agentEditData[0].email_id,agent_type:agentEditData[0].agent_type,password:agentEditData[0].password,image:agentEditData[0].image  });
-      }
+      setRole(agentEditData[0].agent_type)
+     }
       }  
       }
       else
       {
         setagentFeilds({ ...agentFeilds, agt_sett_id:'',first_name:'',last_name:'',email_id:'',agent_type:'',password:'',image:''});
-     
+      
       }   
   },[]);
   const onAgentChange = (text ,stateProp) =>
@@ -154,7 +154,7 @@ function AgentEdit ({navigation}){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
-               editable={false} selectTextOnFocus={false}
+               editable = {false}
                value={agentFeilds.email_id} 
                placeholderTextColor = "#666"
                name="email_id"
@@ -186,6 +186,7 @@ function AgentEdit ({navigation}){
         <View style={styles.EditFieldSwitch}> 
          <SwitchSelector
                initial={0}
+               value={role}
                onPress={(value) => setRole(value)}
                textColor= '#888'
                borderRadius={5}
