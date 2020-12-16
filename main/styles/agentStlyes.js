@@ -3,7 +3,6 @@ import {
 } from 'react-native';
 
 import { Dimensions } from 'react-native';
-import { color } from 'react-native-reanimated';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
@@ -164,6 +163,7 @@ const styles = StyleSheet.create({
                   EditBody:
                   {
                     margin:20,
+                    height:windowHeight,
                     borderRadius:10,
                     backgroundColor:'#fff',
                     shadowColor: "#ccc",

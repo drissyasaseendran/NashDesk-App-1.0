@@ -11,7 +11,9 @@ import Feather from 'react-native-vector-icons/Feather';
 
 function AgentEdit ({navigation}){
 
-  const token = '2d9cc2e28cdae62ec7c6'
+
+   const token = '2d9cc2e28cdae62ec7c6'
+   const item = [{id: 1, name: 'Bedroom'}, {id: 2, name: 'LivingRoom'}]
    const [groupSelected,setgroupSelected] = useState([])
    const [role, setRole] = useState('agent');
    const [groupData,setgroup] = useState([])
@@ -143,7 +145,7 @@ function AgentEdit ({navigation}){
                name="last_name"
                value={agentFeilds.last_name} 
                autoCapitalize = "none"
-               onChangeText={(text)=>onAgentChange(text, 'address')}
+               onChangeText={(text)=>onAgentChange(text, 'last_name')}
                
         />
         </View>
@@ -151,16 +153,20 @@ function AgentEdit ({navigation}){
         <Text style={styles.editlabel} >Email Id</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "City"
+               placeholder = "Email"
+               editable = {true}
                value={agentFeilds.email_id} 
                placeholderTextColor = "#666"
-               name="city"
+               name="email_id"
+               readOnly
                autoCapitalize = "none"    
-               onChangeText={(text)=>onAgentChange(text, 'city')}
+               onChangeText={(text)=>onAgentChange(text, 'email_id')}
                
         />
         </View>
-       
+       <View>
+  
+       </View>
         <View style={styles.EditFieldDropdown} >
         <Picker
          selectedValue={groupSelected}

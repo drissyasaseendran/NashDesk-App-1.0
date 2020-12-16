@@ -1,12 +1,10 @@
 import React, { useEffect ,useState} from "react";
-import {TextInput , TouchableOpacity,Modal, Text,Image,ScrollView,View} from 'react-native';
+import {TextInput , TouchableOpacity, Text,ScrollView,View} from 'react-native';
 import {styles} from '../styles/profileStyles'
 import {profileApiPath} from '../endpoints'
 import {getAccessToken} from '../utils/Authenticator'
 import axios from 'axios'
-import { Dimensions } from 'react-native';
 
-const windowWidth = Dimensions.get('window').width;
 function ProfileUpdate (props){
     const token = getAccessToken()
     const [profileFeild,setprofileFeild] = useState({
@@ -99,9 +97,7 @@ function ProfileUpdate (props){
     return (
       <View>
         <ScrollView>
-        {/* <View style={styles.header}></View> */}
         <View  style={styles.canvasEditBody}>
-       
         <View style={styles.EditBody}> 
         <View style={styles.EditField}> 
         <Text style={styles.editlabel} >Name</Text>
@@ -113,8 +109,6 @@ function ProfileUpdate (props){
                value={profileFeild.first_name} 
                autoCapitalize = "none"
                onChangeText={(text)=>onProfileChange(text, 'first_name')}
-    
-               
         />
         </View>
         <View style={styles.EditField}> 
@@ -176,7 +170,6 @@ function ProfileUpdate (props){
                placeholder = "Password"
                name="password"
                placeholderTextColor = "#666"
-
                value={profileFeild.password}  
                autoCapitalize = "none"
                onChangeText={(text)=>onProfileChange(text, 'password')}
