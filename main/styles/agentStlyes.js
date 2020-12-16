@@ -34,6 +34,13 @@ const styles = StyleSheet.create({
       fontWeight:'bold'
        
     },
+    agenttextColorlname:{
+      color:'#666',
+      fontSize:14,
+    lineHeight:20,
+    paddingLeft:4,
+    fontWeight:'bold'
+    },
     AgentContent:
     {
       

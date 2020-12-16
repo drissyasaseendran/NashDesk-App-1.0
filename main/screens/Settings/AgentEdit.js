@@ -13,7 +13,7 @@ function AgentEdit ({navigation}){
 
    const token = '2d9cc2e28cdae62ec7c6'
    const item = [{id: 1, name: 'Bedroom'}, {id: 2, name: 'LivingRoom'}]
-   const [groupSelected,setgroupSelected] = useState([])
+   const [groupSelected,setgroupSelected] = useState('')
    const [role, setRole] = useState('agent');
    const [groupData,setgroup] = useState([])
    const agentEditData = useSelector(state => state.agent.agent.agentedit)
@@ -71,13 +71,13 @@ function AgentEdit ({navigation}){
          "fields":{"first_name":agentFeilds.first_name,
          "last_name":agentFeilds.last_name,
          "agent_type":role,'image':agentFeilds.image,
-         "group":groupSelected},
+         "group":[groupSelected]},
          "request_type":"update"   
      
       }
    
      axios.post(agentApiPath, data).then((respData) => {
-
+      
        if(respData.data.status == "success")
        {
         navigation.navigate('Agents')
@@ -107,14 +107,14 @@ function AgentEdit ({navigation}){
             "city":"",
             "code":"",
             "agent_type":role,
-            "group":groupSelected
+            "group":[groupSelected]
      
                 },
         "request_type":"add" 
      }
    
    axios.post(agentApiPath, data).then((respData) => {
-
+  
     if(respData.data.status == "success")
     {
       navigation.navigate('Agents')
@@ -173,7 +173,7 @@ function AgentEdit ({navigation}){
         <Text style={styles.editlabel} >Last Name</Text>
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
-               placeholder = "Home"
+               placeholder = "Last Name"
                placeholderTextColor = "#666"
                name="last_name"
                value={agentFeilds.last_name} 
@@ -187,11 +187,10 @@ function AgentEdit ({navigation}){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
-               editable = {false}
+               editable = {agentStatus== "Add"?true:false}
                value={agentFeilds.email_id} 
                placeholderTextColor = "#666"
                name="email_id"
-               readOnly
                autoCapitalize = "none"    
                onChangeText={(text)=>onAgentChange(text, 'email_id')}
                

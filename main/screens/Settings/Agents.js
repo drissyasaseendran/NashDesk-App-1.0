@@ -92,7 +92,11 @@ function Agents ({navigation}){
 							<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
 						</View>
 							<View  style={styles.AgentContentInside}>
-								<Text style={styles.agenttextColor}>{agent.first_name.charAt(0).toUpperCase() + agent.first_name.slice(1)}</Text>
+							<View style={styles.groupInAgents}>
+							<Text style={styles.agenttextColor}>{agent.first_name.charAt(0).toUpperCase() + agent.first_name.slice(1)}</Text>
+							<Text style={styles.agenttextColorlname}>{agent.last_name.charAt(0).toUpperCase() + agent.last_name.slice(1)}</Text>
+								
+											</View>
 								<Text style={styles.agenttextColorEmail}>{agent.email_id}</Text>
 								<Text style={styles.agenttextColorEmail}>{agent.agent_type.charAt(0).toUpperCase() +agent.agent_type.slice(1)}</Text>
 							
