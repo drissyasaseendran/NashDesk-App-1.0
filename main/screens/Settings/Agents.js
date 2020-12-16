@@ -61,7 +61,7 @@ function Agents ({navigation}){
       if(respData.data.status == "success")
       {
       
-        
+        fetchAgentdata()
       }
      
       else
