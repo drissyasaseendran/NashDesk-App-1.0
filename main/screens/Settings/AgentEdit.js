@@ -154,7 +154,7 @@ function AgentEdit ({navigation}){
         <TextInput style = {styles.editProfile}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
-               editable = {true}
+               editable={false} selectTextOnFocus={false}
                value={agentFeilds.email_id} 
                placeholderTextColor = "#666"
                name="email_id"
