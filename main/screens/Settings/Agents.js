@@ -12,6 +12,7 @@ function Agents ({navigation}){
 	const [Agents,setAgents] = useState([])
 	const token = '2d9cc2e28cdae62ec7c6'
 	const [visible,setVisible] = useState(false)
+	const [randomColor,setRandomColor] = useState('')
 	const dispatch = useDispatch()
 	useEffect(() => {
     	fetchAgentdata()
@@ -77,18 +78,25 @@ function Agents ({navigation}){
 		dispatch(agentStatus("Add"))
 		navigation.navigate('AgentEdit')
 	}
-
+	const ChangeColorFunction=()=>
+	{
+	 
+	var ColorCode = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+	 
+	setRandomColor(ColorCode)
+	}
 	return (
 		<View>
 		<ScrollView showsVerticalScrollIndicator={false}>
-			<View style={styles.Content}>
+			<View style={styles.Content} >
 				{
 				Agents && Agents.map((agent) =>
 					{
 						return(
 						<View  style={styles.AgentContentBg}>
 						<View style={styles.AgentContent}>
-						<View  style={styles.AgentContentInside}>
+						<View  style={styles.Profile} >
+							{/* <Text style={styles.ProfileText}> {agent.first_name.charAt(0).toUpperCase() }</Text> */}
 							<Image  style={{ width: 60, height: 60 }} source={require('../../../images/profile.jpeg')} />
 						</View>
 							<View  style={styles.AgentContentInside}>

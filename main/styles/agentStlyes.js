@@ -93,6 +93,24 @@ const styles = StyleSheet.create({
       fontSize:14,
       justifyContent:'center'
     },
+    Profile:
+    {
+      width: 60, height: 60 ,
+      marginLeft:15,
+      fontSize:14,
+     alignSelf:'center',
+     borderRadius:10,
+      backgroundColor:'#666',
+     
+      justifyContent:'center',
+    
+    },
+    ProfileText:
+    {
+     color:'#fff',
+     textAlign:'center',
+     fontSize:30
+    },
     agenttextColorEmail:
                 {
                     color:'#666',
